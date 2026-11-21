@@ -120,6 +120,13 @@ jobs:
               raise SystemExit('The simulator did not reach a responsive SpringBoard before the Action.')
           PY
           printf 'PROOF_DEVICE=%s\n' "$simulator" >> "$GITHUB_ENV"
+      - name: Upload stock emulator configuration
+        if: inputs.purpose == 'stock-android-e2e'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: stock-android-configuration
+          path: ${{ runner.temp }}/stock-android-configuration.txt
+          if-no-files-found: error
       - name: Run the published Action
         uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
         env:
@@ -164,10 +171,3 @@ jobs:
             else
               xcrun simctl spawn "$PROOF_DEVICE" launchctl list | grep -q 'UIKitApplication:dev.uitest.fixture'
             fi
-      - name: Upload stock emulator configuration
-        if: always() && inputs.purpose == 'stock-android-e2e'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: stock-android-configuration
-          path: ${{ runner.temp }}/stock-android-configuration.txt
-          if-no-files-found: error

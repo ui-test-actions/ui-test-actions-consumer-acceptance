@@ -4,7 +4,8 @@ device=(adb -s emulator-5554)
 {
     printf 'system_image=%s\n' "$1"
     printf 'runner_arch=%s\n' "$(uname -m)"
-    "$ANDROID_HOME/emulator/emulator" -version | sed -n '1p'
+    sed -n 's/^Pkg.Revision=/emulator_revision=/p' "$ANDROID_HOME/emulator/source.properties"
+    sed -n 's/^Pkg.Revision=/image_revision=/p' "$ANDROID_HOME/system-images/android-35/google_apis_playstore/x86_64/source.properties"
     for prop in sys.boot_completed ro.build.version.release ro.build.version.sdk ro.product.cpu.abi ro.build.type ro.build.tags ro.build.version.security_patch; do
         printf '%s=%s\n' "$prop" "$("${device[@]}" shell getprop "$prop" | tr -d '\r')"
     done
