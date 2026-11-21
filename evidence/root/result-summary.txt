@@ -1,0 +1,24 @@
+Root experiment result summary
+==============================
+
+rootavd_commit=613caa44371f85e1a461bc030e07ddc2d71afe32
+magisk_release=v31.1
+magisk_sha256=89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7
+system_image=system-images;android-35;google_apis;x86_64
+image_revision=9
+emulator=37.3.10
+network_isolation=yes (ping and HTTP probes failed; wlan0/eth0 down; iptables OUTPUT reject)
+rootavd_patch=PASS (exit 0; ramdisk hash changed)
+original_ramdisk_restore=PASS (hash restored exactly, then patched image reinstalled)
+magisk_boot=PASS (31.1:MAGISK:R, path /debug_ramdisk)
+ordinary_adb_shell_uid=2000 PASS
+magisk_su=uid=0(root) PASS (explicit /debug_ramdisk/su after policy grant)
+root_persistence_after_cold_boot=PASS (second cold boot, su_exit=0)
+inert_module_install=PASS (magisk --install-module exit 0)
+inert_module_load=FAIL (module directory and /data/adb/inert-module-ran absent after cold boot)
+magisk_app_status=BLOCKED (no resolvable launcher activity; package unavailable after boot)
+crash_buffer_entries=0
+
+Details and raw logs: root-verification.txt, reboot-verification.txt,
+module-install.txt, module-installed.txt, magisk-logcat.txt, patch.log,
+ramdisk-hashes.txt, network-isolation.txt, magisk-status-UNAVAILABLE.md.

@@ -1,0 +1,133 @@
+collect_phase=initial
+collected_at_utc=2026-11-21T07:16:13Z
+serial=emulator-5554
+system_image=system-images;android-35;google_apis_playstore;x86_64
+avd_name=integrity-stock
+emulator_flags=-no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -wipe-data -skip-adb-auth
+adb_version=Android Debug Bridge version 1.0.41
+emulator_revision=37.3.10
+image_revision=9
+sys.boot_completed=1
+ro.build.version.release=15
+ro.build.version.sdk=35
+ro.product.cpu.abi=x86_64
+ro.product.cpu.abilist=x86_64,arm64-v8a
+ro.build.fingerprint=google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.036/12592187:user/release-keys
+ro.build.type=user
+ro.build.tags=release-keys
+ro.build.version.security_patch=2024-09-05
+ro.build.version.incremental=12592187
+ro.product.model=sdk_gphone64_x86_64
+ro.product.device=emu64xa
+ro.product.manufacturer=Google
+ro.hardware=ranchu
+ro.kernel.qemu=1
+ro.boot.qemu=1
+ro.product.first_api_level=35
+ro.debuggable=0
+ro.secure=1
+ro.boot.verifiedbootstate=
+ro.boot.flash.locked=
+adb_shell_identity=uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+adb_shell_uid=2000
+user_setup_complete=1
+device_provisioned=1
+play_store_version_name=versionName=41.3.25-31 [0] [PR] 640531013
+play_store_version_code=versionCode=84132530 minSdk=31 targetSdk=34
+gms_version_name=versionName=24.23.35 (190800-646585959)
+gms_version_code=versionCode=242335041 minSdk=31 targetSdk=34
+--- pm path ---
+package:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk
+package:/product/priv-app/Phonesky/Phonesky.apk
+--- launcher packages ---
+package:com.google.android.apps.wallpaper.nexus
+package:com.google.android.apps.nexuslauncher
+--- display ---
+Physical size: 1080x1920
+Physical density: 420
+--- avd config ---
+PlayStore.enabled=no
+abi.type=x86_64
+image.sysdir.1=system-images/android-35/google_apis_playstore/x86_64/
+tag.id=google_apis_playstore
+hw.ramSize=4096
+hw.cpu.ncore=4
+hw.lcd.width=1080
+hw.lcd.height=1920
+hw.lcd.density=420
+disk.dataPartition.size=6G
+collect_phase=final
+collected_at_utc=2026-11-21T07:36:50Z
+serial=emulator-5554
+system_image=system-images;android-35;google_apis_playstore;x86_64
+avd_name=integrity-stock
+emulator_flags=-no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -wipe-data -skip-adb-auth
+adb_version=Android Debug Bridge version 1.0.41
+emulator_revision=37.3.10
+image_revision=9
+sys.boot_completed=1
+ro.build.version.release=15
+ro.build.version.sdk=35
+ro.product.cpu.abi=x86_64
+ro.product.cpu.abilist=x86_64,arm64-v8a
+ro.build.fingerprint=google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.036/12592187:user/release-keys
+ro.build.type=user
+ro.build.tags=release-keys
+ro.build.version.security_patch=2024-09-05
+ro.build.version.incremental=12592187
+ro.product.model=sdk_gphone64_x86_64
+ro.product.device=emu64xa
+ro.product.manufacturer=Google
+ro.hardware=ranchu
+ro.kernel.qemu=1
+ro.boot.qemu=1
+ro.product.first_api_level=35
+ro.debuggable=0
+ro.secure=1
+ro.boot.verifiedbootstate=
+ro.boot.flash.locked=
+adb_shell_identity=uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+adb_shell_uid=2000
+user_setup_complete=1
+device_provisioned=1
+play_store_version_name=versionName=54.3.07-34 [0] [PR] 1022292552
+play_store_version_code=versionCode=85430740 minSdk=34 targetSdk=37
+gms_version_name=versionName=26.45.31 (260800-1020418964)
+gms_version_code=versionCode=264531038 minSdk=35 targetSdk=37
+--- pm path ---
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/base.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_AdsDynamite_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_CronetDynamite_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_DynamiteLoader_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_DynamiteModulesA_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_DynamiteModulesC_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_GoogleCertificates_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_MapsDynamite_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_MeasurementDynamite_installtime.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_all_locale_splits.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_config.en.apk
+package:/data/app/~~h3VoAkhQt2zvpxFrRmvZXQ==/com.google.android.gms-6g9kGE6kxcFbLNfX7qI54w==/split_config.xxhdpi.apk
+package:/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/base.apk
+package:/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/split_config.en.apk
+package:/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/split_config.x86_64.apk
+package:/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/split_phonesky_data_loader.apk
+package:/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/split_phonesky_data_loader.config.x86_64.apk
+package:/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/split_phonesky_webrtc_native_lib.apk
+package:/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/split_phonesky_webrtc_native_lib.config.x86_64.apk
+--- launcher packages ---
+package:com.google.android.apps.wallpaper.nexus
+package:com.google.android.apps.nexuslauncher
+--- display ---
+Physical size: 1080x1920
+Physical density: 420
+--- avd config ---
+PlayStore.enabled=no
+abi.type=x86_64
+image.sysdir.1=system-images/android-35/google_apis_playstore/x86_64/
+tag.id=google_apis_playstore
+hw.ramSize=4096
+hw.cpu.ncore=4
+hw.lcd.width=1080
+hw.lcd.height=1920
+hw.lcd.density=420
+disk.dataPartition.size=6G

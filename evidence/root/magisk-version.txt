@@ -1,0 +1,6 @@
+repository=https://github.com/topjohnwu/Magisk
+release=v31.1
+asset=Magisk-v31.1.apk
+expected_sha256=89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7
+actual_sha256=89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7
+size_bytes=10679283

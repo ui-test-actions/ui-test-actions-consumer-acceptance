@@ -1,0 +1,37 @@
+verified_at_utc=2026-11-21T08:57:13Z
+adb_shell_id=uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+adb_shell_uid=2000
+magisk_binary=/debug_ramdisk/magisk
+magisk_version=31.1:MAGISK:R
+magisk_path=/debug_ramdisk
+--- su candidates ---
+lrwxrwxrwx 1 root root      8 2026-11-21 08:56 /debug_ramdisk/su -> ./magisk
+-rwsr-x--- 1 root shell 51224 2025-01-23 17:21 /system/xbin/su
+/system/bin/su
+/system/xbin/su
+PATH=/product/bin:/apex/com.android.runtime/bin:/apex/com.android.art/bin:/system_ext/bin:/system/bin:/system/xbin:/odm/bin:/vendor/bin:/vendor/xbin
+--- explicit su -c id attempts (timeout 15s each) ---
+candidate=/debug_ramdisk/su
+uid=0(root) gid=0(root) groups=0(root) context=u:r:magisk:s0
+su_exit=0
+/debug_ramdisk/su
+magisk_root=verified
+--- Magisk app package ---
+    versionCode=31100 targetSdk=37
+    User 0: ceDataInode=0 deDataInode=0 installed=true hidden=false suspended=false distractionFlags=0 stopped=true notLaunched=true enabled=0 instant=false virtual=false quarantined=false
+No activity found
+--- Magisk app repair and explicit activity start ---
+Package com.topjohnwu.magisk new state: enabled
+android.content.pm.PackageManager$NameNotFoundException: Package com.topjohnwu.magisk doesn't exist
+No activity found
+Starting: Intent { cmp=com.topjohnwu.magisk/.ui.MainActivity }
+Error type 3
+Error: Activity class {com.topjohnwu.magisk/com.topjohnwu.magisk.ui.MainActivity} does not exist.
+--- /data/adb/magisk ---
+--- /data/adb/modules ---
+inert_module_marker_path=/data/adb/inert-module-ran
+inert_module_marker=absent
+--- modules list ---
+total 16
+drwxr-xr-x 2 root root 4096 2026-11-21 08:56 .
+drwx------ 6 root root 4096 2026-11-21 08:57 ..

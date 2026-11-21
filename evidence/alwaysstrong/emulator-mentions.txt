@@ -1,0 +1,50 @@
+=== direct references to emulator/virtual devices in the pinned tree ===
+/home/runner/work/_temp/AlwaysStrong/scripts/build-asfetch.sh:38:# i.e. real devices. x86/x86_64 are emulator-only (curl/busybox work there),
+/home/runner/work/_temp/AlwaysStrong/module/collect_logs.sh:117:      ro.product.cpu.abi ro.product.cpu.abilist ro.boot.hardware ro.kernel.qemu \
+/home/runner/work/_temp/AlwaysStrong/build.sh:361:    # WSL: pick up the Windows-side Android Studio install
+/home/runner/work/_temp/AlwaysStrong/build.sh:407:        die "Android NDK not found. Set ANDROID_NDK_HOME or install via Android Studio (SDK Manager -> NDK)"
+/home/runner/work/_temp/AlwaysStrong/build.sh:422:# x86/x86_64 are emulator-only; there curl/busybox already work, and shipping
+/home/runner/work/_temp/AlwaysStrong/build.sh:447:    find_ndk || die "Android NDK not found. Set ANDROID_NDK_HOME or install via Android Studio (SDK Manager -> NDK)"
+/home/runner/work/_temp/AlwaysStrong/build.sh:770:    # arm64-v8a ONLY (~9 MB). x86_64 (emulators / a few Chromebooks) can self-build
+
+=== x86 mentions in the pinned tree ===
+/home/runner/work/_temp/AlwaysStrong/docs/ADVANCED.md:80:- **ABI:** the `-TEESIM` builds are **64-bit only** (arm64-v8a / x86_64); on a 32-bit device they install but the keystore half stays inactive. As on the release zips, PlayIntegrityFix inject-s has no x86 zygisk, so `-inject*` can't spoof Play Integrity on x86.
+/home/runner/work/_temp/AlwaysStrong/scripts/build-asfetch.sh:38:# i.e. real devices. x86/x86_64 are emulator-only (curl/busybox work there),
+/home/runner/work/_temp/AlwaysStrong/scripts/build-watcher.sh:11:#           use the linux-x86_64 prebuilts from the SDK package).
+/home/runner/work/_temp/AlwaysStrong/scripts/build-watcher.sh:41:    -t arm64-v8a -t armeabi-v7a -t x86 -t x86_64 \
+/home/runner/work/_temp/AlwaysStrong/scripts/build-watcher.sh:49:    [x86]=i686-linux-android
+/home/runner/work/_temp/AlwaysStrong/scripts/build-watcher.sh:50:    [x86_64]=x86_64-linux-android
+/home/runner/work/_temp/AlwaysStrong/module/status_fetch.sh:70:    x86_64)        SF_ABI=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module/status_fetch.sh:71:    i?86)          SF_ABI=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/module/pif_native_fetch.sh:49:    x86_64)         ABI=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module/pif_native_fetch.sh:50:    i?86)           ABI=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/module/service.sh:202:    x86_64)        AS_ABI=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module/service.sh:203:    i?86)          AS_ABI=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/module/customize.sh:16:  x64)   ABI_DIR="x86_64" ;;
+/home/runner/work/_temp/AlwaysStrong/module/customize.sh:17:  x86)   ABI_DIR="x86" ;;
+/home/runner/work/_temp/AlwaysStrong/module/customize.sh:173:# PlayIntegrityFix inject-s is ARM-only, so on x86 that build has no zygisk to
+/home/runner/work/_temp/AlwaysStrong/module/customize.sh:186:for z in arm64-v8a armeabi-v7a x86 x86_64; do
+/home/runner/work/_temp/AlwaysStrong/module/beta_pif.sh:36:    x86_64)         ABI=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module/beta_pif.sh:37:    i?86)           ABI=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/module/collect_logs.sh:62:    x86_64) ABI=x86_64 ;; i?86) ABI=x86 ;; *) ABI="" ;;
+/home/runner/work/_temp/AlwaysStrong/module/action.sh:91:    x86_64)         ABI=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module/action.sh:92:    i?86)           ABI=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/module/keybox_fetch.sh:57:    x86_64)         ABI=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module/keybox_fetch.sh:58:    i?86)           ABI=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/README.md:69:- **ABI:** every build installs on arm64-v8a, armeabi-v7a, x86 and x86_64, but PlayIntegrityFix inject-s has no x86 zygisk — on x86 / x86_64 the `-inject` build can't spoof Play Integrity (it says so at install). On x86 use the default or the Lite build.
+/home/runner/work/_temp/AlwaysStrong/attest/teesim.sh:251:    for _abi in arm64-v8a x86_64; do
+/home/runner/work/_temp/AlwaysStrong/attest/teesim.sh:256:    # The release zip ships arm64-v8a only. On x86_64 there is no payload to run.
+/home/runner/work/_temp/AlwaysStrong/module-variants/fork/ship/engine.sh:120:        x86_64)         _ea_abi=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module-variants/fork/ship/engine.sh:121:        i?86|i686)      _ea_abi=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/module-variants/inject/ship/engine.sh:115:        x86_64)         _ea_abi=x86_64 ;;
+/home/runner/work/_temp/AlwaysStrong/module-variants/inject/ship/engine.sh:116:        i?86|i686)      _ea_abi=x86 ;;
+/home/runner/work/_temp/AlwaysStrong/build.sh:243:    for c in 7z 7za "/c/Program Files/7-Zip/7z.exe" "/c/Program Files (x86)/7-Zip/7z.exe"; do
+/home/runner/work/_temp/AlwaysStrong/build.sh:337:WATCHER_ABIS=(arm64-v8a armeabi-v7a x86 x86_64)
+/home/runner/work/_temp/AlwaysStrong/build.sh:401:        die "cargo not found. Install Rust: https://rustup.rs (then: rustup target add aarch64-linux-android armv7-linux-androideabi i686-linux-android x86_64-linux-android)"
+/home/runner/work/_temp/AlwaysStrong/build.sh:422:# x86/x86_64 are emulator-only; there curl/busybox already work, and shipping
+/home/runner/work/_temp/AlwaysStrong/build.sh:696:    for abi in arm64-v8a armeabi-v7a x86 x86_64; do
+/home/runner/work/_temp/AlwaysStrong/build.sh:719:    for abi in arm64-v8a armeabi-v7a x86 x86_64; do
+/home/runner/work/_temp/AlwaysStrong/build.sh:768:    # shipping both arm64-v8a and x86_64 would make an 18 MB zip. teesim is 64-bit
+/home/runner/work/_temp/AlwaysStrong/build.sh:770:    # arm64-v8a ONLY (~9 MB). x86_64 (emulators / a few Chromebooks) can self-build
+/home/runner/work/_temp/AlwaysStrong/build.sh:771:    # with TEESIM_ABIS="arm64-v8a x86_64".
+/home/runner/work/_temp/AlwaysStrong/build.sh:1003:for abi in arm64-v8a armeabi-v7a x86 x86_64; do

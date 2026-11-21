@@ -1,0 +1,110 @@
+{
+  "assessment": "CHECK_UNAVAILABLE",
+  "measurement_type": "official Play Store device integrity diagnostic (Play Integrity settings > Check integrity)",
+  "measurement_attempted_at_utc": "2026-11-21T07:21:19Z",
+  "measurement_finished_at_utc": "2026-11-21T07:27:49Z",
+  "result": null,
+  "reason": "The Play Store was signed out. The documented seven-tap unlock did not expose Developer options, so the Check integrity entry point was not present. No verdict labels were returned.",
+  "not_an_integrity_failure": "An unavailable diagnostic is not evidence that the device failed BASIC, DEVICE, STRONG, or VIRTUAL integrity.",
+  "device": {
+    "avd": "integrity-stock",
+    "system_image": "system-images;android-35;google_apis_playstore;x86_64",
+    "image_revision": "9",
+    "emulator": "37.3.10",
+    "android_release": "15",
+    "api_level": "35",
+    "abi": "x86_64",
+    "build_fingerprint": "google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.036/12592187:user/release-keys",
+    "build_type": "user",
+    "build_tags": "release-keys",
+    "security_patch": "2024-09-05",
+    "boot_completed": "1",
+    "adb_shell_uid": "2000",
+    "google_play_services_present": true,
+    "google_play_store_present": true,
+    "device_certification_label": "Device is not certified"
+  },
+  "google_play_services": {
+    "initial_version_name": "24.23.35 (190800-646585959)",
+    "initial_version_code": "242335041",
+    "final_version_name": "26.45.31 (260800-1020418964)",
+    "final_version_code": "264531038"
+  },
+  "google_play_store": {
+    "initial_version_name": "41.3.25-31 [0] [PR] 640531013",
+    "initial_version_code": "84132530",
+    "final_version_name": "54.3.07-34 [0] [PR] 1022292552",
+    "final_version_code": "85430740",
+    "self_update_check": "Google Play Store is up to date"
+  },
+  "account_state": {
+    "signed_in": false,
+    "account_created": false,
+    "organization_test_account_available": false
+  },
+  "attempts": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-11-21T07:21:19Z",
+      "action": "Open Play Store overflow menu and Settings while signed out",
+      "observed": "Settings, Updates, and Play Protect were reachable from the overflow menu.",
+      "screenshot": "../ui-test-actions/screenshots/stock/03-play-store-options.png"
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-11-21T07:21:57Z",
+      "action": "Expand About",
+      "observed": "Play Store version 54.3.07-34 was visible; Play Protect certification read 'Device is not certified'.",
+      "screenshot": "../ui-test-actions/screenshots/stock/05-play-store-about.png"
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-11-21T07:22:16Z",
+      "action": "Tap the Play Store version row seven times",
+      "observed": "No 'Developer options' entry appeared in Settings, General, or About. No unlock toast was present in the captured frame.",
+      "screenshot": "../ui-test-actions/screenshots/stock/06-play-store-developer-enabled.png"
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-11-21T07:23:54Z",
+      "action": "Request Play Store self-update and dismiss the result",
+      "observed": "Play Store reported 'Google Play Store is up to date'.",
+      "screenshot": "../ui-test-actions/screenshots/stock/08-play-store-update-attempt.png"
+    },
+    {
+      "sequence": 5,
+      "at_utc": "2026-11-21T07:27:09Z",
+      "action": "Repeat seven semantic taps on the Play Store version row after relaunch",
+      "observed": "Developer options and Check integrity remained absent.",
+      "screenshot": "../ui-test-actions/screenshots/stock/14-play-store-after-semantic-taps.png"
+    }
+  ],
+  "observed_settings_sections": [
+    "General",
+    "Notifications",
+    "Network preferences",
+    "About"
+  ],
+  "developer_options_present": false,
+  "check_integrity_present": false,
+  "verdict_labels_returned": {
+    "MEETS_BASIC_INTEGRITY": null,
+    "MEETS_DEVICE_INTEGRITY": null,
+    "MEETS_STRONG_INTEGRITY": null,
+    "MEETS_VIRTUAL_INTEGRITY": null
+  },
+  "exact_api_errors": [
+    "UNAUTHENTICATED: Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential.",
+    "ActivityManager: Scheduling restart of crashed service com.google.android.gms/.play.integrity.api.service.IntegrityApiPersistentService"
+  ],
+  "documented_procedure": "https://developer.android.com/google/play/integrity/additional-tools#check_the_device_integrity_verdict_from_any_device",
+  "independent_note": "Google's procedure starts from the Play Store profile icon. In a signed-out Play Store the same Settings screen was reached through the overflow menu, so navigation itself was not the blocker. The documented developer-mode unlock is gated on an account; no organization-approved test account was available, and no account was created.",
+  "evidence": {
+    "runner_configuration": "configuration.txt",
+    "play_store_dumpsys": "play-store-dumpsys.txt",
+    "gms_dumpsys": "gms-dumpsys.txt",
+    "logcat": "logcat.txt",
+    "settings_tree": "play-store-settings-tree.json",
+    "interaction_log": "../ui-test-actions/interaction-results.json"
+  }
+}

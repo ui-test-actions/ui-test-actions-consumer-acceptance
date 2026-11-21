@@ -1,0 +1,12 @@
+repository=https://gitlab.com/Evokerr/AlwaysStrong
+requested_commit=35b80223db44332f8262cb78453d561a36c97ea1
+actual_commit=35b80223db44332f8262cb78453d561a36c97ea1
+commit_date=2026-11-12T03:21:07+03:00
+tag=v1.0.6.1
+release_date=2026-11-12T00:21:42.219Z
+default_zip=AlwaysStrong-v1.0.6.1.zip
+module_id=tricky_store
+module_name=AlwaysStrong
+module_version=v1.0.6.1
+module_versionCode=1061
+declared_minimum_android=10 (SDK 29), README.md:29

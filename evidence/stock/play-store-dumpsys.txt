@@ -1,0 +1,2051 @@
+Activity Resolver Table:
+  Schemes:
+      market:
+        4e7d2e9 com.android.vending/com.google.android.finsky.activities.MarketDeepLinkHandlerActivity filter 22dfb6e
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "details": -1
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 9ddf621
+          Action: "android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "market"
+          Authority: "search": -1
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter e02d35d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "webstoreredirect": -1
+        112d432 com.android.vending/com.google.android.finsky.transparentmainactivity.TransparentMainActivity filter 257c583
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "details": -1
+      package:
+        b25ba1b com.android.vending/com.google.android.finsky.protect.PermissionAutoRevocationSettingsPage filter 9a6a7b8
+          Action: "android.intent.action.AUTO_REVOKE_PERMISSIONS"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "package"
+      google-orchestration:
+        280b6ad com.android.vending/com.google.android.wallet.instrumentmanager.redirect.ImFinishAndroidAppRedirectActivity filter f44ade2
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "google-orchestration"
+          Authority: "return": -1
+      http:
+        ee420e6 com.android.vending/com.google.android.finsky.protect.impl.PlayProtectHomeDeepLinkActivity filter 10c4627
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{PREFIX: /protect/home}"
+          AutoVerify=true
+        8c3f0d4 com.android.vending/com.google.android.finsky.applaunch.LaunchAppDeepLinkActivity filter 6c6527d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /apps/launch}"
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter dd30c88
+          Action: "android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "market.android.com": -1
+          AutoVerify=true
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 3060a46
+          Action: "android.intent.action.VIEW"
+          Action: "afwapp.android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "my.play": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{PREFIX: /}"
+          AutoVerify=true
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 8d7e407
+          Action: "android.intent.action.VIEW"
+          Action: "afwapp.android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "leagues.withgoogle.com": -1
+          AutoVerify=true
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter fd06934
+          Action: "android.intent.action.VIEW"
+          Action: "afwapp.android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: /}"
+          Path: "PatternMatcher{PREFIX: /store}"
+          Path: "PatternMatcher{PREFIX: /redeem}"
+          Path: "PatternMatcher{PREFIX: /wishlist}"
+          Path: "PatternMatcher{PREFIX: /profile}"
+          Path: "PatternMatcher{PREFIX: /subscriptions}"
+          Path: "PatternMatcher{PREFIX: /games/profile}"
+          Path: "PatternMatcher{PREFIX: /apps/test/}"
+          Path: "PatternMatcher{LITERAL: /apps}"
+          AutoVerify=true
+        8675193 com.android.vending/com.google.android.finsky.rubiks.cubes.activity.CubesActivity filter 98ab5d0
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /cubes}"
+          AutoVerify=true
+        3df3300 com.android.vending/com.google.android.finsky.transparentmainactivity.HsdpAlias filter 992e739
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /d}"
+      https:
+        ee420e6 com.android.vending/com.google.android.finsky.protect.impl.PlayProtectHomeDeepLinkActivity filter 10c4627
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{PREFIX: /protect/home}"
+          AutoVerify=true
+        8c3f0d4 com.android.vending/com.google.android.finsky.applaunch.LaunchAppDeepLinkActivity filter 6c6527d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /apps/launch}"
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter dd30c88
+          Action: "android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "market.android.com": -1
+          AutoVerify=true
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 3060a46
+          Action: "android.intent.action.VIEW"
+          Action: "afwapp.android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "my.play": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{PREFIX: /}"
+          AutoVerify=true
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 8d7e407
+          Action: "android.intent.action.VIEW"
+          Action: "afwapp.android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "leagues.withgoogle.com": -1
+          AutoVerify=true
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter fd06934
+          Action: "android.intent.action.VIEW"
+          Action: "afwapp.android.intent.action.VIEW"
+          Action: "android.nfc.action.NDEF_DISCOVERED"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: /}"
+          Path: "PatternMatcher{PREFIX: /store}"
+          Path: "PatternMatcher{PREFIX: /redeem}"
+          Path: "PatternMatcher{PREFIX: /wishlist}"
+          Path: "PatternMatcher{PREFIX: /profile}"
+          Path: "PatternMatcher{PREFIX: /subscriptions}"
+          Path: "PatternMatcher{PREFIX: /games/profile}"
+          Path: "PatternMatcher{PREFIX: /apps/test/}"
+          Path: "PatternMatcher{LITERAL: /apps}"
+          AutoVerify=true
+        35fa991 com.android.vending/com.google.android.finsky.phonehandoff.WearPurchaseProxyActivity filter c8b90f6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /wearpurchase}"
+          AutoVerify=true
+        1dbdcf7 com.android.vending/com.google.androidbrowserhelper.trusted.LauncherActivity filter 5fa8764
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "https"
+          Authority: "myaccount.google.com": -1
+          Authority: "accounts.google.com": -1
+          Path: "PatternMatcher{PREFIX: /location-remediation}"
+          AutoVerify=true
+        8675193 com.android.vending/com.google.android.finsky.rubiks.cubes.activity.CubesActivity filter 98ab5d0
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /cubes}"
+          AutoVerify=true
+        3df3300 com.android.vending/com.google.android.finsky.transparentmainactivity.HsdpAlias filter 992e739
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /d}"
+      iabData:
+        9416572 com.android.vending/com.google.android.finsky.billing.acquire.SheetUiBuilderHostActivity filter cd94640
+          Action: "com.google.android.finsky.phoenix.ACQUIRE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "iabData"
+        16a9979 com.android.vending/com.google.android.finsky.billing.acquire.LockToPortraitUiBuilderHostActivity filter 979d31f
+          Action: "com.google.android.finsky.portrait.UI_BUILDER"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "iabData"
+        516017e com.android.vending/com.google.android.finsky.uibuilderactivity.UiBuilderActivity filter 4847f2c
+          Action: "com.google.android.finsky.univision.UIBUILDER"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "iabData"
+
+  Non-Data Actions:
+      com.google.android.finsky.family.MEMBER_SETTINGS:
+        77d0717 com.android.vending/com.google.android.finsky.family.management.FamilyMemberSettingsActivity filter b2f3704
+          Action: "com.google.android.finsky.family.MEMBER_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.android.vending.billing.PURCHASE:
+        75430ca com.android.vending/com.google.android.finsky.billing.lightpurchase.LightPurchaseFlowActivity filter bf2823b
+          Action: "com.android.vending.billing.PURCHASE"
+          Category: "android.intent.category.DEFAULT"
+      android.app.supervision.action.VIEW_APP_FILTER_SETTINGS:
+        e919d58 com.android.vending/com.google.android.finsky.contentfilterui.ContentFiltersActivity3 filter 7ec8f96
+          Action: "android.app.supervision.action.VIEW_APP_FILTER_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.MAIN:
+        39f4cff com.android.vending/.AssetBrowserActivity filter 83aacc
+          Action: "android.intent.action.MAIN"
+          Action: "com.google.android.finsky.VIEW_MY_DOWNLOADS"
+          Action: "android.intent.action.SEARCH"
+          Category: "android.intent.category.LAUNCHER"
+          Category: "android.intent.category.APP_MARKET"
+          Category: "android.intent.category.DEFAULT"
+        254f9c9 com.android.vending/com.google.android.finsky.setupui.VpaSelectionOptionalStepActivity filter cbfc8ce
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.DEFAULT"
+          Category: "com.android.settings.suggested.category.PAI"
+          mPriority=10, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+      com.google.android.finsky.intent.action.PARENTAL_CONTROLS:
+        e919d58 com.android.vending/com.google.android.finsky.contentfilterui.ContentFiltersActivity3 filter c00feb1
+          Action: "com.google.android.finsky.intent.action.PARENTAL_CONTROLS"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.gms.actions.SEARCH_ACTION:
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter b84702b
+          Action: "com.google.android.gms.actions.SEARCH_ACTION"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.VIEW_MY_DOWNLOADS:
+        39f4cff com.android.vending/.AssetBrowserActivity filter 83aacc
+          Action: "android.intent.action.MAIN"
+          Action: "com.google.android.finsky.VIEW_MY_DOWNLOADS"
+          Action: "android.intent.action.SEARCH"
+          Category: "android.intent.category.LAUNCHER"
+          Category: "android.intent.category.APP_MARKET"
+          Category: "android.intent.category.DEFAULT"
+      android.settings.SYSTEM_SERVICES_MANAGEMENT:
+        eaa6985 com.android.vending/com.google.android.finsky.systemservicesactivity.SystemServicesActivity filter c93a3da
+          Action: "android.settings.SYSTEM_SERVICES_MANAGEMENT"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.ACTION_RETURN_FROM_SUPERVISION_STATUS:
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter c461c1e
+          Action: "com.google.android.finsky.ACTION_RETURN_FROM_SUPERVISION_STATUS"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+      android.search.action.CHOICE_SCREEN:
+        bbf5a28 com.android.vending/com.google.android.finsky.setup.dse.impl.ChoiceScreenTrampolineActivity filter e1c341
+          Action: "android.search.action.CHOICE_SCREEN"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.STORE_ARCHIVE:
+        8c0fdb3 com.android.vending/com.google.android.finsky.hibernation.impl.UnhibernateActivity filter 2eabf70
+          Action: "com.google.android.STORE_ARCHIVE"
+          Category: "android.intent.category.DEFAULT"
+      android.settings.SYSTEM_SERVICES_DETAILS:
+        eaa6985 com.android.vending/com.google.android.finsky.systemservicesactivity.SystemServicesActivity filter b65600b
+          Action: "android.settings.SYSTEM_SERVICES_DETAILS"
+          Category: "android.intent.category.DEFAULT"
+      android.settings.SYSTEM_COMPONENT_UPDATE_SETTINGS:
+        9be4d1a com.android.vending/com.google.android.finsky.systemcomponentupdateui.common.SystemComponentUpdateActivity filter da0f04b
+          Action: "android.settings.SYSTEM_COMPONENT_UPDATE_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.SHOW_APP_INFO:
+        a2b73ef com.android.vending/com.google.android.finsky.activities.ShowAppInfoActivity filter bad5efc
+          Action: "android.intent.action.SHOW_APP_INFO"
+          Category: "android.intent.category.DEFAULT"
+      com.android.finsky.APP_DETAILS_DIALOG:
+        543c20f com.android.vending/com.google.android.finsky.activities.InlineAppDetailsDialog filter 994629c
+          Action: "com.android.finsky.APP_DETAILS_DIALOG"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.ACTION_RETURN_FROM_LOCATION_DISPUTE_STATUS:
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 59e4859
+          Action: "com.google.android.finsky.ACTION_RETURN_FROM_LOCATION_DISPUTE_STATUS"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+      com.google.android.finsky.phoenix.ACQUIRE:
+        9416572 com.android.vending/com.google.android.finsky.billing.acquire.SheetUiBuilderHostActivity filter 5ed1dc3
+          Action: "com.google.android.finsky.phoenix.ACQUIRE"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.ACTION_RETURN_FROM_AGE_VERIFICATION_STATUS:
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 6a4e4a0
+          Action: "com.google.android.finsky.ACTION_RETURN_FROM_AGE_VERIFICATION_STATUS"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+      android.content.pm.action.SESSION_DETAILS:
+        59163c com.android.vending/com.google.android.finsky.sessiondetailsactivity.SessionDetailsActivity filter 91cefc5
+          Action: "android.content.pm.action.SESSION_DETAILS"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.PLAY_REMOTE_SETUP:
+        c444dcd com.android.vending/com.google.android.finsky.remotesetup.PlayRemoteSetupActivity filter 257c682
+          Action: "com.google.android.finsky.PLAY_REMOTE_SETUP"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.family.SETUP:
+        6f5d4ed com.android.vending/com.google.android.finsky.family.setup.FamilySetupActivity filter 9da0f22
+          Action: "com.google.android.finsky.family.SETUP"
+          Category: "android.intent.category.DEFAULT"
+      android.settings.MODULE_UPDATE_SETTINGS:
+        ef6ee8 com.android.vending/com.google.android.finsky.systemupdateactivity.SystemUpdateActivityAlias filter 92d1901
+          Action: "android.settings.MODULE_UPDATE_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=10, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+        d07f1e7 com.android.vending/com.google.android.finsky.systemupdateactivity.SystemUpdateActivityV2Alias filter 7c09194
+          Action: "android.settings.MODULE_UPDATE_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.android.vending.billing.BIOMETRICS_CONSENT:
+        2c866c com.android.vending/com.google.android.finsky.billing.biometricsconsentactivity.BiometricsConsentActivity filter 7725435
+          Action: "com.android.vending.billing.BIOMETRICS_CONSENT"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.univision.UIBUILDER:
+        516017e com.android.vending/com.google.android.finsky.uibuilderactivity.UiBuilderActivity filter 44736df
+          Action: "com.google.android.finsky.univision.UIBUILDER"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.DETAILS:
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter a8884d2
+          Action: "com.google.android.finsky.DETAILS"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.STORAGE_FREE_UP_ACTION:
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 104b9a3
+          Action: "com.google.android.finsky.STORAGE_FREE_UP_ACTION"
+          Category: "android.intent.category.DEFAULT"
+      com.android.settings.action.IA_SETTINGS:
+        ef6ee8 com.android.vending/com.google.android.finsky.systemupdateactivity.SystemUpdateActivityAlias filter d9823a6
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=99, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+        d07f1e7 com.android.vending/com.google.android.finsky.systemupdateactivity.SystemUpdateActivityV2Alias filter 5d1443d
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+        e9261fb com.android.vending/com.google.android.finsky.verifier.impl.scan.adi.AdiWarnModeTrampolineActivity filter 1506218
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+        3ad4471 com.android.vending/com.google.android.finsky.verifier.impl.scan.adi.ColorOsAdiWarnModeTrampolineActivity filter c06c256
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+        29b22d7 com.android.vending/com.google.android.finsky.verifier.impl.scan.adi.OplusAdiWarnModeTrampolineActivity filter 9f587c4
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.PLAY_PROTECT:
+        be21115 com.android.vending/com.google.android.finsky.protect.ExternalPlayProtectHomeEntryPoint filter bb3dc2a
+          Action: "com.google.android.finsky.PLAY_PROTECT"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.finsky.portrait.UI_BUILDER:
+        16a9979 com.android.vending/com.google.android.finsky.billing.acquire.LockToPortraitUiBuilderHostActivity filter 1bc66be
+          Action: "com.google.android.finsky.portrait.UI_BUILDER"
+          Category: "android.intent.category.DEFAULT"
+      com.google.android.vending.verifier.REQUEST_CONSENT:
+        331bdf5 com.android.vending/com.google.android.finsky.verifier.impl.consent.ConsentDialog filter 48cb78a
+          Action: "com.google.android.vending.verifier.REQUEST_CONSENT"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.SEARCH:
+        ae1b4a5 com.android.vending/com.google.android.finsky.activities.MainActivity filter 3c2607a
+          Action: "android.intent.action.SEARCH"
+          Category: "android.intent.category.DEFAULT"
+        39f4cff com.android.vending/.AssetBrowserActivity filter 83aacc
+          Action: "android.intent.action.MAIN"
+          Action: "com.google.android.finsky.VIEW_MY_DOWNLOADS"
+          Action: "android.intent.action.SEARCH"
+          Category: "android.intent.category.LAUNCHER"
+          Category: "android.intent.category.APP_MARKET"
+          Category: "android.intent.category.DEFAULT"
+
+Receiver Resolver Table:
+  Full MIME Types:
+      application/*:
+        bfe1789 com.android.vending/com.google.android.finsky.recoverymode.download.impl.RecoveryModeDownloadBroadcastReceiver filter 351f38e
+          Action: "android.intent.action.DOWNLOAD_COMPLETED"
+          StaticType: "application"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      application/vnd.android.package-archive:
+        91e67bd com.android.vending/com.google.android.finsky.verifier.impl.PackageVerificationReceiver filter ebbf1b2
+          Action: "android.intent.action.PACKAGE_NEEDS_VERIFICATION"
+          StaticType: "application/vnd.android.package-archive"
+
+  Base MIME Types:
+      application:
+        91e67bd com.android.vending/com.google.android.finsky.verifier.impl.PackageVerificationReceiver filter ebbf1b2
+          Action: "android.intent.action.PACKAGE_NEEDS_VERIFICATION"
+          StaticType: "application/vnd.android.package-archive"
+
+  Wild MIME Types:
+      application:
+        bfe1789 com.android.vending/com.google.android.finsky.recoverymode.download.impl.RecoveryModeDownloadBroadcastReceiver filter 351f38e
+          Action: "android.intent.action.DOWNLOAD_COMPLETED"
+          StaticType: "application"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+
+  Schemes:
+      package:
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter 28a173a
+          Action: "android.intent.action.PACKAGE_ADDED"
+          Scheme: "package"
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter 8bbbfeb
+          Action: "android.intent.action.PACKAGE_REMOVED"
+          Scheme: "package"
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter 72c8148
+          Action: "android.intent.action.PACKAGE_FULLY_REMOVED"
+          Scheme: "package"
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter 3072be1
+          Action: "android.intent.action.PACKAGE_CHANGED"
+          Scheme: "package"
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter a726d06
+          Action: "android.intent.action.PACKAGE_FIRST_LAUNCH"
+          Scheme: "package"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter c5e4163
+          Action: "android.intent.action.PACKAGE_ADDED"
+          Scheme: "package"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter 1a03160
+          Action: "android.intent.action.PACKAGE_REMOVED"
+          Scheme: "package"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter 807619
+          Action: "android.intent.action.PACKAGE_FULLY_REMOVED"
+          Scheme: "package"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter b0416de
+          Action: "android.intent.action.PACKAGE_CHANGED"
+          Scheme: "package"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter d6990bf
+          Action: "android.intent.action.PACKAGE_FIRST_LAUNCH"
+          Scheme: "package"
+        cfe5a9f com.android.vending/com.google.android.finsky.appcontentservice.engage.broadcastreceiver.EngagePackageActionReceiver filter de337ec
+          Action: "android.intent.action.PACKAGE_CHANGED"
+          Scheme: "package"
+        cfe5a9f com.android.vending/com.google.android.finsky.appcontentservice.engage.broadcastreceiver.EngagePackageActionReceiver filter 150e7b5
+          Action: "android.intent.action.PACKAGE_FULLY_REMOVED"
+          Scheme: "package"
+        cfe5a9f com.android.vending/com.google.android.finsky.appcontentservice.engage.broadcastreceiver.EngagePackageActionReceiver filter 109fe4a
+          Action: "android.intent.action.PACKAGE_DATA_CLEARED"
+          Scheme: "package"
+
+  Non-Data Actions:
+      com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_USE_DATA:
+        b27a345 com.android.vending/com.google.android.finsky.downloadservice.DownloadNotificationActionReceiver filter ffdba9a
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_USE_DATA"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_DISMISSED"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_LAUNCH"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_UNINSTALL"
+      android.accounts.action.ACCOUNT_REMOVED:
+        35f3e5f com.android.vending/com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver filter 108b0ac
+          Action: "android.accounts.action.ACCOUNT_REMOVED"
+      com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CLICKED_BACKGROUND_ACTION:
+        2755da7 com.android.vending/com.google.android.finsky.downloadserviceclient.DownloadServiceBackgroundReceiver filter 4abf254
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CLICKED_BACKGROUND_ACTION"
+          Action: "com.google.android.finsky.downloadservice.intent.action.WAKING_STATE_UPDATE_BROADCAST_BACKGROUND_ACTION"
+      com.android.vending.NEW_UPDATE_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      com.android.vending.RICH_USER_NOTIFICATION_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_DISMISSED:
+        b27a345 com.android.vending/com.google.android.finsky.downloadservice.DownloadNotificationActionReceiver filter ffdba9a
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_USE_DATA"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_DISMISSED"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_LAUNCH"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_UNINSTALL"
+      com.google.android.finsky.gamestreaks.ACTION_STREAK_AT_RISK_CHECK:
+        6aa0e69 com.android.vending/com.google.android.finsky.gamestreaks.notification.GameStreaksAlarmReceiver filter 50250ee
+          Action: "com.google.android.finsky.gamestreaks.ACTION_STREAK_AT_RISK_CHECK"
+      android.content.pm.action.SESSION_UPDATED:
+        d902d43 com.android.vending/com.google.android.finsky.packageinstaller.main.AtomicInstallBroadcastReceiverMain filter 8ffdfc0
+          Action: "android.content.pm.action.SESSION_UPDATED"
+        99ef4f9 com.android.vending/com.google.android.finsky.packageinstaller.background.AtomicInstallBroadcastReceiverBackground filter 8e85c3e
+          Action: "android.content.pm.action.SESSION_UPDATED"
+      com.google.android.finsky.appswidgetmanager.ACTION_PINNED:
+        3f54a31 com.android.vending/com.google.android.finsky.appswidgetmanager.impl.AppWidgetPinnedReceiver filter ef1b516
+          Action: "com.google.android.finsky.appswidgetmanager.ACTION_PINNED"
+      android.app.action.PROFILE_OWNER_CHANGED:
+        fee27af com.android.vending/com.google.android.finsky.devicemanagement.receiver.DeviceManagementReceiver filter 8d867bc
+          Action: "android.app.action.PROFILE_OWNER_CHANGED"
+          Action: "android.app.action.DEVICE_OWNER_CHANGED"
+        4a3586d com.android.vending/com.google.android.finsky.devicemanagement.backgroundreceiver.DeviceManagementReceiver filter fcc0ca2
+          Action: "android.app.action.PROFILE_OWNER_CHANGED"
+          Action: "android.app.action.DEVICE_OWNER_CHANGED"
+        d06ed33 com.android.vending/com.google.android.finsky.devicemanagement.quicklaunchreceiver.DeviceManagementReceiver filter aab8f0
+          Action: "android.app.action.PROFILE_OWNER_CHANGED"
+          Action: "android.app.action.DEVICE_OWNER_CHANGED"
+      android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE:
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter de9a51d
+          Action: "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter 636c2ea
+          Action: "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
+      com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CANCEL:
+        b27a345 com.android.vending/com.google.android.finsky.downloadservice.DownloadNotificationActionReceiver filter ffdba9a
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_USE_DATA"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_DISMISSED"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_LAUNCH"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_UNINSTALL"
+      androidx.profileinstaller.action.SAVE_PROFILE:
+        e990ff1 com.android.vending/androidx.profileinstaller.ProfileInstallReceiver filter 99e6944
+          Action: "androidx.profileinstaller.action.SAVE_PROFILE"
+      android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE:
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter c2c69f4
+          Action: "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter c195ad5
+          Action: "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"
+      com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        aff8fcb com.android.vending/com.google.android.finsky.downloadservice.DownloadRetryActionReceiver filter ea243a8
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+          Action: "com.google.android.finsky.downloadservice.intent.action.DOWNLOAD_RETRY_DUE_ACTION"
+      com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_LAUNCH:
+        b27a345 com.android.vending/com.google.android.finsky.downloadservice.DownloadNotificationActionReceiver filter ffdba9a
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_USE_DATA"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_DISMISSED"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_LAUNCH"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_UNINSTALL"
+      com.google.android.finsky.action.UNATTENDED_UPDATE_PREPARED:
+        e070481 com.android.vending/com.google.android.finsky.systemupdate.receivers.UnattendedUpdatePreparedReceiver filter 9226926
+          Action: "com.google.android.finsky.action.UNATTENDED_UPDATE_PREPARED"
+      com.android.vending.BIOAUTH_CONSENT:
+        658923 com.android.vending/com.google.android.finsky.playbioauth.PlayBioAuthReceiver filter f163e20
+          Action: "com.android.vending.BIOAUTH_CONSENT"
+      com.android.vending.CRASH_SENT:
+        2663d9 com.android.vending/com.google.android.finsky.recoverycrashlogger.RecoveryCrashReceiver filter 59ad19e
+          Action: "com.android.vending.CRASH_SENT"
+      com.android.vending.SHARE_SHEET_RESULT:
+        71afe97 com.android.vending/com.google.android.finsky.billing.common.ShareSheetResultReceiver filter fda9884
+          Action: "com.android.vending.SHARE_SHEET_RESULT"
+      com.android.vending.SUCCESSFULLY_UPDATED_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      com.google.android.libraries.appdoctor.ACTION_TELE_DOCTOR_FIX:
+        3f801bb com.android.vending/com.google.android.finsky.appdoctor.PhoneskyAppDoctorReceiver filter 2c1e6d8
+          Action: "com.google.android.libraries.appdoctor.ACTION_TELE_DOCTOR_FIX"
+      android.intent.action.SIM_STATE_CHANGED:
+        4124953 com.android.vending/com.google.android.finsky.simhandler.SimStateReceiver filter 752b290
+          Action: "android.intent.action.SIM_STATE_CHANGED"
+      com.google.android.gms.dck.action.DIGITAL_KEY_IN_USE:
+        94c2825 com.android.vending/com.google.android.finsky.gearhead.receiver.CarKeyConnectionReceiver filter b468dfa
+          Action: "com.google.android.gms.dck.action.DIGITAL_KEY_IN_USE"
+      android.finsky.safetycenter.action.HANDLE_INLINE_ACTION:
+        82f7f8b com.android.vending/com.google.android.finsky.safetycenter.receiver.SafetyCenterReceiver filter 597d868
+          Action: "android.finsky.safetycenter.action.HANDLE_INLINE_ACTION"
+          Action: "android.safetycenter.action.REFRESH_SAFETY_SOURCES"
+      com.google.android.gms.auth.GOOGLE_ACCOUNT_CHANGE:
+        7630f8d com.android.vending/com.google.android.finsky.accounts.impl.AccountsChangedReceiver filter 7f8c542
+          Action: "com.google.android.gms.auth.GOOGLE_ACCOUNT_CHANGE"
+          Category: "com.google.android.gms.auth.category.ACCOUNT_ADDED"
+          Category: "com.google.android.gms.auth.category.ACCOUNT_REMOVED"
+          Category: "com.google.android.gms.auth.category.ACCOUNT_MUTATED"
+      com.android.vending.TOS_ACKED:
+        c051573 com.android.vending/com.google.android.finsky.tos.TosAckedReceiver filter 4a55c30
+          Action: "com.android.vending.TOS_ACKED"
+      com.android.vending.GENERIC_NOTIFICATION_DELETION:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      android.scheduling.action.REBOOT_READY:
+        9148967 com.android.vending/com.google.android.finsky.systemupdate.receivers.RebootReadinessReceiver filter c461314
+          Action: "android.scheduling.action.REBOOT_READY"
+      com.android.vending.SUCCESSFULLY_UPDATED_DELETED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      android.intent.action.LOCALE_CHANGED:
+        99f10a9 com.android.vending/com.google.android.finsky.userlanguages.LocaleChangedReceiver filter b83c62e
+          Action: "android.intent.action.LOCALE_CHANGED"
+      com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      android.intent.action.APPLICATION_LOCALE_CHANGED:
+        31195cf com.android.vending/com.google.android.finsky.userlanguages.ApplicationLocaleChangedReceiver filter 73c0b5c
+          Action: "android.intent.action.APPLICATION_LOCALE_CHANGED"
+      com.android.launcher3.action.FIRST_SCREEN_ACTIVE_INSTALLS:
+        2b2d8b7 com.android.vending/com.google.android.finsky.setup.LauncherConfigurationReceiver filter 8b83824
+          Action: "com.android.launcher3.action.FIRST_SCREEN_ACTIVE_INSTALLS"
+      androidx.profileinstaller.action.INSTALL_PROFILE:
+        e990ff1 com.android.vending/androidx.profileinstaller.ProfileInstallReceiver filter f6d67d6
+          Action: "androidx.profileinstaller.action.INSTALL_PROFILE"
+      com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CLICKED_BACKGROUND_ACTION:
+        33c21a1 com.android.vending/com.google.android.finsky.installqueue.servicev2.broadcastreceiver.InstallQueueReceiver filter 65f8fc6
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CLICKED_BACKGROUND_ACTION"
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_USE_DATA"
+      com.google.android.gms.app.importance.ACTION_APP_IMPORTANCE_CHANGED:
+        cb9298f com.android.vending/com.google.android.finsky.gameusage.data.receiver.GameLifecycleChangeBroadcastReceiver filter 91a741c
+          Action: "com.google.android.gms.app.importance.ACTION_APP_IMPORTANCE_CHANGED"
+      com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      com.google.android.c2dm.intent.RECEIVE:
+        7e3617b com.android.vending/com.google.firebase.iid.FirebaseInstanceIdReceiver filter 3a62b98
+          Action: "com.google.android.c2dm.intent.RECEIVE"
+      android.app.action.DEVICE_OWNER_CHANGED:
+        fee27af com.android.vending/com.google.android.finsky.devicemanagement.receiver.DeviceManagementReceiver filter 8d867bc
+          Action: "android.app.action.PROFILE_OWNER_CHANGED"
+          Action: "android.app.action.DEVICE_OWNER_CHANGED"
+        4a3586d com.android.vending/com.google.android.finsky.devicemanagement.backgroundreceiver.DeviceManagementReceiver filter fcc0ca2
+          Action: "android.app.action.PROFILE_OWNER_CHANGED"
+          Action: "android.app.action.DEVICE_OWNER_CHANGED"
+        d06ed33 com.android.vending/com.google.android.finsky.devicemanagement.quicklaunchreceiver.DeviceManagementReceiver filter aab8f0
+          Action: "android.app.action.PROFILE_OWNER_CHANGED"
+          Action: "android.app.action.DEVICE_OWNER_CHANGED"
+      android.app.action.APP_BLOCK_STATE_CHANGED:
+        9d836dd com.android.vending/com.google.android.finsky.notification.impl.NotificationSettingsBroadcastReceiver filter db4e252
+          Action: "android.app.action.APP_BLOCK_STATE_CHANGED"
+          Action: "android.app.action.NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED"
+      androidx.profileinstaller.action.SKIP_FILE:
+        e990ff1 com.android.vending/androidx.profileinstaller.ProfileInstallReceiver filter cbc9a57
+          Action: "androidx.profileinstaller.action.SKIP_FILE"
+      com.google.android.finsky.downloadservice.intent.action.WAKING_STATE_UPDATE_BROADCAST_ACTION:
+        7a42ec1 com.android.vending/com.google.android.finsky.downloadserviceclient.DownloadServiceReceiver filter 16ce666
+          Action: "com.google.android.finsky.downloadservice.intent.action.WAKING_STATE_UPDATE_BROADCAST_ACTION"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CLICKED_ACTION"
+      com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CLICKED_ACTION:
+        7a42ec1 com.android.vending/com.google.android.finsky.downloadserviceclient.DownloadServiceReceiver filter 16ce666
+          Action: "com.google.android.finsky.downloadservice.intent.action.WAKING_STATE_UPDATE_BROADCAST_ACTION"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CLICKED_ACTION"
+      com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CANCEL:
+        33c21a1 com.android.vending/com.google.android.finsky.installqueue.servicev2.broadcastreceiver.InstallQueueReceiver filter 65f8fc6
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CLICKED_BACKGROUND_ACTION"
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_USE_DATA"
+      com.google.android.finsky.shellservice.COMMAND:
+        203f5fd com.android.vending/com.google.android.finsky.shellservice.RootOnlyProdCommandReceiver filter f5102f2
+          Action: "com.google.android.finsky.shellservice.COMMAND"
+      androidx.profileinstaller.action.BENCHMARK_OPERATION:
+        e990ff1 com.android.vending/androidx.profileinstaller.ProfileInstallReceiver filter b1dba2d
+          Action: "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+      com.google.android.finsky.downloadservice.intent.action.WAKING_STATE_UPDATE_BROADCAST_BACKGROUND_ACTION:
+        2755da7 com.android.vending/com.google.android.finsky.downloadserviceclient.DownloadServiceBackgroundReceiver filter 4abf254
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CLICKED_BACKGROUND_ACTION"
+          Action: "com.google.android.finsky.downloadservice.intent.action.WAKING_STATE_UPDATE_BROADCAST_BACKGROUND_ACTION"
+      android.intent.action.BOOT_COMPLETED:
+        fb079db com.android.vending/com.google.android.finsky.boothandler.BootCompletedReceiver filter da6cc78
+          Action: "android.intent.action.BOOT_COMPLETED"
+        b565503 com.android.vending/androidx.work.impl.background.systemalarm.RescheduleReceiver filter 4fb4c80
+          Action: "android.intent.action.BOOT_COMPLETED"
+      android.intent.action.UNARCHIVE_PACKAGE:
+        5a8cfab com.android.vending/com.google.android.finsky.hibernation.receiver.UnarchivePackageReceiver filter 168b608
+          Action: "android.intent.action.UNARCHIVE_PACKAGE"
+      android.app.action.NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED:
+        9d836dd com.android.vending/com.google.android.finsky.notification.impl.NotificationSettingsBroadcastReceiver filter db4e252
+          Action: "android.app.action.APP_BLOCK_STATE_CHANGED"
+          Action: "android.app.action.NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED"
+      com.android.vending.OUTSTANDING_UPDATE_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_UNINSTALL:
+        b27a345 com.android.vending/com.google.android.finsky.downloadservice.DownloadNotificationActionReceiver filter ffdba9a
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_USE_DATA"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_DISMISSED"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_LAUNCH"
+          Action: "com.google.android.finsky.downloadservice.intent.action.NOTIFICATION_UNINSTALL"
+      android.appwidget.action.APPWIDGET_UPDATE:
+        cfd947f com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.WatchWidgetProvider filter 4711c4c
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        9906495 com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.GamesWidgetProvider filter 15e69aa
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        ce0f99b com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.ReadWidgetProvider filter b9b138
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        c5fb511 com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.ListenWidgetProvider filter a117676
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        cb9477 com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.ShoppingWidgetProvider filter 8f4a8e4
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        ff9914d com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.FoodWidgetProvider filter 6168402
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        f5b0113 com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.SocialWidgetProvider filter bc56f50
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        2daf549 com.android.vending/com.google.android.finsky.rubiks.cubes.widget.personalized.TravelWidgetProvider filter d6cde4e
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        16a9b6f com.android.vending/com.google.android.finsky.rubiks.cubes.widget.CubesAppWidgetProvider filter c9a307c
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        4549d05 com.android.vending/com.google.android.finsky.rubiks.cubes.widget.ContentForwardWidgetProvider filter 6bc915a
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+      com.android.vending.PREREGISTRATION_RELEASED_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      androidx.work.diagnostics.REQUEST_DIAGNOSTICS:
+        b4ec2b9 com.android.vending/androidx.work.impl.diagnostics.DiagnosticsReceiver filter 3f376fe
+          Action: "androidx.work.diagnostics.REQUEST_DIAGNOSTICS"
+      com.google.android.finsky.downloadservice.intent.action.DOWNLOAD_RETRY_DUE_ACTION:
+        aff8fcb com.android.vending/com.google.android.finsky.downloadservice.DownloadRetryActionReceiver filter ea243a8
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+          Action: "com.google.android.finsky.downloadservice.intent.action.DOWNLOAD_RETRY_DUE_ACTION"
+      android.intent.action.MY_PACKAGE_REPLACED:
+        52f0e65 com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver filter 8946fc7
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+        e385392 com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver filter 2c7038c
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+      com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_USE_DATA:
+        33c21a1 com.android.vending/com.google.android.finsky.installqueue.servicev2.broadcastreceiver.InstallQueueReceiver filter 65f8fc6
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CLICKED_BACKGROUND_ACTION"
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_CANCEL"
+          Action: "com.google.android.finsky.installqueue.servicev2.intent.action.NOTIFICATION_USE_DATA"
+      android.safetycenter.action.REFRESH_SAFETY_SOURCES:
+        82f7f8b com.android.vending/com.google.android.finsky.safetycenter.receiver.SafetyCenterReceiver filter 597d868
+          Action: "android.finsky.safetycenter.action.HANDLE_INLINE_ACTION"
+          Action: "android.safetycenter.action.REFRESH_SAFETY_SOURCES"
+      com.google.android.gms.phenotype.UPDATE:
+        78fd175 com.android.vending/com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver filter f8c050a
+          Action: "com.google.android.gms.phenotype.UPDATE"
+      com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED:
+        da2bb87 com.android.vending/com.google.android.finsky.notification.impl.NotificationReceiver filter 4d72ab4
+          Action: "com.android.vending.NEW_UPDATE_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_PRIMARY_ACTION_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_CLICKED"
+          Action: "com.android.vending.GENERIC_NOTIFICATION_DELETION"
+          Action: "com.android.vending.SUCCESSFULLY_UPDATED_DELETED"
+          Action: "com.android.vending.NEW_UPDATE_NEED_APPROVAL_CLICKED"
+          Action: "com.android.vending.RICH_USER_NOTIFICATION_SECONDARY_ACTION_CLICKED"
+          Action: "com.android.vending.OUTSTANDING_UPDATE_CLICKED"
+          Action: "com.android.vending.PREREGISTRATION_RELEASED_CLICKED"
+          Action: "com.android.vending.SUCCESSFULLY_INSTALLED_CLICKED"
+      com.google.android.finsky.intent.action.UPDATE_DSE_APP_AGA:
+        f21cf51 com.android.vending/com.google.android.finsky.dsehelper.SearchWidgetDseChangeBroadcastReceiver filter 83623b6
+          Action: "com.google.android.finsky.intent.action.UPDATE_DSE_APP_AGA"
+
+  MIME Typed Actions:
+      android.intent.action.DOWNLOAD_COMPLETED:
+        bfe1789 com.android.vending/com.google.android.finsky.recoverymode.download.impl.RecoveryModeDownloadBroadcastReceiver filter 351f38e
+          Action: "android.intent.action.DOWNLOAD_COMPLETED"
+          StaticType: "application"
+          mPriority=0, mOrder=0, mHasStaticPartialTypes=true, mHasDynamicPartialTypes=false
+      android.intent.action.PACKAGE_NEEDS_VERIFICATION:
+        91e67bd com.android.vending/com.google.android.finsky.verifier.impl.PackageVerificationReceiver filter ebbf1b2
+          Action: "android.intent.action.PACKAGE_NEEDS_VERIFICATION"
+          StaticType: "application/vnd.android.package-archive"
+
+Service Resolver Table:
+  Schemes:
+      wear:
+        b7c4ba com.android.vending/com.google.android.finsky.wearsupport.WearChangeListenerService filter e0b9f6b
+          Action: "com.google.android.gms.wearable.MESSAGE_RECEIVED"
+          Scheme: "wear"
+        ae201fc com.android.vending/com.google.android.finsky.playconnect.networklayer.wearnetwork.service.WearNetworkListenerService filter 3bdd085
+          Action: "com.google.android.gms.wearable.DATA_CHANGED"
+          Scheme: "wear"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{PREFIX: /playconnect_handshake}"
+        ae201fc com.android.vending/com.google.android.finsky.playconnect.networklayer.wearnetwork.service.WearNetworkListenerService filter 9387eda
+          Action: "com.google.android.gms.wearable.REQUEST_RECEIVED"
+          Scheme: "wear"
+          Authority: "": -1 WILD
+          Path: "PatternMatcher{PREFIX: /playconnect_message_client_message}"
+
+  Non-Data Actions:
+      com.android.vending.billing.IBillingService.BIND:
+        a95b270 com.android.vending/com.google.android.finsky.billing.service.BillingService filter bb49e9
+          Action: "com.android.vending.billing.IBillingService.BIND"
+      com.google.android.finsky.BIND_PACKAGE_UPDATE_SERVICE:
+        fa2ec10 com.android.vending/com.google.android.finsky.services.PackageUpdateService filter ab9309
+          Action: "com.google.android.finsky.BIND_PACKAGE_UPDATE_SERVICE"
+      com.google.android.finsky.BIND_DOWNLOAD_SERVICE:
+        917940 com.android.vending/com.google.android.finsky.downloadservice.DownloadService filter 8625079
+          Action: "com.google.android.finsky.BIND_DOWNLOAD_SERVICE"
+      com.google.android.gms.ads.identifier.BIND_LISTENER:
+        1d0890e com.android.vending/com.google.android.finsky.services.AdIdListener filter e60cf2f
+          Action: "com.google.android.gms.ads.identifier.BIND_LISTENER"
+      com.google.android.finsky.services.IMarketCatalogService.BIND:
+        a41f50c com.android.vending/com.google.android.finsky.services.MarketCatalogService filter a072e55
+          Action: "com.google.android.finsky.services.IMarketCatalogService.BIND"
+      com.google.android.play.core.install.BIND_INSTALL_SERVICE:
+        6902d28 com.android.vending/com.google.android.finsky.installservice.InstallService filter e159a41
+          Action: "com.google.android.play.core.install.BIND_INSTALL_SERVICE"
+      com.google.android.finsky.BIND_APP_FILTERED_ERROR_SERVICE:
+        98ff001 com.android.vending/com.google.android.finsky.updateprompt.PlayAppFilteredErrorsService filter f2faea6 permission com.android.vending.APP_ERRORS_SERVICE
+          Action: "com.google.android.finsky.BIND_APP_FILTERED_ERROR_SERVICE"
+      com.android.vending.licensing.IBackgroundLicensingService:
+        3ef9cdc com.android.vending/com.google.android.finsky.licensingservice.background.BackgroundLicensingService filter cf901e5 permission com.android.vending.CHECK_LICENSE
+          Action: "com.android.vending.licensing.IBackgroundLicensingService"
+      com.android.vending.setup.IPlayP2pRestoreService.BIND:
+        3be3112 com.android.vending/com.google.android.finsky.setup.p2p.PlayP2pRestoreService filter da90e3 permission com.android.vending.setup.PLAY_SETUP_SERVICE
+          Action: "com.android.vending.setup.IPlayP2pRestoreService.BIND"
+      com.android.vending.developergroupidinfo.IDeveloperGroupIdInfoService.BIND:
+        b143fd2 com.android.vending/com.google.android.finsky.developergroupidinfo.DeveloperGroupIdInfoService filter 17d58a3 permission com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO
+          Action: "com.android.vending.developergroupidinfo.IDeveloperGroupIdInfoService.BIND"
+      com.google.android.play.core.splitinstall.BIND_SPLIT_INSTALL_SERVICE:
+        2ca4c5e com.android.vending/com.google.android.finsky.splitinstallservice.SplitInstallService filter 21b583f
+          Action: "com.google.android.play.core.splitinstall.BIND_SPLIT_INSTALL_SERVICE"
+      com.google.android.finsky.BIND_APP_ERROR_SERVICE:
+        400fa04 com.android.vending/com.google.android.finsky.apperrors.PlayAppErrorsService filter 3afdbed permission com.android.vending.APP_ERRORS_SERVICE
+          Action: "com.google.android.finsky.BIND_APP_ERROR_SERVICE"
+      com.google.android.play.deku.action.BIND_DEKU_BROKER_SERVICE:
+        6bc1546 com.android.vending/com.google.android.finsky.deku.controller.DekuBrokerService filter 6b49307
+          Action: "com.google.android.play.deku.action.BIND_DEKU_BROKER_SERVICE"
+      com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE:
+        952871e com.android.vending/com.google.android.finsky.expressintegrityservice.ExpressIntegrityService filter c82dbff
+          Action: "com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE"
+        8f98dcc com.android.vending/com.google.android.finsky.expressintegrityservice.BackgroundExpressIntegrityService filter 33db815
+          Action: "com.google.android.play.core.expressintegrityservice.BIND_EXPRESS_INTEGRITY_SERVICE"
+      com.android.vending.billing.IBillingAccountService.BIND:
+        d47aac8 com.android.vending/com.google.android.finsky.billing.legacyservice.BillingAccountService filter c3cd761 permission com.android.vending.billing.BILLING_ACCOUNT_SERVICE
+          Action: "com.android.vending.billing.IBillingAccountService.BIND"
+      com.google.android.play.engage.BIND_APP_ENGAGE_SERVICE:
+        4bd3058 com.android.vending/com.google.android.finsky.appcontentservice.engage.AppEngageService filter 55895b1
+          Action: "com.google.android.play.engage.BIND_APP_ENGAGE_SERVICE"
+      com.google.android.finsky.action.BIND_UNIFIED_APP_STATUS_SERVICE:
+        73cf3ce com.android.vending/com.google.android.finsky.ipcservers.external.unifiedappstatus.UnifiedAppStatusEndpointService filter 690c2ef
+          Action: "com.google.android.finsky.action.BIND_UNIFIED_APP_STATUS_SERVICE"
+      android.intent.action.LOAD_DATA:
+        c7b859c com.android.vending/com.google.android.finsky.dataloader.ProductionDataLoaderService filter 5f59ba5
+          Action: "android.intent.action.LOAD_DATA"
+        59dbb7a com.android.vending/com.google.android.finsky.dataloader.PhoneskyDataLoaderService filter da42f2b
+          Action: "android.intent.action.LOAD_DATA"
+      com.android.vending.safeselfupdateservice.SELF_UPDATE_INSTALL:
+        77102c2 com.android.vending/com.google.android.finsky.recoverymode.safeselfupdate.SafeSelfUpdateService filter e0178d3
+          Action: "com.android.vending.safeselfupdateservice.SELF_UPDATE_INSTALL"
+          Action: "com.android.vending.safeselfupdateservice.SELF_UPDATE_CHECK"
+      com.google.android.build.data.Properties:
+        81e45df com.android.vending/com.google.android.build.data.PropertiesServiceHolder filter 7a7e22c
+          Action: "com.google.android.build.data.Properties"
+      com.google.firebase.MESSAGING_EVENT:
+        47297a0 com.android.vending/com.google.android.finsky.dfenotification.impl.PhoneskyFirebaseMessagingService filter 4bd7f59
+          Action: "com.google.firebase.MESSAGING_EVENT"
+        a999e39 com.android.vending/com.google.firebase.messaging.FirebaseMessagingService filter ab3ec7e
+          Action: "com.google.firebase.MESSAGING_EVENT"
+          mPriority=-500, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+      com.google.android.finsky.BIND_PLAY_INSTALL_SERVICE:
+        390281a com.android.vending/com.google.android.finsky.installapi.PlayInstallService filter eb52f4b
+          Action: "com.google.android.finsky.BIND_PLAY_INSTALL_SERVICE"
+      com.google.android.play.core.install.BIND_APP_RECOVERY_UPDATE_SERVICE:
+        fbad5b0 com.android.vending/com.google.android.finsky.installservice.AppRecoveryUpdateService filter 5c8cc29
+          Action: "com.google.android.play.core.install.BIND_APP_RECOVERY_UPDATE_SERVICE"
+      com.google.android.engage.BIND_APP_ENGAGE_SERVICE:
+        c39da96 com.android.vending/com.google.android.finsky.appcontentservice.engage.AppEngageServiceV2 filter b3ff617
+          Action: "com.google.android.engage.BIND_APP_ENGAGE_SERVICE"
+      com.google.android.play.core.grouping.BIND_GROUPING_API_SERVICE:
+        b895f88 com.android.vending/com.google.android.finsky.dataprojectionapiservice.DataProjectionApiService filter fc94d21
+          Action: "com.google.android.play.core.grouping.BIND_GROUPING_API_SERVICE"
+      com.google.android.play.core.lmd.BIND_OVERLAY_DISPLAY_SERVICE:
+        b5a5bf6 com.android.vending/com.google.android.finsky.inlinedetails.lmd.service.LmdOverlayService filter 3c24bf7
+          Action: "com.google.android.play.core.lmd.BIND_OVERLAY_DISPLAY_SERVICE"
+      com.android.vending.appdiscoveryservice.IAppDiscoveryService.BIND:
+        36fd9a4 com.android.vending/com.google.android.finsky.appdiscoveryservice.AppDiscoveryService filter 3c7d30d permission com.android.vending.appdiscoveryservice.permission.ACCESS_APP_DISCOVERY_SERVICE
+          Action: "com.android.vending.appdiscoveryservice.IAppDiscoveryService.BIND"
+      com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE:
+        4e9ca64 com.android.vending/com.google.android.finsky.integrityservice.IntegrityService filter 8dd4cd
+          Action: "com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE"
+        6c84182 com.android.vending/com.google.android.finsky.integrityservice.BackgroundIntegrityService filter 3c5b093
+          Action: "com.google.android.play.core.integrityservice.BIND_INTEGRITY_SERVICE"
+      com.android.vending.setup.IDseService.BIND:
+        58d7286 com.android.vending/com.google.android.finsky.setup.dse.impl.DseService filter fc2c747 permission com.google.android.finsky.permission.DSE
+          Action: "com.android.vending.setup.IDseService.BIND"
+      com.android.vending.setup.IPlaySetupServiceV2.BIND:
+        690ab74 com.android.vending/com.google.android.finsky.setup.PlaySetupServiceV2 filter f8e889d permission com.android.vending.setup.PLAY_SETUP_SERVICE
+          Action: "com.android.vending.setup.IPlaySetupServiceV2.BIND"
+      com.android.vending.billing.InAppBillingService.BIND:
+        d310a22 com.android.vending/com.google.android.finsky.billing.iab.InAppBillingService filter 743dcb3
+          Action: "com.android.vending.billing.InAppBillingService.BIND"
+      androidx.enterprise.feedback.action.APP_STATES:
+        a13a072 com.android.vending/com.google.android.finsky.enterprisedevicereport.AppStatesService filter f6a3cc3
+          Action: "androidx.enterprise.feedback.action.APP_STATES"
+      com.google.android.play.core.install.BIND_UPDATE_SERVICE:
+        378abe6 com.android.vending/com.google.android.finsky.installservice.DevTriggeredUpdateService filter 8a57527
+          Action: "com.google.android.play.core.install.BIND_UPDATE_SERVICE"
+      com.google.android.play.core.prewarm.BIND_PREWARM_SERVICE:
+        2b4e96c com.android.vending/com.google.android.finsky.prewarmservice.PrewarmService filter bae7b35
+          Action: "com.google.android.play.core.prewarm.BIND_PREWARM_SERVICE"
+      com.google.android.finsky.BIND_GET_INSTALL_REFERRER_SERVICE:
+        b4ef3d4 com.android.vending/com.google.android.finsky.externalreferrer.GetInstallReferrerService filter 8e0997d
+          Action: "com.google.android.finsky.BIND_GET_INSTALL_REFERRER_SERVICE"
+      com.google.android.finsky.ageverification.BIND:
+        2d2cbca com.android.vending/com.google.android.finsky.ageverification.service.AgeSignalsService filter 614813b
+          Action: "com.google.android.finsky.ageverification.BIND"
+      com.google.android.gms.tapandpay.issuer.GENERATE_PAYMENT_CREDENTIALS:
+        d8be483 com.android.vending/com.google.android.gms.tapandpay.issuer.GeneratePaymentCredentialsService filter 4826600 permission com.google.android.gms.permission.SEND_ANDROID_PAY_DATA
+          Action: "com.google.android.gms.tapandpay.issuer.GENERATE_PAYMENT_CREDENTIALS"
+      com.android.vending.reviews.IReviewsService.BIND:
+        fead06a com.android.vending/com.google.android.finsky.services.ReviewsService filter e77395b
+          Action: "com.android.vending.reviews.IReviewsService.BIND"
+      com.google.android.play.core.assetmoduleservice.BIND_ASSET_MODULE_SERVICE:
+        7c70ae0 com.android.vending/com.google.android.finsky.assetmoduleservice.AssetModuleService filter e501199
+          Action: "com.google.android.play.core.assetmoduleservice.BIND_ASSET_MODULE_SERVICE"
+      com.google.android.vending.verifier.ACTION_PACKAGE_VERIFICATION_API:
+        8e820e7 com.android.vending/com.google.android.finsky.verifier.impl.api.safetynet.PackageVerificationApiService filter e869494
+          Action: "com.google.android.vending.verifier.ACTION_PACKAGE_VERIFICATION_API"
+          Category: "android.intent.category.DEFAULT"
+      com.android.vending.safeselfupdateservice.SELF_UPDATE_CHECK:
+        77102c2 com.android.vending/com.google.android.finsky.recoverymode.safeselfupdate.SafeSelfUpdateService filter e0178d3
+          Action: "com.android.vending.safeselfupdateservice.SELF_UPDATE_INSTALL"
+          Action: "com.android.vending.safeselfupdateservice.SELF_UPDATE_CHECK"
+      com.android.vending.licensing.ILicensingService:
+        5699bae com.android.vending/com.google.android.finsky.services.LicensingService filter 1fa7d4f permission com.android.vending.CHECK_LICENSE
+          Action: "com.android.vending.licensing.ILicensingService"
+      com.google.android.play.deku.action.BIND_DEKU_PROXY_BROKER_SERVICE:
+        e18ec34 com.android.vending/com.google.android.finsky.deku.controller.GpDekuBrokerService filter ccc9a5d
+          Action: "com.google.android.play.deku.action.BIND_DEKU_PROXY_BROKER_SERVICE"
+      com.google.android.finsky.ipcservers.external.APP_CONTENT_SERVICE:
+        bab28d0 com.android.vending/com.google.android.finsky.ipcservers.external.appcontentservice.AppContentGrpcServerAndroidService filter f2ff0c9
+          Action: "com.google.android.finsky.ipcservers.external.APP_CONTENT_SERVICE"
+      com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService:
+        6302b62 com.android.vending/com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService filter f8684f3
+          Action: "com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService"
+      com.android.vending.securedatatransfer.IAntiTamperKeyTransferService:
+        a509f0b com.android.vending/com.google.android.finsky.securedatatransfer.antitamperservice.AntiTamperKeyTransferService filter 24b41e8
+          Action: "com.android.vending.securedatatransfer.IAntiTamperKeyTransferService"
+      com.google.android.play.core.hsdp.BIND_HSDP_SERVICE:
+        717bab8 com.android.vending/com.google.android.finsky.inlinedetails.hsdp.service.HsdpService filter 24ec091
+          Action: "com.google.android.play.core.hsdp.BIND_HSDP_SERVICE"
+      com.google.android.verifier.backport.VERIFY_PACKAGE_SYSTEM:
+        f0a8b3d com.android.vending/com.google.android.verifier.backport.impl.system.BackportVerificationSystemService filter c180f32
+          Action: "com.google.android.verifier.backport.VERIFY_PACKAGE_SYSTEM"
+      com.google.android.finsky.BIND_IN_APP_REVIEW_SERVICE:
+        49bf72a com.android.vending/com.google.android.finsky.inappreviewservice.InAppReviewService filter 33391b
+          Action: "com.google.android.finsky.BIND_IN_APP_REVIEW_SERVICE"
+      android.support.unusedapprestrictions.action.CustomUnusedAppRestrictionsBackportService:
+        cf751be com.android.vending/com.google.android.finsky.permissionrevocation.UnusedAppRestrictionsBackportService filter 729e21f
+          Action: "android.support.unusedapprestrictions.action.CustomUnusedAppRestrictionsBackportService"
+      com.android.vending.details.IDetailsService.BIND:
+        dd8936 com.android.vending/com.google.android.finsky.services.DetailsService filter 3e61037
+          Action: "com.android.vending.details.IDetailsService.BIND"
+      com.google.android.finsky.BIND_CROSS_DEVICE_PROMPT_SERVICE:
+        379a66e com.android.vending/com.google.android.finsky.crossdevicepromptservice.CrossDevicePromptService filter 295910f
+          Action: "com.google.android.finsky.BIND_CROSS_DEVICE_PROMPT_SERVICE"
+      com.google.android.finsky.BIND_PLAY_MODULE_SERVICE:
+        bb2b93c com.android.vending/com.google.android.finsky.zapp.PlayModuleService filter ff156c5
+          Action: "com.google.android.finsky.BIND_PLAY_MODULE_SERVICE"
+      com.android.vending.contentfilters.IContentFiltersService.BIND:
+        39f55f8 com.android.vending/com.google.android.finsky.contentfilterui.ContentFiltersService filter cd95ad1
+          Action: "com.android.vending.contentfilters.IContentFiltersService.BIND"
+
+Domain verification status:
+  com.android.vending:
+    ID: c7156f14-4a96-45bf-92c1-3f5eeed44df1
+    Signatures: [7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53]
+    Domain verification state:
+      leagues.withgoogle.com: system_configured
+      accounts.google.com: system_configured
+      play.google.com: system_configured
+      market.android.com: system_configured
+      myaccount.google.com: system_configured
+      my.play: system_configured
+    User all:
+      Verification link handling allowed: true
+      Selection state:
+        Disabled:
+          leagues.withgoogle.com
+          accounts.google.com
+          play.google.com
+          market.android.com
+          myaccount.google.com
+          my.play
+
+Permissions:
+  Permission [com.google.android.vending.verifier.ACCESS_VERIFIER] (fc0da6c):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{4b0586 com.google.android.vending.verifier.ACCESS_VERIFIER}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE] (3321835):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=normal
+    perm=PermissionInfo{ebff674 com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST] (db2a4ca):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{841f412 com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.engage.REQUEST_ENGAGE_DATA] (181e63b):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{b2005e0 com.google.android.engage.REQUEST_ENGAGE_DATA}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.BIOAUTH_CONSENT] (5173158):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{f473f5e com.android.vending.BIOAUTH_CONSENT}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.permission.C2D_MESSAGE] (df902b1):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{9afa00c com.android.vending.permission.C2D_MESSAGE}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.setup.PLAY_SETUP_SERVICE] (7be4396):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=normal
+    perm=PermissionInfo{2c3f36a com.android.vending.setup.PLAY_SETUP_SERVICE}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.CHECK_LICENSE] (9eab17):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=normal|instant
+    perm=PermissionInfo{3bcb0f8 com.android.vending.CHECK_LICENSE}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.billing.BILLING_SERVICE] (67a0b04):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{ba5dc36 com.android.vending.billing.BILLING_SERVICE}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.BILLING] (a6a18ed):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=normal|instant
+    perm=PermissionInfo{787e4a4 com.android.vending.BILLING}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.TOS_ACKED] (7130322):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{1eb85c2 com.android.vending.TOS_ACKED}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.DCK_BROADCAST] (c58e1b3):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{4b0a710 com.google.android.finsky.permission.DCK_BROADCAST}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.INSTANT_APP_STATE] (a0ed370):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{cf03c0e com.google.android.finsky.permission.INSTANT_APP_STATE}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.billing.BILLING_ACCOUNT_SERVICE] (55c56e9):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{361243c com.android.vending.billing.BILLING_ACCOUNT_SERVICE}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.DSE] (c022f6e):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=normal
+    perm=PermissionInfo{c780b1a com.google.android.finsky.permission.DSE}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.appdiscoveryservice.permission.ACCESS_APP_DISCOVERY_SERVICE] (475e60f):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=normal
+    perm=PermissionInfo{23a4828 com.android.vending.appdiscoveryservice.permission.ACCESS_APP_DISCOVERY_SERVICE}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO] (e5b69c):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{67bbee6 com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.p2p.APP_INSTALL_API] (81a78a5):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=normal
+    perm=PermissionInfo{5625418 com.android.vending.p2p.APP_INSTALL_API}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.INTERNAL_BROADCAST] (8a5d47a):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{301087d com.google.android.finsky.permission.INTERNAL_BROADCAST}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (5b4d42b):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{77dc3c3 com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.GEARHEAD_SERVICE] (ae5a088):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{59aaf79 com.google.android.finsky.permission.GEARHEAD_SERVICE}
+    flags=0x0
+
+Permissions:
+  Permission [com.google.android.finsky.permission.ACCESS_INSTANT_APP_NOTIFICATION_ENFORCEMENT] (bdefa21):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{a6ed91f com.google.android.finsky.permission.ACCESS_INSTANT_APP_NOTIFICATION_ENFORCEMENT}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.billing.ADD_CREDIT_CARD] (4acbe46):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature|privileged
+    perm=PermissionInfo{d8dca35 com.android.vending.billing.ADD_CREDIT_CARD}
+    flags=0x0
+
+Permissions:
+  Permission [com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE] (faa8807):
+    sourcePackage=com.android.vending
+    uid=10142 gids=[] type=0 prot=signature
+    perm=PermissionInfo{e31e83b com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE}
+    flags=0x0
+
+Registered ContentProviders:
+  com.android.vending/com.google.android.finsky.dumpsys.mainimpl.MainDumpsysContentProvider:
+    Provider{8a40b58 com.android.vending/com.google.android.finsky.dumpsys.mainimpl.MainDumpsysContentProvider}
+  com.android.vending/com.google.android.finsky.fileprovider.FinskyFileProvider:
+    Provider{75dd4b1 com.android.vending/com.google.android.finsky.fileprovider.FinskyFileProvider}
+  com.android.vending/com.google.android.finsky.developersettingsscreen.settings.playdebugtrace.provider.PlayDebugTraceContentProvider:
+    Provider{ba7ad96 com.android.vending/com.google.android.finsky.developersettingsscreen.settings.playdebugtrace.provider.PlayDebugTraceContentProvider}
+  com.android.vending/com.google.android.finsky.searchsuggestions.RecentSuggestionsProvider:
+    Provider{54ccd17 com.android.vending/com.google.android.finsky.searchsuggestions.RecentSuggestionsProvider}
+  com.android.vending/com.google.android.finsky.dumpsys.backgroundimpl.BackgroundDumpsysContentProvider:
+    Provider{efa8504 com.android.vending/com.google.android.finsky.dumpsys.backgroundimpl.BackgroundDumpsysContentProvider}
+  com.android.vending/com.google.android.finsky.securityhub.SecurityHubContentProvider:
+    Provider{a4a0aed com.android.vending/com.google.android.finsky.securityhub.SecurityHubContentProvider}
+  com.android.vending/com.google.android.finsky.addtohomescreen.AddToHomeScreenSettingProvider:
+    Provider{1290d22 com.android.vending/com.google.android.finsky.addtohomescreen.AddToHomeScreenSettingProvider}
+  com.android.vending/com.google.android.finsky.setup.p2p.CachedPackageContentProvider:
+    Provider{ac723b3 com.android.vending/com.google.android.finsky.setup.p2p.CachedPackageContentProvider}
+
+ContentProvider Authorities:
+  [com.google.android.finsky.setup.p2p.CachedPackageContentProvider]:
+    Provider{ac723b3 com.android.vending/com.google.android.finsky.setup.p2p.CachedPackageContentProvider}
+      applicationInfo=ApplicationInfo{d783d34 com.android.vending}
+  [com.google.android.finsky.RecentSuggestionsProvider]:
+    Provider{54ccd17 com.android.vending/com.google.android.finsky.searchsuggestions.RecentSuggestionsProvider}
+      applicationInfo=ApplicationInfo{910175d com.android.vending}
+  [com.google.android.finsky.dumpsys.mainimpl.MainDumpsysContentProvider]:
+    Provider{8a40b58 com.android.vending/com.google.android.finsky.dumpsys.mainimpl.MainDumpsysContentProvider}
+      applicationInfo=ApplicationInfo{1e678d2 com.android.vending}
+  [com.android.vending.debug]:
+    Provider{ba7ad96 com.android.vending/com.google.android.finsky.developersettingsscreen.settings.playdebugtrace.provider.PlayDebugTraceContentProvider}
+      applicationInfo=ApplicationInfo{c5d9da3 com.android.vending}
+  [com.google.android.finsky.securityhub.provider]:
+    Provider{a4a0aed com.android.vending/com.google.android.finsky.securityhub.SecurityHubContentProvider}
+      applicationInfo=ApplicationInfo{8f5f8a0 com.android.vending}
+  [com.google.android.finsky.FileProvider]:
+    Provider{75dd4b1 com.android.vending/com.google.android.finsky.fileprovider.FinskyFileProvider}
+      applicationInfo=ApplicationInfo{e3bcc59 com.android.vending}
+  [com.google.android.finsky.dumpsys.backgroundimpl.BackgroundDumpsysContentProvider]:
+    Provider{efa8504 com.android.vending/com.google.android.finsky.dumpsys.backgroundimpl.BackgroundDumpsysContentProvider}
+      applicationInfo=ApplicationInfo{d8f501e com.android.vending}
+  [com.android.vending.addtohomescreen]:
+    Provider{1290d22 com.android.vending/com.google.android.finsky.addtohomescreen.AddToHomeScreenSettingProvider}
+      applicationInfo=ApplicationInfo{5a270ff com.android.vending}
+
+Key Set Manager:
+  [com.android.vending]
+      Signing KeySets: 23
+
+Packages:
+  Package [com.android.vending] (5cfa88):
+    appId=10142
+    pkg=Package{91c4c21 com.android.vending}
+    codePath=/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==
+    resourcePath=/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==
+    legacyNativeLibraryDir=/data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/lib
+    extractNativeLibs=false
+    primaryCpuAbi=x86_64
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=85430740 minSdk=34 targetSdk=37
+    minExtensionVersions=[]
+    versionName=54.3.07-34 [0] [PR] 1022292552
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base, config.en, config.x86_64, phonesky_data_loader, phonesky_data_loader.config.x86_64, phonesky_webrtc_native_lib, phonesky_webrtc_native_lib.config.x86_64]
+    apkSigningVersion=3
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ALLOW_BACKUP RESTORE_ANY_VERSION ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVILEGED PRODUCT PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    emergencyInstaller=com.google.android.gms
+    forceQueryable=false
+    queriesPackages=[com.android.vending, com.google.android.apps.maps]
+    queriesIntents=[Intent { act=androidx.window.extensions.layout.EngagementModeService }, Intent { act=android.intent.action.VIEW cat=[android.intent.category.BROWSABLE] dat=https:/... }, Intent { act=android.intent.action.VIEW cat=[android.intent.category.BROWSABLE] dat=https://www.example.com/... }, Intent { act=android.support.customtabs.action.CustomTabsService }, Intent { act=com.android.setupwizard.action.PARTNER_CUSTOMIZATION }, Intent { act=com.google.android.setupcompat.restore.restoreprogress.RESTORE_PROGRESS_SERVICE_ACTION }]
+    scannedAsStoppedSystemApp=true
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      org.apache.http.legacy
+      vendor.google.libraries.desktop.serviceability
+      android.ext.adservices
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.jar
+      /system_ext/framework/androidx.window.extensions.jar
+      /system_ext/framework/androidx.window.sidecar.jar
+    timeStamp=2026-11-21 07:17:08
+    lastUpdateTime=2026-11-21 07:17:08
+    installerPackageName=com.android.vending
+    installerPackageUid=10142
+    initiatingPackageName=com.android.vending
+    originatingPackageName=null
+    packageSource=0
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{9e84a24 version:3, signatures:[98deb0ca], past signatures:[e3ca78d8 flags: 17, 98deb0ca flags: 17]}
+    installPermissionsFixed=false
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ALLOW_BACKUP RESTORE_ANY_VERSION ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVILEGED PRODUCT PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    declared permissions:
+      com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature
+      com.android.vending.appdiscoveryservice.permission.ACCESS_APP_DISCOVERY_SERVICE: prot=normal
+      com.android.vending.CHECK_LICENSE: prot=normal|instant
+      com.android.vending.BILLING: prot=normal|instant
+      com.android.vending.permission.C2D_MESSAGE: prot=signature
+      com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE: prot=signature
+      com.android.vending.billing.BILLING_ACCOUNT_SERVICE: prot=signature|privileged
+      com.android.vending.billing.ADD_CREDIT_CARD: prot=signature|privileged
+      com.android.vending.BIOAUTH_CONSENT: prot=signature|privileged
+      com.android.vending.TOS_ACKED: prot=signature|privileged
+      com.google.android.finsky.permission.DSE: prot=normal
+      com.android.vending.setup.PLAY_SETUP_SERVICE: prot=normal
+      com.google.android.finsky.permission.GEARHEAD_SERVICE: prot=signature|privileged
+      com.google.android.vending.verifier.ACCESS_VERIFIER: prot=signature
+      com.google.android.finsky.permission.INSTANT_APP_STATE: prot=signature
+      com.google.android.finsky.permission.ACCESS_INSTANT_APP_NOTIFICATION_ENFORCEMENT: prot=signature
+      com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE: prot=normal
+      com.google.android.finsky.permission.INTERNAL_BROADCAST: prot=signature
+      com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST: prot=signature
+      com.google.android.finsky.permission.DCK_BROADCAST: prot=signature
+      com.google.android.engage.REQUEST_ENGAGE_DATA: prot=signature
+      com.android.vending.billing.BILLING_SERVICE: prot=signature
+      com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO: prot=signature
+    requested permissions:
+      android.permission.REAL_GET_TASKS
+      android.permission.QUERY_ADVANCED_PROTECTION_MODE
+      android.permission.WRITE_SETTINGS
+      android.permission.READ_SMS
+      com.sonyericsson.home.permission.BROADCAST_BADGE
+      com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST
+      android.permission.LAUNCH_TWO_PANE_SETTINGS_DEEP_LINK
+      android.permission.POST_NOTIFICATIONS
+      com.google.android.c2dm.permission.RECEIVE
+      android.permission.USE_CREDENTIALS
+      android.permission.OVERRIDE_COMPAT_CHANGE_CONFIG_ON_RELEASE_BUILD
+      android.permission.ACCESS_NOTIFICATION_POLICY
+      android.permission.GET_APP_OPS_STATS
+      com.google.android.providers.gsf.permission.READ_GSERVICES
+      android.permission.READ_RUNTIME_PROFILES
+      android.permission.MANAGE_ACCOUNTS
+      com.oppo.launcher.permission.WRITE_SETTINGS
+      android.permission.INSTALL_PACKAGES
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE
+      android.permission.GET_ROLE_HOLDERS
+      android.permission.NFC
+      com.google.android.engage.REQUEST_ENGAGE_DATA
+      android.permission.CHANGE_OVERLAY_PACKAGES
+      com.anddoes.launcher.permission.UPDATE_COUNT
+      com.sec.android.provider.badge.permission.READ
+      android.permission.SEND_DEVICE_CUSTOMIZATION_READY
+      android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.FOREGROUND_SERVICE
+      com.google.android.providers.gsf.permission.WRITE_GSERVICES
+      com.huawei.android.launcher.permission.WRITE_SETTINGS
+      android.permission.GET_APP_METADATA
+      android.permission.RECEIVE_BOOT_COMPLETED
+      com.google.android.apps.play.games.lib.dekuloguploadservice.permission.UPLOAD_DEKU_LOGS
+      com.android.vending.BIOAUTH_CONSENT
+      android.permission.ENFORCE_UPDATE_OWNERSHIP
+      android.permission.ACCESS_ADSERVICES_AD_ID
+      android.permission.NEARBY_WIFI_DEVICES
+      android.permission.RECEIVE_SMS
+      com.android.vending.permission.C2D_MESSAGE
+      android.permission.BLUETOOTH_CONNECT
+      android.permission.BLUETOOTH
+      com.google.android.gms.permission.AD_ID_NOTIFICATION
+      android.permission.GET_TASKS
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.INTERNET
+      com.android.vending.INTENT_VENDING_ONLY
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.UPDATE_DEVICE_STATS
+      com.google.android.gms.permission.BIOAUTH_CONSENT
+      android.permission.WRITE_DEVICE_CONFIG
+      com.google.android.gms.WRITE_VERIFY_APPS_CONSENT
+      android.permission.SEND_SAFETY_CENTER_UPDATE
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS
+      android.permission.ACCESS_INSTANT_APPS
+      android.permission.GET_PACKAGE_SIZE
+      com.google.android.partnersetup.permission.WRITE_APP_PROVIDER
+      android.permission.ALLOCATE_AGGRESSIVE
+      android.permission.BATTERY_STATS
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.GET_ACCOUNTS_PRIVILEGED
+      android.permission.WRITE_SECURE_SETTINGS
+      com.android.vending.TOS_ACKED
+      android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED
+      com.google.android.finsky.permission.INSTANT_APP_STATE
+      android.permission.ACCESS_COARSE_LOCATION
+      com.google.android.settings.setup.dock.RUN_DOCK_SETUP
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_APP_BADGE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.SEND_SMS
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      com.google.android.gms.permission.CAR
+      com.android.permission.USE_INSTALLER_V2
+      android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.PACKAGE_VERIFICATION_AGENT
+      com.majeur.launcher.permission.UPDATE_BADGE
+      android.permission.REVOKE_RUNTIME_PERMISSIONS
+      android.permission.MANAGE_USERS
+      android.permission.SET_PREFERRED_APPLICATIONS
+      android.permission.ACCESS_NETWORK_STATE
+      com.oppo.launcher.permission.READ_SETTINGS
+      org.chromium.arc.apkcacheprovider.permission.READ_CACHE
+      android.permission.BACKUP
+      com.google.android.gms.dck.permission.DIGITAL_KEY_IN_USE
+      com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.MANAGE_ROLLBACKS
+      com.google.android.finsky.permission.DSE
+      com.huawei.android.launcher.permission.READ_SETTINGS
+      android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+      com.google.android.setupwizard.READ_DEVICE_ORIGIN_FIRST_PARTY
+      android.permission.USE_FINGERPRINT
+      com.sec.android.provider.badge.permission.WRITE
+      org.chromium.arc.apkcacheprovider.permission.WRITE_CACHE
+      com.google.android.gms.appevents.permission.SEND_APP_IMPORTANCE_UPDATES
+      android.permission.REBOOT
+      com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO
+      android.permission.FOREGROUND_SERVICE_MICROPHONE
+      android.permission.CLEAR_APP_CACHE
+      com.google.android.gms.auth.permission.GOOGLE_ACCOUNT_CHANGE
+      android.permission.GRANT_RUNTIME_PERMISSIONS
+      android.permission.BLUETOOTH_ADVERTISE
+      android.permission.CONNECTIVITY_INTERNAL
+      android.permission.START_ACTIVITIES_FROM_BACKGROUND
+      android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
+      android.permission.LOADER_USAGE_STATS
+      com.google.android.finsky.permission.INTERNAL_BROADCAST
+      android.permission.FORCE_STOP_PACKAGES
+      android.permission.MANAGE_DEFAULT_SEARCH_ENGINE
+      android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.VIBRATE
+      com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+      com.huawei.android.launcher.permission.CHANGE_BADGE
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST
+      vendor.google.desktop.permission.BIND_SERVICEABILITY_SERVICE_INTERNAL
+      android.permission.READ_SYSTEM_GRAMMATICAL_GENDER
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.HIDE_STATUS_BAR_NOTIFICATION
+      android.permission.USE_BIOMETRIC
+      com.htc.launcher.permission.UPDATE_SHORTCUT
+      android.permission.MANAGE_APP_OPS_MODES
+      com.google.android.setupwizard.READ_DEVICE_ORIGIN
+      com.android.launcher.permission.INSTALL_SHORTCUT
+      android.permission.STATUS_BAR
+      android.permission.QUERY_ALL_PACKAGES
+      android.permission.RECORD_AUDIO
+      android.permission.SEND_SMS_NO_CONFIRMATION
+      com.google.android.gms.permission.AD_ID
+      android.permission.DUMP
+      android.permission.READ_DEVICE_CONFIG
+      com.htc.launcher.permission.READ_SETTINGS
+      android.permission.WAKE_LOCK
+      android.permission.READ_CONTACTS
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED
+      com.android.chrome.permission.SHOW_COMPLIANCE_SCREEN
+      android.permission.BLUETOOTH_SCAN
+      android.permission.SET_HARMFUL_APP_WARNINGS
+      com.google.android.setupwizard.SETUP_PROGRESS_SERVICE
+      com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE
+      android.permission.DELETE_PACKAGES
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST: granted=true
+      com.google.android.c2dm.permission.RECEIVE: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      android.permission.OVERRIDE_COMPAT_CHANGE_CONFIG_ON_RELEASE_BUILD: granted=true
+      android.permission.ACCESS_NOTIFICATION_POLICY: granted=true
+      android.permission.GET_APP_OPS_STATS: granted=true
+      com.google.android.providers.gsf.permission.READ_GSERVICES: granted=true
+      android.permission.READ_RUNTIME_PROFILES: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE: granted=true
+      android.permission.NFC: granted=true
+      com.google.android.engage.REQUEST_ENGAGE_DATA: granted=true
+      android.permission.CHANGE_OVERLAY_PACKAGES: granted=true
+      android.permission.SEND_DEVICE_CUSTOMIZATION_READY: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      com.google.android.providers.gsf.permission.WRITE_GSERVICES: granted=true
+      android.permission.GET_APP_METADATA: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.android.vending.BIOAUTH_CONSENT: granted=true
+      android.permission.ENFORCE_UPDATE_OWNERSHIP: granted=true
+      android.permission.ACCESS_ADSERVICES_AD_ID: granted=true
+      com.android.vending.permission.C2D_MESSAGE: granted=true
+      android.permission.BLUETOOTH: granted=true
+      com.google.android.gms.permission.AD_ID_NOTIFICATION: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      com.android.vending.INTENT_VENDING_ONLY: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.UPDATE_DEVICE_STATS: granted=true
+      com.google.android.gms.permission.BIOAUTH_CONSENT: granted=true
+      android.permission.WRITE_DEVICE_CONFIG: granted=true
+      com.google.android.gms.WRITE_VERIFY_APPS_CONSENT: granted=true
+      android.permission.SEND_SAFETY_CENTER_UPDATE: granted=true
+      android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS: granted=true
+      android.permission.ACCESS_INSTANT_APPS: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      com.google.android.partnersetup.permission.WRITE_APP_PROVIDER: granted=true
+      android.permission.ALLOCATE_AGGRESSIVE: granted=true
+      android.permission.BATTERY_STATS: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.GET_ACCOUNTS_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.android.vending.TOS_ACKED: granted=true
+      android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED: granted=true
+      com.google.android.finsky.permission.INSTANT_APP_STATE: granted=true
+      com.google.android.settings.setup.dock.RUN_DOCK_SETUP: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      com.google.android.gms.permission.CAR: granted=true
+      com.android.permission.USE_INSTALLER_V2: granted=true
+      android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.PACKAGE_VERIFICATION_AGENT: granted=true
+      android.permission.REVOKE_RUNTIME_PERMISSIONS: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.SET_PREFERRED_APPLICATIONS: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.BACKUP: granted=true
+      com.google.android.gms.dck.permission.DIGITAL_KEY_IN_USE: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.MANAGE_ROLLBACKS: granted=true
+      com.google.android.finsky.permission.DSE: granted=true
+      android.permission.ACCESS_ADSERVICES_ATTRIBUTION: granted=true
+      android.permission.USE_FINGERPRINT: granted=true
+      com.google.android.gms.appevents.permission.SEND_APP_IMPORTANCE_UPDATES: granted=true
+      android.permission.REBOOT: granted=true
+      com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO: granted=true
+      android.permission.FOREGROUND_SERVICE_MICROPHONE: granted=true
+      android.permission.CLEAR_APP_CACHE: granted=true
+      com.google.android.gms.auth.permission.GOOGLE_ACCOUNT_CHANGE: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      android.permission.START_ACTIVITIES_FROM_BACKGROUND: granted=true
+      android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK: granted=true
+      android.permission.LOADER_USAGE_STATS: granted=true
+      com.google.android.finsky.permission.INTERNAL_BROADCAST: granted=true
+      android.permission.FORCE_STOP_PACKAGES: granted=true
+      android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS: granted=true
+      android.permission.VIBRATE: granted=true
+      com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST: granted=true
+      android.permission.READ_SYSTEM_GRAMMATICAL_GENDER: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.USE_BIOMETRIC: granted=true
+      android.permission.MANAGE_APP_OPS_MODES: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.STATUS_BAR: granted=true
+      android.permission.QUERY_ALL_PACKAGES: granted=true
+      android.permission.SEND_SMS_NO_CONFIRMATION: granted=true
+      com.google.android.gms.permission.AD_ID: granted=true
+      android.permission.DUMP: granted=true
+      android.permission.READ_DEVICE_CONFIG: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED: granted=true
+      com.android.chrome.permission.SHOW_COMPLIANCE_SCREEN: granted=true
+      android.permission.SET_HARMFUL_APP_WARNINGS: granted=true
+      com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=344225 deDataInode=49389 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=1 instant=false virtual=false quarantined=false
+      installReason=0
+      dataDir=/data/user/0/com.android.vending
+      firstInstallTime=2026-11-21 07:15:52
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+      legacy overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+      lastDisabledCaller: com.google.android.partnersetup
+      gids=[3002, 3003, 3001, 3007]
+      runtime permissions:
+        android.permission.READ_SMS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.POST_NOTIFICATIONS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.NEARBY_WIFI_DEVICES: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.RECEIVE_SMS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.BLUETOOTH_CONNECT: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ SYSTEM_FIXED|GRANTED_BY_DEFAULT|REVOKE_WHEN_REQUESTED|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.ACCESS_COARSE_LOCATION: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.SEND_SMS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.BLUETOOTH_ADVERTISE: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ SYSTEM_FIXED|GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.RECORD_AUDIO: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_CONTACTS: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.BLUETOOTH_SCAN: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+      disabledComponents:
+        com.google.android.finsky.permissionrevocation.UnusedAppRestrictionsBackportService
+        com.google.android.finsky.wearsupport.WearSupportService
+        com.google.android.finsky.systemupdateactivity.SystemUpdateActivityAlias
+        com.google.android.finsky.systemupdateactivity.SystemUpdateActivityV2Alias
+        com.google.android.finsky.activities.DebugActivity
+        com.google.android.finsky.protect.PermissionAutoRevocationSettingsPage
+        com.google.android.finsky.wearsupport.WearChangeListenerService
+      enabledComponents:
+        com.google.android.finsky.protect.ExternalPlayProtectHomeEntryPoint
+        com.google.android.finsky.hibernation.impl.UnhibernateActivity
+        com.android.vending.AssetBrowserActivity
+
+Hidden system packages:
+  Package [com.android.vending] (2c4a846):
+    appId=10142
+    pkg=Package{d2ff2b7 com.android.vending}
+    codePath=/product/priv-app/Phonesky
+    resourcePath=/product/priv-app/Phonesky
+    legacyNativeLibraryDir=/product/priv-app/Phonesky/lib
+    extractNativeLibs=false
+    primaryCpuAbi=x86_64
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=84132530 minSdk=31 targetSdk=34
+    minExtensionVersions=[]
+    versionName=41.3.25-31 [0] [PR] 640531013
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=3
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP RESTORE_ANY_VERSION ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVILEGED PRODUCT PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    emergencyInstaller=com.google.android.gms
+    forceQueryable=false
+    queriesPackages=[com.google.android.apps.maps]
+    queriesIntents=[Intent { act=android.intent.action.VIEW cat=[android.intent.category.BROWSABLE] dat=http://www.example.com/... }, Intent { act=android.support.customtabs.action.CustomTabsService }]
+    scannedAsStoppedSystemApp=true
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      org.apache.http.legacy
+      android.ext.adservices
+      androidx.window.extensions
+      androidx.window.sidecar
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.jar
+      /system_ext/framework/androidx.window.extensions.jar
+      /system_ext/framework/androidx.window.sidecar.jar
+    timeStamp=2009-01-01 00:00:00
+    lastUpdateTime=2026-11-21 07:15:52
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=null
+    originatingPackageName=null
+    packageSource=0
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{9e84a24 version:3, signatures:[98deb0ca], past signatures:[e3ca78d8 flags: 17, 98deb0ca flags: 17]}
+    installPermissionsFixed=false
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP RESTORE_ANY_VERSION ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVILEGED PRODUCT PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    declared permissions:
+      com.android.vending.appdiscoveryservice.permission.ACCESS_APP_DISCOVERY_SERVICE: prot=normal
+      com.android.vending.CHECK_LICENSE: prot=normal|instant
+      com.android.vending.BILLING: prot=normal|instant
+      com.android.vending.p2p.APP_INSTALL_API: prot=normal
+      com.android.vending.permission.C2D_MESSAGE: prot=signature
+      com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE: prot=signature
+      com.android.vending.billing.BILLING_ACCOUNT_SERVICE: prot=signature|privileged
+      com.android.vending.billing.ADD_CREDIT_CARD: prot=signature|privileged
+      com.android.vending.BIOAUTH_CONSENT: prot=signature
+      com.android.vending.TOS_ACKED: prot=signature|privileged
+      com.google.android.finsky.permission.DSE: prot=normal
+      com.android.vending.setup.PLAY_SETUP_SERVICE: prot=normal
+      com.google.android.finsky.permission.GEARHEAD_SERVICE: prot=signature|privileged
+      com.google.android.vending.verifier.ACCESS_VERIFIER: prot=signature
+      com.google.android.finsky.permission.INSTANT_APP_STATE: prot=signature
+      com.google.android.finsky.permission.ACCESS_INSTANT_APP_NOTIFICATION_ENFORCEMENT: prot=signature
+      com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE: prot=normal
+      com.google.android.finsky.permission.INTERNAL_BROADCAST: prot=signature
+      com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST: prot=signature
+      com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO: prot=signature
+      com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature
+    requested permissions:
+      android.permission.REAL_GET_TASKS
+      android.permission.WRITE_SETTINGS
+      android.permission.READ_SMS
+      com.sonyericsson.home.permission.BROADCAST_BADGE
+      com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST
+      android.permission.LAUNCH_TWO_PANE_SETTINGS_DEEP_LINK
+      android.permission.POST_NOTIFICATIONS
+      com.google.android.c2dm.permission.RECEIVE
+      android.permission.USE_CREDENTIALS
+      android.permission.OVERRIDE_COMPAT_CHANGE_CONFIG_ON_RELEASE_BUILD
+      android.permission.GET_APP_OPS_STATS
+      com.google.android.providers.gsf.permission.READ_GSERVICES
+      android.permission.READ_RUNTIME_PROFILES
+      android.permission.MANAGE_ACCOUNTS
+      com.oppo.launcher.permission.WRITE_SETTINGS
+      android.permission.INSTALL_PACKAGES
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE
+      android.permission.NFC
+      android.permission.CHANGE_OVERLAY_PACKAGES
+      com.anddoes.launcher.permission.UPDATE_COUNT
+      com.sec.android.provider.badge.permission.READ
+      android.permission.SEND_DEVICE_CUSTOMIZATION_READY
+      android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.FOREGROUND_SERVICE
+      com.google.android.providers.gsf.permission.WRITE_GSERVICES
+      com.huawei.android.launcher.permission.WRITE_SETTINGS
+      android.permission.RECEIVE_BOOT_COMPLETED
+      com.android.vending.BIOAUTH_CONSENT
+      android.permission.ENFORCE_UPDATE_OWNERSHIP
+      android.permission.ACCESS_ADSERVICES_AD_ID
+      android.permission.NEARBY_WIFI_DEVICES
+      android.permission.RECEIVE_SMS
+      com.android.vending.permission.C2D_MESSAGE
+      android.permission.BLUETOOTH_CONNECT
+      android.permission.BLUETOOTH
+      com.google.android.gms.permission.AD_ID_NOTIFICATION
+      android.permission.GET_TASKS
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.INTERNET
+      com.android.vending.INTENT_VENDING_ONLY
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.UPDATE_DEVICE_STATS
+      android.permission.WRITE_DEVICE_CONFIG
+      com.google.android.gms.WRITE_VERIFY_APPS_CONSENT
+      android.permission.SEND_SAFETY_CENTER_UPDATE
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS
+      android.permission.ACCESS_INSTANT_APPS
+      android.permission.GET_PACKAGE_SIZE
+      com.google.android.partnersetup.permission.WRITE_APP_PROVIDER
+      android.permission.ALLOCATE_AGGRESSIVE
+      android.permission.BATTERY_STATS
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.GET_ACCOUNTS_PRIVILEGED
+      android.permission.WRITE_SECURE_SETTINGS
+      com.android.vending.TOS_ACKED
+      android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED
+      com.google.android.finsky.permission.INSTANT_APP_STATE
+      android.permission.ACCESS_COARSE_LOCATION
+      com.google.android.settings.setup.dock.RUN_DOCK_SETUP
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_APP_BADGE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.SEND_SMS
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      com.google.android.gms.permission.CAR
+      com.android.permission.USE_INSTALLER_V2
+      android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME
+      android.permission.MANAGE_CLOUDSEARCH
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.PACKAGE_VERIFICATION_AGENT
+      com.majeur.launcher.permission.UPDATE_BADGE
+      android.permission.REVOKE_RUNTIME_PERMISSIONS
+      android.permission.MANAGE_USERS
+      android.permission.SET_PREFERRED_APPLICATIONS
+      android.permission.ACCESS_NETWORK_STATE
+      com.oppo.launcher.permission.READ_SETTINGS
+      org.chromium.arc.apkcacheprovider.permission.READ_CACHE
+      android.permission.BACKUP
+      com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.MANAGE_ROLLBACKS
+      com.google.android.finsky.permission.DSE
+      com.huawei.android.launcher.permission.READ_SETTINGS
+      android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+      android.permission.USE_FINGERPRINT
+      com.sec.android.provider.badge.permission.WRITE
+      org.chromium.arc.apkcacheprovider.permission.WRITE_CACHE
+      android.permission.REBOOT
+      com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO
+      android.permission.CLEAR_APP_CACHE
+      com.google.android.gms.auth.permission.GOOGLE_ACCOUNT_CHANGE
+      android.permission.GRANT_RUNTIME_PERMISSIONS
+      android.permission.BLUETOOTH_ADVERTISE
+      android.permission.CONNECTIVITY_INTERNAL
+      android.permission.START_ACTIVITIES_FROM_BACKGROUND
+      android.permission.LOADER_USAGE_STATS
+      com.google.android.finsky.permission.INTERNAL_BROADCAST
+      android.permission.FORCE_STOP_PACKAGES
+      android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.VIBRATE
+      com.huawei.android.launcher.permission.CHANGE_BADGE
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST
+      android.permission.READ_SYSTEM_GRAMMATICAL_GENDER
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.USE_BIOMETRIC
+      com.htc.launcher.permission.UPDATE_SHORTCUT
+      android.permission.MANAGE_APP_OPS_MODES
+      com.android.launcher.permission.INSTALL_SHORTCUT
+      android.permission.STATUS_BAR
+      android.permission.QUERY_ALL_PACKAGES
+      android.permission.SEND_SMS_NO_CONFIRMATION
+      com.google.android.gms.permission.AD_ID
+      android.permission.DUMP
+      android.permission.READ_DEVICE_CONFIG
+      com.htc.launcher.permission.READ_SETTINGS
+      android.permission.WAKE_LOCK
+      android.permission.READ_CONTACTS
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED
+      com.android.chrome.permission.SHOW_COMPLIANCE_SCREEN
+      android.permission.BLUETOOTH_SCAN
+      android.permission.SET_HARMFUL_APP_WARNINGS
+      com.google.android.setupwizard.SETUP_PROGRESS_SERVICE
+      com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE
+      android.permission.DELETE_PACKAGES
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST: granted=true
+      com.google.android.c2dm.permission.RECEIVE: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      android.permission.OVERRIDE_COMPAT_CHANGE_CONFIG_ON_RELEASE_BUILD: granted=true
+      android.permission.ACCESS_NOTIFICATION_POLICY: granted=true
+      android.permission.GET_APP_OPS_STATS: granted=true
+      com.google.android.providers.gsf.permission.READ_GSERVICES: granted=true
+      android.permission.READ_RUNTIME_PROFILES: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE: granted=true
+      android.permission.NFC: granted=true
+      com.google.android.engage.REQUEST_ENGAGE_DATA: granted=true
+      android.permission.CHANGE_OVERLAY_PACKAGES: granted=true
+      android.permission.SEND_DEVICE_CUSTOMIZATION_READY: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      com.google.android.providers.gsf.permission.WRITE_GSERVICES: granted=true
+      android.permission.GET_APP_METADATA: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.android.vending.BIOAUTH_CONSENT: granted=true
+      android.permission.ENFORCE_UPDATE_OWNERSHIP: granted=true
+      android.permission.ACCESS_ADSERVICES_AD_ID: granted=true
+      com.android.vending.permission.C2D_MESSAGE: granted=true
+      android.permission.BLUETOOTH: granted=true
+      com.google.android.gms.permission.AD_ID_NOTIFICATION: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      com.android.vending.INTENT_VENDING_ONLY: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.UPDATE_DEVICE_STATS: granted=true
+      com.google.android.gms.permission.BIOAUTH_CONSENT: granted=true
+      android.permission.WRITE_DEVICE_CONFIG: granted=true
+      com.google.android.gms.WRITE_VERIFY_APPS_CONSENT: granted=true
+      android.permission.SEND_SAFETY_CENTER_UPDATE: granted=true
+      android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS: granted=true
+      android.permission.ACCESS_INSTANT_APPS: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      com.google.android.partnersetup.permission.WRITE_APP_PROVIDER: granted=true
+      android.permission.ALLOCATE_AGGRESSIVE: granted=true
+      android.permission.BATTERY_STATS: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.GET_ACCOUNTS_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.android.vending.TOS_ACKED: granted=true
+      android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED: granted=true
+      com.google.android.finsky.permission.INSTANT_APP_STATE: granted=true
+      com.google.android.settings.setup.dock.RUN_DOCK_SETUP: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      com.google.android.gms.permission.CAR: granted=true
+      com.android.permission.USE_INSTALLER_V2: granted=true
+      android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.PACKAGE_VERIFICATION_AGENT: granted=true
+      android.permission.REVOKE_RUNTIME_PERMISSIONS: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.SET_PREFERRED_APPLICATIONS: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.BACKUP: granted=true
+      com.google.android.gms.dck.permission.DIGITAL_KEY_IN_USE: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.MANAGE_ROLLBACKS: granted=true
+      com.google.android.finsky.permission.DSE: granted=true
+      android.permission.ACCESS_ADSERVICES_ATTRIBUTION: granted=true
+      android.permission.USE_FINGERPRINT: granted=true
+      com.google.android.gms.appevents.permission.SEND_APP_IMPORTANCE_UPDATES: granted=true
+      android.permission.REBOOT: granted=true
+      com.google.android.finsky.permission.DEVELOPER_GROUP_ID_INFO: granted=true
+      android.permission.FOREGROUND_SERVICE_MICROPHONE: granted=true
+      android.permission.CLEAR_APP_CACHE: granted=true
+      com.google.android.gms.auth.permission.GOOGLE_ACCOUNT_CHANGE: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      android.permission.START_ACTIVITIES_FROM_BACKGROUND: granted=true
+      android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK: granted=true
+      android.permission.LOADER_USAGE_STATS: granted=true
+      com.google.android.finsky.permission.INTERNAL_BROADCAST: granted=true
+      android.permission.FORCE_STOP_PACKAGES: granted=true
+      android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS: granted=true
+      android.permission.VIBRATE: granted=true
+      com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST: granted=true
+      android.permission.READ_SYSTEM_GRAMMATICAL_GENDER: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.USE_BIOMETRIC: granted=true
+      android.permission.MANAGE_APP_OPS_MODES: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.STATUS_BAR: granted=true
+      android.permission.QUERY_ALL_PACKAGES: granted=true
+      android.permission.SEND_SMS_NO_CONFIRMATION: granted=true
+      com.google.android.gms.permission.AD_ID: granted=true
+      android.permission.DUMP: granted=true
+      android.permission.READ_DEVICE_CONFIG: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED: granted=true
+      com.android.chrome.permission.SHOW_COMPLIANCE_SCREEN: granted=true
+      android.permission.SET_HARMFUL_APP_WARNINGS: granted=true
+      com.android.vending.billing.IN_APP_NOTIFY.permission.C2D_MESSAGE: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=344225 deDataInode=49389 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=1 instant=false virtual=false quarantined=false
+      installReason=0
+      dataDir=/data/user/0/com.android.vending
+      firstInstallTime=2026-11-21 07:15:52
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+      legacy overlay paths:
+        /product/overlay/EmulationPixel6/EmulationPixel6Overlay.apk
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+      lastDisabledCaller: com.google.android.partnersetup
+      gids=[3002, 3003, 3001, 3007]
+      runtime permissions:
+        android.permission.READ_SMS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.POST_NOTIFICATIONS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.NEARBY_WIFI_DEVICES: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.RECEIVE_SMS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.BLUETOOTH_CONNECT: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ SYSTEM_FIXED|GRANTED_BY_DEFAULT|REVOKE_WHEN_REQUESTED|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.ACCESS_COARSE_LOCATION: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.SEND_SMS: granted=true, flags=[ GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.BLUETOOTH_ADVERTISE: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ SYSTEM_FIXED|GRANTED_BY_DEFAULT|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT|RESTRICTION_SYSTEM_EXEMPT|RESTRICTION_UPGRADE_EXEMPT]
+        android.permission.RECORD_AUDIO: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.READ_CONTACTS: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+        android.permission.BLUETOOTH_SCAN: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+      disabledComponents:
+        com.google.android.finsky.permissionrevocation.UnusedAppRestrictionsBackportService
+        com.google.android.finsky.wearsupport.WearSupportService
+        com.google.android.finsky.systemupdateactivity.SystemUpdateActivity
+        com.google.android.finsky.activities.DebugActivity
+        com.google.android.finsky.protect.PermissionAutoRevocationSettingsPage
+        com.google.android.finsky.wearsupport.WearChangeListenerService
+      enabledComponents:
+        com.google.android.finsky.protect.ExternalPlayProtectHomeEntryPoint
+        com.google.android.finsky.hibernation.impl.UnhibernateActivity
+        com.android.vending.AssetBrowserActivity
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  forceQueryable:
+    com.android.vending
+  queries via package name:
+    com.android.vending:
+      com.google.android.apps.maps
+  queries via component:
+    com.android.vending:
+      com.android.chrome
+      com.google.android.apps.docs
+  queryable via interaction:
+    User 0:
+      [com.android.DeviceAsWebcam,com.android.keychain,com.android.localtransport,com.android.settings,com.android.location.fused,com.android.emulator.multidisplay,com.android.server.telecom,android,com.android.providers.settings,com.android.dynsystem,com.android.inputdevices]:
+        com.android.vending
+      com.android.vending:
+        [com.android.DeviceAsWebcam,com.android.keychain,com.android.localtransport,com.android.settings,com.android.location.fused,com.android.emulator.multidisplay,com.android.server.telecom,android,com.android.providers.settings,com.android.dynsystem,com.android.inputdevices]
+        [com.google.android.gms,com.google.android.gsf]
+        com.android.chrome
+        com.google.android.inputmethod.latin
+      [com.google.android.gms,com.google.android.gsf]:
+        com.android.vending
+      com.google.android.inputmethod.latin:
+        com.android.vending
+  queryable via uses-library:
+
+Dexopt state:
+  [com.android.vending]
+    path: /data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/base.apk
+      x86_64: [status=verify] [reason=install] [primary-abi]
+        [location is /data/app/~~JeXybLarOGES2m27eOE3Fw==/com.android.vending-RsC4eOTSPEus2BGipMRSNw==/oat/x86_64/base.odex]
+    known secondary dex files:
+      /data/user/0/com.android.vending/app_dg_cache/BCD37DA6707F74E3F78AB9C0F65BC34E65B1F2E1/the.apk
+        x86_64: [status=verify] [reason=vdex] [primary-abi]
+          [location is /data/user/0/com.android.vending/app_dg_cache/BCD37DA6707F74E3F78AB9C0F65BC34E65B1F2E1/oat/x86_64/the.vdex]
+        class loader context: PCL[];PCL[/product/priv-app/Phonesky/Phonesky.apk]{PCL[/system/framework/org.apache.http.legacy.jar]#PCL[/system_ext/framework/androidx.window.extensions.jar]#PCL[/system_ext/framework/androidx.window.sidecar.jar]}
+
+Compiler stats:
+  [com.android.vending]
+     base.apk - 3220

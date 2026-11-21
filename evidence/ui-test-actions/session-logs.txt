@@ -1,0 +1,72 @@
+UI Test Actions session log
+==========================
+
+Action pin: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89 (v3.0.1 action pin)
+Client: ui-test-actions/agent.py at the same pin
+Transport: Cloudflare Quick Tunnel
+External agent: DeepSeek V4.1 Flash in T3 Code/OpenCode, running outside GitHub Actions
+
+Stock Google Play session
+-------------------------
+Session ID: ba6fadebd87625b4f0276264
+Target/screen: android / 1080x1920
+Connected at: 2026-11-21T07:19Z (artifact ui-session-stock-baseline-1-ba6fadebd87625b4f0276264)
+Commands: 107
+Screenshots: 23
+Failed commands: 2, both client-side parameter mistakes that were corrected:
+- an element.find with an unsupported `package` selector (HTTP 400);
+- a keyboard.press using `KEYCODE_HOME` instead of the documented `home` key name (HTTP 400).
+Neither indicates a session or emulator failure.
+
+Timeline (UTC):
+- 07:20:54  First stock screenshot after session start: Android 15 home screen (01-home-screen.png).
+- 07:20:54  app.launch com.android.vending; signed-out Play Store welcome shown (02-play-store-launch.png).
+- 07:21:22  Overflow menu opened; Settings/Updates/Play Protect present (03-play-store-options.png).
+- 07:21:39  Play Store Settings opened (04-play-store-settings.png).
+- 07:21:57  About expanded; version 54.3.07-34, "Device is not certified" (05-play-store-about.png).
+- 07:22:16  Seven semantic taps on the Play Store version row completed (06-play-store-developer-enabled.png).
+- 07:23:17  General expanded; no Developer options entry (07-play-store-general.png).
+- 07:23:54  Play Store self-update requested; "Google Play Store is up to date" (08-play-store-update-attempt.png).
+- 07:27:09  Seven semantic version taps repeated after relaunch; still no Developer options or Check integrity (14-play-store-after-semantic-taps.png).
+- 07:28:09  Fixture installed through app.install; launched through app.launch (15-fixture-launch.png).
+- 07:28:31  Unicode text inserted through the UI Test Actions text.insert command (16-fixture-text-entered.png).
+- 07:28:39  Semantic click on APPLY CHANGE; UI changed to AFTER (17-fixture-after-click.png).
+- 07:28:41  Scrolled the fixture's 30-row list (18-fixture-scrolled.png).
+- 07:28:44  Home key returned to the launcher (19-home-after-interaction.png).
+- 07:29:37  Back from Play Store Settings (21-play-store-back.png).
+- 07:30:02  Screenshot after a 20-second wait; tree.snapshot still returned 14 nodes, so the session was stable (23-stability-after-wait.png).
+
+Diagnostic conclusion: CHECK_UNAVAILABLE. The signed-out Play Store exposed Settings, but
+the documented seven-tap unlock did not expose Developer options, so Check integrity
+was not present. Full details: evidence/stock/integrity-result.json.
+
+Isolated AOSP root session
+--------------------------
+Session IDs:
+- a82b9fb239d5a5b9ed484b2e (first root session, 2026-11-21T07:34-07:46Z)
+- 1d5c959d185bd292d33c92c7 (second root session, 2026-11-21T07:52-08:03Z)
+- 9ae0b576ba91e79ea537a38e (third root session, 2026-11-21T08:12-08:20Z)
+
+Commands observed (first session): 55
+Screenshots: 11
+Failed commands: 3
+- app.launch com.topjohnwu.magisk: HTTP 502 action_outcome_unknown twice. The package
+  is installed but Settings > Apps > com.topjohnwu.magisk offers no Open action and
+  `cmd package resolve-activity` returns no launcher activity.
+- tree.snapshot on Settings > About emulated device: HTTP 502 action_outcome_unknown.
+  Screenshots and pointer/keyboard actions still worked on that screen; this is a
+  reproducible UI Test Actions tree-source limitation worth a separate report.
+
+Root UI evidence captured:
+- 02-magisk-launch.png / 03-magisk-after-relaunch.png: Home remained foreground after
+  the Magisk launch attempt.
+- 10-settings-all-apps.png: com.topjohnwu.magisk is installed.
+- 11-magisk-app-info.png: app info has Archive/Uninstall/Force stop but no Open.
+- 12-about-emulated-device.png / 14-about-emulated-device-scrolled.png: AOSP system
+  information screen, captured after the tree-source failure.
+- 16/17: later root session starts (home screen; airplane mode visible, confirming the
+  guest-side network isolation).
+
+Secrets: the private session token was generated on the runner, stored only in the
+private `ui-session-token-*` artifact and a local 0600 file, and is not included in
+this evidence tree. The raw token was never printed.

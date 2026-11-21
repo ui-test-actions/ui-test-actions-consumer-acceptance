@@ -1,0 +1,49 @@
+name: Android experiment · evidence archive
+
+# Packages the committed evidence tree and its per-file hashes. No production
+# release is created and no repository outside the experiment branch is touched.
+on:
+  push:
+    branches: [experiment/integrity-root-magisk]
+    paths: [experiment/triggers/report]
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-archive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Build the evidence archive and hashes
+        shell: bash
+        run: |
+          find evidence -type f ! -name SHA256SUMS.txt -print0 \
+            | sort -z | xargs -0 sha256sum > evidence/SHA256SUMS.txt
+          zip -qr android-integrity-experiment-evidence.zip evidence
+          sha256sum android-integrity-experiment-evidence.zip > android-integrity-experiment-evidence.zip.sha256
+          ls -lh android-integrity-experiment-evidence.zip
+          cat android-integrity-experiment-evidence.zip.sha256
+      - name: Upload the evidence archive
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.0
+        with:
+          name: android-integrity-experiment-evidence-${{ github.run_id }}
+          path: |
+            android-integrity-experiment-evidence.zip
+            android-integrity-experiment-evidence.zip.sha256
+          if-no-files-found: error
+          retention-days: 14
+      - name: Summarize the archive
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "### Evidence archive"
+            echo '```'
+            cat android-integrity-experiment-evidence.zip.sha256
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

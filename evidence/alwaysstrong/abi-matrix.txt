@@ -1,0 +1,40 @@
+=== native payloads in the default release ===
+bin/arm64-v8a/asfetch | ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, stripped
+bin/arm64-v8a/aswatcher | ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, stripped
+bin/armeabi-v7a/asfetch | ELF 32-bit LSB pie executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, stripped
+bin/armeabi-v7a/aswatcher | ELF 32-bit LSB pie executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, stripped
+bin/x86/aswatcher | ELF 32-bit LSB pie executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, stripped
+bin/x86_64/aswatcher | ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, stripped
+lib/arm64-v8a/libTEESimulator.so | ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=387827b844449b162082a3265cb5b1067dbadcae, stripped
+lib/arm64-v8a/libcertgen.so | ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, stripped
+lib/arm64-v8a/libinject.so | ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, BuildID[sha1]=a005b4127163b9fa1c14c187ef71520b785a1adb, stripped
+lib/arm64-v8a/libsupervisor.so | ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, BuildID[sha1]=fbfe346f9cae6238fe47007c17cfacd8316a0e18, stripped
+lib/armeabi-v7a/libTEESimulator.so | ELF 32-bit LSB shared object, ARM, EABI5 version 1 (SYSV), dynamically linked, BuildID[sha1]=3ad66a1add103be254937f288cef2ebeb0d54023, stripped
+lib/armeabi-v7a/libinject.so | ELF 32-bit LSB pie executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, BuildID[sha1]=577a2192dc122a5d89b14fc6f1b8229e97aa7fb8, stripped
+lib/armeabi-v7a/libsupervisor.so | ELF 32-bit LSB pie executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, BuildID[sha1]=3fbfc111658403b2443edfa4d185f52592c5b693, stripped
+lib/x86/libTEESimulator.so | ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, BuildID[sha1]=311c475234fbc92fd6edc4d79db1fe7ee5cc6644, stripped
+lib/x86/libinject.so | ELF 32-bit LSB pie executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, BuildID[sha1]=e71f22797b259a1e81ead8e44d87ebde07956a93, stripped
+lib/x86/libsupervisor.so | ELF 32-bit LSB pie executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker, BuildID[sha1]=c958bfd7b5ad4a7d20db32d629ea84ab939d6dd0, stripped
+lib/x86_64/libTEESimulator.so | ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=2e550b2ad25346d966321b2af3e4645ca7d19d0f, stripped
+lib/x86_64/libinject.so | ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, BuildID[sha1]=d796163e9b6bc444e6a741e034a5b34310085dc6, stripped
+lib/x86_64/libsupervisor.so | ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /system/bin/linker64, BuildID[sha1]=749de5d71529b2996bf4cb13a9c48357d2f5c4e3, stripped
+zygisk/arm64-v8a.so | ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, BuildID[sha1]=94177f17869fa5ef8498518cd9276a4b22f82ffd, stripped
+zygisk/armeabi-v7a.so | ELF 32-bit LSB shared object, ARM, EABI5 version 1 (SYSV), dynamically linked, BuildID[sha1]=0e8f0ca57c8cfdc5b29d7df453e50a6fbe5f5b4e, stripped
+
+=== module installer ABI branches ===
+13:case "$ARCH" in
+14:  arm64) ABI_DIR="arm64-v8a" ;;
+15:  arm)   ABI_DIR="armeabi-v7a" ;;
+16:  x64)   ABI_DIR="x86_64" ;;
+17:  x86)   ABI_DIR="x86" ;;
+173:# PlayIntegrityFix inject-s is ARM-only, so on x86 that build has no zygisk to
+194:HAS_ZYGISK_SO=0
+195:[ -f "$MODPATH/zygisk/$ABI_DIR.so" ] && HAS_ZYGISK_SO=1
+197:if [ $HAS_ZYGISK_SO -eq 0 ]; then
+198:  ui_print "⚠️ no PIF zygisk for $ABI_DIR ($ENGINE_NAME is ARM-only)"
+200:  ui_print "⚠️ use the default build for $ABI_DIR"
+
+=== zygisk members in the default zip ===
+        0  2026-11-12 03:12   zygisk/
+   413848  2026-11-12 03:12   zygisk/arm64-v8a.so
+   266768  2026-11-12 03:12   zygisk/armeabi-v7a.so

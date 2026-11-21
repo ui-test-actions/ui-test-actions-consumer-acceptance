@@ -1,0 +1,11 @@
+- Device is system-as-root
+*************************
+ Inert boot marker 
+ by integrity-experiment 
+*************************
+*******************
+ Powered by Magisk 
+*******************
+- Extracting module files
+- Done
+module_install_exit=0

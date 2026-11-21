@@ -1,0 +1,263 @@
+collect_phase=setup
+collected_at_utc=2026-11-21T08:26:53Z
+system_image=system-images;android-35;google_apis;x86_64
+avd_name=integrity-root
+rootavd_commit=613caa44371f85e1a461bc030e07ddc2d71afe32
+magisk_requested=v31.1
+magisk_apk_sha256=89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7
+emulator_revision=37.3.10
+image_revision=9
+sys.boot_completed=1
+ro.build.version.release=15
+ro.build.version.sdk=35
+ro.product.cpu.abi=x86_64
+ro.product.cpu.abilist=x86_64,arm64-v8a
+ro.build.fingerprint=google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys
+ro.build.type=userdebug
+ro.build.tags=dev-keys
+ro.build.version.security_patch=2024-09-05
+ro.product.model=sdk_gphone64_x86_64
+ro.product.device=emu64xa
+ro.product.manufacturer=Google
+ro.hardware=ranchu
+ro.kernel.qemu=1
+ro.boot.qemu=1
+ro.debuggable=1
+ro.secure=1
+ro.boot.verifiedbootstate=
+ro.boot.flash.locked=
+ro.crypto.state=encrypted
+adb_shell_identity=uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+adb_shell_uid=2000
+--- display ---
+Physical size: 1080x1920
+Physical density: 420
+--- magisk packages ---
+--- network interfaces ---
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: dummy0: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 46:ba:01:d3:7d:0a brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::44ba:1ff:fed3:7d0a/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ifb0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 32
+    link/ether 76:b1:fb:6a:81:41 brd ff:ff:ff:ff:ff:ff
+4: ifb1: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 32
+    link/ether d2:6e:4f:c7:50:84 brd ff:ff:ff:ff:ff:ff
+5: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+6: gre0@NONE: <NOARP> mtu 1476 qdisc noop state DOWN group default qlen 1000
+    link/gre 0.0.0.0 brd 0.0.0.0
+7: gretap0@NONE: <BROADCAST,MULTICAST> mtu 1462 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+8: erspan0@NONE: <BROADCAST,MULTICAST> mtu 1450 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+9: ip_vti0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+10: ip6_vti0@NONE: <NOARP> mtu 1364 qdisc noop state DOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+11: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+12: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+13: ip6gre0@NONE: <NOARP> mtu 1448 qdisc noop state DOWN group default qlen 1000
+    link/gre6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+14: hwsim0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ieee802.11/radiotap 12:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+15: eth0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
+16: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 02:15:b2:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.16/24 brd 10.0.2.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+    inet6 fec0::95a7:cacc:c056:46d7/64 scope site temporary dynamic 
+       valid_lft 86398sec preferred_lft 14398sec
+    inet6 fec0::e8b8:189:a5c4:3783/64 scope site dynamic mngtmpaddr stable-privacy 
+       valid_lft 86398sec preferred_lft 14398sec
+    inet6 fe80::6ee9:c80b:e63a:f446/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+--- avd config ---
+PlayStore.enabled=no
+abi.type=x86_64
+image.sysdir.1=system-images/android-35/google_apis/x86_64/
+tag.id=google_apis
+hw.ramSize=4096
+hw.cpu.ncore=4
+hw.lcd.width=1080
+hw.lcd.height=1920
+hw.lcd.density=420
+disk.dataPartition.size=6G
+collect_phase=after-patch-boot
+collected_at_utc=2026-11-21T08:27:52Z
+system_image=system-images;android-35;google_apis;x86_64
+avd_name=integrity-root
+rootavd_commit=613caa44371f85e1a461bc030e07ddc2d71afe32
+magisk_requested=v31.1
+magisk_apk_sha256=89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7
+emulator_revision=37.3.10
+image_revision=9
+sys.boot_completed=1
+ro.build.version.release=15
+ro.build.version.sdk=35
+ro.product.cpu.abi=x86_64
+ro.product.cpu.abilist=x86_64,arm64-v8a
+ro.build.fingerprint=google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys
+ro.build.type=userdebug
+ro.build.tags=dev-keys
+ro.build.version.security_patch=2024-09-05
+ro.product.model=sdk_gphone64_x86_64
+ro.product.device=emu64xa
+ro.product.manufacturer=Google
+ro.hardware=ranchu
+ro.kernel.qemu=1
+ro.boot.qemu=1
+ro.debuggable=1
+ro.secure=1
+ro.boot.verifiedbootstate=
+ro.boot.flash.locked=
+ro.crypto.state=encrypted
+adb_shell_identity=uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+adb_shell_uid=2000
+--- display ---
+Physical size: 1080x1920
+Physical density: 420
+--- magisk packages ---
+--- network interfaces ---
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: dummy0: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 86:66:48:e3:84:aa brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::8466:48ff:fee3:84aa/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ifb0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 32
+    link/ether 42:a5:35:67:b3:f2 brd ff:ff:ff:ff:ff:ff
+4: ifb1: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 32
+    link/ether 32:04:de:1b:99:5d brd ff:ff:ff:ff:ff:ff
+5: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+6: gre0@NONE: <NOARP> mtu 1476 qdisc noop state DOWN group default qlen 1000
+    link/gre 0.0.0.0 brd 0.0.0.0
+7: gretap0@NONE: <BROADCAST,MULTICAST> mtu 1462 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+8: erspan0@NONE: <BROADCAST,MULTICAST> mtu 1450 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+9: ip_vti0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+10: ip6_vti0@NONE: <NOARP> mtu 1364 qdisc noop state DOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+11: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+12: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+13: ip6gre0@NONE: <NOARP> mtu 1448 qdisc noop state DOWN group default qlen 1000
+    link/gre6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+14: hwsim0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ieee802.11/radiotap 12:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+15: eth0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
+16: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 02:15:b2:00:00:00 brd ff:ff:ff:ff:ff:ff
+--- avd config ---
+PlayStore.enabled=no
+abi.type=x86_64
+image.sysdir.1=system-images/android-35/google_apis/x86_64/
+tag.id=google_apis
+hw.ramSize=4096
+hw.cpu.ncore=4
+hw.lcd.width=1080
+hw.lcd.height=1920
+hw.lcd.density=420
+disk.dataPartition.size=6G
+collect_phase=after-second-cold-boot
+collected_at_utc=2026-11-21T08:36:53Z
+system_image=system-images;android-35;google_apis;x86_64
+avd_name=integrity-root
+rootavd_commit=613caa44371f85e1a461bc030e07ddc2d71afe32
+magisk_requested=v31.1
+magisk_apk_sha256=89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7
+emulator_revision=37.3.10
+image_revision=9
+sys.boot_completed=1
+ro.build.version.release=15
+ro.build.version.sdk=35
+ro.product.cpu.abi=x86_64
+ro.product.cpu.abilist=x86_64,arm64-v8a
+ro.build.fingerprint=google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys
+ro.build.type=userdebug
+ro.build.tags=dev-keys
+ro.build.version.security_patch=2024-09-05
+ro.product.model=sdk_gphone64_x86_64
+ro.product.device=emu64xa
+ro.product.manufacturer=Google
+ro.hardware=ranchu
+ro.kernel.qemu=1
+ro.boot.qemu=1
+ro.debuggable=1
+ro.secure=1
+ro.boot.verifiedbootstate=
+ro.boot.flash.locked=
+ro.crypto.state=encrypted
+adb_shell_identity=uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+adb_shell_uid=2000
+--- display ---
+Physical size: 1080x1920
+Physical density: 420
+--- magisk packages ---
+--- network interfaces ---
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: dummy0: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 6a:b3:06:59:f5:4d brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::68b3:6ff:fe59:f54d/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ifb0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 32
+    link/ether 86:24:61:74:67:22 brd ff:ff:ff:ff:ff:ff
+4: ifb1: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 32
+    link/ether be:06:f9:ff:8a:70 brd ff:ff:ff:ff:ff:ff
+5: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+6: gre0@NONE: <NOARP> mtu 1476 qdisc noop state DOWN group default qlen 1000
+    link/gre 0.0.0.0 brd 0.0.0.0
+7: gretap0@NONE: <BROADCAST,MULTICAST> mtu 1462 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+8: erspan0@NONE: <BROADCAST,MULTICAST> mtu 1450 qdisc noop state DOWN group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+9: ip_vti0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+10: ip6_vti0@NONE: <NOARP> mtu 1364 qdisc noop state DOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+11: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+12: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN group default qlen 1000
+    link/tunnel6 :: brd ::
+13: ip6gre0@NONE: <NOARP> mtu 1448 qdisc noop state DOWN group default qlen 1000
+    link/gre6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+14: hwsim0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ieee802.11/radiotap 12:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+15: eth0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
+16: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 02:15:b2:00:00:00 brd ff:ff:ff:ff:ff:ff
+--- avd config ---
+PlayStore.enabled=no
+abi.type=x86_64
+image.sysdir.1=system-images/android-35/google_apis/x86_64/
+tag.id=google_apis
+hw.ramSize=4096
+hw.cpu.ncore=4
+hw.lcd.width=1080
+hw.lcd.height=1920
+hw.lcd.density=420
+disk.dataPartition.size=6G

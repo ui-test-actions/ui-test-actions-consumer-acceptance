@@ -1,0 +1,7 @@
+repository=https://gitlab.com/newbit/rootAVD
+requested_commit=613caa44371f85e1a461bc030e07ddc2d71afe32
+actual_commit=613caa44371f85e1a461bc030e07ddc2d71afe32
+commit_date=2024-10-04T22:12:28+02:00
+collected_at_utc=2026-11-21T08:36:57Z
+rootavd_commit=613caa44371f85e1a461bc030e07ddc2d71afe32
+magisk_apk_sha256=89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7

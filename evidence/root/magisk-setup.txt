@@ -1,0 +1,22 @@
+total 4168
+drwxr-xr-x 3 shell shell    4096 2026-11-21 08:56 .
+drwx------ 6 root  root     4096 2026-11-21 08:56 ..
+-rwxr-xr-x 1 shell shell    4095 1979-12-31 00:00 addon.d.sh
+-rwxr-xr-x 1 shell shell    9976 1979-12-31 00:00 app_functions.sh
+-rwxr-xr-x 1 shell shell    6695 1979-12-31 00:00 boot_patch.sh
+-rwxr-xr-x 1 shell shell  190696 2026-11-21 08:56 bootctl
+-rwxr-xr-x 1 shell shell 1767048 2026-11-21 08:56 busybox
+drwxr-xr-x 2 shell shell    4096 2026-11-21 08:56 dexopt
+-rwxr-xr-x 1 shell shell    4936 2026-11-21 08:56 init-ld
+-rwxr-xr-x 1 shell shell  410576 2026-11-21 08:56 magisk
+-rwxr-xr-x 1 shell shell 1118040 2026-11-21 08:56 magiskboot
+-rwxr-xr-x 1 shell shell  209288 2026-11-21 08:56 magiskinit
+-rwxr-xr-x 1 shell shell  408504 2026-11-21 08:56 magiskpolicy
+-rwxr-xr-x 1 shell shell    3656 1979-12-31 00:00 main.jar
+-rwxr-xr-x 1 shell shell     612 1979-12-31 00:00 module_installer.sh
+-rwxr-xr-x 1 shell shell    4535 1979-12-31 00:00 uninstaller.sh
+-rwxr-xr-x 1 shell shell   20022 1979-12-31 00:00 util_functions.sh
+---
+-rwxr-xr-x 1 shell shell 1767048 2026-11-21 08:56 /data/adb/magisk/busybox
+-rwxr-xr-x 1 shell shell 1118040 2026-11-21 08:56 /data/adb/magisk/magiskboot
+-rwxr-xr-x 1 shell shell     612 1979-12-31 00:00 /data/adb/magisk/module_installer.sh

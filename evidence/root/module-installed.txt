@@ -1,0 +1,21 @@
+total 24
+drwxr-xr-x 3 root root 4096 2026-11-21 08:56 .
+drwx------ 7 root root 4096 2026-11-21 08:56 ..
+drwxrwxrwx 2 root root 4096 2026-11-21 08:56 integrity-inert-test
+---
+id=integrity-inert-test
+name=Inert boot marker
+version=1.0
+versionCode=1
+author=integrity-experiment
+description=Writes a timestamp to /data/local/tmp at post-fs-data; changes no security state.
+---
+total 92
+drwx------  7 root   root    4096 2026-11-21 08:56 .
+drwxrwx--x 51 system system  4096 2026-11-21 08:56 ..
+drwxr-xr-x  3 shell  shell   4096 2026-11-21 08:56 magisk
+----------  1 root   root   32768 2026-11-21 08:56 magisk.db
+drwxr-xr-x  3 root   root    4096 2026-11-21 08:56 modules
+drwxrwxrwx  3 root   root    4096 2026-11-21 08:56 modules_update
+drwxr-xr-x  2 root   root    4096 2026-11-21 08:56 post-fs-data.d
+drwxr-xr-x  2 root   root    4096 2026-11-21 08:56 service.d

@@ -1,0 +1,3 @@
+6ec79a881bc5e9ec1f89fe03cad9fe6c958e09f967fd8a800ef6575384fc8837  AlwaysStrong-v1.0.6.1-inject.zip
+f216d8511c99f3e066675c7dd72b34c60c9ad20d3e647b06f2bcfa96351b19ba  AlwaysStrong-v1.0.6.1-nopif.zip
+560b69fb5b30999004f2a02bb2ffbe73567e61656bfb6ecf629c7a9803218636  AlwaysStrong-v1.0.6.1.zip

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Android integrity / root experiment — visual summary</title>
+<style>
+  :root { color-scheme: light; --ink:#15202b; --muted:#5b6775; --line:#dce3ea; --bg:#f4f7fa; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px; font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--bg); }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0 26px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .card .k { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+  .card .v { font-size: 20px; font-weight: 650; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); background: #fbfcfe; }
+  tr:last-child td { border-bottom: 0; }
+  .status { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+  .pass { background: #d9f2e3; color: #12633a; }
+  .fail { background: #fbdcdc; color: #8a1c1c; }
+  .blocked { background: #fdeccb; color: #7a4a00; }
+  .unavailable { background: #e4e8ee; color: #3e4b5a; }
+  .unverified { background: #e8e0fb; color: #4d2b8c; }
+  .note { color: var(--muted); font-size: 13px; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .panel h2 { font-size: 16px; margin: 0 0 8px; }
+  ul { margin: 8px 0 0 18px; padding: 0; }
+  li { margin: 5px 0; }
+  code { background: #eef2f6; padding: 1px 5px; border-radius: 5px; font-size: 13px; }
+  .foot { margin-top: 22px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Android emulator, rootAVD, Magisk &amp; Play Integrity</h1>
+  <p class="sub">GitHub-hosted Actions experiment · 2026-11-21 · isolated branch <code>experiment/integrity-root-magisk</code></p>
+
+  <div class="grid">
+    <div class="card"><div class="k">Runner</div><div class="v">Ubuntu 24.04 · KVM</div></div>
+    <div class="card"><div class="k">Emulator</div><div class="v">37.3.10 · API 35</div></div>
+    <div class="card"><div class="k">UI session</div><div class="v">2 live sessions</div></div>
+    <div class="card"><div class="k">Genuine verdicts</div><div class="v">Unavailable</div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Test</th><th>Result</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr><td>Runner acceleration</td><td><span class="status pass">PASS</span></td><td><code>runner/acceleration.txt</code></td></tr>
+      <tr><td>Stock Google Play boot</td><td><span class="status pass">PASS</span></td><td><code>stock/configuration.txt</code></td></tr>
+      <tr><td>Stock ADB authorization repeatability</td><td><span class="status fail">FAIL</span> in 2 later boots</td><td>supplement / system runs</td></tr>
+      <tr><td>UI Test Actions connectivity</td><td><span class="status pass">PASS</span></td><td><code>ui-test-actions/interaction-results.json</code></td></tr>
+      <tr><td>Remote UI control</td><td><span class="status pass">PASS</span></td><td>stock screenshots 01–23</td></tr>
+      <tr><td>Google Play Services / Store</td><td><span class="status pass">PASS</span></td><td><code>stock/play-versions.txt</code></td></tr>
+      <tr><td>Genuine BASIC / DEVICE / STRONG / VIRTUAL</td><td><span class="status unavailable">CHECK_UNAVAILABLE</span></td><td><code>stock/integrity-result.json</code></td></tr>
+      <tr><td>rootAVD patch</td><td><span class="status pass">PASS</span></td><td><code>root/patch.log</code></td></tr>
+      <tr><td>Magisk root access</td><td><span class="status pass">PASS</span></td><td><code>root/root-verification.txt</code></td></tr>
+      <tr><td>Root persistence after cold boot</td><td><span class="status pass">PASS</span></td><td><code>root/reboot-verification.txt</code></td></tr>
+      <tr><td>Inert module loading</td><td><span class="status fail">FAIL</span></td><td><code>root/module-installed.txt</code></td></tr>
+      <tr><td>Magisk app status screen</td><td><span class="status blocked">BLOCKED</span></td><td><code>root/magisk-status-UNAVAILABLE.md</code></td></tr>
+      <tr><td>AlwaysStrong theoretical compatibility</td><td><span class="status pass">PASS</span> (TEE; PIF gap)</td><td><code>alwaysstrong/compatibility-review.md</code></td></tr>
+      <tr><td>AlwaysStrong independent runtime evidence</td><td><span class="status unverified">UNVERIFIED</span></td><td><code>alwaysstrong/independent-evidence-status.md</code></td></tr>
+      <tr><td>AlwaysStrong verified attestation effect</td><td><span class="status unverified">UNVERIFIED</span></td><td><code>alwaysstrong/independent-evidence-status.md</code></td></tr>
+    </tbody>
+  </table>
+
+  <div class="split">
+    <div class="panel">
+      <h2>What was demonstrated</h2>
+      <ul>
+        <li>External agent connected to a real UI Test Actions session and controlled the Android emulator.</li>
+        <li>App install, launch, semantic click, Unicode text, scroll, Back/Home, screenshot, and UI tree all worked.</li>
+        <li>rootAVD patched the Android 15 ramdisk; Magisk 31.1 booted and <code>su -c id</code> returned UID 0 after two cold boots.</li>
+        <li>The guest was isolated from outbound IP traffic before the patch.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>What remains open</h2>
+      <ul>
+        <li>Genuine Play Integrity labels need a signed-in, organization-approved Play Store account or an authorized test app/backend.</li>
+        <li>Magisk 31.1's app package and modules did not survive a cold boot on this image.</li>
+        <li>AlwaysStrong was not executed; its x86_64 PIF Zygisk payload is missing.</li>
+        <li>Two later stock boots stalled at ADB authorization, a headless-runner reliability gap.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="foot">Statuses: PASS, FAIL, BLOCKED, CHECK_UNAVAILABLE, NOT_APPLICABLE, NOT_TESTED, UNVERIFIED. CHECK_UNAVAILABLE is not an integrity failure; UNVERIFIED is not a pass.</p>
+</div>
+</body>
+</html>

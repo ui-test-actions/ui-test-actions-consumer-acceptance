@@ -1,0 +1,300 @@
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature game_platform is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature games is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature growth_upgradeparty is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature home is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature homegraph is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature tflite_dynamite is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature kids_dashboard is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature kids_get_parent_verification_intent is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature kids_resource_filtering is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature kids_screentime_restriction_callback is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature kids_transparency is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature maps_core is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature mdocstore is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature mlkit.docscan.crop is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature mlkit.docscan.enhance is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature mlkit.docscan.shadow is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature mlkit.segmentation.subject is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature multipackage_debug is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature permissions_debug is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature play_cloud_search is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature semanticlocation_debug is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature tensorgps_metrics is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature tflite_delegate_edgetpu is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature tflite_delegate_test is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature tflite_gpu_dynamite is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature usonia_iam is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature vision.face is disabled.
+11-21 08:57:06.557  1402  1556 I ModuleSetMgr: Download of container feature vision.ica is disabled.
+11-21 08:57:06.558  1402  1556 I ModuleSetResolution: Pending container module APKs: []
+11-21 08:57:06.558  1402  1556 I ModuleSetResolution: Pending non-container module APKs: []
+11-21 08:57:06.562  1189  1323 E hzy     : Unable to load Cronet module
+11-21 08:57:06.562  1189  1323 E hzy     : Caused by: hqh: Failed to load remote module.
+11-21 08:57:06.585  1402  1427 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:7 and remote module com.google.android.gms.googlecertificates:7
+11-21 08:57:06.600  1270  1498 I MediaProvider: SessionId set to a0d7bf9f-1b37-48da-94b3-6681d3d66fd7 on paths /data/user/0/com.google.android.providers.media.module/databases/external.db and /data/media/0.
+11-21 08:57:06.660  1402  1427 I DynamiteModule: Selected local version of com.google.android.gms.googlecertificates
+11-21 08:57:06.939  1402  1556 E gle.android.gms: Failed to open APK '/data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk': Invalid file
+11-21 08:57:06.939  1402  1556 W PackageManager: Failure to parse package archive apkFile= /data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk
+11-21 08:57:07.012  1189  1189 I SystemSubtypesReportModule: SystemSubtypesReportModule$3.onCurrentInputMethodEntryChanged():136 entry: en-US, source: UNSPECIFIED
+11-21 08:57:07.012  1189  1189 I SystemSubtypesReportModule: SystemSubtypesReportModule.switchToSubtypeByEntry():205 en-US
+11-21 08:57:07.375  1270  1563 W JobInfo : Job 'com.google.android.providers.media.module/com.android.providers.media.MediaService#-300' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+11-21 08:57:07.473   581  1217 W JobInfo : Job 'com.google.android.providers.media.module/com.android.providers.media.MediaService#-300' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+11-21 08:57:07.479  1054  1137 W ctxmgr  : [WorkManager] Long workInfo: pkg=com.google.android.gms, lbl=Modulesdelayed_module_init, start=2026-11-21 08:57:05.407+0000, stop=2026-11-21 08:57:07.478+0000, durtn=2071ms [CONTEXT service_id=47 ]
+11-21 08:57:08.796  1270  1679 D MediaProvider: xattr set to 1e031cbd-3136-43af-8c0e-89daf6545e40 for key:user.intdbsessionid0 on path: /data/user/0/com.google.android.providers.media.module/databases/internal.db.
+11-21 08:57:08.810  1270  1679 I MediaProvider: SessionId set to 1e031cbd-3136-43af-8c0e-89daf6545e40 on paths /data/user/0/com.google.android.providers.media.module/databases/internal.db and /data/media/0.
+11-21 08:57:08.948  1402  1556 I ChimeraCfgMgr: Updating module config: container:2423359190800 -> container:2423359190800
+11-21 08:57:08.951  1402  1556 E DowngradeHelper: isModuleDowngradeRequired false
+11-21 08:57:09.221  1231  1275 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+11-21 08:57:09.613  1189  1189 I SystemSubtypesReportModule: SystemSubtypesReportModule$3.onCurrentInputMethodEntryChanged():136 entry: en-US, source: UNSPECIFIED
+11-21 08:57:09.775  1054  1054 I Wear_Controller: Wearable module requires a companion app to be installed.
+11-21 08:57:09.858   581   628 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+11-21 08:57:09.898   847   880 V WindowManagerShell: onTransitionReady (#3) android.os.BinderProxy@75c2ffb: {id=3 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@29f8fd4} m=OPEN f=MOVE_TO_TOP leash=Surface(name=Task=6)/@0x3e14641 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@dbb057d} m=CLOSE f=SHOW_WALLPAPER leash=Surface(name=Task=5)/@0x198e7e6 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1}]}
+11-21 08:57:09.904   847   880 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=3 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@29f8fd4} m=OPEN f=MOVE_TO_TOP leash=Surface(name=Task=6)/@0x3e14641 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@dbb057d} m=CLOSE f=SHOW_WALLPAPER leash=Surface(name=Task=5)/@0x198e7e6 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1}]}
+11-21 08:57:09.904   847   880 V WindowManagerShell: start default transition animation, info = {id=3 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@29f8fd4} m=OPEN f=MOVE_TO_TOP leash=Surface(name=Task=6)/@0x3e14641 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@dbb057d} m=CLOSE f=SHOW_WALLPAPER leash=Surface(name=Task=5)/@0x198e7e6 sb=Rect(0, 0 - 1080, 1920) eb=Rect(0, 0 - 1080, 1920) d=0 taskParent=-1}]}
+11-21 08:57:10.081   581  1866 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle
+11-21 08:57:10.081   581  1866 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle took to complete: 0ms
+11-21 08:57:10.647  1189  1465 E PhenotypeModule: PhenotypeModule.handlePhenotypeConfigurationUpdates():469 Get empty configurations.
+11-21 08:57:10.653  1189  1471 I PhenotypeModule: PhenotypeModule.handleResult():319 fetchAndUpdate() : Success, hasFlags=false, fetchStatus=2026-11-21 08:57:05{reason=ON_CREATE, isFullFetch=true, isEmpty=true, registeredFormFactor=phone, fetchedFormFactor=, success=true, failureMessage=null, isDelta=false, fetchedFlagsCount=0, deletedFlagsCount=0, totalTime=5337}
+11-21 08:57:10.803   581  1816 I SoundTriggerMiddlewareLogging: LIST_MODULE [client= "com.google.android.as"] () -> [ {Id: 0, Implementor: android, Version: 1} ]
+11-21 08:57:10.916  1402  1586 I GmsModuleFndr: Beginning GMS chimera module scan
+11-21 08:57:11.024  1402  1586 I ModuleSetResolution: Computing pending module set with APKs: [[AdsFdrDynamite.integ:241199801100000], [Cronetdynamite:242335190800], [Dynamiteloader:242335190000], [Dynamitemodulesa:242335190000], [Dynamitemodulesc:242335190000], [Googlecertificates:242335190000], [Mapsdynamite:242335190000], [Measurementdynamite:242335190000]]
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature ambient_context is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature antifingerprinting is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature appsearch_dynamite_impl is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature brella_dynamite is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature callstreaming is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature dck_management is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature easyunlock is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature enterprise_zt_mp_complete is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature fast_pair is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature game_platform is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature games is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature growth_upgradeparty is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature home is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature homegraph is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature tflite_dynamite is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature kids_dashboard is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature kids_get_parent_verification_intent is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature kids_resource_filtering is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature kids_screentime_restriction_callback is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature kids_transparency is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature maps_core is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature mdocstore is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature mlkit.docscan.crop is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature mlkit.docscan.enhance is disabled.
+11-21 08:57:11.025  1402  1586 I ModuleSetMgr: Download of container feature mlkit.docscan.shadow is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature mlkit.segmentation.subject is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature multipackage_debug is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature permissions_debug is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature play_cloud_search is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature semanticlocation_debug is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature tensorgps_metrics is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature tflite_delegate_edgetpu is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature tflite_delegate_test is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature tflite_gpu_dynamite is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature usonia_iam is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature vision.face is disabled.
+11-21 08:57:11.026  1402  1586 I ModuleSetMgr: Download of container feature vision.ica is disabled.
+11-21 08:57:11.086  1402  1586 I ModuleSetResolution: Pending container module APKs: []
+11-21 08:57:11.087  1402  1586 I ModuleSetResolution: Pending non-container module APKs: []
+11-21 08:57:11.088  1267  1839 I AiAiNowPlaying: Initializing Now Playing SimpleStorage Module.
+11-21 08:57:11.104  1402  1586 E gle.android.gms: Failed to open APK '/data/user_de/0/com.google.android.gms/app_chimera/m/0000000b/DynamiteModulesA.apk': Invalid file
+11-21 08:57:11.104  1402  1586 W PackageManager: Failure to parse package archive apkFile= /data/user_de/0/com.google.android.gms/app_chimera/m/0000000b/DynamiteModulesA.apk
+11-21 08:57:11.104  1402  1586 E gle.android.gms: Failed to open APK '/data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk': Invalid file
+11-21 08:57:11.104  1402  1586 W PackageManager: Failure to parse package archive apkFile= /data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk
+11-21 08:57:11.118  1402  1990 I GmsModuleFndr: Beginning GMS chimera module scan
+11-21 08:57:11.119  1402  1990 I ModuleSetResolution: Computing pending module set with APKs: [[AdsFdrDynamite.integ:241199801100000], [Cronetdynamite:242335190800], [Dynamiteloader:242335190000], [Dynamitemodulesa:242335190000], [Dynamitemodulesc:242335190000], [Googlecertificates:242335190000], [Mapsdynamite:242335190000], [Measurementdynamite:242335190000]]
+11-21 08:57:11.120  1402  1990 I ModuleSetMgr: Download of container feature ambient_context is disabled.
+11-21 08:57:11.125  1402  1990 I ModuleSetMgr: Download of container feature antifingerprinting is disabled.
+11-21 08:57:11.125  1402  1990 I ModuleSetMgr: Download of container feature appsearch_dynamite_impl is disabled.
+11-21 08:57:11.125  1402  1990 I ModuleSetMgr: Download of container feature brella_dynamite is disabled.
+11-21 08:57:11.125  1402  1990 I ModuleSetMgr: Download of container feature callstreaming is disabled.
+11-21 08:57:11.125  1402  1990 I ModuleSetMgr: Download of container feature dck_management is disabled.
+11-21 08:57:11.125  1402  1990 I ModuleSetMgr: Download of container feature easyunlock is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature enterprise_zt_mp_complete is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature fast_pair is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature game_platform is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature games is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature growth_upgradeparty is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature home is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature homegraph is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature tflite_dynamite is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature kids_dashboard is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature kids_get_parent_verification_intent is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature kids_resource_filtering is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature kids_screentime_restriction_callback is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature kids_transparency is disabled.
+11-21 08:57:11.126  1402  1990 I ModuleSetMgr: Download of container feature maps_core is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature mdocstore is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature mlkit.docscan.crop is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature mlkit.docscan.enhance is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature mlkit.docscan.shadow is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature mlkit.segmentation.subject is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature multipackage_debug is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature permissions_debug is disabled.
+11-21 08:57:11.127  1402  1990 I ModuleSetMgr: Download of container feature play_cloud_search is disabled.
+11-21 08:57:11.128  1402  1990 I ModuleSetMgr: Download of container feature semanticlocation_debug is disabled.
+11-21 08:57:11.128  1402  1990 I ModuleSetMgr: Download of container feature tensorgps_metrics is disabled.
+11-21 08:57:11.130  1402  1990 I ModuleSetMgr: Download of container feature tflite_delegate_edgetpu is disabled.
+11-21 08:57:11.130  1402  1990 I ModuleSetMgr: Download of container feature tflite_delegate_test is disabled.
+11-21 08:57:11.130  1402  1990 I ModuleSetMgr: Download of container feature tflite_gpu_dynamite is disabled.
+11-21 08:57:11.130  1402  1990 I ModuleSetMgr: Download of container feature usonia_iam is disabled.
+11-21 08:57:11.130  1402  1990 I ModuleSetMgr: Download of container feature vision.face is disabled.
+11-21 08:57:11.130  1402  1990 I ModuleSetMgr: Download of container feature vision.ica is disabled.
+11-21 08:57:11.131  1402  1990 I ModuleSetResolution: Pending container module APKs: []
+11-21 08:57:11.131  1402  1990 I ModuleSetResolution: Pending non-container module APKs: []
+11-21 08:57:11.141  1402  1990 E gle.android.gms: Failed to open APK '/data/user_de/0/com.google.android.gms/app_chimera/m/0000000b/DynamiteModulesA.apk': Invalid file
+11-21 08:57:11.141  1402  1990 W PackageManager: Failure to parse package archive apkFile= /data/user_de/0/com.google.android.gms/app_chimera/m/0000000b/DynamiteModulesA.apk
+11-21 08:57:11.141  1402  1990 E gle.android.gms: Failed to open APK '/data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk': Invalid file
+11-21 08:57:11.142  1402  1990 W PackageManager: Failure to parse package archive apkFile= /data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk
+11-21 08:57:11.247  1054  1122 W DynamiteModule: Local module descriptor class for com.google.android.gms.cronet_dynamite not found.
+11-21 08:57:11.247  1054  1122 I DynamiteModule: Considering local module com.google.android.gms.cronet_dynamite:0 and remote module com.google.android.gms.cronet_dynamite:0
+11-21 08:57:11.247  1054  1122 E chcx    : Unable to load Cronet module
+11-21 08:57:11.247  1054  1122 E chcx    : atwa: No acceptable module com.google.android.gms.cronet_dynamite found. Local version is 0 and remote version is 0.
+11-21 08:57:11.247  1054  1122 E chcx    : 	at com.google.android.gms.dynamite.DynamiteModule.f(:com.google.android.gms@242335041@24.23.35 (190800-646585959):665)
+11-21 08:57:11.247  1054  1122 E CronetEngineFactory: Failed loading Cronet module, falling back to Java implementation [CONTEXT service_id=267 ]
+11-21 08:57:11.247  1054  1122 E CronetEngineFactory: Caused by: atwa: No acceptable module com.google.android.gms.cronet_dynamite found. Local version is 0 and remote version is 0.
+11-21 08:57:11.247  1054  1122 E CronetEngineFactory: 	at com.google.android.gms.dynamite.DynamiteModule.f(:com.google.android.gms@242335041@24.23.35 (190800-646585959):665)
+11-21 08:57:11.255  1231  1275 D StrictMode: 	at com.google.android.gms.chimera.container.GmsModuleChimeraProvider.query(:com.google.android.gms@242335041@24.23.35 (190800-646585959):135)
+11-21 08:57:11.258  1231  1275 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:0
+11-21 08:57:11.258  1231  1275 E GoogleCertificates: hco: No acceptable module com.google.android.gms.googlecertificates found. Local version is 0 and remote version is 0.
+11-21 08:57:11.258  1231  1275 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+11-21 08:57:11.275  1310  1665 I SRMClientModule: SRMc: Instantiating SodaResourceManagerClient with account-scope.
+11-21 08:57:11.359  1402  1990 E gle.android.gms: Failed to open APK '/data/user_de/0/com.google.android.gms/app_chimera/m/0000000b/DynamiteModulesA.apk': Invalid file
+11-21 08:57:11.359  1402  1990 W PackageManager: Failure to parse package archive apkFile= /data/user_de/0/com.google.android.gms/app_chimera/m/0000000b/DynamiteModulesA.apk
+11-21 08:57:11.359  1402  1990 E gle.android.gms: Failed to open APK '/data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk': Invalid file
+11-21 08:57:11.359  1402  1990 W PackageManager: Failure to parse package archive apkFile= /data/user_de/0/com.google.android.gms/app_chimera/m/0000000c/DynamiteModulesC.apk
+11-21 08:57:11.431  1884  1965 I SRMClientSgtnModule: SRMc: Instantiating SodaResourceManagerClient with non-account-scope.
+11-21 08:57:11.431  1884  1965 I SRMClientSgtnModule: SRMc: Instantiating SodaResourceManagerClient with non-account-scope.
+11-21 08:57:11.539  1374  1927 I BugleRcsEngine: imsModule is null, shutdown not required [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[471a7177-2929]" thread_id=62 ]
+11-21 08:57:11.539  1374  1927 I BugleRcsEngine: skipping imsModule.stop [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[471a7177-2929]" thread_id=62 ]
+11-21 08:57:11.545  1374  1927 I BugleRcsEngine: imsModule is null, shutdown not required [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[471a7177-2929]" thread_id=62 ]
+11-21 08:57:11.545  1374  1927 I BugleRcsEngine: skipping imsModule.stop [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[471a7177-2929]" thread_id=62 ]
+11-21 08:57:11.546  1231  1266 W PowerStateManagerModule: <DWB> Context manager broadcast triggered power state fence restoration
+11-21 08:57:11.549  1231  1266 W AutoDndManagerModule: <DWB> Context manager broadcast triggered fence restoration
+11-21 08:57:11.553  1884  1964 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+11-21 08:57:11.603  1054  1709 W ChimeraUtils: Module com.google.android.gms.backup_base missing resource null(0)
+11-21 08:57:11.656  1189  1473 I ManagedDeviceCheckModule: ManagedDeviceCheckModule$1.onSuccess():106 checkManagedAccountPresence() result=isi{hasDasherAccount=false, hasEduAccount=false, hasUnicornOrGriffinAccount=false}, hasManagedAccount=false, hasSupervisedAccount=false
+11-21 08:57:11.700  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:11.700  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:11.863   581   628 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+11-21 08:57:12.002  2104  2104 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:12.002  2104  2104 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:12.029  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:12.029  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:12.040  1270  1270 W ActivityThread: getPackageInfo() called with an older ApplicationInfo than the cached version for package com.google.android.providers.media.module
+11-21 08:57:12.042   581  1816 W JobInfo : Job 'com.google.android.providers.media.module/com.android.providers.media.MediaService#-300' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+11-21 08:57:12.057  1270  1270 W ActivityThread: getPackageInfo() called with an older ApplicationInfo than the cached version for package com.google.android.providers.media.module
+11-21 08:57:12.057   581  1816 W JobInfo : Job 'com.google.android.providers.media.module/com.android.providers.media.MediaService#-300' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+11-21 08:57:12.076  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:12.076  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:12.096  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:12.097  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:12.235  1267  2031 I AiAiEcho: SearchBE[AppFetcherV2][PROCESSING]:is initialized with [19] apps [time=1075750193, reason=module is initialized.]
+11-21 08:57:12.372  1267  1839 I AiAiEcho: EchoSearch: WidgetFetcherImpl is initialized with [33] widgets [reason=module initialized]
+11-21 08:57:12.414  2104  2220 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:7 and remote module com.google.android.gms.googlecertificates:0
+11-21 08:57:12.414  2104  2220 I DynamiteModule: Selected local version of com.google.android.gms.googlecertificates
+11-21 08:57:12.517  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:12.517  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:12.537  1054  1054 W ChimeraUtils: Module com.google.android.gms.nearby missing resource null(0)
+11-21 08:57:12.538  1054  1054 W ChimeraUtils: Module com.google.android.gms.nearby missing resource null(0)
+11-21 08:57:12.595  1054  1054 I NearbyFastPair: NearbyAppHelper: Check Mainline Tethering module version code. [CONTEXT service_id=265 ]
+11-21 08:57:12.644  1054  1113 I NearbyFastPair: DynamicSupportModule: onSupportStateUpdate start [CONTEXT service_id=265 ]
+11-21 08:57:12.658  1270  1679 I MediaProvider: Begin Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+11-21 08:57:12.666  1270  1679 I MediaProvider: End Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+11-21 08:57:12.667  1270  1679 I MediaProvider: Begin Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+11-21 08:57:12.672  1054  1113 I NearbyFastPair: DynamicSupportModule: onSupportStateUpdate end [CONTEXT service_id=265 ]
+11-21 08:57:12.672  1054  1113 I NearbyFastPair: DynamicSupportModule: onSupportStateUpdate start [CONTEXT service_id=265 ]
+11-21 08:57:12.672  1054  1113 I NearbyFastPair: DynamicSupportModule: onSupportStateUpdate end [CONTEXT service_id=265 ]
+11-21 08:57:12.676  1270  1679 I MediaProvider: End Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+11-21 08:57:12.978  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:12.978  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:13.032  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:13.032  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:13.058  1402  1990 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-21 08:57:13.058  1402  1990 I DynamiteModule: Selected local version of com.google.android.gms.providerinstaller.dynamite
+11-21 08:57:13.075   581   899 W ForegroundServiceTypeLoggerModule: Foreground service start for UID: 10137 does not have any types
+11-21 08:57:13.093  1402  1990 I GmsModuleFndr: Beginning GMS chimera module scan
+11-21 08:57:13.185  1402  1990 I ModuleSetResolution: Computing pending module set with APKs: [[AdsFdrDynamite.integ:241199801100000], [Cronetdynamite:242335190800], [Dynamiteloader:242335190000], [Dynamitemodulesa:242335190000], [Dynamitemodulesc:242335190000], [Googlecertificates:242335190000], [Mapsdynamite:242335190000], [Measurementdynamite:242335190000]]
+11-21 08:57:13.190  1402  1990 I ModuleSetMgr: Download of container feature ambient_context is disabled.
+11-21 08:57:13.190  1402  1990 I ModuleSetMgr: Download of container feature antifingerprinting is disabled.
+11-21 08:57:13.197  1402  1990 I ModuleSetMgr: Download of container feature appsearch_dynamite_impl is disabled.
+11-21 08:57:13.197  1402  1990 I ModuleSetMgr: Download of container feature brella_dynamite is disabled.
+11-21 08:57:13.197  1402  1990 I ModuleSetMgr: Download of container feature callstreaming is disabled.
+11-21 08:57:13.197  1402  1990 I ModuleSetMgr: Download of container feature dck_management is disabled.
+11-21 08:57:13.197  1402  1990 I ModuleSetMgr: Download of container feature easyunlock is disabled.
+11-21 08:57:13.197  1402  1990 I ModuleSetMgr: Download of container feature enterprise_zt_mp_complete is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature fast_pair is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature game_platform is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature games is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature growth_upgradeparty is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature home is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature homegraph is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature tflite_dynamite is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature kids_dashboard is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature kids_get_parent_verification_intent is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature kids_resource_filtering is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature kids_screentime_restriction_callback is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature kids_transparency is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature maps_core is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature mdocstore is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature mlkit.docscan.crop is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature mlkit.docscan.enhance is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature mlkit.docscan.shadow is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature mlkit.segmentation.subject is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature multipackage_debug is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature permissions_debug is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature play_cloud_search is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature semanticlocation_debug is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature tensorgps_metrics is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature tflite_delegate_edgetpu is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature tflite_delegate_test is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature tflite_gpu_dynamite is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature usonia_iam is disabled.
+11-21 08:57:13.198  1402  1990 I ModuleSetMgr: Download of container feature vision.face is disabled.
+11-21 08:57:13.199  1402  1990 I ModuleSetMgr: Download of container feature vision.ica is disabled.
+11-21 08:57:13.199  1402  1990 I ModuleSetResolution: Pending container module APKs: []
+11-21 08:57:13.199  1402  1990 I ModuleSetResolution: Pending non-container module APKs: []
+11-21 08:57:13.361  1402  1990 I ChimeraCfgMgr: Updating module config: container:2423359190800 -> container:2423359190800
+11-21 08:57:13.361  1402  1990 E DowngradeHelper: isModuleDowngradeRequired false
+11-21 08:57:13.381   581  1799 E PackageManager: android.content.pm.PackageManager$NameNotFoundException: Package com.topjohnwu.magisk unavailable
+11-21 08:57:13.385   581  1799 W incfs   : isIncFsPathImpl(): could not statfs /data/app/~~3YY4PtBTzBBRrV0qEB2I0w==/com.topjohnwu.magisk-4ILgccldO85PLYMKm6gHDQ==: No such file or directory
+11-21 08:57:13.502   581  1799 I AppsFilter: interaction: PackageSetting{3d93a47 com.android.microdroid.empty_payload/10188} -> PackageSetting{d29a274 com.topjohnwu.magisk/10209} BLOCKED
+11-21 08:57:13.553   581   822 W ForegroundServiceTypeLoggerModule: FGS stop call for: 10137 has no types!
+11-21 08:57:13.665  1267  1267 I AiAiEcho: AppFetcherImpl onPackageChanged com.topjohnwu.magisk.
+11-21 08:57:13.666  1267  1267 E AiAiEcho: AppFetcherImpl Package Not Found: com.topjohnwu.magisk.
+11-21 08:57:13.666  1267  2031 E AiAiEcho: AppIndexer Package Not Found while checking status: [com.topjohnwu.magisk] userId:[0].
+11-21 08:57:13.666  1267  2031 I AiAiEcho: AppIndexer Package:[com.topjohnwu.magisk] UserProfile:[0] Enabled:[null].
+11-21 08:57:13.666  1267  2031 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.topjohnwu.magisk], userId:[0], reason:[package is updated.].
+11-21 08:57:13.667   581   628 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+11-21 08:57:13.678   581   899 I ActivityTaskManager: START u0 {flg=0x10000000 cmp=com.topjohnwu.magisk/.ui.MainActivity} with LAUNCH_MULTIPLE from uid 2000 result code=-92
+11-21 08:57:13.710   581   628 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+11-21 08:57:13.811   581   581 E NotificationPrefHelper: could not restore com.topjohnwu.magisk
+11-21 08:57:13.811   581   581 E NotificationPrefHelper: android.content.pm.PackageManager$NameNotFoundException: com.topjohnwu.magisk
+11-21 08:57:13.814   581   753 W WifiService: Couldn't get PackageInfo for package:com.topjohnwu.magisk
+11-21 08:57:13.814   581   753 D WifiService: Remove settings for package:com.topjohnwu.magisk
+11-21 08:57:13.814   581   753 D WifiConfigManager: Remove all networks for app ApplicationInfo{2310375 com.topjohnwu.magisk}
+11-21 08:57:13.814   581   753 I PasspointManager: No app ops listener found for com.topjohnwu.magisk
+11-21 08:57:13.814   581   807 D ShortcutService: changing package: com.topjohnwu.magisk userId0
+11-21 08:57:13.815   581   807 D ShortcutService: handlePackageChanged: com.topjohnwu.magisk user=0
+11-21 08:57:13.815   581   807 D ShortcutService: rescanPackageIfNeeded 0@com.topjohnwu.magisk, forceRescan=true , isNewApp=true
+11-21 08:57:13.815   581   807 D ShortcutService: Package com.topjohnwu.magisk has 0 manifest shortcut(s), and 0 share target(s)
+11-21 08:57:13.823  1000  1000 D CarrierSvcBindHelper: onPackageModified: com.topjohnwu.magisk
+11-21 08:57:13.849   581  1273 E BackupTransportManager: [UserID:0] Trying to register transports from package not found com.topjohnwu.magisk
+11-21 08:57:13.934  1231  1275 D StrictMode: 	at com.google.android.gms.chimera.container.GmsModuleChimeraProvider.query(:com.google.android.gms@242335041@24.23.35 (190800-646585959):135)
+11-21 08:57:13.938  1884  1964 D StrictMode: 	at com.google.android.gms.chimera.container.GmsModuleChimeraProvider.query(:com.google.android.gms@242335041@24.23.35 (190800-646585959):135)
+11-21 08:57:13.938  1884  1964 D StrictMode: 	at com.google.android.gms.dynamite.DynamiteModule.e(PG:69)
+11-21 08:57:13.938  1884  1964 D StrictMode: 	at com.google.android.gms.dynamite.DynamiteModule.b(PG:87)
+11-21 08:57:13.938  1884  1964 D StrictMode: 	at com.google.android.gms.dynamite.DynamiteModule.d(PG:58)
+11-21 08:57:13.966  1231  1275 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:7
+11-21 08:57:13.966  1231  1275 I DynamiteModule: Selected remote version of com.google.android.gms.googlecertificates, version >= 7
+11-21 08:57:14.007  1000  1092 D ImsResolver: maybeAddedImsService, packageName: com.topjohnwu.magisk
+11-21 08:57:14.010  2104  2116 I DynamiteModule: Considering local module com.google.android.gms.cronet_dynamite:0 and remote module com.google.android.gms.cronet_dynamite:3111
+11-21 08:57:14.012  2104  2116 I DynamiteModule: Selected remote version of com.google.android.gms.cronet_dynamite, version >= 3111
+11-21 08:57:14.043  1884  1964 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:7
+11-21 08:57:14.064  1884  1964 I DynamiteModule: Selected remote version of com.google.android.gms.googlecertificates, version >= 7
+11-21 08:57:14.064  1884  1964 V DynamiteModule: Dynamite loader version >= 2, using loadModule2NoCrashUtils
+11-21 08:57:14.162   581   639 E MidiService: handlePackageUpdate could not find package com.topjohnwu.magisk
+11-21 08:57:14.162   581   639 E MidiService: android.content.pm.PackageManager$NameNotFoundException: com.topjohnwu.magisk
+11-21 08:57:14.486  1189  1189 I SystemSubtypesReportModule: SystemSubtypesReportModule$3.onCurrentInputMethodEntryChanged():136 entry: en-US, source: UNSPECIFIED
+11-21 08:57:14.500  1270  1270 I ActivityThread: ApplicationInfo updating for com.google.android.providers.media.module, new timestamp: 34176

@@ -1,0 +1,79 @@
+[!] We are in a ranchu emulator shell
+[-] Api Level Arch Detect
+[-] Device Platform is x64 only
+[-] Device SDK API: 35
+[-] First API Level: 35
+[-] The AVD runs on Android 15
+[-] Switch to the location of the script file
+[*] Looking for an unzip binary
+[-] unzip binary found
+[*] Extracting busybox and Magisk.zip via unzip ...
+[*] Finding a working Busybox Version
+[*] Testing Busybox /data/local/tmp/rootavd/lib/x86/libbusybox.so
+[!] Found a working Busybox Version
+[!] BusyBox v1.36.1.1 topjohnwu (2024-10-06 01:38:43 PDT) multi-call binary.
+[*] Move busybox from lib to workdir
+[*] Re-Run rootAVD in Magisk Busybox STANDALONE (D)ASH
+[-] We are now in Magisk Busybox STANDALONE (D)ASH
+[*] rootAVD with Magisk  Installer
+[-] Get Flags
+[*] System-as-root, keep dm/avb-verity
+[-] Encrypted data, keep forceencrypt
+[*] RECOVERYMODE=false
+[-] KEEPVERITY=true
+[*] KEEPFORCEENCRYPT=true
+[-] copy all x86_64 files from /data/local/tmp/rootavd/lib/x86_64 to /data/local/tmp/rootavd
+[*] init LD_PRELOAD is present
+[*] Detecting ramdisk.img compression
+[!] Ramdisk.img uses lz4_legacy compression
+[-] taken from shakalaca's MagiskOnEmulator/process.sh
+[*] executing ramdisk splitting / extraction / repacking
+[-] API level greater then 30
+[*] Check if we need to repack ramdisk before patching ..
+[-] Multiple cpio archives detected
+[*] Unpacking ramdisk ..
+[*] Searching for the real End of the 1st Archive
+[-] Dumping from 0 to 2065204 ..
+Detected format: lz4_legacy
+[-] Dumping from 2065204 to 2154572 ..
+Detected format: lz4_legacy
+[*] Repacking ramdisk ..
+[!] allowing MANAGE_EXTERNAL_STORAGE permissions to...
+[-] Checking ramdisk STATUS=0
+[-] Stock boot image detected
+[*] Verifying Boot Image by its Kernel Release number:
+[-] This AVD = 6.6.50-android15-8-g8adecb593e9b-ab12525588
+[-]  Ramdisk = 6.6.50-android15-8-g8adecb593e9b-ab12525588
+[!] Ramdisk is probably from this AVD
+[-] Patching ramdisk
+[*] Pre-init storage partition: vdd1
+[*] adding overlay.d/sbin folders to ramdisk
+Loading cpio: [ramdisk.cpio]
+Create directory [overlay.d] (0750)
+Create directory [overlay.d/sbin] (0750)
+Dumping cpio: [ramdisk.cpio]
+[!] patching the ramdisk with Magisk Init
+Loading cpio: [ramdisk.cpio]
+Add file [init] (100750)
+Add file [overlay.d/sbin/magisk.xz] (100644)
+Add file [overlay.d/sbin/init-ld.xz] (100644)
+Patch with flag KEEPVERITY=[true] KEEPFORCEENCRYPT=[true]
+Loading cpio: [ramdisk.cpio.orig]
+Backup [init] -> [.backup/init.xz]
+Record new entry: [overlay.d] -> [.backup/.rmlist]
+Record new entry: [overlay.d/sbin] -> [.backup/.rmlist]
+Record new entry: [overlay.d/sbin/init-ld.xz] -> [.backup/.rmlist]
+Record new entry: [overlay.d/sbin/magisk.xz] -> [.backup/.rmlist]
+Create directory [.backup] (0000)
+Add file [.backup/.magisk] (100000)
+Dumping cpio: [ramdisk.cpio]
+[*] repacking back to ramdisk.img format
+[!] Copy Magisk.zip to Magisk.apk
+rootavd_patch_exit=0
+/data/local/tmp/rootavd/ramdiskpatched4AVD.img: 1 file pulled, 0 skipped. 177.3 MB/s (1740810 bytes in 0.009s)
+/data/local/tmp/rootavd/Magisk.apk: 1 file pulled, 0 skipped. 213.7 MB/s (10679283 bytes in 0.048s)
+/data/local/tmp/rootavd/ramdisk.cpio: 1 file pulled, 0 skipped. 244.0 MB/s (2049552 bytes in 0.008s)
+/data/local/tmp/rootavd/config: 1 file pulled, 0 skipped. 0.2 MB/s (122 bytes in 0.001s)
+adb: error: failed to stat remote object '/data/local/tmp/rootavd/magisk_menu.txt': No such file or directory
+adb: error: failed to stat remote object '/data/local/tmp/rootavd/magisk_versions.txt': No such file or directory
+adb: error: failed to stat remote object '/data/local/tmp/rootavd/magisk_dl_links.txt': No such file or directory

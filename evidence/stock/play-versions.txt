@@ -1,0 +1,12 @@
+collect_phase=initial
+collected_at_utc=2026-11-21T07:16:13Z
+play_store_version_name=versionName=41.3.25-31 [0] [PR] 640531013
+play_store_version_code=versionCode=84132530 minSdk=31 targetSdk=34
+gms_version_name=versionName=24.23.35 (190800-646585959)
+gms_version_code=versionCode=242335041 minSdk=31 targetSdk=34
+collect_phase=final
+collected_at_utc=2026-11-21T07:36:50Z
+play_store_version_name=versionName=54.3.07-34 [0] [PR] 1022292552
+play_store_version_code=versionCode=85430740 minSdk=34 targetSdk=37
+gms_version_name=versionName=26.45.31 (260800-1020418964)
+gms_version_code=versionCode=264531038 minSdk=35 targetSdk=37
