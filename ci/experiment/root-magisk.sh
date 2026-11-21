@@ -59,7 +59,7 @@ launch_emulator() {
         sleep 1
     done
     local args=(-avd "$avd" -port "$port" -no-window -no-audio -no-snapshot
-        -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4)
+        -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -skip-adb-auth)
     if [[ "$wipe" == 'yes' ]]; then args+=(-wipe-data); fi
     "$sdk/emulator/emulator" "${args[@]}" > "$evidence/emulator-$tag.log" 2>&1 &
     local pid=$!

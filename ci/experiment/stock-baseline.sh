@@ -28,7 +28,7 @@ collect() {
         echo "serial=$serial"
         echo "system_image=$image"
         echo "avd_name=$avd"
-        echo "emulator_flags=-no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -wipe-data"
+        echo "emulator_flags=-no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -wipe-data -skip-adb-auth"
         echo "adb_version=$(adb version | head -1)"
         sed -n 's/^Pkg.Revision=/emulator_revision=/p' "$sdk/emulator/source.properties" 2>/dev/null || true
         sed -n 's/^Pkg.Revision=/image_revision=/p' "$image_dir/source.properties" 2>/dev/null || true
@@ -119,7 +119,7 @@ grep -E '^(hw\.|disk\.|PlayStore|tag\.|image\.|abi\.)' "$config" > "$evidence/av
 # Cold, clean boot of the stock Play image. -no-snapshot prevents reuse of any
 # snapshot state, including one that might have been created accidentally.
 "$sdk/emulator/emulator" -avd "$avd" -port "$port" -no-window -no-audio -no-snapshot \
-    -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -wipe-data \
+    -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -wipe-data -skip-adb-auth \
     > "$evidence/emulator.log" 2>&1 &
 emulator_pid=$!
 echo "$emulator_pid" > "$evidence/emulator.pid"
