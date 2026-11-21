@@ -30,7 +30,7 @@ jobs:
           printf 'Original GTK test document.\n' > gtk-evidence/document.txt
           dpkg-query --show mousepad > gtk-evidence/version.txt
           printf '%s\n' 'source c4b2fcbba98a853cac1998269c55b3b954e3faf0' >> gtk-evidence/version.txt
-      - uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
         with:
           target: linux
           token-sha256: ${{ inputs.token_sha256 }}

@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
       - name: Install the native desktop fixture and accessibility packages
         run: sudo apt-get -o DPkg::Lock::Timeout=60 install -y --no-install-recommends python3-tk python3-pyatspi at-spi2-core dbus-x11
-      - uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
         env:
           UI_FIXTURE_EVENTS: ${{ runner.temp }}/diag-app.jsonl
         with:

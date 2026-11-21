@@ -1,0 +1,104 @@
+name: Interactive mobile lifetime test
+run-name: Consumer mobile · ${{ inputs.target }} · ${{ inputs.duration }}m · ${{ inputs.purpose }}
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        type: choice
+        options: [android, ios]
+        required: true
+      duration:
+        description: Minutes after app and transport readiness
+        type: string
+        default: '60'
+      purpose:
+        type: string
+        default: expiry
+      token_sha256:
+        description: SHA-256 of the external observer's session bearer
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  interactive:
+    runs-on: ${{ inputs.target == 'android' && 'ubuntu-24.04' || 'macos-26' }}
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: a56957b05ce72ed15c0c35daad572a2add0d173e
+          path: published-client
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Boot the Android emulator and build the lightweight fixture
+        if: inputs.target == 'android'
+        shell: bash
+        run: |
+          sudo chmod a+rw /dev/kvm
+          image='system-images;android-35;google_apis;x86_64'
+          tools="$ANDROID_HOME/cmdline-tools/latest/bin"
+          "$tools/sdkmanager" emulator "$image" 'platforms;android-35' 'build-tools;35.0.0'
+          export PATH="$ANDROID_HOME/platform-tools:$PATH"
+          echo "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+          export ANDROID_AVD_HOME="$RUNNER_TEMP/live-ui-avds"
+          mkdir -p "$HOME/.android" "$ANDROID_AVD_HOME"
+          adb start-server
+          echo no | "$tools/avdmanager" create avd --force --name consumer-proof --package "$image" --path "$ANDROID_AVD_HOME/consumer-proof.avd"
+          "$ANDROID_HOME/emulator/emulator" -avd consumer-proof -port 5554 -no-window -no-audio \
+            -no-snapshot -no-boot-anim -gpu swiftshader_indirect > emulator.log 2>&1 &
+          emulator_pid=$!
+          bash published-client/fixtures/android/build.sh "$RUNNER_TEMP/consumer-android"
+          if ! timeout 360 bash -c 'until [[ "$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" == 1 ]]; do kill -0 "$1" || exit 1; sleep 2; done' bash "$emulator_pid"; then
+            cat emulator.log >&2
+            exit 1
+          fi
+          adb -s emulator-5554 shell input keyevent KEYCODE_WAKEUP
+          adb -s emulator-5554 shell wm dismiss-keyguard
+          printf '%s\n' 'PROOF_DEVICE=emulator-5554' >> "$GITHUB_ENV"
+      - name: Boot the ARM64 iOS simulator and build the lightweight fixture
+        if: inputs.target == 'ios'
+        shell: bash
+        run: |
+          test "$(uname -m)" = arm64
+          uname -m
+          xcodebuild -version
+          xcrun simctl list devices available -j > simulators.json
+          simulator=$(python - <<'PY'
+          import json
+          from pathlib import Path
+
+          runtimes = json.loads(Path('simulators.json').read_text())['devices']
+          print(next(device['udid'] for key in reversed(sorted(runtimes)) if '.iOS-' in key
+                     for device in runtimes[key] if device['name'].startswith('iPhone') and device['isAvailable']))
+          PY
+          )
+          bash published-client/fixtures/ios/build.sh "$RUNNER_TEMP/LiveUIFixture.app"
+          xcrun simctl bootstatus "$simulator" -b
+          printf 'PROOF_DEVICE=%s\n' "$simulator" >> "$GITHUB_ENV"
+      - name: Run the published Action
+        uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
+        with:
+          target: ${{ inputs.target }}
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: ${{ inputs.duration }}
+          device: ${{ env.PROOF_DEVICE }}
+          app-ids: dev.uitest.fixture
+          deeplink-schemes: ui-test-fixture
+          launch: |
+            if [[ "$RUNNER_OS" == Linux ]]; then
+              adb -s "$PROOF_DEVICE" install -r "$RUNNER_TEMP/consumer-android/fixture.apk"
+              adb -s "$PROOF_DEVICE" shell am start -W -n dev.uitest.fixture/.MainActivity
+            else
+              xcrun simctl install "$PROOF_DEVICE" "$RUNNER_TEMP/LiveUIFixture.app"
+              xcrun simctl launch "$PROOF_DEVICE" dev.uitest.fixture
+            fi
+          ready: |
+            if [[ "$RUNNER_OS" == Linux ]]; then
+              adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -q 'mResumedActivity.*dev.uitest.fixture\|topResumedActivity.*dev.uitest.fixture'
+            else
+              xcrun simctl spawn "$PROOF_DEVICE" launchctl list | grep -q 'UIKitApplication:dev.uitest.fixture'
+            fi

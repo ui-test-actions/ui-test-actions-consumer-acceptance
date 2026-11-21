@@ -33,7 +33,7 @@ jobs:
       - name: Build the test app
         shell: bash
         run: bash ci/build-desktop-app.sh # Replace with your build command.
-      - uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
         with:
           target: ${{ inputs.target }}
           token-sha256: ${{ inputs.token_sha256 }}

@@ -52,7 +52,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: ui-test-actions/ui-test-actions
-          ref: aa993a101396b7cfa1aab0891ad37a46a94153af
+          ref: a56957b05ce72ed15c0c35daad572a2add0d173e
           path: published-client
           persist-credentials: false
       - name: Use public client helpers at the action pin
@@ -63,7 +63,7 @@ jobs:
             python3-tk fonts-noto-core xvfb xauth xdotool xclip openbox wmctrl \
             python3-pyatspi at-spi2-core dbus-x11
           mkdir -m 700 "$RUNNER_TEMP/named-transport-proof"
-      - uses: ui-test-actions/ui-test-actions@aa993a101396b7cfa1aab0891ad37a46a94153af
+      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
         with:
           target: linux
           token-sha256: ${{ inputs.token_sha256 }}
