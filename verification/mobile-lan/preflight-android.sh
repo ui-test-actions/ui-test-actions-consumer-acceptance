@@ -5,8 +5,12 @@ sdk="${ANDROID_HOME:?}"
 image='system-images;android-35;google_apis;x86_64'
 out="${RUNNER_TEMP:?}/mobile-lan-preflight"
 mkdir -p "$out"
-sudo apt-get -qq update
-sudo apt-get -qq install -y dnsmasq-base libpulse0 libxcb-cursor0
+apt_options=(-o Acquire::Retries=3 -o Acquire::http::Timeout=20 -o APT::Update::Error-Mode=any)
+packages=(dnsmasq-base libpulse0 libxcb-cursor0)
+if ! sudo apt-get "${apt_options[@]}" update || ! sudo apt-get "${apt_options[@]}" install -y "${packages[@]}"; then
+  sudo apt-get "${apt_options[@]}" update
+  sudo apt-get "${apt_options[@]}" install -y "${packages[@]}"
+fi
 sudo chmod a+rw /dev/kvm
 "$sdk/cmdline-tools/latest/bin/sdkmanager" 'platform-tools' "$image"
 export PATH="$sdk/platform-tools:$PATH"
