@@ -1,0 +1,47 @@
+name: Android experiment · stock system information
+
+# A short stock boot used only to capture the Android system-information screen
+# as supplementary ADB evidence. UI control evidence comes from the main stock
+# and root UI Test Actions sessions.
+on:
+  push:
+    branches: [experiment/integrity-root-magisk]
+    paths: [experiment/triggers/stock-system]
+
+permissions:
+  contents: read
+
+jobs:
+  stock-system:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      EVIDENCE_DIR: evidence/stock-system
+      AVD_NAME: integrity-stock-system
+      PLAYSTORE_ENABLED: 'no'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Boot the stock emulator
+        shell: bash
+        run: bash ci/experiment/stock-baseline.sh boot
+      - name: Capture Android system information
+        shell: bash
+        run: |
+          adb -s emulator-5554 shell am start -a android.settings.DEVICE_INFO_SETTINGS
+          sleep 3
+          adb -s emulator-5554 exec-out screencap -p > "$EVIDENCE_DIR/system-information.png"
+          adb -s emulator-5554 shell uiautomator dump /data/local/tmp/system-info.xml
+          adb -s emulator-5554 pull /data/local/tmp/system-info.xml "$EVIDENCE_DIR/system-information.xml"
+          adb -s emulator-5554 shell getprop > "$EVIDENCE_DIR/getprop.txt"
+          adb -s emulator-5554 shell dumpsys package com.android.vending > "$EVIDENCE_DIR/play-store-dumpsys.txt"
+          adb -s emulator-5554 emu kill
+      - name: Upload system information
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.0
+        with:
+          name: android-experiment-stock-system-${{ github.run_id }}
+          path: evidence/stock-system
+          if-no-files-found: warn
+          retention-days: 14
