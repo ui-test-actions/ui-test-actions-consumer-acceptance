@@ -40,6 +40,7 @@ jobs:
           target: ${{ inputs.target }}
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
+          transport-fallback: ${{ inputs.purpose == 'v301-connector-exit' && 'local' || 'none' }}
           launch: bash ci/launch-desktop-app.sh # Starts the app and returns.
           ready: bash ci/check-desktop-ready.sh # Returns zero when the app is ready.
           desktop-apps: >-
