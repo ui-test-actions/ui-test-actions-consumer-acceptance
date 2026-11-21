@@ -1,7 +1,7 @@
 # Independent UI Test Actions consumer
 
-This repository uses the public action at `672f07488d17d39375d8895398d72e4fb94b4437`. The desktop workflow comes from the public desktop example with consumer build, launch and readiness hooks for a synthetic fixture. The mobile IP link and WireGuard are separate test infrastructure. Client helpers are checked out at the published pin. The source of the action is maintained by its publisher.
+This repository uses the public Action at `672f07488d17d39375d8895398d72e4fb94b4437` for Quick Tunnel, private networking, loopback, and fallback. The desktop workflow comes from the public example with consumer launch and readiness hooks. Other workflows exercise checksum-verified upstream editors and the paired native P2pKit samples. The app LAN and the UI-control WireGuard overlay each have their own setup and cleanup. [Public setup guide](https://github.com/ui-test-actions/ui-test-actions#add-the-action-to-a-workflow) · [Consumer evidence](https://github.com/ui-test-actions/ui-test-actions/tree/main/verification/consumer-acceptance)
 
 ## Named Tunnel
 
-The repository-scoped preflight uses the same credential names and published pin as the public documentation. Configure a dedicated hostname and its scoped connector and Access credentials in this repository before dispatching an actual Named session. Workflow concurrency is repository-local. Use distinct dedicated tunnel hostnames when more than one repository can run concurrently.
+The Named workflow uses `aa993a101396b7cfa1aab0891ad37a46a94153af` and the documented secret names. Configure a dedicated hostname and its scoped connector and Access credentials before dispatch. Workflow concurrency is repository-local. Use distinct dedicated tunnel hostnames when more than one repository can run concurrently. [Named Tunnel setup](https://github.com/ui-test-actions/ui-test-actions/blob/main/docs/transports.md#named-tunnel-and-access)
