@@ -20,11 +20,15 @@ on:
         required: true
 permissions:
   contents: read
+  actions: read
 jobs:
   interactive:
     runs-on: ${{ inputs.target == 'android' && 'ubuntu-24.04' || 'macos-26' }}
     timeout-minutes: 90
     steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: ui-test-actions/ui-test-actions
@@ -34,6 +38,12 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
+      - name: Prepare the retained Parlor package for an isolated offline test
+        if: inputs.target == 'android' && inputs.purpose == 'v301-parlor-offline'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: bash ci/prepare-parlor.sh
       - name: Boot the Android emulator and build the lightweight fixture
         if: inputs.target == 'android'
         shell: bash
@@ -51,7 +61,9 @@ jobs:
           "$ANDROID_HOME/emulator/emulator" -avd consumer-proof -port 5554 -no-window -no-audio \
             -no-snapshot -no-boot-anim -gpu swiftshader_indirect > emulator.log 2>&1 &
           emulator_pid=$!
-          bash published-client/fixtures/android/build.sh "$RUNNER_TEMP/consumer-android"
+          if [[ -z "${PARLOR_APK:-}" ]]; then
+            bash published-client/fixtures/android/build.sh "$RUNNER_TEMP/consumer-android"
+          fi
           if ! timeout 360 bash -c 'until [[ "$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" == 1 ]]; do kill -0 "$1" || exit 1; sleep 2; done' bash "$emulator_pid"; then
             cat emulator.log >&2
             exit 1
@@ -107,10 +119,20 @@ jobs:
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
           device: ${{ env.PROOF_DEVICE }}
-          app-ids: dev.uitest.fixture
-          deeplink-schemes: ui-test-fixture
+          app-ids: ${{ env.PARLOR_APK != '' && 'me.parlor.android' || 'dev.uitest.fixture' }}
+          deeplink-schemes: ${{ env.PARLOR_APK == '' && 'ui-test-fixture' || '' }}
           launch: |
-            if [[ "$RUNNER_OS" == Linux ]]; then
+            if [[ -n "${PARLOR_APK:-}" ]]; then
+              adb -s "$PROOF_DEVICE" shell cmd connectivity airplane-mode enable
+              adb -s "$PROOF_DEVICE" shell svc wifi disable
+              adb -s "$PROOF_DEVICE" shell svc data disable
+              adb -s "$PROOF_DEVICE" install "$PARLOR_APK"
+              component=$(adb -s "$PROOF_DEVICE" shell cmd package resolve-activity --brief \
+                -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -p me.parlor.android |
+                tr -d '\r' | tail -1)
+              [[ "$component" == me.parlor.android/* ]]
+              adb -s "$PROOF_DEVICE" shell am start -W -n "$component"
+            elif [[ "$RUNNER_OS" == Linux ]]; then
               adb -s "$PROOF_DEVICE" install -r "$RUNNER_TEMP/consumer-android/fixture.apk"
               adb -s "$PROOF_DEVICE" shell am start -W -n dev.uitest.fixture/.MainActivity
             else
@@ -118,7 +140,9 @@ jobs:
               xcrun simctl launch "$PROOF_DEVICE" dev.uitest.fixture
             fi
           ready: |
-            if [[ "$RUNNER_OS" == Linux ]]; then
+            if [[ -n "${PARLOR_APK:-}" ]]; then
+              adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -q 'mResumedActivity.*me.parlor.android\|topResumedActivity.*me.parlor.android'
+            elif [[ "$RUNNER_OS" == Linux ]]; then
               adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -q 'mResumedActivity.*dev.uitest.fixture\|topResumedActivity.*dev.uitest.fixture'
             else
               xcrun simctl spawn "$PROOF_DEVICE" launchctl list | grep -q 'UIKitApplication:dev.uitest.fixture'
