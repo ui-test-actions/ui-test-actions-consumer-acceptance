@@ -78,7 +78,7 @@ sudo chmod a+rw /dev/kvm
     echo
     echo "=== libpulse presence ==="
     ldconfig -p 2>/dev/null | grep -E 'libpulse\.so' || echo "libpulse_absent"
-} | tee "$out/acceleration.txt"
+} | tee -a "$out/acceleration.txt"
 
 if ! ldconfig -p 2>/dev/null | grep -q 'libpulse\.so\.0'; then
     echo "libpulse0 is missing; installing the documented emulator runtime dependency." | tee -a "$out/acceleration.txt"
@@ -95,7 +95,7 @@ fi
 {
     echo "=== emulator accel-check ==="
     timeout 30 "${ANDROID_HOME}/emulator/emulator" -accel-check 2>&1 || echo "accel_check_exit=$?"
-} | tee "$out/acceleration.txt"
+} | tee -a "$out/acceleration.txt"
 
 # Record the installed emulator package after install.
 { echo "=== emulator package ==="; "${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager" --list_installed 2>&1 | grep -E "emulator|system-images"; } | tee -a "$out/sdk-versions.txt"
