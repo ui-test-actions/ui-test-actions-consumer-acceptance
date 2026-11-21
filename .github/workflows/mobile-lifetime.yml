@@ -39,17 +39,22 @@ jobs:
         with:
           python-version: '3.12'
       - name: Prepare the retained Parlor package for an isolated offline test
-        if: inputs.target == 'android' && inputs.purpose == 'v301-parlor-offline'
+        if: inputs.target == 'android' && (inputs.purpose == 'v301-parlor-offline' || inputs.purpose == 'stock-android-e2e')
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: bash ci/prepare-parlor.sh
       - name: Boot the Android emulator and build the lightweight fixture
         if: inputs.target == 'android'
+        env:
+          MOBILE_SCENARIO: ${{ inputs.purpose }}
         shell: bash
         run: |
           sudo chmod a+rw /dev/kvm
           image='system-images;android-35;google_apis;x86_64'
+          if [[ "$MOBILE_SCENARIO" == stock-android-e2e ]]; then
+            image='system-images;android-35;google_apis_playstore;x86_64'
+          fi
           tools="$ANDROID_HOME/cmdline-tools/latest/bin"
           "$tools/sdkmanager" emulator "$image" 'platforms;android-35' 'build-tools;35.0.0'
           export PATH="$ANDROID_HOME/platform-tools:$PATH"
@@ -61,7 +66,7 @@ jobs:
           "$ANDROID_HOME/emulator/emulator" -avd consumer-proof -port 5554 -no-window -no-audio \
             -no-snapshot -no-boot-anim -gpu swiftshader_indirect > emulator.log 2>&1 &
           emulator_pid=$!
-          if [[ -z "${PARLOR_APK:-}" ]]; then
+          if [[ -z "${PARLOR_APK:-}" || "$MOBILE_SCENARIO" == stock-android-e2e ]]; then
             bash published-client/fixtures/android/build.sh "$RUNNER_TEMP/consumer-android"
           fi
           if ! timeout 360 bash -c 'until [[ "$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" == 1 ]]; do kill -0 "$1" || exit 1; sleep 2; done' bash "$emulator_pid"; then
@@ -71,6 +76,9 @@ jobs:
           adb -s emulator-5554 shell input keyevent KEYCODE_WAKEUP
           adb -s emulator-5554 shell wm dismiss-keyguard
           printf '%s\n' 'PROOF_DEVICE=emulator-5554' >> "$GITHUB_ENV"
+          if [[ "$MOBILE_SCENARIO" == stock-android-e2e ]]; then
+            bash ci/describe-stock-android.sh "$image" "$ANDROID_AVD_HOME/consumer-proof.avd/config.ini"
+          fi
       - name: Boot the ARM64 iOS simulator and build the lightweight fixture
         if: inputs.target == 'ios'
         shell: bash
@@ -114,15 +122,22 @@ jobs:
           printf 'PROOF_DEVICE=%s\n' "$simulator" >> "$GITHUB_ENV"
       - name: Run the published Action
         uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
+        env:
+          MOBILE_SCENARIO: ${{ inputs.purpose }}
         with:
           target: ${{ inputs.target }}
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
           device: ${{ env.PROOF_DEVICE }}
-          app-ids: ${{ env.PARLOR_APK != '' && 'me.parlor.android' || 'dev.uitest.fixture' }}
+          app-ids: ${{ inputs.purpose == 'stock-android-e2e' && 'dev.uitest.fixture,me.parlor.android,com.android.vending,com.android.settings' || env.PARLOR_APK != '' && 'me.parlor.android' || 'dev.uitest.fixture' }}
+          app-installs: >-
+            ${{ inputs.purpose == 'stock-android-e2e' && format('{{"me.parlor.android":"{0}"}}', env.PARLOR_APK) || '{}' }}
           deeplink-schemes: ${{ env.PARLOR_APK == '' && 'ui-test-fixture' || '' }}
           launch: |
-            if [[ -n "${PARLOR_APK:-}" ]]; then
+            if [[ "$MOBILE_SCENARIO" == stock-android-e2e ]]; then
+              adb -s "$PROOF_DEVICE" install "$RUNNER_TEMP/consumer-android/fixture.apk"
+              adb -s "$PROOF_DEVICE" shell am start -W -n dev.uitest.fixture/.MainActivity
+            elif [[ -n "${PARLOR_APK:-}" ]]; then
               adb -s "$PROOF_DEVICE" shell cmd connectivity airplane-mode enable
               adb -s "$PROOF_DEVICE" shell svc wifi disable
               adb -s "$PROOF_DEVICE" shell svc data disable
@@ -140,10 +155,19 @@ jobs:
               xcrun simctl launch "$PROOF_DEVICE" dev.uitest.fixture
             fi
           ready: |
-            if [[ -n "${PARLOR_APK:-}" ]]; then
+            if [[ "$MOBILE_SCENARIO" == stock-android-e2e ]]; then
+              adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -E 'mResumedActivity.*dev.uitest.fixture|topResumedActivity.*dev.uitest.fixture'
+            elif [[ -n "${PARLOR_APK:-}" ]]; then
               adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -q 'mResumedActivity.*me.parlor.android\|topResumedActivity.*me.parlor.android'
             elif [[ "$RUNNER_OS" == Linux ]]; then
               adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -q 'mResumedActivity.*dev.uitest.fixture\|topResumedActivity.*dev.uitest.fixture'
             else
               xcrun simctl spawn "$PROOF_DEVICE" launchctl list | grep -q 'UIKitApplication:dev.uitest.fixture'
             fi
+      - name: Upload stock emulator configuration
+        if: always() && inputs.purpose == 'stock-android-e2e'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: stock-android-configuration
+          path: ${{ runner.temp }}/stock-android-configuration.txt
+          if-no-files-found: error
