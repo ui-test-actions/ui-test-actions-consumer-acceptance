@@ -84,7 +84,7 @@ jobs:
             adb -s emulator-5554 shell input keyevent KEYCODE_WAKEUP
             adb -s emulator-5554 shell wm dismiss-keyguard
             adb -s emulator-5554 shell input keyevent KEYCODE_HOME
-            adb -s emulator-5554 shell monkey -p com.topjohnwu.magisk -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
+            adb -s emulator-5554 shell am start -W -n com.topjohnwu.magisk/.ui.MainActivity >/dev/null 2>&1 || true
           ready: |
             adb -s emulator-5554 shell getprop sys.boot_completed | grep -q 1
       - name: Ensure the shell su policy if the interactive grant did not complete

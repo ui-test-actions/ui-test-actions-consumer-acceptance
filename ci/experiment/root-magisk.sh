@@ -174,7 +174,9 @@ verify_root() {
             fi
         done
         echo '--- Magisk app package ---'
-        adb -s "$serial" shell 'pm list packages -f com.topjohnwu.magisk; dumpsys package com.topjohnwu.magisk 2>/dev/null | grep -E "versionName|versionCode|Activity|MAIN|LAUNCHER" | head -30; cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -p com.topjohnwu.magisk 2>/dev/null' 2>/dev/null || true
+        adb -s "$serial" shell 'pm list packages -f com.topjohnwu.magisk; pm list packages -d | grep magisk || true; pm list packages -e | grep magisk || true; dumpsys package com.topjohnwu.magisk 2>/dev/null | grep -E "versionName|versionCode|Activity|MAIN|LAUNCHER|enabled=|stopped=|hidden=|suspended=" | head -40; cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -p com.topjohnwu.magisk 2>/dev/null' 2>/dev/null || true
+        echo '--- explicit Magisk activity start ---'
+        timeout 25 adb -s "$serial" shell 'am start -W -n com.topjohnwu.magisk/.ui.MainActivity' 2>&1 || true
         echo '--- /data/adb/magisk ---'
         adb -s "$serial" shell 'ls -la /data/adb/magisk 2>/dev/null | head -20' 2>/dev/null || true
         echo '--- /data/adb/modules ---'
@@ -402,7 +404,7 @@ if [[ "$phase" == 'grant' ]]; then
     adb -s "$serial" unroot >> "$evidence/grant.txt" 2>&1 || true
     adb -s "$serial" wait-for-device
     sleep 2
-    local candidate
+    candidate=""
     for candidate in $(su_candidates); do
         set +e
         timeout 20 adb -s "$serial" shell "$candidate -c id" 2>&1 | tee -a "$evidence/grant.txt"
