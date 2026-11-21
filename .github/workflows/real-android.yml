@@ -1,0 +1,49 @@
+name: Verify upstream Android editor persistence
+on:
+  workflow_dispatch:
+    inputs:
+      token_sha256:
+        description: SHA-256 digest of the external verifier's session bearer
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  editor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: a56957b05ce72ed15c0c35daad572a2add0d173e
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Boot the emulator and install the checksum-verified release
+        shell: bash
+        run: bash verification/real-apps/prepare.sh android
+      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
+        with:
+          target: android
+          device: ${{ env.REAL_APP_DEVICE }}
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: '8'
+          app-ids: net.gsantner.markor
+          launch: bash verification/real-apps/launch.sh android
+          ready: bash verification/real-apps/ready.sh android
+      - name: Verify the exact saved UTF-8 document
+        shell: bash
+        run: |
+          document=real-app-evidence/document.txt
+          adb -s "$REAL_APP_DEVICE" pull /sdcard/Documents/ui-test-actions/document.txt "$document"
+          python verification/real-apps/verify.py assert android "$document" real-app-evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ !cancelled() }}
+        with:
+          name: markor-evidence
+          path: |
+            real-app-evidence/app.json
+            real-app-evidence/result.json
+          retention-days: 7
