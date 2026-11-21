@@ -66,7 +66,7 @@ jobs:
         run: |
           work="$RUNNER_TEMP/transport-proof"
           prefix=()
-          if [[ "$MODE" == private ]]; then prefix=(sudo ip netns exec ui-peer); fi
+          if [[ "$MODE" == private ]]; then prefix=(sudo --preserve-env=PYTHONPATH ip netns exec ui-peer); fi
           (
             set +e
             "${prefix[@]}" "$(command -v python)" verification/transports/check.py "$MODE" "$work"

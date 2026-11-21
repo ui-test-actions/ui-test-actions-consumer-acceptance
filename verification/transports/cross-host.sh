@@ -63,7 +63,7 @@ case "$step" in
     observe)
         fetch "ui-session-host-$GITHUB_RUN_ATTEMPT-*" "$work/connection"
         sudo ping -n -c 2 -w 15 10.204.0.1
-        sudo --preserve-env=RUNNER_TEMP "$(command -v python)" verification/transports/check.py cross "$work" \
+        sudo --preserve-env=RUNNER_TEMP,PYTHONPATH "$(command -v python)" verification/transports/check.py cross "$work" \
             --connection "$(find "$work/connection" -name connection.json -print -quit)"
         ;;
     cleanup)

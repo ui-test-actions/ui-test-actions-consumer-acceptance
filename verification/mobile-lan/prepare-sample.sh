@@ -8,20 +8,28 @@ digest="${3:?}"
 [[ "$digest" =~ ^[a-f0-9]{64}$ ]]
 staging="$RUNNER_TEMP/mobile-lan-sample"
 mkdir -p "$staging"
-producer_workflow=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$producer" --jq \
-  'select(.event == "workflow_dispatch" and .status == "completed") | .path')
-test "$producer_workflow" = .github/workflows/mobile-lan-apps.yml
-gh run download "$producer" --repo "$GITHUB_REPOSITORY" --pattern "p2pkit-sample-$target-*" --dir "$staging"
-shopt -s nullglob
-markers=("$staging"/*/SOURCE_COMMIT)
-test "${#markers[@]}" = 1
-package=$(dirname "${markers[0]}")
+case "$target:$producer" in
+  android:44727058613|ios:44733760941) ;;
+  *) printf '%s\n' "Unsupported cached build run." >&2; exit 1 ;;
+esac
+gh release download p2pkit-fixtures --repo "$GITHUB_REPOSITORY" --pattern "$target-*" --dir "$staging"
+package="$staging"
+mv "$staging/$target-source" "$package/SOURCE_COMMIT"
+mv "$staging/$target-sha256" "$package/SHA256SUMS"
+if [[ "$target" == android ]]; then
+  mv "$staging/android-sample.apk" "$package/sample.apk"
+else
+  mv "$staging/ios-sample-app.zip" "$package/sample-app.zip"
+fi
 test "$(cat "$package/SOURCE_COMMIT")" = fd3cd74fcc82d342ee6c5a305f7ed15b0b7ed19d
 asset=sample-app.zip
 if [[ "$target" == android ]]; then asset=sample.apk; fi
-(cd "$package" && test "$(shasum -a 256 "$asset")" = "$(cat SHA256SUMS)")
+case "$target" in
+  android) expected=5526f8b958f8f86c37e818f0e766b15acee6f03564f0ad2d4ef2a514866cec8f ;;
+  ios) expected=ad1a19ae223eb83f52e3b8ce6a0408f43861784fdf1be15774f370ce71f85607 ;;
+esac
+(cd "$package" && test "$(shasum -a 256 "$asset")" = "$expected  $asset")
 if [[ "$target" == android ]]; then
-  cp "$package/sample.apk" "$staging/sample.apk"
   {
     echo LAN_DEVICE=emulator-5554
     echo LAN_APP_ID=dev.p2pkit.sample.android
