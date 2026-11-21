@@ -1,8 +1,14 @@
 name: Android experiment · runner preflight
 
 # Read-only host/SDK inspection. Every other phase is gated on this evidence.
+#
+# GitHub only accepts workflow_dispatch for workflows that exist on the default
+# branch. This experiment must not modify main, so each phase is triggered by a
+# push to its own marker file on the isolated experiment branch.
 on:
-  workflow_dispatch:
+  push:
+    branches: [experiment/integrity-root-magisk]
+    paths: [experiment/triggers/preflight]
 
 permissions:
   contents: read
