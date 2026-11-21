@@ -8,6 +8,7 @@ phase="${1:?usage: stock-baseline.sh boot|collect}"
 sdk="${ANDROID_HOME:?ANDROID_HOME must point to the Android SDK}"
 tools="$sdk/cmdline-tools/latest/bin"
 image='system-images;android-35;google_apis_playstore;x86_64'
+image_dir="$sdk/${image//;//}"
 avd='integrity-stock'
 serial='emulator-5554'
 port='5554'
@@ -30,7 +31,7 @@ collect() {
         echo "emulator_flags=-no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect -accel on -memory 4096 -cores 4 -wipe-data"
         echo "adb_version=$(adb version | head -1)"
         sed -n 's/^Pkg.Revision=/emulator_revision=/p' "$sdk/emulator/source.properties" 2>/dev/null || true
-        sed -n 's/^Pkg.Revision=/image_revision=/p' "$sdk/$image/source.properties" 2>/dev/null || true
+        sed -n 's/^Pkg.Revision=/image_revision=/p' "$image_dir/source.properties" 2>/dev/null || true
         for prop in sys.boot_completed ro.build.version.release ro.build.version.sdk \
             ro.product.cpu.abi ro.product.cpu.abilist ro.build.fingerprint ro.build.type \
             ro.build.tags ro.build.version.security_patch ro.build.version.incremental \
@@ -84,7 +85,7 @@ yes | "$tools/sdkmanager" --licenses >/dev/null 2>&1 || true
     echo "=== emulator source.properties ==="
     cat "$sdk/emulator/source.properties"
     echo "=== image source.properties ==="
-    cat "$sdk/$image/source.properties"
+    cat "$image_dir/source.properties"
     echo "=== emulator -version ==="
     "$sdk/emulator/emulator" -version 2>&1 || true
     echo "=== adb version ==="

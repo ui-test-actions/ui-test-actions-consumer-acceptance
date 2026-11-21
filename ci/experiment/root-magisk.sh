@@ -8,6 +8,7 @@ phase="${1:?usage: root-magisk.sh setup|patch|verify|module|reboot|collect}"
 sdk="${ANDROID_HOME:?ANDROID_HOME must point to the Android SDK}"
 tools="$sdk/cmdline-tools/latest/bin"
 image='system-images;android-35;google_apis;x86_64'
+image_dir="$sdk/${image//;//}"
 avd='integrity-root'
 serial='emulator-5554'
 port='5554'
@@ -17,7 +18,7 @@ rootavd_dir="${GITHUB_WORKSPACE}/rootAVD"
 rootavd_commit='613caa44371f85e1a461bc030e07ddc2d71afe32'
 magisk_version='v31.1'
 magisk_sha256='89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7'
-ramdisk="$sdk/$image/ramdisk.img"
+ramdisk="$image_dir/ramdisk.img"
 mkdir -p "$evidence" "$avd_home" "$HOME/.android"
 export ANDROID_USER_HOME="$HOME/.android"
 export ANDROID_AVD_HOME="$avd_home"
@@ -78,7 +79,7 @@ collect_props() {
         echo "magisk_requested=$magisk_version"
         echo "magisk_apk_sha256=$magisk_sha256"
         sed -n 's/^Pkg.Revision=/emulator_revision=/p' "$sdk/emulator/source.properties" 2>/dev/null || true
-        sed -n 's/^Pkg.Revision=/image_revision=/p' "$sdk/$image/source.properties" 2>/dev/null || true
+        sed -n 's/^Pkg.Revision=/image_revision=/p' "$image_dir/source.properties" 2>/dev/null || true
         for prop in sys.boot_completed ro.build.version.release ro.build.version.sdk \
             ro.product.cpu.abi ro.product.cpu.abilist ro.build.fingerprint ro.build.type \
             ro.build.tags ro.build.version.security_patch ro.product.model ro.product.device \
@@ -155,7 +156,7 @@ if [[ "$phase" == 'setup' ]]; then
         echo "=== emulator source.properties ==="
         cat "$sdk/emulator/source.properties"
         echo "=== image source.properties ==="
-        cat "$sdk/$image/source.properties"
+        cat "$image_dir/source.properties"
         echo "=== emulator -version ==="
         "$sdk/emulator/emulator" -version 2>&1 || true
         echo "=== adb version ==="
