@@ -78,6 +78,7 @@ jobs:
             adb -s emulator-5554 shell getprop sys.boot_completed | grep -q 1
       - name: Collect post-session evidence
         if: always()
+        timeout-minutes: 5
         shell: bash
         run: bash ci/experiment/stock-baseline.sh collect
       - name: Upload stock baseline evidence

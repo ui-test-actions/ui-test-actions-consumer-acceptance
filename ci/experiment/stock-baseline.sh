@@ -2,6 +2,7 @@
 # Stock Google Play emulator baseline for the integrity experiment.
 # Usage: stock-baseline.sh boot|collect
 set -euo pipefail
+trap 'status=$?; echo "EXPERIMENT_FAILURE phase=${phase:-unknown} line=${LINENO} status=${status}" | tee -a evidence/stock/failure.txt 2>/dev/null || true' ERR
 
 phase="${1:?usage: stock-baseline.sh boot|collect}"
 sdk="${ANDROID_HOME:?ANDROID_HOME must point to the Android SDK}"
@@ -36,24 +37,24 @@ collect() {
             ro.product.model ro.product.device ro.product.manufacturer ro.hardware \
             ro.kernel.qemu ro.boot.qemu ro.product.first_api_level ro.debuggable \
             ro.secure ro.boot.verifiedbootstate ro.boot.flash.locked; do
-            printf '%s=%s\n' "$prop" "$(adb -s "$serial" shell getprop "$prop" 2>/dev/null | tr -d '\r')"
+            printf '%s=%s\n' "$prop" "$(timeout 20 adb -s "$serial" shell getprop "$prop" 2>/dev/null | tr -d '\r')"
         done
-        printf 'adb_shell_identity=%s\n' "$(adb -s "$serial" shell id 2>/dev/null | tr -d '\r')"
-        printf 'adb_shell_uid=%s\n' "$(adb -s "$serial" shell id -u 2>/dev/null | tr -d '\r')"
-        printf 'user_setup_complete=%s\n' "$(adb -s "$serial" shell settings get secure user_setup_complete 2>/dev/null | tr -d '\r')"
-        printf 'device_provisioned=%s\n' "$(adb -s "$serial" shell settings get global device_provisioned 2>/dev/null | tr -d '\r')"
-        printf 'play_store_version_name=%s\n' "$(adb -s "$serial" shell dumpsys package com.android.vending 2>/dev/null | grep -m1 'versionName=' | tr -d '\r' | sed 's/^ *//')"
-        printf 'play_store_version_code=%s\n' "$(adb -s "$serial" shell dumpsys package com.android.vending 2>/dev/null | grep -m1 'versionCode=' | tr -d '\r' | sed 's/^ *//')"
-        printf 'gms_version_name=%s\n' "$(adb -s "$serial" shell dumpsys package com.google.android.gms 2>/dev/null | grep -m1 'versionName=' | tr -d '\r' | sed 's/^ *//')"
-        printf 'gms_version_code=%s\n' "$(adb -s "$serial" shell dumpsys package com.google.android.gms 2>/dev/null | grep -m1 'versionCode=' | tr -d '\r' | sed 's/^ *//')"
+        printf 'adb_shell_identity=%s\n' "$(timeout 20 adb -s "$serial" shell id 2>/dev/null | tr -d '\r')"
+        printf 'adb_shell_uid=%s\n' "$(timeout 20 adb -s "$serial" shell id -u 2>/dev/null | tr -d '\r')"
+        printf 'user_setup_complete=%s\n' "$(timeout 20 adb -s "$serial" shell settings get secure user_setup_complete 2>/dev/null | tr -d '\r')"
+        printf 'device_provisioned=%s\n' "$(timeout 20 adb -s "$serial" shell settings get global device_provisioned 2>/dev/null | tr -d '\r')"
+        printf 'play_store_version_name=%s\n' "$(timeout 20 adb -s "$serial" shell dumpsys package com.android.vending 2>/dev/null | grep -m1 'versionName=' | tr -d '\r' | sed 's/^ *//')"
+        printf 'play_store_version_code=%s\n' "$(timeout 20 adb -s "$serial" shell dumpsys package com.android.vending 2>/dev/null | grep -m1 'versionCode=' | tr -d '\r' | sed 's/^ *//')"
+        printf 'gms_version_name=%s\n' "$(timeout 20 adb -s "$serial" shell dumpsys package com.google.android.gms 2>/dev/null | grep -m1 'versionName=' | tr -d '\r' | sed 's/^ *//')"
+        printf 'gms_version_code=%s\n' "$(timeout 20 adb -s "$serial" shell dumpsys package com.google.android.gms 2>/dev/null | grep -m1 'versionCode=' | tr -d '\r' | sed 's/^ *//')"
         echo '--- pm path ---'
-        adb -s "$serial" shell pm path com.google.android.gms 2>/dev/null || true
-        adb -s "$serial" shell pm path com.android.vending 2>/dev/null || true
+        timeout 20 adb -s "$serial" shell pm path com.google.android.gms 2>/dev/null || true
+        timeout 20 adb -s "$serial" shell pm path com.android.vending 2>/dev/null || true
         echo '--- launcher packages ---'
-        adb -s "$serial" shell pm list packages 2>/dev/null | grep -Ei 'launcher|nexus' || true
+        timeout 20 adb -s "$serial" shell pm list packages 2>/dev/null | grep -Ei 'launcher|nexus' || true
         echo '--- display ---'
-        adb -s "$serial" shell wm size 2>/dev/null || true
-        adb -s "$serial" shell wm density 2>/dev/null || true
+        timeout 20 adb -s "$serial" shell wm size 2>/dev/null || true
+        timeout 20 adb -s "$serial" shell wm density 2>/dev/null || true
         echo '--- avd config ---'
         grep -E '^(hw\.(ramSize|cpu\.ncore|lcd\.(width|height|density))|disk\.dataPartition\.size|PlayStore\.enabled|tag\.id|image\.sysdir|abi\.type)' \
             "$avd_home/$avd.avd/config.ini" 2>/dev/null || true
@@ -62,12 +63,12 @@ collect() {
 
 if [[ "$phase" == 'collect' ]]; then
     collect final || true
-    adb -s "$serial" logcat -d -v threadtime > "$evidence/logcat.txt" 2>/dev/null || true
-    adb -s "$serial" shell dumpsys package com.android.vending > "$evidence/play-store-dumpsys.txt" 2>/dev/null || true
-    adb -s "$serial" shell dumpsys package com.google.android.gms > "$evidence/gms-dumpsys.txt" 2>/dev/null || true
-    adb -s "$serial" shell pm list packages > "$evidence/packages.txt" 2>/dev/null || true
-    adb -s "$serial" exec-out screencap -p > "$evidence/adb-post-session.png" 2>/dev/null || true
-    adb -s "$serial" emu kill 2>/dev/null || true
+    timeout 30 adb -s "$serial" logcat -d -v threadtime > "$evidence/logcat.txt" 2>/dev/null || true
+    timeout 20 adb -s "$serial" shell dumpsys package com.android.vending > "$evidence/play-store-dumpsys.txt" 2>/dev/null || true
+    timeout 20 adb -s "$serial" shell dumpsys package com.google.android.gms > "$evidence/gms-dumpsys.txt" 2>/dev/null || true
+    timeout 20 adb -s "$serial" shell pm list packages > "$evidence/packages.txt" 2>/dev/null || true
+    timeout 20 adb -s "$serial" exec-out screencap -p > "$evidence/adb-post-session.png" 2>/dev/null || true
+    timeout 10 adb -s "$serial" emu kill 2>/dev/null || true
     exit 0
 fi
 
@@ -154,8 +155,9 @@ done
 adb -s "$serial" shell input keyevent KEYCODE_HOME || true
 sleep 3
 
-collect initial
-adb -s "$serial" exec-out screencap -p > "$evidence/adb-home.png"
+collect initial || true
+adb -s "$serial" wait-for-device || true
+timeout 30 adb -s "$serial" exec-out screencap -p > "$evidence/adb-home.png" || true
 printf 'FIXTURE_APK=%s\n' "${RUNNER_TEMP}/integrity-fixture/fixture.apk" >> "$GITHUB_ENV"
 printf 'STOCK_SERIAL=%s\n' "$serial" >> "$GITHUB_ENV"
 echo "stock_boot=complete"

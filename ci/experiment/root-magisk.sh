@@ -2,6 +2,7 @@
 # Disposable AOSP rootAVD + Magisk validation for the integrity experiment.
 # Usage: root-magisk.sh setup|patch|verify|module|reboot|collect
 set -euo pipefail
+trap 'status=$?; echo "EXPERIMENT_FAILURE phase=${phase:-unknown} line=${LINENO} status=${status}" | tee -a evidence/root/failure.txt 2>/dev/null || true' ERR
 
 phase="${1:?usage: root-magisk.sh setup|patch|verify|module|reboot|collect}"
 sdk="${ANDROID_HOME:?ANDROID_HOME must point to the Android SDK}"
@@ -83,17 +84,17 @@ collect_props() {
             ro.build.tags ro.build.version.security_patch ro.product.model ro.product.device \
             ro.product.manufacturer ro.hardware ro.kernel.qemu ro.boot.qemu ro.debuggable \
             ro.secure ro.boot.verifiedbootstate ro.boot.flash.locked ro.crypto.state; do
-            printf '%s=%s\n' "$prop" "$(adb -s "$serial" shell getprop "$prop" 2>/dev/null | tr -d '\r')"
+            printf '%s=%s\n' "$prop" "$(timeout 20 adb -s "$serial" shell getprop "$prop" 2>/dev/null | tr -d '\r')"
         done
-        printf 'adb_shell_identity=%s\n' "$(adb -s "$serial" shell id 2>/dev/null | tr -d '\r')"
-        printf 'adb_shell_uid=%s\n' "$(adb -s "$serial" shell id -u 2>/dev/null | tr -d '\r')"
+        printf 'adb_shell_identity=%s\n' "$(timeout 20 adb -s "$serial" shell id 2>/dev/null | tr -d '\r')"
+        printf 'adb_shell_uid=%s\n' "$(timeout 20 adb -s "$serial" shell id -u 2>/dev/null | tr -d '\r')"
         echo '--- display ---'
-        adb -s "$serial" shell wm size 2>/dev/null || true
-        adb -s "$serial" shell wm density 2>/dev/null || true
+        timeout 20 adb -s "$serial" shell wm size 2>/dev/null || true
+        timeout 20 adb -s "$serial" shell wm density 2>/dev/null || true
         echo '--- magisk packages ---'
-        adb -s "$serial" shell pm list packages 2>/dev/null | grep -i magisk || true
+        timeout 20 adb -s "$serial" shell pm list packages 2>/dev/null | grep -i magisk || true
         echo '--- network interfaces ---'
-        adb -s "$serial" shell ip addr 2>/dev/null || true
+        timeout 20 adb -s "$serial" shell ip addr 2>/dev/null || true
         echo '--- avd config ---'
         grep -E '^(hw\.(ramSize|cpu\.ncore|lcd\.(width|height|density))|disk\.dataPartition\.size|PlayStore\.enabled|tag\.id|image\.sysdir|abi\.type)' \
             "$avd_home/$avd.avd/config.ini" 2>/dev/null || true
@@ -431,9 +432,9 @@ if [[ "$phase" == 'collect' ]]; then
         echo "rootavd_commit=$(git -C "$rootavd_dir" rev-parse HEAD 2>/dev/null || echo missing)"
         echo "magisk_apk_sha256=$(sha256sum "$rootavd_dir/Magisk.zip" 2>/dev/null | awk '{print $1}' || echo missing)"
     } >> "$evidence/rootavd-version.txt"
-    adb -s "$serial" logcat -d -b crash -v threadtime > "$evidence/crash-log.txt" 2>/dev/null || true
-    adb -s "$serial" exec-out screencap -p > "$evidence/adb-final.png" 2>/dev/null || true
-    adb -s "$serial" emu kill >/dev/null 2>&1 || true
+    timeout 30 adb -s "$serial" logcat -d -b crash -v threadtime > "$evidence/crash-log.txt" 2>/dev/null || true
+    timeout 20 adb -s "$serial" exec-out screencap -p > "$evidence/adb-final.png" 2>/dev/null || true
+    timeout 10 adb -s "$serial" emu kill >/dev/null 2>&1 || true
     log "collect complete"
     exit 0
 fi
