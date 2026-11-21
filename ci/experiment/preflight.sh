@@ -60,7 +60,16 @@ mkdir -p "$out"
         grep -E 'system-images;android-(35|34);(google_apis|google_apis_playstore|aosp_atd);x86_64' || true
 } | tee "$out/sdk-versions.txt"
 
+# The hosted image does not preinstall the emulator package, and /dev/kvm is
+# group-owned by kvm. The documented GitHub Actions setup grants the runner user
+# access with chmod before booting an accelerated AVD.
+sudo chmod a+rw /dev/kvm
+"${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager" --install emulator >/dev/null
+
 {
+    echo "=== kvm permissions after documented chmod ==="
+    ls -l /dev/kvm
+    echo
     echo "=== emulator -version (before libpulse check) ==="
     timeout 30 "${ANDROID_HOME}/emulator/emulator" -version 2>&1 || echo "emulator_version_exit=$?"
     echo
@@ -87,6 +96,9 @@ fi
     echo "=== emulator accel-check ==="
     timeout 30 "${ANDROID_HOME}/emulator/emulator" -accel-check 2>&1 || echo "accel_check_exit=$?"
 } | tee "$out/acceleration.txt"
+
+# Record the installed emulator package after install.
+{ echo "=== emulator package ==="; "${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager" --list_installed 2>&1 | grep -E "emulator|system-images"; } | tee -a "$out/sdk-versions.txt"
 
 # The emulator creates its AVD home lazily. Record the resolved locations so
 # the boot logs can be compared across jobs.
