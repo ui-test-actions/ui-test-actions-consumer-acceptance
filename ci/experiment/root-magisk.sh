@@ -23,6 +23,9 @@ mkdir -p "$evidence" "$avd_home" "$HOME/.android"
 export ANDROID_USER_HOME="$HOME/.android"
 export ANDROID_AVD_HOME="$avd_home"
 export PATH="$sdk/platform-tools:$sdk/emulator:$PATH"
+if [[ -n "${GITHUB_PATH:-}" ]]; then
+    printf '%s\n' "$sdk/platform-tools" "$sdk/emulator" >> "$GITHUB_PATH"
+fi
 
 log() { printf '%s %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*" | tee -a "$evidence/run.log"; }
 
