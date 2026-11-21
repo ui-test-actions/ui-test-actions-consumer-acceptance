@@ -1,0 +1,9 @@
+{
+  "accepted_unique_ids": 65536,
+  "retained_responses": 64,
+  "cached_reuses_after_saturation": 10000,
+  "memory_at_saturation_bytes": 9686530,
+  "memory_after_reuses_bytes": 9686594,
+  "traced_peak_bytes": 9688003,
+  "elapsed_sec": 7.143
+}

@@ -1,0 +1,35 @@
+{
+  "runner_ready_utc": "2026-11-21T04:06:39.3021823Z",
+  "runner_closed_utc": "2026-11-21T05:06:39.4854685Z",
+  "runner_elapsed_seconds": 3600.183,
+  "last_live": {
+    "at": "2026-11-21T05:06:27.510+00:00",
+    "http": 200,
+    "seconds_remaining": 1,
+    "deadline_estimate": 1795237588.2085218
+  },
+  "first_terminal": {
+    "at": "2026-11-21T05:06:29.846+00:00",
+    "http": 530
+  },
+  "late_mutation": {
+    "observed_at": "2026-11-21T05:05:38.231+00:00",
+    "seconds_remaining": 51,
+    "expected_app_label": "AFTER \u00b7 Hour end",
+    "label_region": [
+      85,
+      112,
+      605,
+      165
+    ],
+    "change_bounds": [
+      1,
+      10,
+      520,
+      42
+    ]
+  },
+  "soak_rounds": 12,
+  "soak_authenticated_reads": 576,
+  "soak_identified_observations": 384
+}

@@ -1,0 +1,9 @@
+{
+  "process_after_crash": {
+    "id": "crash-fixture",
+    "running": false,
+    "exit_code": 17
+  },
+  "relaunch_screen_verified": true,
+  "post_relaunch_native_action_verified": true
+}

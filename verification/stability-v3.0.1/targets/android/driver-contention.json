@@ -1,0 +1,12 @@
+{
+  "legacy_busy": [
+    429,
+    429,
+    429,
+    429,
+    429,
+    429
+  ],
+  "metadata_http": 200,
+  "wait": "condition_timeout"
+}

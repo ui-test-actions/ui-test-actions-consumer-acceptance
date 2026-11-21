@@ -1,0 +1,20 @@
+{
+  "targets": [
+    "linux",
+    "windows"
+  ],
+  "windows_tree_nodes": 5,
+  "cross_origin": 403,
+  "anonymous": 401,
+  "workflow_results": [
+    "passed",
+    "diverged",
+    "passed"
+  ],
+  "gif": true,
+  "live_pointer_pixel": [
+    23,
+    99,
+    59
+  ]
+}

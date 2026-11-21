@@ -1,0 +1,7 @@
+{
+  "stalled_local_connections": 24,
+  "additional_worker_admitted": false,
+  "released_connections": 12,
+  "recovery_ms": 13.886,
+  "same_session_after_recovery": true
+}

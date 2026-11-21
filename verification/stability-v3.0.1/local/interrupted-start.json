@@ -1,0 +1,13 @@
+{
+  "baseline": {
+    "phase": "v3.0.0",
+    "exit_code": -15,
+    "stop_marker": false
+  },
+  "candidate": {
+    "phase": "v3.0.1",
+    "exit_code": 130,
+    "stop_marker": true
+  },
+  "foreground_wrapper_signal": "SIGTERM"
+}

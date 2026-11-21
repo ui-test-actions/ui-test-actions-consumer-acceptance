@@ -1,0 +1,16 @@
+{
+  "run_id": 44865862051,
+  "source_run": 44848744079,
+  "source_commit": "0811b7a2dc359a7bba0bc08c942a0ed237e0031f",
+  "version": "1.0.0",
+  "package": "me.parlor.android",
+  "source_aab_sha256": "c8032952722e092ea9a3b44bcaacd8bba5e354795503513b5ca5f7071ca7194f",
+  "device_network": "airplane mode, Wi-Fi and cellular data disabled before install",
+  "story": "ليلة العاصفة في بيت الحلبي",
+  "mode": "Classic Vote",
+  "players": 6,
+  "all_entered_player_names_observed_exactly": true,
+  "case_intro_rendered": true,
+  "first_how_to_play_card_rendered": true,
+  "full_private_turn_handoff": "not reached before lease expiry"
+}

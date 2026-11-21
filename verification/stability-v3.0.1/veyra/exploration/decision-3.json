@@ -1,0 +1,5 @@
+{
+  "finish": true,
+  "summary": "The visible Arabic settings card changed to the released dark-theme color and the mirrored navigation stayed on the right.",
+  "expect": {"pixel":{"x":250,"y":548,"rgb":[20,18,23],"tolerance":4}}
+}

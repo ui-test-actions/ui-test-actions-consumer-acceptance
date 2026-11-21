@@ -1,0 +1,322 @@
+{
+  "action_pin": "0c818c5d72e8c30c59bd1287c330a40392bf8e89",
+  "case_results": {
+    "android": {
+      "run_id": 44864410954,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864410954",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": "2026-11-21T04:08:00.3005045Z",
+      "runner_closed": "2026-11-21T04:24:00.7417226Z",
+      "runner_lifetime_seconds": 960.441
+    },
+    "appium-android": {
+      "run_id": 44866101847,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44866101847",
+      "workflow_sha": "087dc1b4ff78debe21956e54273358f89ba51b45",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "android",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "appium-ios": {
+      "run_id": 44866105078,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44866105078",
+      "workflow_sha": "087dc1b4ff78debe21956e54273358f89ba51b45",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "ios",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "fallback": {
+      "run_id": 44864419457,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864419457",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "desktop (fallback)",
+          "conclusion": "success",
+          "cleanup": []
+        },
+        {
+          "name": "desktop (local)",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "freeze-linux": {
+      "run_id": 44867402285,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44867402285",
+      "workflow_sha": "45011f43fa3816cc9e62f336cb4352a9d2190f46",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "freeze-macos": {
+      "run_id": 44867402170,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44867402170",
+      "workflow_sha": "45011f43fa3816cc9e62f336cb4352a9d2190f46",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "freeze-windows": {
+      "run_id": 44867402215,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44867402215",
+      "workflow_sha": "45011f43fa3816cc9e62f336cb4352a9d2190f46",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "ios": {
+      "run_id": 44864410688,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864410688",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": "2026-11-21T04:11:40.6323900Z",
+      "runner_closed": "2026-11-21T04:27:40.8390210Z",
+      "runner_lifetime_seconds": 960.207
+    },
+    "linux": {
+      "run_id": 44864410952,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864410952",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": "2026-11-21T04:06:39.3021823Z",
+      "runner_closed": "2026-11-21T05:06:39.4854685Z",
+      "runner_lifetime_seconds": 3600.183
+    },
+    "macos": {
+      "run_id": 44864410955,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864410955",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": "2026-11-21T04:07:05.3949210Z",
+      "runner_closed": "2026-11-21T04:23:06.2835800Z",
+      "runner_lifetime_seconds": 960.889
+    },
+    "p2p": {
+      "run_id": 44864419511,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864419511",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "pair (android, ubuntu-24.04)",
+          "conclusion": "success",
+          "cleanup": [
+            "success"
+          ]
+        },
+        {
+          "name": "pair (ios, macos-26)",
+          "conclusion": "success",
+          "cleanup": [
+            "success"
+          ]
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "parlor": {
+      "run_id": 44865862051,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44865862051",
+      "workflow_sha": "e47f097e119812b64c898c274d39fd70dd78340f",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": "2026-11-21T04:25:25.4238520Z",
+      "runner_closed": "2026-11-21T04:35:26.3069328Z",
+      "runner_lifetime_seconds": 600.883
+    },
+    "quick-exit-r2": {
+      "run_id": 44865963815,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44865963815",
+      "workflow_sha": "cb4e802cfccb25bf3951c45a89803e0757c19943",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "failure",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "quick-exit": {
+      "run_id": 44865638776,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44865638776",
+      "workflow_sha": "d22573ad6fd05cc3cb237c5e8a45ecde6daeb26d",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "failure",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "windows": {
+      "run_id": 44864411227,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864411227",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "cancelled",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "cancelled",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "wireguard": {
+      "run_id": 44864419586,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44864419586",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "peer",
+          "conclusion": "success",
+          "cleanup": []
+        },
+        {
+          "name": "host",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "regression": {
+      "run_id": 44864317894,
+      "url": "https://github.com/ui-test-actions/ui-test-actions/actions/runs/44864317894",
+      "workflow_sha": "0c818c5d72e8c30c59bd1287c330a40392bf8e89",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "tests (windows-2025)",
+          "conclusion": "success",
+          "cleanup": []
+        },
+        {
+          "name": "tests (ubuntu-24.04)",
+          "conclusion": "success",
+          "cleanup": []
+        },
+        {
+          "name": "tests (macos-15)",
+          "conclusion": "success",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    },
+    "invalid-config": {
+      "run_id": 44865315897,
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44865315897",
+      "workflow_sha": "d9ace5053e1ed80e834bb7c1f12584c2f458fe51",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "interactive",
+          "conclusion": "failure",
+          "cleanup": []
+        }
+      ],
+      "runner_ready": null,
+      "runner_closed": null,
+      "runner_lifetime_seconds": null
+    }
+  }
+}

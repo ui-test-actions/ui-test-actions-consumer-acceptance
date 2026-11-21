@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "source_commit": "3137353853d646b66e5d9a249845d5618ab93555",
+  "app_with_frozen_ui_state": "T",
+  "restart_seconds_until_visual_match": 7.116,
+  "same_control_session": true,
+  "separate_app_process": true,
+  "playlist_surface_pixels_equal": true,
+  "memory_before_bytes": 434675712,
+  "memory_after_bytes": 441917440
+}

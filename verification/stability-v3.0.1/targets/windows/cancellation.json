@@ -1,0 +1,70 @@
+{
+  "requested_at": "2026-11-21T04:19:06.825+00:00",
+  "run_id": 44864411227,
+  "first_terminal": {
+    "at": "2026-11-21T04:19:17.728+00:00",
+    "http": 530,
+    "seconds_from_submission": 10.904
+  },
+  "samples": [
+    {
+      "at": "2026-11-21T04:19:07.383+00:00",
+      "http": 200,
+      "seconds_remaining": 226,
+      "deadline_estimate": 1795234973.1060743,
+      "seconds_from_submission": 0.559
+    },
+    {
+      "at": "2026-11-21T04:19:08.856+00:00",
+      "http": 200,
+      "seconds_remaining": 224,
+      "deadline_estimate": 1795234972.5709803,
+      "seconds_from_submission": 2.032
+    },
+    {
+      "at": "2026-11-21T04:19:10.348+00:00",
+      "http": 200,
+      "seconds_remaining": 223,
+      "deadline_estimate": 1795234973.0530581,
+      "seconds_from_submission": 3.524
+    },
+    {
+      "at": "2026-11-21T04:19:11.862+00:00",
+      "http": 200,
+      "seconds_remaining": 221,
+      "deadline_estimate": 1795234972.5559793,
+      "seconds_from_submission": 5.038
+    },
+    {
+      "at": "2026-11-21T04:19:13.312+00:00",
+      "http": 200,
+      "seconds_remaining": 220,
+      "deadline_estimate": 1795234973.0383387,
+      "seconds_from_submission": 6.488
+    },
+    {
+      "at": "2026-11-21T04:19:14.769+00:00",
+      "http": 200,
+      "seconds_remaining": 218,
+      "deadline_estimate": 1795234972.491838,
+      "seconds_from_submission": 7.945
+    },
+    {
+      "at": "2026-11-21T04:19:16.230+00:00",
+      "http": 200,
+      "seconds_remaining": 217,
+      "deadline_estimate": 1795234972.9507022,
+      "seconds_from_submission": 9.406
+    },
+    {
+      "at": "2026-11-21T04:19:17.728+00:00",
+      "http": 530,
+      "seconds_from_submission": 10.904
+    },
+    {
+      "at": "2026-11-21T04:19:19.224+00:00",
+      "http": 530,
+      "seconds_from_submission": 12.4
+    }
+  ]
+}

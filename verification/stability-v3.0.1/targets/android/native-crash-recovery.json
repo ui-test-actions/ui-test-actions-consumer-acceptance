@@ -1,0 +1,14 @@
+{
+  "process_after_crash": {
+    "id": "dev.uitest.fixture",
+    "running": false,
+    "source": "android:dumpsys",
+    "last_os_exit": {
+      "reason_code": 4,
+      "reason": "APP CRASH(EXCEPTION)"
+    },
+    "sample_monotonic_ms": 817881.974
+  },
+  "relaunch_screen_verified": true,
+  "post_relaunch_native_action_verified": true
+}

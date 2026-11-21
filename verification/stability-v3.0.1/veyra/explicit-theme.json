@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "target": "linux",
+  "inputs": [],
+  "steps": [
+    {
+      "ms": 72,
+      "action": {
+        "command": "visual.sample",
+        "params": {
+          "region": {
+            "x": 244,
+            "y": 544,
+            "width": 12,
+            "height": 9
+          }
+        }
+      },
+      "save_as": "frame_1"
+    },
+    {
+      "ms": 91,
+      "action": {
+        "command": "pointer.click",
+        "params": {
+          "x": 733,
+          "y": 583
+        }
+      },
+      "display": [
+        1280,
+        900
+      ],
+      "expect": {
+        "pixel": {
+          "x": 250,
+          "y": 548,
+          "rgb": [
+            20,
+            18,
+            23
+          ],
+          "tolerance": 4
+        }
+      }
+    },
+    {
+      "ms": 513,
+      "action": {
+        "command": "visual.wait",
+        "params": {
+          "baseline": "frame_1",
+          "condition": "changed"
+        }
+      }
+    }
+  ]
+}

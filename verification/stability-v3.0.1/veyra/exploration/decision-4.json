@@ -1,0 +1,6 @@
+{
+  "summary": "Select the Arabic Dark option in the mirrored appearance settings",
+  "before": {"pixel":{"x":250,"y":548,"rgb":[255,255,255],"tolerance":2}},
+  "action": {"command":"pointer.click","params":{"x":733,"y":583}},
+  "expect": {"pixel":{"x":250,"y":548,"rgb":[20,18,23],"tolerance":4},"timeout_ms":4000}
+}

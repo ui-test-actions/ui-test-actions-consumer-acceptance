@@ -1,0 +1,20 @@
+{
+  "observed_at": "2026-11-21T04:08:11+00:00",
+  "target": "android",
+  "api_version": 2,
+  "anonymous_status": 401,
+  "reconnected": true,
+  "batch_steps": 3,
+  "batch_replay_equal": true,
+  "before_color": [
+    25,
+    43,
+    66
+  ],
+  "after_color": [
+    23,
+    99,
+    59
+  ],
+  "fixture_text": "Stress · العربية ١٢٣ 👩🏽‍💻"
+}

@@ -1,0 +1,92 @@
+{
+  "protocol": "2025-11-25",
+  "tools": [
+    "ui_action",
+    "ui_assert",
+    "ui_batch",
+    "ui_capabilities",
+    "ui_coordinate",
+    "ui_inspect",
+    "ui_screenshot",
+    "ui_sessions",
+    "ui_workflow"
+  ],
+  "devices": [
+    {
+      "device": "linux",
+      "target": "linux",
+      "seconds_remaining": 3152,
+      "available": true
+    },
+    {
+      "device": "windows",
+      "target": "windows",
+      "seconds_remaining": 536,
+      "available": true
+    }
+  ],
+  "linux_workflow": {
+    "version": 1,
+    "status": "passed",
+    "steps": [
+      {
+        "step": 1,
+        "stage": "complete",
+        "operation": "pointer.click",
+        "client_action_ms": 582.346,
+        "client_assertion_ms": 868.39,
+        "client_action_to_expectation_ms": 1450.807
+      }
+    ],
+    "target": "linux"
+  },
+  "cross_device": {
+    "version": 1,
+    "status": "passed",
+    "devices": {
+      "linux": "linux",
+      "windows": "windows"
+    },
+    "stages": [
+      {
+        "name": "Verify the two actual clipboards agree",
+        "status": "passed",
+        "devices": {
+          "linux": {
+            "status": "passed",
+            "elapsed_ms": 568
+          },
+          "windows": {
+            "status": "passed",
+            "elapsed_ms": 534
+          }
+        },
+        "checks": [
+          {
+            "bindings": [
+              "linux_clipboard",
+              "expected"
+            ],
+            "equal": true
+          },
+          {
+            "bindings": [
+              "windows_clipboard",
+              "expected"
+            ],
+            "equal": true
+          }
+        ],
+        "captured": [
+          "linux_clipboard",
+          "windows_clipboard"
+        ]
+      }
+    ]
+  },
+  "unknown_action": {
+    "code": "unknown_command",
+    "http_status": 404,
+    "message": "The runner returned HTTP 404 (unknown_command)."
+  }
+}

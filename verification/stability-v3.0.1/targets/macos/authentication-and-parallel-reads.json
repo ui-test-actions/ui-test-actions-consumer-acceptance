@@ -1,0 +1,7 @@
+{
+  "anonymous": 401,
+  "wrong_bearer": 401,
+  "wrong_session": 409,
+  "clients": 8,
+  "same_session_reads": 96
+}

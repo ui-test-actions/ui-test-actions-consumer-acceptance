@@ -1,0 +1,10 @@
+{
+  "process_after_crash": {
+    "id": "dev.uitest.fixture",
+    "running": false,
+    "source": "simulator:launchctl",
+    "sample_monotonic_ms": 1603261.842
+  },
+  "relaunch_screen_verified": true,
+  "post_relaunch_native_action_verified": true
+}

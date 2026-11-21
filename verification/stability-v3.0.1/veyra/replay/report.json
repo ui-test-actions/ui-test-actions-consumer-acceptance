@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "status": "passed",
+  "steps": [
+    {
+      "step": 1,
+      "stage": "complete",
+      "operation": "visual.sample",
+      "client_action_ms": 68.215
+    },
+    {
+      "step": 2,
+      "stage": "complete",
+      "operation": "pointer.click",
+      "client_action_ms": 17.886,
+      "client_assertion_ms": 373.212,
+      "client_action_to_expectation_ms": 391.122
+    },
+    {
+      "step": 3,
+      "stage": "complete",
+      "operation": "visual.wait",
+      "client_action_ms": 69.309
+    }
+  ],
+  "target": "linux"
+}

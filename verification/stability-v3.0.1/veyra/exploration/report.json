@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "objective": "Switch Veyra from system light to dark while its Arabic RTL view is active, then verify when the layout and appearance have settled.",
+  "status": "passed",
+  "steps": [
+    {
+      "number": 1,
+      "before": "9cc06abf429cb8a00ca1",
+      "plan": {
+        "summary": "Select the Arabic Dark option in the mirrored appearance settings",
+        "before": {
+          "pixel": {
+            "x": 250,
+            "y": 548,
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "tolerance": 2
+          }
+        },
+        "action": {
+          "command": "pointer.click",
+          "params": {
+            "x": 733,
+            "y": 583
+          }
+        },
+        "expect": {
+          "pixel": {
+            "x": 250,
+            "y": 548,
+            "rgb": [
+              20,
+              18,
+              23
+            ],
+            "tolerance": 4
+          },
+          "timeout_ms": 4000
+        }
+      },
+      "outcome": "passed",
+      "after": "1a47f4e2b2c62787f81c"
+    },
+    {
+      "number": 2,
+      "before": "1a47f4e2b2c62787f81c",
+      "plan": {
+        "finish": true,
+        "summary": "The visible Arabic settings card changed to the released dark-theme color and the mirrored navigation stayed on the right.",
+        "expect": {
+          "pixel": {
+            "x": 250,
+            "y": 548,
+            "rgb": [
+              20,
+              18,
+              23
+            ],
+            "tolerance": 4
+          }
+        }
+      },
+      "outcome": "finished"
+    }
+  ],
+  "states": {
+    "9cc06abf429cb8a00ca1": {
+      "visits": 1,
+      "first": "initial.png",
+      "visible_nodes": 0
+    },
+    "1a47f4e2b2c62787f81c": {
+      "visits": 1,
+      "first": "step-001.png",
+      "visible_nodes": 0
+    }
+  },
+  "transitions": [
+    {
+      "step": 1,
+      "from": "9cc06abf429cb8a00ca1",
+      "to": "1a47f4e2b2c62787f81c"
+    }
+  ],
+  "target": "linux"
+}
