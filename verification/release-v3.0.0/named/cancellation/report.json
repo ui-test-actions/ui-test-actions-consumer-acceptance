@@ -1,0 +1,133 @@
+{
+  "run": 44851468937,
+  "mode": "cancellation",
+  "opening": {
+    "at": "2026-11-21T01:40:38.189+00:00",
+    "http": 200,
+    "remaining": 279,
+    "milliseconds": 561
+  },
+  "access": {
+    "missing": {
+      "/": 403,
+      "/v1/session": 403
+    },
+    "invalid": {
+      "/": 401,
+      "/v1/session": 401
+    }
+  },
+  "another_access_application_http": 403,
+  "wrong_session_http": 409,
+  "journey": {
+    "transport": "cloudflare-named",
+    "target": "linux",
+    "initial_seconds_remaining": 285,
+    "before_pixel": [
+      25,
+      43,
+      66
+    ],
+    "after_pixel": [
+      23,
+      99,
+      59
+    ],
+    "anonymous_http": 401,
+    "wrong_bearer_http": 401,
+    "reconnected": true,
+    "replayed_request_equal": true,
+    "unpinned_tls_rejected": false,
+    "wrong_host_http": null,
+    "image_sha256": {
+      "before.png": "8d1baf41fd65e69407de379a2e98d4170eb4958f8f6874d4d2f8dd70529fa31f",
+      "after.png": "23ca0a9a1ff664ca82c5e29080a237a6825d1f91b4f1356b766bcbb1f194e3be"
+    }
+  },
+  "cancellation_requested_at": "2026-11-21T01:40:38.750+00:00",
+  "samples": [
+    {
+      "at": "2026-11-21T01:40:38.751+00:00",
+      "http": 200,
+      "remaining": 278,
+      "milliseconds": 551,
+      "seconds_from_cancellation": 0.552
+    },
+    {
+      "at": "2026-11-21T01:40:40.302+00:00",
+      "http": 200,
+      "remaining": 277,
+      "milliseconds": 538,
+      "seconds_from_cancellation": 2.09
+    },
+    {
+      "at": "2026-11-21T01:40:41.840+00:00",
+      "http": 200,
+      "remaining": 275,
+      "milliseconds": 614,
+      "seconds_from_cancellation": 3.705
+    },
+    {
+      "at": "2026-11-21T01:40:43.455+00:00",
+      "http": 200,
+      "remaining": 274,
+      "milliseconds": 549,
+      "seconds_from_cancellation": 5.254
+    },
+    {
+      "at": "2026-11-21T01:40:45.005+00:00",
+      "http": 200,
+      "remaining": 272,
+      "milliseconds": 573,
+      "seconds_from_cancellation": 6.828
+    },
+    {
+      "at": "2026-11-21T01:40:46.578+00:00",
+      "http": 200,
+      "remaining": 270,
+      "milliseconds": 551,
+      "seconds_from_cancellation": 8.379
+    },
+    {
+      "at": "2026-11-21T01:40:48.129+00:00",
+      "http": 200,
+      "remaining": 269,
+      "milliseconds": 551,
+      "seconds_from_cancellation": 9.93
+    },
+    {
+      "at": "2026-11-21T01:40:49.680+00:00",
+      "http": 200,
+      "remaining": 267,
+      "milliseconds": 539,
+      "seconds_from_cancellation": 11.469
+    },
+    {
+      "at": "2026-11-21T01:40:51.219+00:00",
+      "http": 200,
+      "remaining": 266,
+      "milliseconds": 602,
+      "seconds_from_cancellation": 13.071
+    },
+    {
+      "at": "2026-11-21T01:40:52.821+00:00",
+      "http": 200,
+      "remaining": 264,
+      "milliseconds": 540,
+      "seconds_from_cancellation": 14.611
+    },
+    {
+      "at": "2026-11-21T01:40:54.361+00:00",
+      "http": 502,
+      "milliseconds": 591,
+      "seconds_from_cancellation": 16.203
+    },
+    {
+      "at": "2026-11-21T01:40:55.953+00:00",
+      "http": 502,
+      "milliseconds": 544,
+      "seconds_from_cancellation": 17.747
+    }
+  ],
+  "passed": true
+}

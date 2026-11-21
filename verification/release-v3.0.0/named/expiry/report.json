@@ -1,0 +1,396 @@
+{
+  "run": 44850813196,
+  "mode": "expiry",
+  "opening": {
+    "at": "2026-11-21T01:34:05.442+00:00",
+    "http": 200,
+    "remaining": 277,
+    "milliseconds": 669
+  },
+  "access": {
+    "missing": {
+      "/": 403,
+      "/v1/session": 403
+    },
+    "invalid": {
+      "/": 401,
+      "/v1/session": 401
+    }
+  },
+  "another_access_application_http": 403,
+  "wrong_session_http": 409,
+  "journey": {
+    "transport": "cloudflare-named",
+    "target": "linux",
+    "initial_seconds_remaining": 284,
+    "before_pixel": [
+      25,
+      43,
+      66
+    ],
+    "after_pixel": [
+      23,
+      99,
+      59
+    ],
+    "anonymous_http": 401,
+    "wrong_bearer_http": 401,
+    "reconnected": true,
+    "replayed_request_equal": true,
+    "unpinned_tls_rejected": false,
+    "wrong_host_http": null,
+    "image_sha256": {
+      "before.png": "cd21d75b0789667fa087a875e89f3897588008f4dd256686af710ab6582c01d7",
+      "after.png": "23ca0a9a1ff664ca82c5e29080a237a6825d1f91b4f1356b766bcbb1f194e3be"
+    }
+  },
+  "samples": [
+    {
+      "at": "2026-11-21T01:34:06.111+00:00",
+      "http": 200,
+      "remaining": 276,
+      "milliseconds": 690
+    },
+    {
+      "at": "2026-11-21T01:34:11.801+00:00",
+      "http": 200,
+      "remaining": 271,
+      "milliseconds": 584
+    },
+    {
+      "at": "2026-11-21T01:34:17.385+00:00",
+      "http": 200,
+      "remaining": 265,
+      "milliseconds": 601
+    },
+    {
+      "at": "2026-11-21T01:34:22.986+00:00",
+      "http": 200,
+      "remaining": 259,
+      "milliseconds": 574
+    },
+    {
+      "at": "2026-11-21T01:34:28.561+00:00",
+      "http": 200,
+      "remaining": 254,
+      "milliseconds": 701
+    },
+    {
+      "at": "2026-11-21T01:34:34.262+00:00",
+      "http": 200,
+      "remaining": 248,
+      "milliseconds": 592
+    },
+    {
+      "at": "2026-11-21T01:34:39.854+00:00",
+      "http": 200,
+      "remaining": 243,
+      "milliseconds": 574
+    },
+    {
+      "at": "2026-11-21T01:34:45.429+00:00",
+      "http": 200,
+      "remaining": 237,
+      "milliseconds": 584
+    },
+    {
+      "at": "2026-11-21T01:34:51.013+00:00",
+      "http": 200,
+      "remaining": 231,
+      "milliseconds": 577
+    },
+    {
+      "at": "2026-11-21T01:34:56.590+00:00",
+      "http": 200,
+      "remaining": 226,
+      "milliseconds": 640
+    },
+    {
+      "at": "2026-11-21T01:35:02.230+00:00",
+      "http": 200,
+      "remaining": 220,
+      "milliseconds": 602
+    },
+    {
+      "at": "2026-11-21T01:35:07.832+00:00",
+      "http": 200,
+      "remaining": 215,
+      "milliseconds": 594
+    },
+    {
+      "at": "2026-11-21T01:35:13.427+00:00",
+      "http": 200,
+      "remaining": 209,
+      "milliseconds": 821
+    },
+    {
+      "at": "2026-11-21T01:35:19.248+00:00",
+      "http": 200,
+      "remaining": 203,
+      "milliseconds": 597
+    },
+    {
+      "at": "2026-11-21T01:35:24.845+00:00",
+      "http": 200,
+      "remaining": 198,
+      "milliseconds": 650
+    },
+    {
+      "at": "2026-11-21T01:35:30.496+00:00",
+      "http": 200,
+      "remaining": 192,
+      "milliseconds": 633
+    },
+    {
+      "at": "2026-11-21T01:35:36.129+00:00",
+      "http": 200,
+      "remaining": 186,
+      "milliseconds": 599
+    },
+    {
+      "at": "2026-11-21T01:35:41.729+00:00",
+      "http": 200,
+      "remaining": 181,
+      "milliseconds": 570
+    },
+    {
+      "at": "2026-11-21T01:35:47.299+00:00",
+      "http": 200,
+      "remaining": 175,
+      "milliseconds": 607
+    },
+    {
+      "at": "2026-11-21T01:35:52.906+00:00",
+      "http": 200,
+      "remaining": 169,
+      "milliseconds": 616
+    },
+    {
+      "at": "2026-11-21T01:35:58.527+00:00",
+      "http": 200,
+      "remaining": 163,
+      "milliseconds": 1897
+    },
+    {
+      "at": "2026-11-21T01:36:05.421+00:00",
+      "http": 200,
+      "remaining": 157,
+      "milliseconds": 756
+    },
+    {
+      "at": "2026-11-21T01:36:11.177+00:00",
+      "http": 200,
+      "remaining": 151,
+      "milliseconds": 610
+    },
+    {
+      "at": "2026-11-21T01:36:16.787+00:00",
+      "http": 200,
+      "remaining": 146,
+      "milliseconds": 604
+    },
+    {
+      "at": "2026-11-21T01:36:22.391+00:00",
+      "http": 200,
+      "remaining": 140,
+      "milliseconds": 711
+    },
+    {
+      "at": "2026-11-21T01:36:28.103+00:00",
+      "http": 200,
+      "remaining": 134,
+      "milliseconds": 677
+    },
+    {
+      "at": "2026-11-21T01:36:33.780+00:00",
+      "http": 200,
+      "remaining": 129,
+      "milliseconds": 578
+    },
+    {
+      "at": "2026-11-21T01:36:39.359+00:00",
+      "http": 200,
+      "remaining": 123,
+      "milliseconds": 586
+    },
+    {
+      "at": "2026-11-21T01:36:44.945+00:00",
+      "http": 200,
+      "remaining": 117,
+      "milliseconds": 578
+    },
+    {
+      "at": "2026-11-21T01:36:50.523+00:00",
+      "http": 200,
+      "remaining": 112,
+      "milliseconds": 570
+    },
+    {
+      "at": "2026-11-21T01:36:56.093+00:00",
+      "http": 200,
+      "remaining": 106,
+      "milliseconds": 675
+    },
+    {
+      "at": "2026-11-21T01:37:01.768+00:00",
+      "http": 200,
+      "remaining": 101,
+      "milliseconds": 676
+    },
+    {
+      "at": "2026-11-21T01:37:07.445+00:00",
+      "http": 200,
+      "remaining": 95,
+      "milliseconds": 589
+    },
+    {
+      "at": "2026-11-21T01:37:13.034+00:00",
+      "http": 200,
+      "remaining": 89,
+      "milliseconds": 719
+    },
+    {
+      "at": "2026-11-21T01:37:18.754+00:00",
+      "http": 200,
+      "remaining": 84,
+      "milliseconds": 688
+    },
+    {
+      "at": "2026-11-21T01:37:24.442+00:00",
+      "http": 200,
+      "remaining": 78,
+      "milliseconds": 560
+    },
+    {
+      "at": "2026-11-21T01:37:30.002+00:00",
+      "http": 200,
+      "remaining": 72,
+      "milliseconds": 660
+    },
+    {
+      "at": "2026-11-21T01:37:35.663+00:00",
+      "http": 200,
+      "remaining": 67,
+      "milliseconds": 655
+    },
+    {
+      "at": "2026-11-21T01:37:41.318+00:00",
+      "http": 200,
+      "remaining": 61,
+      "milliseconds": 699
+    },
+    {
+      "at": "2026-11-21T01:37:47.018+00:00",
+      "http": 200,
+      "remaining": 55,
+      "milliseconds": 675
+    },
+    {
+      "at": "2026-11-21T01:37:52.693+00:00",
+      "http": 200,
+      "remaining": 50,
+      "milliseconds": 594
+    },
+    {
+      "at": "2026-11-21T01:37:58.419+00:00",
+      "http": 200,
+      "remaining": 43,
+      "milliseconds": 1948
+    },
+    {
+      "at": "2026-11-21T01:38:05.333+00:00",
+      "http": 200,
+      "remaining": 37,
+      "milliseconds": 596
+    },
+    {
+      "at": "2026-11-21T01:38:10.930+00:00",
+      "http": 200,
+      "remaining": 31,
+      "milliseconds": 673
+    },
+    {
+      "at": "2026-11-21T01:38:16.603+00:00",
+      "http": 200,
+      "remaining": 26,
+      "milliseconds": 668
+    },
+    {
+      "at": "2026-11-21T01:38:22.271+00:00",
+      "http": 200,
+      "remaining": 20,
+      "milliseconds": 567
+    },
+    {
+      "at": "2026-11-21T01:38:27.838+00:00",
+      "http": 200,
+      "remaining": 15,
+      "milliseconds": 573
+    },
+    {
+      "at": "2026-11-21T01:38:29.411+00:00",
+      "http": 200,
+      "remaining": 13,
+      "milliseconds": 565
+    },
+    {
+      "at": "2026-11-21T01:38:30.977+00:00",
+      "http": 200,
+      "remaining": 11,
+      "milliseconds": 635
+    },
+    {
+      "at": "2026-11-21T01:38:32.612+00:00",
+      "http": 200,
+      "remaining": 10,
+      "milliseconds": 682
+    },
+    {
+      "at": "2026-11-21T01:38:34.294+00:00",
+      "http": 200,
+      "remaining": 8,
+      "milliseconds": 586
+    },
+    {
+      "at": "2026-11-21T01:38:35.880+00:00",
+      "http": 200,
+      "remaining": 7,
+      "milliseconds": 578
+    },
+    {
+      "at": "2026-11-21T01:38:37.459+00:00",
+      "http": 200,
+      "remaining": 5,
+      "milliseconds": 570
+    },
+    {
+      "at": "2026-11-21T01:38:39.029+00:00",
+      "http": 200,
+      "remaining": 3,
+      "milliseconds": 598
+    },
+    {
+      "at": "2026-11-21T01:38:40.628+00:00",
+      "http": 200,
+      "remaining": 2,
+      "milliseconds": 579
+    },
+    {
+      "at": "2026-11-21T01:38:42.206+00:00",
+      "http": 200,
+      "remaining": 0,
+      "milliseconds": 569
+    },
+    {
+      "at": "2026-11-21T01:38:43.775+00:00",
+      "http": 530,
+      "milliseconds": 526
+    },
+    {
+      "at": "2026-11-21T01:38:45.301+00:00",
+      "http": 530,
+      "milliseconds": 527
+    }
+  ],
+  "passed": true
+}

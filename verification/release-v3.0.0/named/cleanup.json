@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-11-21T01:43:06.652130+00:00",
+  "unrelated_dns_record_count": 5,
+  "unrelated_dns_unchanged": true,
+  "existing_access_application_and_policy_unchanged": true,
+  "existing_hostname_anonymous_http": 403,
+  "test_dns_record_removed": true,
+  "test_access_app_removed": true,
+  "test_tunnel_deleted": true
+}

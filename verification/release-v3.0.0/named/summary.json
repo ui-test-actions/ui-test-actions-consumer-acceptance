@@ -1,0 +1,52 @@
+{
+  "runs": {
+    "named-expiry": 44850813196,
+    "named-cancellation": 44851468937
+  },
+  "samples": {
+    "named-expiry": {
+      "last_live": {
+        "at": "2026-11-21T01:38:42.206+00:00",
+        "http": 200,
+        "remaining": 0,
+        "milliseconds": 569
+      },
+      "terminal": [
+        {
+          "at": "2026-11-21T01:38:43.775+00:00",
+          "http": 530,
+          "milliseconds": 526
+        },
+        {
+          "at": "2026-11-21T01:38:45.301+00:00",
+          "http": 530,
+          "milliseconds": 527
+        }
+      ]
+    },
+    "named-cancellation": {
+      "last_live": {
+        "at": "2026-11-21T01:40:52.821+00:00",
+        "http": 200,
+        "remaining": 264,
+        "milliseconds": 540,
+        "seconds_from_cancellation": 14.611
+      },
+      "terminal": [
+        {
+          "at": "2026-11-21T01:40:54.361+00:00",
+          "http": 502,
+          "milliseconds": 591,
+          "seconds_from_cancellation": 16.203
+        },
+        {
+          "at": "2026-11-21T01:40:55.953+00:00",
+          "http": 502,
+          "milliseconds": 544,
+          "seconds_from_cancellation": 17.747
+        }
+      ]
+    }
+  },
+  "credentials_found_in_retained_files_or_public_workflow_logs": 0
+}
