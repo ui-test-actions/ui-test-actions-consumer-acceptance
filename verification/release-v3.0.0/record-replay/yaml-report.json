@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "status": "passed",
+  "steps": [
+    {
+      "step": 1,
+      "stage": "complete",
+      "operation": "pointer.click",
+      "client_action_ms": 534.259
+    },
+    {
+      "step": 2,
+      "stage": "complete",
+      "operation": "keyboard.press",
+      "client_action_ms": 556.114
+    },
+    {
+      "step": 3,
+      "stage": "complete",
+      "operation": "keyboard.press",
+      "client_action_ms": 593.803
+    },
+    {
+      "step": 4,
+      "stage": "complete",
+      "operation": "keyboard.press",
+      "client_action_ms": 566.608
+    },
+    {
+      "step": 5,
+      "stage": "complete",
+      "operation": "text.insert",
+      "client_action_ms": 565.276
+    },
+    {
+      "step": 6,
+      "stage": "complete",
+      "operation": "pointer.click",
+      "client_action_ms": 550.863
+    }
+  ],
+  "target": "linux"
+}

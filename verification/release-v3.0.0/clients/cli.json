@@ -1,0 +1,16 @@
+{
+  "sessions": [
+    {
+      "device": "linux",
+      "target": "linux",
+      "seconds_remaining": 558,
+      "available": true
+    },
+    {
+      "device": "windows",
+      "target": "windows",
+      "seconds_remaining": 580,
+      "available": true
+    }
+  ]
+}

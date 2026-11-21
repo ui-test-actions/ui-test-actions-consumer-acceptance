@@ -1,0 +1,37 @@
+{
+  "run": 44851211958,
+  "target": "ios",
+  "semantic_button_visible_label": "AFTER · Button tapped",
+  "visible_rows_before": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "visible_rows_after": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "two_finger_native_label": "Pinch expanded",
+  "ambiguous_gesture_http": null,
+  "unicode_clipboard_round_trip": true,
+  "exact_native_text": null
+}

@@ -1,0 +1,22 @@
+{
+  "source": "app",
+  "events": [
+    {
+      "event": "ui.ready",
+      "epoch_ms": 1795224257375,
+      "level": "info"
+    },
+    {
+      "event": "ui.applied",
+      "epoch_ms": 1795224258682,
+      "level": "info"
+    },
+    {
+      "event": "process.failed",
+      "epoch_ms": 1795224266375,
+      "code": 17,
+      "level": "error"
+    }
+  ],
+  "truncated": false
+}

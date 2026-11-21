@@ -1,0 +1,13 @@
+{
+  "target": "ios",
+  "first_authenticated": {
+    "at": "2026-11-21T01:39:56.639+00:00",
+    "http": 200,
+    "seconds_remaining": 376,
+    "deadline_estimate": 1795225572.294837
+  },
+  "reconnected": true,
+  "observable_visual_change": true,
+  "ambiguous_batch_recovered_from_live_observation": true,
+  "completed_only_remaining_steps": true
+}

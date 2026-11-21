@@ -1,0 +1,74 @@
+{
+  "target": "android",
+  "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+  "runs": {
+    "hour": {
+      "createdAt": "2026-11-21T01:20:15Z",
+      "databaseId": 44849566417,
+      "displayTitle": "Consumer mobile \u00b7 android \u00b7 60m \u00b7 hour",
+      "headSha": "5615f42d8e32f5dafc7ee425b334c045413ff83a",
+      "workflow": "mobile-lifetime.yml",
+      "job": 136677449790,
+      "conclusion": "success"
+    },
+    "cancellation": {
+      "createdAt": "2026-11-21T01:31:09Z",
+      "databaseId": 44850640164,
+      "displayTitle": "Consumer mobile \u00b7 android \u00b7 8m \u00b7 cancellation",
+      "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+      "workflow": "mobile-lifetime.yml",
+      "job": 136680920511,
+      "conclusion": "cancelled"
+    }
+  },
+  "runner_elapsed_seconds": 3600.965,
+  "runner_ready_at": "2026-11-21T01:22:51.1908476Z",
+  "runner_closed_at": "2026-11-21T02:22:52.1561307Z",
+  "opening": {
+    "at": "2026-11-21T01:22:51.230+00:00",
+    "http": 200,
+    "seconds_remaining": 3590,
+    "deadline_estimate": 1795227760.7654448
+  },
+  "late_ui_action": {
+    "observed_at": "2026-11-21T02:21:49.987+00:00",
+    "seconds_remaining": 51,
+    "expected_app_label": "AFTER \u00b7 Hour end",
+    "label_region": [
+      28,
+      87,
+      295,
+      133
+    ],
+    "change_bounds": [
+      80,
+      12,
+      178,
+      46
+    ]
+  },
+  "last_live": {
+    "at": "2026-11-21T02:22:39.619+00:00",
+    "http": 200,
+    "seconds_remaining": 1,
+    "deadline_estimate": 1795227760.3004997,
+    "offset_seconds": -1.14
+  },
+  "first_terminal": {
+    "at": "2026-11-21T02:22:42.174+00:00",
+    "http": 530,
+    "offset_seconds": 1.42
+  },
+  "last_live_after_cancel": {
+    "at": "2026-11-21T01:33:27.752+00:00",
+    "http": 200,
+    "seconds_remaining": 443,
+    "deadline_estimate": 1795225250.463854,
+    "seconds_from_submission": 15.425
+  },
+  "first_terminal_after_cancel": {
+    "at": "2026-11-21T01:33:29.279+00:00",
+    "http": 530,
+    "seconds_from_submission": 16.951
+  }
+}

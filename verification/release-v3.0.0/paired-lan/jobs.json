@@ -1,0 +1,39 @@
+{
+  "jobs": [
+    {
+      "name": "pair (ios, macos-26)",
+      "conclusion": "success",
+      "completed_at": "2026-11-21T01:42:33Z",
+      "checks": [
+        {
+          "name": "Verify guest-to-Mac and Mac-to-guest IP delivery",
+          "conclusion": "success",
+          "completed_at": "2026-11-21T01:25:02Z"
+        },
+        {
+          "name": "Retire LAN resources",
+          "conclusion": "success",
+          "completed_at": "2026-11-21T01:42:26Z"
+        }
+      ]
+    },
+    {
+      "name": "pair (android, ubuntu-24.04)",
+      "conclusion": "success",
+      "completed_at": "2026-11-21T01:40:28Z",
+      "checks": [
+        {
+          "name": "Verify guest-to-Mac and Mac-to-guest IP delivery",
+          "conclusion": "success",
+          "completed_at": "2026-11-21T01:25:01Z"
+        },
+        {
+          "name": "Retire LAN resources",
+          "conclusion": "success",
+          "completed_at": "2026-11-21T01:40:23Z"
+        }
+      ]
+    }
+  ],
+  "ios_control_live_after_android_cleanup": true
+}

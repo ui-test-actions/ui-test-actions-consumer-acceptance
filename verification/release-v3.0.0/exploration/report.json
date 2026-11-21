@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "objective": "Move the focused fixture over a previously black screen point and verify it from a fresh observation.",
+  "status": "passed",
+  "steps": [
+    {
+      "number": 1,
+      "before": "97cd4c7797ca52d5614b",
+      "plan": {
+        "summary": "Move the fixture right and observe the green body at the previously black point.",
+        "before": {
+          "pixel": {
+            "x": 700,
+            "y": 350,
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "action": {
+          "command": "pointer.drag",
+          "params": {
+            "x": 420,
+            "y": 74,
+            "end_x": 820,
+            "end_y": 104,
+            "duration_ms": 650
+          }
+        },
+        "expect": {
+          "pixel": {
+            "x": 700,
+            "y": 350,
+            "rgb": [
+              23,
+              99,
+              59
+            ]
+          },
+          "timeout_ms": 3500
+        }
+      },
+      "outcome": "passed",
+      "after": "97cd4c7797ca52d5614b"
+    },
+    {
+      "number": 2,
+      "before": "97cd4c7797ca52d5614b",
+      "plan": {
+        "summary": "The moved fixture occupies the previously black point and retains its applied state.",
+        "finish": true,
+        "expect": {
+          "pixel": {
+            "x": 700,
+            "y": 350,
+            "rgb": [
+              23,
+              99,
+              59
+            ]
+          }
+        }
+      },
+      "outcome": "finished"
+    }
+  ],
+  "states": {
+    "97cd4c7797ca52d5614b": {
+      "visits": 2,
+      "first": "initial.png",
+      "visible_nodes": 7
+    }
+  },
+  "transitions": [
+    {
+      "step": 1,
+      "from": "97cd4c7797ca52d5614b",
+      "to": "97cd4c7797ca52d5614b"
+    }
+  ],
+  "target": "macos"
+}

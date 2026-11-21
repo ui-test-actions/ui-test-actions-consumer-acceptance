@@ -1,0 +1,7 @@
+{
+  "target": "macos",
+  "fresh_client": true,
+  "copy_back_exact": true,
+  "line_count": 3,
+  "sha256": "a11c0a02481ae427801aaa4f1b6f2a113ef0120b2159c57ac5fa2947b3365130"
+}

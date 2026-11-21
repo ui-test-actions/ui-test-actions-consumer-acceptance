@@ -1,0 +1,30 @@
+{
+  "transport": "local",
+  "target": "linux",
+  "initial_seconds_remaining": 60,
+  "before_pixel": [
+    25,
+    43,
+    66
+  ],
+  "after_pixel": [
+    23,
+    99,
+    59
+  ],
+  "anonymous_http": 401,
+  "wrong_bearer_http": 401,
+  "reconnected": true,
+  "replayed_request_equal": true,
+  "unpinned_tls_rejected": false,
+  "wrong_host_http": 421,
+  "image_sha256": {
+    "before.png": "8d1baf41fd65e69407de379a2e98d4170eb4958f8f6874d4d2f8dd70529fa31f",
+    "after.png": "9b87e5c923cafcfc042fae657221afc9399e7a68194979904219b1f79b4beb41"
+  },
+  "app_verified_exact_unicode_once": true,
+  "separate_hosted_peer": false,
+  "last_live_seconds_remaining": 0,
+  "expired_http": null,
+  "expired": true
+}

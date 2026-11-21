@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-11-21T02:21:49.987+00:00",
+  "seconds_remaining": 51,
+  "expected_app_label": "AFTER · Hour end",
+  "label_region": [
+    28,
+    87,
+    295,
+    133
+  ],
+  "change_bounds": [
+    80,
+    12,
+    178,
+    46
+  ]
+}

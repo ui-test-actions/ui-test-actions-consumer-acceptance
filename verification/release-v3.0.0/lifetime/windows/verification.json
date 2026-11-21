@@ -1,0 +1,74 @@
+{
+  "target": "windows",
+  "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+  "runs": {
+    "hour": {
+      "createdAt": "2026-11-21T01:20:21Z",
+      "databaseId": 44849577921,
+      "displayTitle": "Consumer \u00b7 windows \u00b7 hour",
+      "headSha": "5615f42d8e32f5dafc7ee425b334c045413ff83a",
+      "workflow": "desktop.yml",
+      "job": 136677482462,
+      "conclusion": "success"
+    },
+    "cancellation": {
+      "createdAt": "2026-11-21T01:31:16Z",
+      "databaseId": 44850653705,
+      "displayTitle": "Consumer \u00b7 windows \u00b7 cancellation",
+      "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+      "workflow": "desktop.yml",
+      "job": 136680959676,
+      "conclusion": "cancelled"
+    }
+  },
+  "runner_elapsed_seconds": 3600.341,
+  "runner_ready_at": "2026-11-21T01:21:22.8718241Z",
+  "runner_closed_at": "2026-11-21T02:21:23.2126659Z",
+  "opening": {
+    "at": "2026-11-21T01:21:21.848+00:00",
+    "http": 200,
+    "seconds_remaining": 3591,
+    "deadline_estimate": 1795227672.4180522
+  },
+  "late_ui_action": {
+    "observed_at": "2026-11-21T02:20:22.520+00:00",
+    "seconds_remaining": 50,
+    "expected_app_label": "AFTER \u00b7 Hour end",
+    "label_region": [
+      85,
+      124,
+      610,
+      168
+    ],
+    "change_bounds": [
+      130,
+      11,
+      394,
+      33
+    ]
+  },
+  "last_live": {
+    "at": "2026-11-21T02:21:10.735+00:00",
+    "http": 200,
+    "seconds_remaining": 2,
+    "deadline_estimate": 1795227672.4307978,
+    "offset_seconds": -1.59
+  },
+  "first_terminal": {
+    "at": "2026-11-21T02:21:13.349+00:00",
+    "http": 530,
+    "offset_seconds": 1.02
+  },
+  "last_live_after_cancel": {
+    "at": "2026-11-21T01:32:52.533+00:00",
+    "http": 200,
+    "seconds_remaining": 453,
+    "deadline_estimate": 1795225225.2125669,
+    "seconds_from_submission": 9.658
+  },
+  "first_terminal_after_cancel": {
+    "at": "2026-11-21T01:32:53.985+00:00",
+    "http": 530,
+    "seconds_from_submission": 11.111
+  }
+}

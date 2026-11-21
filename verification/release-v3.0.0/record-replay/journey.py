@@ -1,0 +1,7 @@
+import json
+from workflow import run_exported
+
+WORKFLOW = json.loads('{\n  "version": 1,\n  "target": "linux",\n  "inputs": [],\n  "steps": [\n    {\n      "ms": 647,\n      "action": {\n        "command": "pointer.click",\n        "params": {\n          "x": 320,\n          "y": 194\n        }\n      },\n      "display": [\n        1280,\n        800\n      ]\n    },\n    {\n      "ms": 1228,\n      "action": {\n        "command": "keyboard.press",\n        "params": {\n          "keys": [\n            "home"\n          ]\n        }\n      }\n    },\n    {\n      "ms": 1840,\n      "action": {\n        "command": "keyboard.press",\n        "params": {\n          "keys": [\n            "shift",\n            "end"\n          ]\n        }\n      }\n    },\n    {\n      "ms": 2423,\n      "action": {\n        "command": "keyboard.press",\n        "params": {\n          "keys": [\n            "backspace"\n          ]\n        }\n      }\n    },\n    {\n      "ms": 3057,\n      "action": {\n        "command": "text.insert",\n        "params": {\n          "text": "Unified replay checked 83"\n        }\n      }\n    },\n    {\n      "ms": 3648,\n      "action": {\n        "command": "pointer.click",\n        "params": {\n          "x": 341,\n          "y": 267\n        }\n      },\n      "display": [\n        1280,\n        800\n      ]\n    }\n  ]\n}')
+
+if __name__ == "__main__":
+    raise SystemExit(run_exported(WORKFLOW))

@@ -1,0 +1,35 @@
+{
+  "transport": "private",
+  "target": "linux",
+  "initial_seconds_remaining": 116,
+  "before_pixel": [
+    25,
+    43,
+    66
+  ],
+  "after_pixel": [
+    23,
+    99,
+    59
+  ],
+  "anonymous_http": 401,
+  "wrong_bearer_http": 401,
+  "reconnected": true,
+  "replayed_request_equal": true,
+  "unpinned_tls_rejected": true,
+  "wrong_host_http": null,
+  "image_sha256": {
+    "before.png": "8d1baf41fd65e69407de379a2e98d4170eb4958f8f6874d4d2f8dd70529fa31f",
+    "after.png": "9b87e5c923cafcfc042fae657221afc9399e7a68194979904219b1f79b4beb41"
+  },
+  "network_interruption": {
+    "traffic_blocked": true,
+    "same_session_after_recovery": true
+  },
+  "wireguard_bytes_received": 100288,
+  "wireguard_bytes_sent": 24616,
+  "separate_hosted_peer": true,
+  "last_live_seconds_remaining": 0,
+  "expired_http": null,
+  "expired": true
+}

@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-11-21T01:37:30.555289+00:00",
+  "targets": {
+    "linux": {
+      "cross_bearer_http": 401,
+      "anonymous_http": 401,
+      "stale_session_http": 409,
+      "unknown_command_http": 404,
+      "invalid_coordinates_http": 400,
+      "parallel_reads_successful": 48,
+      "parallel_milliseconds": 5388,
+      "opening_remaining_at_start": 2643
+    },
+    "windows": {
+      "cross_bearer_http": 401,
+      "anonymous_http": 401,
+      "stale_session_http": 409,
+      "unknown_command_http": 404,
+      "invalid_coordinates_http": 400,
+      "parallel_reads_successful": 48,
+      "parallel_milliseconds": 5043,
+      "opening_remaining_at_start": 2642
+    },
+    "macos": {
+      "cross_bearer_http": 401,
+      "anonymous_http": 401,
+      "stale_session_http": 409,
+      "unknown_command_http": 404,
+      "invalid_coordinates_http": 400,
+      "parallel_reads_successful": 48,
+      "parallel_milliseconds": 5934,
+      "opening_remaining_at_start": 2644
+    },
+    "android": {
+      "cross_bearer_http": 401,
+      "anonymous_http": 401,
+      "stale_session_http": 409,
+      "unknown_command_http": 404,
+      "invalid_coordinates_http": 400,
+      "parallel_reads_successful": 48,
+      "parallel_milliseconds": 5467,
+      "opening_remaining_at_start": 2720
+    },
+    "ios": {
+      "cross_bearer_http": 401,
+      "anonymous_http": 401,
+      "stale_session_http": 409,
+      "unknown_command_http": 404,
+      "invalid_coordinates_http": 400,
+      "parallel_reads_successful": 48,
+      "parallel_milliseconds": 4928,
+      "opening_remaining_at_start": 3307
+    }
+  }
+}

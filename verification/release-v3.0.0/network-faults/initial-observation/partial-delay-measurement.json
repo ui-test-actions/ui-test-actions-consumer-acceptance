@@ -1,0 +1,27 @@
+{
+  "proof": {
+    "configured_one_way_delay_ms": 500,
+    "observed_native_rtt_ms": [
+      1078.0,
+      1161.0,
+      1354.0,
+      1141.0,
+      1108.0,
+      1091.0
+    ],
+    "receiver_observation_present": false
+  },
+  "resume": {
+    "configured_one_way_delay_ms": 500,
+    "observed_native_rtt_ms": [
+      1150.0,
+      1136.0,
+      1136.0,
+      1097.0,
+      1145.0,
+      1142.0,
+      1114.0
+    ],
+    "receiver_observation_present": false
+  }
+}

@@ -1,0 +1,694 @@
+{
+  "api_version": 2,
+  "target": "macos",
+  "screen": {
+    "width": 1024,
+    "height": 768
+  },
+  "commands": {
+    "clipboard.get": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "clipboard.set": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 8192
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "element.assert": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "text_contains": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "resource_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "visible": {
+              "type": "boolean"
+            },
+            "properties": {
+              "type": "object",
+              "properties": {
+                "focused": {
+                  "type": "boolean"
+                },
+                "selected": {
+                  "type": "boolean"
+                },
+                "checked": {
+                  "type": "boolean"
+                },
+                "editable": {
+                  "type": "boolean"
+                },
+                "checkable": {
+                  "type": "boolean"
+                },
+                "clickable": {
+                  "type": "boolean"
+                },
+                "scrollable": {
+                  "type": "boolean"
+                },
+                "password": {
+                  "type": "boolean"
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "present",
+            "absent"
+          ]
+        }
+      },
+      "required": [
+        "selector",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "element.click": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "id",
+        "snapshot_id"
+      ],
+      "additionalProperties": false
+    },
+    "element.find": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "text_contains": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "resource_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "visible": {
+              "type": "boolean"
+            },
+            "properties": {
+              "type": "object",
+              "properties": {
+                "focused": {
+                  "type": "boolean"
+                },
+                "selected": {
+                  "type": "boolean"
+                },
+                "checked": {
+                  "type": "boolean"
+                },
+                "editable": {
+                  "type": "boolean"
+                },
+                "checkable": {
+                  "type": "boolean"
+                },
+                "clickable": {
+                  "type": "boolean"
+                },
+                "scrollable": {
+                  "type": "boolean"
+                },
+                "password": {
+                  "type": "boolean"
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "selector"
+      ],
+      "additionalProperties": false
+    },
+    "element.wait": {
+      "type": "object",
+      "properties": {
+        "selector": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "text_contains": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "resource_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "visible": {
+              "type": "boolean"
+            },
+            "properties": {
+              "type": "object",
+              "properties": {
+                "focused": {
+                  "type": "boolean"
+                },
+                "selected": {
+                  "type": "boolean"
+                },
+                "checked": {
+                  "type": "boolean"
+                },
+                "editable": {
+                  "type": "boolean"
+                },
+                "checkable": {
+                  "type": "boolean"
+                },
+                "clickable": {
+                  "type": "boolean"
+                },
+                "scrollable": {
+                  "type": "boolean"
+                },
+                "password": {
+                  "type": "boolean"
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "present",
+            "absent"
+          ]
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 10000
+        }
+      },
+      "required": [
+        "selector",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "keyboard.press": {
+      "type": "object",
+      "properties": {
+        "keys": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 24,
+            "pattern": "^[a-zA-Z0-9_+-]+$"
+          }
+        }
+      },
+      "required": [
+        "keys"
+      ],
+      "additionalProperties": false
+    },
+    "performance.observations": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "pointer.click": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "button": {
+          "type": "string",
+          "enum": [
+            "left",
+            "middle",
+            "right"
+          ]
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "hold_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3000
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "additionalProperties": false
+    },
+    "pointer.drag": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "end_x": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "end_y": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "button": {
+          "type": "string",
+          "enum": [
+            "left",
+            "middle",
+            "right"
+          ]
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3000
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "end_x",
+        "end_y"
+      ],
+      "additionalProperties": false
+    },
+    "pointer.move": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3000
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "additionalProperties": false
+    },
+    "pointer.scroll": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16383
+        },
+        "dx": {
+          "type": "integer",
+          "minimum": -30,
+          "maximum": 30
+        },
+        "dy": {
+          "type": "integer",
+          "minimum": -30,
+          "maximum": 30
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "additionalProperties": false
+    },
+    "recording.start": {
+      "type": "object",
+      "properties": {
+        "duration_seconds": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 30
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "recording.stop": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "text.insert": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 8192
+        },
+        "replace": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "trace.start": {
+      "type": "object",
+      "properties": {
+        "capture_text": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "trace.stop": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "tree.snapshot": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2500
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "visual.sample": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 16383
+            },
+            "y": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 16383
+            },
+            "width": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16384
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16384
+            }
+          },
+          "required": [
+            "x",
+            "y",
+            "width",
+            "height"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "visual.wait": {
+      "type": "object",
+      "properties": {
+        "baseline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "condition": {
+          "type": "string",
+          "enum": [
+            "changed",
+            "stable"
+          ]
+        },
+        "threshold": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 10000
+        }
+      },
+      "required": [
+        "baseline"
+      ],
+      "additionalProperties": false
+    },
+    "windows.close": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "windows.focus": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "windows.list": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "windows.move_resize": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "x": {
+          "type": "integer",
+          "minimum": -16384,
+          "maximum": 16383
+        },
+        "y": {
+          "type": "integer",
+          "minimum": -16384,
+          "maximum": 16383
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16384
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16384
+        }
+      },
+      "required": [
+        "id",
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "limits": {
+    "max_batch_steps": 12,
+    "replay_window": 64,
+    "max_request_bytes": 65536
+  }
+}

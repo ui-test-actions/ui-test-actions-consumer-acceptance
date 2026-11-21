@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "target": "linux",
+  "inputs": [],
+  "steps": [
+    {
+      "action": {
+        "command": "app.launch",
+        "params": {
+          "id": "timed-fixture"
+        }
+      },
+      "expect": {
+        "pixel": {
+          "x": 73,
+          "y": 87,
+          "rgb": [
+            25,
+            43,
+            66
+          ]
+        },
+        "timeout_ms": 4000
+      }
+    },
+    {
+      "action": {
+        "command": "pointer.click",
+        "params": {
+          "x": 341,
+          "y": 268
+        }
+      },
+      "expect": {
+        "pixel": {
+          "x": 73,
+          "y": 87,
+          "rgb": [
+            23,
+            99,
+            59
+          ]
+        },
+        "timeout_ms": 2500
+      }
+    },
+    {
+      "expect": {
+        "pixel": {
+          "x": 73,
+          "y": 87,
+          "rgb": [
+            255,
+            0,
+            255
+          ]
+        },
+        "timeout_ms": 9700
+      }
+    }
+  ]
+}

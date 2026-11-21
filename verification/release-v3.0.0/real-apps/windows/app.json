@@ -1,0 +1,10 @@
+{
+  "app": "Notepad++",
+  "framework": "Win32 and Scintilla",
+  "license": "GPL-3.0 with upstream exceptions",
+  "repository": "notepad-plus-plus/notepad-plus-plus",
+  "ref": "v8.9.9.1",
+  "commit": "066c93ac06e2f8d59c5e5f442e60d8306b603163",
+  "asset": "npp.8.9.9.1.portable.x64.zip",
+  "sha256": "cbcefa34677e10fe6dd19802f7d6b3b9860cd6de62afeaae7680e09c51b47779"
+}

@@ -1,0 +1,95 @@
+{
+  "legacy_runner_time_offset_seconds": 0,
+  "slow_rtt_ms": [
+    1059.0,
+    1080.0,
+    1092.0,
+    1091.0,
+    1060.0,
+    1071.0,
+    1066.0,
+    1065.0,
+    1178.0,
+    1051.0,
+    1086.0,
+    1061.0,
+    1050.0,
+    1108.0,
+    1057.0,
+    1039.0,
+    1056.0
+  ],
+  "loss_probe_results": [
+    true,
+    false,
+    true
+  ],
+  "offline_probe_results": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "restored_rtt_ms": [
+    52.0,
+    52.5,
+    49.1,
+    53.0,
+    164.0,
+    50.7,
+    213.0,
+    55.6,
+    50.7,
+    70.3,
+    62.4,
+    59.2,
+    51.9,
+    106.0,
+    50.2,
+    49.0,
+    49.9,
+    54.4,
+    53.4
+  ],
+  "counters": {
+    "sent": {
+      "arp": 17,
+      "icmp": 301,
+      "mdns": 78,
+      "p2pkit_mdns_query": 9,
+      "p2pkit_mdns_response": 5,
+      "tcp": 883,
+      "fault_flushed": 2,
+      "fault_drop": 80
+    },
+    "received": {
+      "arp": 17,
+      "icmp": 299,
+      "mdns": 17,
+      "p2pkit_mdns_query": 4,
+      "p2pkit_mdns_response": 4,
+      "tcp": 909,
+      "fault_flushed": 2,
+      "fault_drop": 34
+    },
+    "link": {
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 30,
+        "seed": 0
+      },
+      "generation": 8,
+      "remaining_ms": 0,
+      "controller_epoch_ms": 1795229484785
+    }
+  }
+}

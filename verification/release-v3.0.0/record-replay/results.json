@@ -1,0 +1,10 @@
+{
+  "source_run": 44849565412,
+  "replay_run": 44849852695,
+  "formats": [
+    "yaml",
+    "python"
+  ],
+  "identical_visible_status_region": true,
+  "exact_clipboard_copy_back_sha256": "559416dbaaf115a83bcd999bbb95510680da8b4d229d665edd8d43a70eabec83"
+}

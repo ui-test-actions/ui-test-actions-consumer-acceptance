@@ -1,0 +1,60 @@
+{
+  "startup": {},
+  "actions": [
+    {
+      "command": "app.launch",
+      "milliseconds": 0.412,
+      "ok": true
+    },
+    {
+      "command": "pointer.click",
+      "milliseconds": 10.82,
+      "ok": true
+    },
+    {
+      "command": "tree.snapshot",
+      "milliseconds": 71.039,
+      "ok": true
+    },
+    {
+      "command": "app.metrics",
+      "milliseconds": 0.046,
+      "ok": true
+    },
+    {
+      "command": "diagnostics.sources",
+      "milliseconds": 0.009,
+      "ok": true
+    },
+    {
+      "command": "diagnostics.events",
+      "milliseconds": 0.219,
+      "ok": true
+    },
+    {
+      "command": "recording.start",
+      "milliseconds": 0.251,
+      "ok": true
+    },
+    {
+      "command": "recording.stop",
+      "milliseconds": 1.811,
+      "ok": true
+    },
+    {
+      "command": "app.launch",
+      "milliseconds": 0.45,
+      "ok": true
+    },
+    {
+      "command": "pointer.click",
+      "milliseconds": 10.845,
+      "ok": true
+    },
+    {
+      "command": "tree.snapshot",
+      "milliseconds": 57.688,
+      "ok": true
+    }
+  ]
+}

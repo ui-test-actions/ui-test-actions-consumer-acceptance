@@ -1,0 +1,15 @@
+{
+  "summary": "The moved fixture occupies the previously black point and retains its applied state.",
+  "finish": true,
+  "expect": {
+    "pixel": {
+      "x": 700,
+      "y": 350,
+      "rgb": [
+        23,
+        99,
+        59
+      ]
+    }
+  }
+}

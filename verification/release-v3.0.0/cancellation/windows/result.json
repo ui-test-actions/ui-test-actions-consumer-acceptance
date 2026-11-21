@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-11-21T01:32:41+00:00",
+  "target": "windows",
+  "api_version": 2,
+  "anonymous_status": 401,
+  "reconnected": true,
+  "batch_steps": 3,
+  "batch_replay_equal": true,
+  "before_color": [
+    25,
+    43,
+    66
+  ],
+  "after_color": [
+    23,
+    99,
+    59
+  ],
+  "fixture_text": "Cancel check",
+  "first_authenticated": {
+    "at": "2026-11-21T01:32:34.633+00:00",
+    "http": 200,
+    "seconds_remaining": 471,
+    "deadline_estimate": 1795225225.2698708
+  },
+  "advertised_expiry": "2026-11-21T01:40:36.000+00:00"
+}

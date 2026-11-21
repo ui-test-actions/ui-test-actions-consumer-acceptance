@@ -1,0 +1,14 @@
+{
+  "target": "windows",
+  "action": "pointer.click",
+  "pixel": {
+    "x": 80,
+    "y": 98,
+    "rgb": [
+      23,
+      99,
+      59
+    ]
+  },
+  "clipboard_verified": true
+}

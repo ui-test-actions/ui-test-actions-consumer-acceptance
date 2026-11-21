@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "target": "linux",
+  "inputs": [],
+  "steps": [
+    {
+      "ms": 647,
+      "action": {
+        "command": "pointer.click",
+        "params": {
+          "x": 320,
+          "y": 194
+        }
+      },
+      "display": [
+        1280,
+        800
+      ]
+    },
+    {
+      "ms": 1228,
+      "action": {
+        "command": "keyboard.press",
+        "params": {
+          "keys": [
+            "home"
+          ]
+        }
+      }
+    },
+    {
+      "ms": 1840,
+      "action": {
+        "command": "keyboard.press",
+        "params": {
+          "keys": [
+            "shift",
+            "end"
+          ]
+        }
+      }
+    },
+    {
+      "ms": 2423,
+      "action": {
+        "command": "keyboard.press",
+        "params": {
+          "keys": [
+            "backspace"
+          ]
+        }
+      }
+    },
+    {
+      "ms": 3057,
+      "action": {
+        "command": "text.insert",
+        "params": {
+          "text": "Unified replay checked 83"
+        }
+      }
+    },
+    {
+      "ms": 3648,
+      "action": {
+        "command": "pointer.click",
+        "params": {
+          "x": 341,
+          "y": 267
+        }
+      },
+      "display": [
+        1280,
+        800
+      ]
+    }
+  ]
+}

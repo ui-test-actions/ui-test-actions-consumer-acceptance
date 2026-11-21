@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "target": "linux",
+  "app_id": null,
+  "samples": [],
+  "observations": {
+    "startup": {},
+    "actions": [
+      {
+        "command": "app.launch",
+        "milliseconds": 0.412,
+        "ok": true
+      },
+      {
+        "command": "pointer.click",
+        "milliseconds": 10.82,
+        "ok": true
+      },
+      {
+        "command": "tree.snapshot",
+        "milliseconds": 71.039,
+        "ok": true
+      },
+      {
+        "command": "app.metrics",
+        "milliseconds": 0.046,
+        "ok": true
+      },
+      {
+        "command": "diagnostics.sources",
+        "milliseconds": 0.009,
+        "ok": true
+      },
+      {
+        "command": "diagnostics.events",
+        "milliseconds": 0.219,
+        "ok": true
+      },
+      {
+        "command": "recording.start",
+        "milliseconds": 0.251,
+        "ok": true
+      },
+      {
+        "command": "recording.stop",
+        "milliseconds": 1.811,
+        "ok": true
+      },
+      {
+        "command": "app.launch",
+        "milliseconds": 0.45,
+        "ok": true
+      },
+      {
+        "command": "pointer.click",
+        "milliseconds": 10.845,
+        "ok": true
+      },
+      {
+        "command": "tree.snapshot",
+        "milliseconds": 57.688,
+        "ok": true
+      },
+      {
+        "command": "app.metrics",
+        "milliseconds": 0.05,
+        "ok": true
+      },
+      {
+        "command": "diagnostics.sources",
+        "milliseconds": 0.008,
+        "ok": true
+      },
+      {
+        "command": "diagnostics.events",
+        "milliseconds": 0.228,
+        "ok": true
+      }
+    ]
+  },
+  "metrics": {
+    "driver.app.launch.milliseconds": {
+      "samples": 2,
+      "median": 0.431,
+      "maximum": 0.45
+    },
+    "driver.diagnostics.events.milliseconds": {
+      "samples": 2,
+      "median": 0.2235,
+      "maximum": 0.228
+    },
+    "driver.diagnostics.sources.milliseconds": {
+      "samples": 2,
+      "median": 0.0085,
+      "maximum": 0.009
+    },
+    "driver.pointer.click.milliseconds": {
+      "samples": 2,
+      "median": 10.8325,
+      "maximum": 10.845
+    },
+    "driver.recording.start.milliseconds": {
+      "samples": 1,
+      "median": 0.251,
+      "maximum": 0.251
+    },
+    "driver.recording.stop.milliseconds": {
+      "samples": 1,
+      "median": 1.811,
+      "maximum": 1.811
+    },
+    "driver.tree.snapshot.milliseconds": {
+      "samples": 2,
+      "median": 64.3635,
+      "maximum": 71.039
+    }
+  }
+}

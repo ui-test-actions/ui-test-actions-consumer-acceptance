@@ -1,0 +1,15 @@
+{
+  "run": 44852340807,
+  "target": "android",
+  "semantic_button_visible_label": "AFTER \u00b7 Button tapped",
+  "initial_visible_first_row": 1,
+  "visible_rows_after": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "two_finger_native_label": "Pinch expanded"
+}

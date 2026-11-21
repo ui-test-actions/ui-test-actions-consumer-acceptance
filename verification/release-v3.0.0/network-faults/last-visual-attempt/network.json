@@ -1,0 +1,35 @@
+{
+  "profiles": [
+    {
+      "epoch": 1795228057.259267,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 30,
+        "seed": 0
+      },
+      "generation": 0,
+      "remaining_ms": 0,
+      "controller_epoch_ms": 1795228067450
+    },
+    {
+      "epoch": 1795228080.2392254,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 30,
+        "seed": 0
+      },
+      "generation": 1,
+      "remaining_ms": 0,
+      "controller_epoch_ms": 1795228090429
+    }
+  ],
+  "reset_confirmed": true
+}

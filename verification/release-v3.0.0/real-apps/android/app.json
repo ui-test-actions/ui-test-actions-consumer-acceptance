@@ -1,0 +1,10 @@
+{
+  "app": "Markor",
+  "framework": "AndroidX, native editor, and WebView preview",
+  "license": "Apache-2.0",
+  "repository": "gsantner/markor",
+  "ref": "v2026.10.0",
+  "commit": "04e8b92ab51ef950df5dc6efb4e21d2f1d43280c",
+  "asset": "net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+  "sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440"
+}

@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-11-21T01:32:36+00:00",
+  "target": "macos",
+  "api_version": 2,
+  "anonymous_status": 401,
+  "reconnected": true,
+  "batch_steps": 3,
+  "batch_replay_equal": true,
+  "before_color": [
+    25,
+    43,
+    66
+  ],
+  "after_color": [
+    23,
+    99,
+    59
+  ],
+  "fixture_text": "Cancel check",
+  "first_authenticated": {
+    "at": "2026-11-21T01:32:28.845+00:00",
+    "http": 200,
+    "seconds_remaining": 474,
+    "deadline_estimate": 1795225222.4262176
+  },
+  "advertised_expiry": "2026-11-21T01:40:32.000+00:00"
+}

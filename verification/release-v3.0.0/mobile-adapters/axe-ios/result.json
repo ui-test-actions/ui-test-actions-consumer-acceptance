@@ -1,0 +1,10 @@
+{
+  "target": "ios",
+  "screen": {
+    "width": 402,
+    "height": 874
+  },
+  "unicode_exact": true,
+  "expected_label": "AFTER · مرحبًا ١٢٣ — English 🌍",
+  "label_observed": true
+}

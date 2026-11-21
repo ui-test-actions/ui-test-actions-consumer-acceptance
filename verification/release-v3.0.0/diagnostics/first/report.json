@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "status": "diverged",
+  "steps": [
+    {
+      "step": 1,
+      "stage": "complete",
+      "operation": "app.launch",
+      "client_action_ms": 570.611,
+      "client_assertion_ms": 673.896,
+      "client_action_to_expectation_ms": 1244.542
+    },
+    {
+      "step": 2,
+      "stage": "complete",
+      "operation": "pointer.click",
+      "client_action_ms": 591.602,
+      "client_assertion_ms": 627.285,
+      "client_action_to_expectation_ms": 1218.921
+    },
+    {
+      "step": 3,
+      "stage": "assertion"
+    }
+  ],
+  "target": "linux",
+  "error": "The replay expectation did not appear."
+}

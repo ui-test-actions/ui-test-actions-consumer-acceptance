@@ -1,0 +1,414 @@
+[
+  {
+    "ios": {
+      "at": "2026-11-21T02:48:59.841+00:00",
+      "http": 200,
+      "seconds_remaining": 238,
+      "deadline_estimate": 1795229576.373608
+    },
+    "android": {
+      "at": "2026-11-21T02:48:59.834+00:00",
+      "http": 200,
+      "seconds_remaining": 138,
+      "deadline_estimate": 1795229476.3707628
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:49:10.662+00:00",
+      "http": 200,
+      "seconds_remaining": 226,
+      "deadline_estimate": 1795229576.2531452
+    },
+    "android": {
+      "at": "2026-11-21T02:49:10.580+00:00",
+      "http": 200,
+      "seconds_remaining": 125,
+      "deadline_estimate": 1795229475.212096
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:49:21.432+00:00",
+      "http": 200,
+      "seconds_remaining": 215,
+      "deadline_estimate": 1795229576.0492358
+    },
+    "android": {
+      "at": "2026-11-21T02:49:21.299+00:00",
+      "http": 200,
+      "seconds_remaining": 115,
+      "deadline_estimate": 1795229475.9824991
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:49:32.064+00:00",
+      "http": 200,
+      "seconds_remaining": 204,
+      "deadline_estimate": 1795229575.7502642
+    },
+    "android": {
+      "at": "2026-11-21T02:49:32.075+00:00",
+      "http": 200,
+      "seconds_remaining": 104,
+      "deadline_estimate": 1795229475.7557802
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:49:42.759+00:00",
+      "http": 200,
+      "seconds_remaining": 193,
+      "deadline_estimate": 1795229575.4186854
+    },
+    "android": {
+      "at": "2026-11-21T02:49:42.736+00:00",
+      "http": 200,
+      "seconds_remaining": 93,
+      "deadline_estimate": 1795229475.4070423
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:49:53.382+00:00",
+      "http": 200,
+      "seconds_remaining": 183,
+      "deadline_estimate": 1795229576.0722404
+    },
+    "android": {
+      "at": "2026-11-21T02:49:53.669+00:00",
+      "http": 200,
+      "seconds_remaining": 82,
+      "deadline_estimate": 1795229475.2161427
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:50:04.484+00:00",
+      "http": 200,
+      "seconds_remaining": 172,
+      "deadline_estimate": 1795229576.0782754
+    },
+    "android": {
+      "at": "2026-11-21T02:50:04.378+00:00",
+      "http": 200,
+      "seconds_remaining": 72,
+      "deadline_estimate": 1795229476.0263789
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:50:15.143+00:00",
+      "http": 200,
+      "seconds_remaining": 161,
+      "deadline_estimate": 1795229575.8146172
+    },
+    "android": {
+      "at": "2026-11-21T02:50:15.115+00:00",
+      "http": 200,
+      "seconds_remaining": 61,
+      "deadline_estimate": 1795229475.8010807
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:50:25.989+00:00",
+      "http": 200,
+      "seconds_remaining": 150,
+      "deadline_estimate": 1795229575.5671396
+    },
+    "android": {
+      "at": "2026-11-21T02:50:25.821+00:00",
+      "http": 200,
+      "seconds_remaining": 50,
+      "deadline_estimate": 1795229475.4836566
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:50:36.626+00:00",
+      "http": 200,
+      "seconds_remaining": 140,
+      "deadline_estimate": 1795229576.30897
+    },
+    "android": {
+      "at": "2026-11-21T02:50:36.637+00:00",
+      "http": 200,
+      "seconds_remaining": 39,
+      "deadline_estimate": 1795229475.3144345
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:50:47.302+00:00",
+      "http": 200,
+      "seconds_remaining": 129,
+      "deadline_estimate": 1795229575.9711518
+    },
+    "android": {
+      "at": "2026-11-21T02:50:47.317+00:00",
+      "http": 200,
+      "seconds_remaining": 29,
+      "deadline_estimate": 1795229475.978566
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:00.519+00:00",
+      "http": 200,
+      "seconds_remaining": 116,
+      "deadline_estimate": 1795229574.9253707
+    },
+    "android": {
+      "at": "2026-11-21T02:51:00.516+00:00",
+      "http": 200,
+      "seconds_remaining": 15,
+      "deadline_estimate": 1795229473.925692
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:04.138+00:00",
+      "http": 200,
+      "seconds_remaining": 112,
+      "deadline_estimate": 1795229575.8295505
+    },
+    "android": {
+      "at": "2026-11-21T02:51:04.141+00:00",
+      "http": 200,
+      "seconds_remaining": 12,
+      "deadline_estimate": 1795229475.83106
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:07.931+00:00",
+      "http": 200,
+      "seconds_remaining": 108,
+      "deadline_estimate": 1795229575.5382652
+    },
+    "android": {
+      "at": "2026-11-21T02:51:07.782+00:00",
+      "http": 200,
+      "seconds_remaining": 8,
+      "deadline_estimate": 1795229475.463911
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:11.637+00:00",
+      "http": 200,
+      "seconds_remaining": 105,
+      "deadline_estimate": 1795229576.28612
+    },
+    "android": {
+      "at": "2026-11-21T02:51:11.673+00:00",
+      "http": 200,
+      "seconds_remaining": 4,
+      "deadline_estimate": 1795229475.3040257
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:15.308+00:00",
+      "http": 200,
+      "seconds_remaining": 101,
+      "deadline_estimate": 1795229575.9922006
+    },
+    "android": {
+      "at": "2026-11-21T02:51:15.317+00:00",
+      "http": 200,
+      "seconds_remaining": 1,
+      "deadline_estimate": 1795229475.9964914
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:19.013+00:00",
+      "http": 200,
+      "seconds_remaining": 97,
+      "deadline_estimate": 1795229575.6666038
+    },
+    "android": {
+      "at": "2026-11-21T02:51:18.852+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:29.637+00:00",
+      "http": 200,
+      "seconds_remaining": 87,
+      "deadline_estimate": 1795229576.3265376
+    },
+    "android": {
+      "at": "2026-11-21T02:51:29.588+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:40.396+00:00",
+      "http": 200,
+      "seconds_remaining": 76,
+      "deadline_estimate": 1795229576.0184925
+    },
+    "android": {
+      "at": "2026-11-21T02:51:40.201+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:51:51.174+00:00",
+      "http": 200,
+      "seconds_remaining": 65,
+      "deadline_estimate": 1795229575.7870774
+    },
+    "android": {
+      "at": "2026-11-21T02:51:51.159+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:01.851+00:00",
+      "http": 200,
+      "seconds_remaining": 54,
+      "deadline_estimate": 1795229575.5148258
+    },
+    "android": {
+      "at": "2026-11-21T02:52:01.840+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:12.459+00:00",
+      "http": 200,
+      "seconds_remaining": 44,
+      "deadline_estimate": 1795229576.1568823
+    },
+    "android": {
+      "at": "2026-11-21T02:52:12.406+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:23.139+00:00",
+      "http": 200,
+      "seconds_remaining": 33,
+      "deadline_estimate": 1795229575.8010662
+    },
+    "android": {
+      "at": "2026-11-21T02:52:23.040+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:33.773+00:00",
+      "http": 200,
+      "seconds_remaining": 22,
+      "deadline_estimate": 1795229575.4582868
+    },
+    "android": {
+      "at": "2026-11-21T02:52:33.703+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:37.541+00:00",
+      "http": 200,
+      "seconds_remaining": 19,
+      "deadline_estimate": 1795229576.158775
+    },
+    "android": {
+      "at": "2026-11-21T02:52:37.401+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:41.242+00:00",
+      "http": 200,
+      "seconds_remaining": 15,
+      "deadline_estimate": 1795229575.8933825
+    },
+    "android": {
+      "at": "2026-11-21T02:52:41.102+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:44.904+00:00",
+      "http": 200,
+      "seconds_remaining": 11,
+      "deadline_estimate": 1795229575.5743337
+    },
+    "android": {
+      "at": "2026-11-21T02:52:44.864+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:48.585+00:00",
+      "http": 200,
+      "seconds_remaining": 8,
+      "deadline_estimate": 1795229576.246117
+    },
+    "android": {
+      "at": "2026-11-21T02:52:48.488+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:52.342+00:00",
+      "http": 200,
+      "seconds_remaining": 4,
+      "deadline_estimate": 1795229575.9651656
+    },
+    "android": {
+      "at": "2026-11-21T02:52:52.147+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:52:55.965+00:00",
+      "http": 200,
+      "seconds_remaining": 0,
+      "deadline_estimate": 1795229575.6546855
+    },
+    "android": {
+      "at": "2026-11-21T02:52:55.974+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:53:00.224+00:00",
+      "http": 530
+    },
+    "android": {
+      "at": "2026-11-21T02:53:00.226+00:00",
+      "http": 530
+    }
+  },
+  {
+    "ios": {
+      "at": "2026-11-21T02:53:10.811+00:00",
+      "http": 530
+    },
+    "android": {
+      "at": "2026-11-21T02:53:10.797+00:00",
+      "http": 530
+    }
+  }
+]

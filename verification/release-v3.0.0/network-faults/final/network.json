@@ -1,0 +1,167 @@
+{
+  "profiles": [
+    {
+      "epoch": 1795228905.088895,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 30,
+        "seed": 0
+      },
+      "generation": 0,
+      "remaining_ms": 0,
+      "controller_epoch_ms": 1795228915282
+    },
+    {
+      "epoch": 1795228905.6616726,
+      "profile": {
+        "delay_ms": 500,
+        "jitter_ms": 25,
+        "loss_percent": 0,
+        "rate_kbit": 512,
+        "offline": false,
+        "seconds": 63,
+        "seed": 0
+      },
+      "generation": 1,
+      "remaining_ms": 63000,
+      "controller_epoch_ms": 1795228915857
+    },
+    {
+      "epoch": 1795228960.7010386,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 25,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 25,
+        "seed": 123
+      },
+      "generation": 2,
+      "remaining_ms": 25000,
+      "controller_epoch_ms": 1795228970872
+    },
+    {
+      "epoch": 1795228975.2817848,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 30,
+        "seed": 0
+      },
+      "generation": 3,
+      "remaining_ms": 0,
+      "controller_epoch_ms": 1795228985468
+    },
+    {
+      "epoch": 1795229113.4551785,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": true,
+        "seconds": 48,
+        "seed": 0
+      },
+      "generation": 6,
+      "remaining_ms": 48000,
+      "controller_epoch_ms": 1795229123652
+    },
+    {
+      "epoch": 1795229162.501253,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 30,
+        "seed": 0
+      },
+      "generation": 7,
+      "remaining_ms": 0,
+      "controller_epoch_ms": 1795229172695
+    },
+    {
+      "epoch": 1795229223.8851311,
+      "profile": {
+        "delay_ms": 0,
+        "jitter_ms": 0,
+        "loss_percent": 0,
+        "rate_kbit": 0,
+        "offline": false,
+        "seconds": 30,
+        "seed": 0
+      },
+      "generation": 8,
+      "remaining_ms": 0,
+      "controller_epoch_ms": 1795229234082
+    }
+  ],
+  "foreign_bearer_http": 401,
+  "fault_messages_direction": "Android to iOS",
+  "discovered_and_connected": {
+    "android_observed": "iPhone",
+    "ios_observed": "Android-433"
+  },
+  "slow_receiver_line": "Android-433 -> CEDAR",
+  "reachable_during_outage": [
+    "android",
+    "ios"
+  ],
+  "preliminary_outage": {
+    "profiles": [
+      {
+        "epoch": 1795229014.8637586,
+        "profile": {
+          "delay_ms": 0,
+          "jitter_ms": 0,
+          "loss_percent": 0,
+          "rate_kbit": 0,
+          "offline": true,
+          "seconds": 48,
+          "seed": 0
+        },
+        "generation": 4,
+        "remaining_ms": 48000,
+        "controller_epoch_ms": 1795229025059
+      },
+      {
+        "epoch": 1795229058.6102464,
+        "profile": {
+          "delay_ms": 0,
+          "jitter_ms": 0,
+          "loss_percent": 0,
+          "rate_kbit": 0,
+          "offline": false,
+          "seconds": 30,
+          "seed": 0
+        },
+        "generation": 5,
+        "remaining_ms": 0,
+        "controller_epoch_ms": 1795229068807
+      }
+    ],
+    "result": "Accessibility exposed the status as an enabled text node, so the original assertion missed it."
+  },
+  "outage_observation": {
+    "epoch": 1795229121.3637855,
+    "android": "No peers connected"
+  },
+  "restored_pair": {
+    "android": "Broadcast (1)",
+    "ios": "fresh sender row in the timeline"
+  },
+  "recovered_receiver_lines": {
+    "ios": "Android-433 -> MAPLE"
+  },
+  "reset_confirmed": true
+}

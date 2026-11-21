@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-11-21T01:22:59+00:00",
+  "target": "android",
+  "api_version": 2,
+  "anonymous_status": 401,
+  "reconnected": true,
+  "batch_steps": 3,
+  "batch_replay_equal": true,
+  "before_color": [
+    25,
+    43,
+    66
+  ],
+  "after_color": [
+    23,
+    99,
+    59
+  ],
+  "fixture_text": "Hour start",
+  "first_authenticated": {
+    "at": "2026-11-21T01:22:51.230+00:00",
+    "http": 200,
+    "seconds_remaining": 3590,
+    "deadline_estimate": 1795227760.7654448
+  },
+  "advertised_expiry": "2026-11-21T02:22:50.000+00:00"
+}

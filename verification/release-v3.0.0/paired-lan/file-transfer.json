@@ -1,0 +1,7 @@
+{
+  "received_bytes": 204800,
+  "expected_sha256": "b3cb6c687966c0bc6205a1aef0d0c25bf0f690e8fcad0dbdbf304bcc5f177aad",
+  "receiver_sha256": "b3cb6c687966c0bc6205a1aef0d0c25bf0f690e8fcad0dbdbf304bcc5f177aad",
+  "receiver_completion_visible": true,
+  "native_consent_captured": true
+}

@@ -1,0 +1,375 @@
+{
+  "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+  "platforms": [
+    {
+      "target": "windows",
+      "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+      "runs": {
+        "hour": {
+          "createdAt": "2026-11-21T01:20:21Z",
+          "databaseId": 44849577921,
+          "displayTitle": "Consumer \u00b7 windows \u00b7 hour",
+          "headSha": "5615f42d8e32f5dafc7ee425b334c045413ff83a",
+          "workflow": "desktop.yml",
+          "job": 136677482462,
+          "conclusion": "success"
+        },
+        "cancellation": {
+          "createdAt": "2026-11-21T01:31:16Z",
+          "databaseId": 44850653705,
+          "displayTitle": "Consumer \u00b7 windows \u00b7 cancellation",
+          "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+          "workflow": "desktop.yml",
+          "job": 136680959676,
+          "conclusion": "cancelled"
+        }
+      },
+      "runner_elapsed_seconds": 3600.341,
+      "runner_ready_at": "2026-11-21T01:21:22.8718241Z",
+      "runner_closed_at": "2026-11-21T02:21:23.2126659Z",
+      "opening": {
+        "at": "2026-11-21T01:21:21.848+00:00",
+        "http": 200,
+        "seconds_remaining": 3591,
+        "deadline_estimate": 1795227672.4180522
+      },
+      "late_ui_action": {
+        "observed_at": "2026-11-21T02:20:22.520+00:00",
+        "seconds_remaining": 50,
+        "expected_app_label": "AFTER \u00b7 Hour end",
+        "label_region": [
+          85,
+          124,
+          610,
+          168
+        ],
+        "change_bounds": [
+          130,
+          11,
+          394,
+          33
+        ]
+      },
+      "last_live": {
+        "at": "2026-11-21T02:21:10.735+00:00",
+        "http": 200,
+        "seconds_remaining": 2,
+        "deadline_estimate": 1795227672.4307978,
+        "offset_seconds": -1.59
+      },
+      "first_terminal": {
+        "at": "2026-11-21T02:21:13.349+00:00",
+        "http": 530,
+        "offset_seconds": 1.02
+      },
+      "last_live_after_cancel": {
+        "at": "2026-11-21T01:32:52.533+00:00",
+        "http": 200,
+        "seconds_remaining": 453,
+        "deadline_estimate": 1795225225.2125669,
+        "seconds_from_submission": 9.658
+      },
+      "first_terminal_after_cancel": {
+        "at": "2026-11-21T01:32:53.985+00:00",
+        "http": 530,
+        "seconds_from_submission": 11.111
+      }
+    },
+    {
+      "target": "macos",
+      "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+      "runs": {
+        "hour": {
+          "createdAt": "2026-11-21T01:20:27Z",
+          "databaseId": 44849588951,
+          "displayTitle": "Consumer \u00b7 macos \u00b7 hour",
+          "headSha": "5615f42d8e32f5dafc7ee425b334c045413ff83a",
+          "workflow": "desktop.yml",
+          "job": 136677516848,
+          "conclusion": "success"
+        },
+        "cancellation": {
+          "createdAt": "2026-11-21T01:31:23Z",
+          "databaseId": 44850664861,
+          "displayTitle": "Consumer \u00b7 macos \u00b7 cancellation",
+          "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+          "workflow": "desktop.yml",
+          "job": 136680994711,
+          "conclusion": "cancelled"
+        }
+      },
+      "runner_elapsed_seconds": 3600.998,
+      "runner_ready_at": "2026-11-21T01:21:24.1583080Z",
+      "runner_closed_at": "2026-11-21T02:21:25.1560570Z",
+      "opening": {
+        "at": "2026-11-21T01:21:23.265+00:00",
+        "http": 200,
+        "seconds_remaining": 3591,
+        "deadline_estimate": 1795227673.879686
+      },
+      "late_ui_action": {
+        "observed_at": "2026-11-21T02:20:24.433+00:00",
+        "seconds_remaining": 50,
+        "expected_app_label": "AFTER \u00b7 Hour end",
+        "label_region": [
+          85,
+          120,
+          605,
+          166
+        ],
+        "change_bounds": [
+          155,
+          11,
+          353,
+          30
+        ]
+      },
+      "last_live": {
+        "at": "2026-11-21T02:21:13.146+00:00",
+        "http": 200,
+        "seconds_remaining": 1,
+        "deadline_estimate": 1795227673.8393526,
+        "offset_seconds": -0.84
+      },
+      "first_terminal": {
+        "at": "2026-11-21T02:21:15.704+00:00",
+        "http": 530,
+        "offset_seconds": 1.72
+      },
+      "last_live_after_cancel": {
+        "at": "2026-11-21T01:32:53.031+00:00",
+        "http": 200,
+        "seconds_remaining": 450,
+        "deadline_estimate": 1795225222.7373865,
+        "seconds_from_submission": 15.681
+      },
+      "first_terminal_after_cancel": {
+        "at": "2026-11-21T01:32:54.559+00:00",
+        "http": 530,
+        "seconds_from_submission": 17.21
+      }
+    },
+    {
+      "target": "linux",
+      "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+      "runs": {
+        "hour": {
+          "createdAt": "2026-11-21T01:20:14Z",
+          "databaseId": 44849565412,
+          "displayTitle": "Consumer \u00b7 linux \u00b7 hour",
+          "headSha": "5615f42d8e32f5dafc7ee425b334c045413ff83a",
+          "workflow": "desktop.yml",
+          "job": 136677448063,
+          "conclusion": "success"
+        },
+        "cancellation": {
+          "createdAt": "2026-11-21T01:31:08Z",
+          "databaseId": 44850639699,
+          "displayTitle": "Consumer \u00b7 linux \u00b7 cancellation",
+          "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+          "workflow": "desktop.yml",
+          "job": 136680918998,
+          "conclusion": "cancelled"
+        }
+      },
+      "runner_elapsed_seconds": 3600.216,
+      "runner_ready_at": "2026-11-21T01:21:24.6581266Z",
+      "runner_closed_at": "2026-11-21T02:21:24.8741056Z",
+      "opening": {
+        "at": "2026-11-21T01:21:21.875+00:00",
+        "http": 200,
+        "seconds_remaining": 3593,
+        "deadline_estimate": 1795227674.4761004
+      },
+      "late_ui_action": {
+        "observed_at": "2026-11-21T02:20:23.233+00:00",
+        "seconds_remaining": 51,
+        "expected_app_label": "AFTER \u00b7 Hour end",
+        "label_region": [
+          85,
+          112,
+          605,
+          165
+        ],
+        "change_bounds": [
+          2,
+          11,
+          507,
+          41
+        ]
+      },
+      "last_live": {
+        "at": "2026-11-21T02:21:13.412+00:00",
+        "http": 200,
+        "seconds_remaining": 1,
+        "deadline_estimate": 1795227674.1022198,
+        "offset_seconds": -0.18
+      },
+      "first_terminal": {
+        "at": "2026-11-21T02:21:16.028+00:00",
+        "http": 530,
+        "offset_seconds": 2.43
+      },
+      "last_live_after_cancel": {
+        "at": "2026-11-21T01:32:17.042+00:00",
+        "http": 200,
+        "seconds_remaining": 447,
+        "deadline_estimate": 1795225183.6861181,
+        "seconds_from_submission": 14.437
+      },
+      "first_terminal_after_cancel": {
+        "at": "2026-11-21T01:32:18.533+00:00",
+        "http": 530,
+        "seconds_from_submission": 15.927
+      }
+    },
+    {
+      "target": "android",
+      "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+      "runs": {
+        "hour": {
+          "createdAt": "2026-11-21T01:20:15Z",
+          "databaseId": 44849566417,
+          "displayTitle": "Consumer mobile \u00b7 android \u00b7 60m \u00b7 hour",
+          "headSha": "5615f42d8e32f5dafc7ee425b334c045413ff83a",
+          "workflow": "mobile-lifetime.yml",
+          "job": 136677449790,
+          "conclusion": "success"
+        },
+        "cancellation": {
+          "createdAt": "2026-11-21T01:31:09Z",
+          "databaseId": 44850640164,
+          "displayTitle": "Consumer mobile \u00b7 android \u00b7 8m \u00b7 cancellation",
+          "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+          "workflow": "mobile-lifetime.yml",
+          "job": 136680920511,
+          "conclusion": "cancelled"
+        }
+      },
+      "runner_elapsed_seconds": 3600.965,
+      "runner_ready_at": "2026-11-21T01:22:51.1908476Z",
+      "runner_closed_at": "2026-11-21T02:22:52.1561307Z",
+      "opening": {
+        "at": "2026-11-21T01:22:51.230+00:00",
+        "http": 200,
+        "seconds_remaining": 3590,
+        "deadline_estimate": 1795227760.7654448
+      },
+      "late_ui_action": {
+        "observed_at": "2026-11-21T02:21:49.987+00:00",
+        "seconds_remaining": 51,
+        "expected_app_label": "AFTER \u00b7 Hour end",
+        "label_region": [
+          28,
+          87,
+          295,
+          133
+        ],
+        "change_bounds": [
+          80,
+          12,
+          178,
+          46
+        ]
+      },
+      "last_live": {
+        "at": "2026-11-21T02:22:39.619+00:00",
+        "http": 200,
+        "seconds_remaining": 1,
+        "deadline_estimate": 1795227760.3004997,
+        "offset_seconds": -1.14
+      },
+      "first_terminal": {
+        "at": "2026-11-21T02:22:42.174+00:00",
+        "http": 530,
+        "offset_seconds": 1.42
+      },
+      "last_live_after_cancel": {
+        "at": "2026-11-21T01:33:27.752+00:00",
+        "http": 200,
+        "seconds_remaining": 443,
+        "deadline_estimate": 1795225250.463854,
+        "seconds_from_submission": 15.425
+      },
+      "first_terminal_after_cancel": {
+        "at": "2026-11-21T01:33:29.279+00:00",
+        "http": 530,
+        "seconds_from_submission": 16.951
+      }
+    },
+    {
+      "target": "ios",
+      "action_pin": "a56957b05ce72ed15c0c35daad572a2add0d173e",
+      "runs": {
+        "hour": {
+          "createdAt": "2026-11-21T01:27:33Z",
+          "databaseId": 44850289378,
+          "displayTitle": "Consumer mobile \u00b7 ios \u00b7 60m \u00b7 hour-retry",
+          "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+          "workflow": "mobile-lifetime.yml",
+          "job": 136679794299,
+          "conclusion": "success"
+        },
+        "cancellation": {
+          "createdAt": "2026-11-21T01:31:16Z",
+          "databaseId": 44850653618,
+          "displayTitle": "Interactive mobile lifetime test",
+          "headSha": "ddbe9256fba23515091d419a1f669333e61e1460",
+          "workflow": "mobile-lifetime.yml",
+          "job": 136680959375,
+          "conclusion": "cancelled"
+        }
+      },
+      "runner_elapsed_seconds": 3600.287,
+      "runner_ready_at": "2026-11-21T01:32:38.0923610Z",
+      "runner_closed_at": "2026-11-21T02:32:38.3790200Z",
+      "opening": {
+        "at": "2026-11-21T01:32:38.728+00:00",
+        "http": 200,
+        "seconds_remaining": 3589,
+        "deadline_estimate": 1795228347.3706198
+      },
+      "late_ui_action": {
+        "observed_at": "2026-11-21T02:31:45.211+00:00",
+        "seconds_remaining": 43,
+        "expected_app_label": "AFTER \u00b7 Hour end",
+        "label_region": [
+          399,
+          175,
+          625,
+          210
+        ],
+        "change_bounds": [
+          52,
+          13,
+          173,
+          25
+        ]
+      },
+      "last_live": {
+        "at": "2026-11-21T02:32:26.803+00:00",
+        "http": 200,
+        "seconds_remaining": 1,
+        "deadline_estimate": 1795228347.4920402,
+        "offset_seconds": -0.64
+      },
+      "first_terminal": {
+        "at": "2026-11-21T02:32:29.340+00:00",
+        "http": 530,
+        "offset_seconds": 1.9
+      },
+      "last_live_after_cancel": {
+        "at": "2026-11-21T01:40:48.402+00:00",
+        "http": 200,
+        "seconds_remaining": 324,
+        "deadline_estimate": 1795225571.974267,
+        "seconds_from_submission": 34.275
+      },
+      "first_terminal_after_cancel": {
+        "at": "2026-11-21T01:40:49.906+00:00",
+        "http": 530,
+        "seconds_from_submission": 35.778
+      }
+    }
+  ]
+}

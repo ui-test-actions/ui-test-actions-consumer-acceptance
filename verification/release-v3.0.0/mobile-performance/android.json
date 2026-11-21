@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "target": "android",
+  "app_id": "dev.uitest.fixture",
+  "samples": [
+    {
+      "id": "dev.uitest.fixture",
+      "running": true,
+      "source": "android:dumpsys",
+      "pid": 2040,
+      "pss_bytes": 17277952,
+      "rss_bytes": 106717184,
+      "cpu_recent_percent": 0.3,
+      "cpu_ms": 9000.0,
+      "cpu_source": "android:ps TIME",
+      "sample_monotonic_ms": 2763621.189,
+      "at_ms": 372.267,
+      "client_poll_ms": 744.343
+    },
+    {
+      "id": "dev.uitest.fixture",
+      "running": true,
+      "source": "android:dumpsys",
+      "pid": 2040,
+      "pss_bytes": 24231936,
+      "rss_bytes": 114753536,
+      "cpu_recent_percent": 0.3,
+      "cpu_ms": 9000.0,
+      "cpu_source": "android:ps TIME",
+      "sample_monotonic_ms": 2764546.767,
+      "at_ms": 1330.383,
+      "client_poll_ms": 660.519,
+      "cpu_one_core_percent": 0.0
+    },
+    {
+      "id": "dev.uitest.fixture",
+      "running": true,
+      "source": "android:dumpsys",
+      "pid": 2040,
+      "pss_bytes": 24231936,
+      "rss_bytes": 114753536,
+      "cpu_recent_percent": 0.3,
+      "cpu_ms": 9000.0,
+      "cpu_source": "android:ps TIME",
+      "sample_monotonic_ms": 2765549.728,
+      "at_ms": 2335.084,
+      "client_poll_ms": 669.99,
+      "cpu_one_core_percent": 0.0
+    }
+  ],
+  "observations": {
+    "startup": {
+      "launch_command_ms": 3978.667,
+      "workflow_readiness_ms": 4194.774
+    },
+    "actions": [
+      {
+        "command": "pointer.click",
+        "milliseconds": 68.653,
+        "ok": true
+      },
+      {
+        "command": "text.insert",
+        "milliseconds": 604.325,
+        "ok": true
+      },
+      {
+        "command": "pointer.click",
+        "milliseconds": 41.166,
+        "ok": true
+      },
+      {
+        "command": "app.metrics",
+        "milliseconds": 144.664,
+        "ok": true
+      },
+      {
+        "command": "app.metrics",
+        "milliseconds": 86.348,
+        "ok": true
+      },
+      {
+        "command": "app.metrics",
+        "milliseconds": 82.268,
+        "ok": true
+      }
+    ]
+  },
+  "metrics": {
+    "app.android:dumpsys.cpu_recent_percent": {
+      "samples": 3,
+      "median": 0.3,
+      "maximum": 0.3
+    },
+    "app.android:dumpsys.pss_bytes": {
+      "samples": 3,
+      "median": 24231936,
+      "maximum": 24231936
+    },
+    "app.android:dumpsys.rss_bytes": {
+      "samples": 3,
+      "median": 114753536,
+      "maximum": 114753536
+    },
+    "app.android:ps TIME.cpu_one_core_percent": {
+      "samples": 2,
+      "median": 0.0,
+      "maximum": 0.0
+    },
+    "driver.pointer.click.milliseconds": {
+      "samples": 2,
+      "median": 54.9095,
+      "maximum": 68.653
+    },
+    "driver.text.insert.milliseconds": {
+      "samples": 1,
+      "median": 604.325,
+      "maximum": 604.325
+    },
+    "startup.launch_command_ms": {
+      "samples": 1,
+      "median": 3978.667,
+      "maximum": 3978.667
+    },
+    "startup.workflow_readiness_ms": {
+      "samples": 1,
+      "median": 4194.774,
+      "maximum": 4194.774
+    }
+  }
+}
