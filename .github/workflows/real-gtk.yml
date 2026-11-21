@@ -1,0 +1,66 @@
+name: Verify real Linux GTK RTL editing
+on:
+  workflow_dispatch:
+    inputs:
+      token_sha256:
+        description: SHA-256 digest of the agent's private token
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  gtk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install pinned Mousepad and enable Arabic locale
+        shell: bash
+        run: |
+          sudo apt-get -o DPkg::Lock::Timeout=60 install -y --no-install-recommends \
+            mousepad=0.6.1-1build2 fonts-noto-core xvfb xauth xdotool xclip openbox wmctrl \
+            python3-pyatspi at-spi2-core dbus-x11
+          sudo locale-gen ar_EG.UTF-8
+          mkdir -p gtk-evidence
+          printf 'Original GTK test document.\n' > gtk-evidence/document.txt
+          dpkg-query --show mousepad > gtk-evidence/version.txt
+          printf '%s\n' 'source c4b2fcbba98a853cac1998269c55b3b954e3faf0' >> gtk-evidence/version.txt
+      - uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+        with:
+          target: linux
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: '8'
+          file-exchange: '1'
+          launch: |
+            LANG=ar_EG.UTF-8 LC_ALL=ar_EG.UTF-8 LANGUAGE=ar mousepad "$PWD/gtk-evidence/document.txt" > gtk-evidence/app.log 2>&1 &
+            printf '%s\n' "$!" > gtk-evidence/launcher.pid
+          ready: |
+            kill -0 "$(cat gtk-evidence/launcher.pid)"
+            wmctrl -l | grep -Fq document.txt
+      - name: Verify persisted Unicode independent of the client
+        shell: bash
+        run: |
+          PYTHONPATH=verification/real-apps python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from verify import EXPECTED
+          data = Path("gtk-evidence/document.txt").read_bytes()
+          if data.decode("utf-8-sig").removesuffix("\n") != EXPECTED:
+              raise SystemExit("Mousepad did not persist the exact Arabic/Unicode fixture")
+          result = {"app":"Mousepad","package":"0.6.1-1build2","locale":"ar_EG.UTF-8",
+                    "sha256":hashlib.sha256(data).hexdigest(),"result":"passed"}
+          Path("gtk-evidence/result.json").write_text(json.dumps(result, indent=2) + "\n")
+          PY
+      - name: Publish GTK application evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: gtk-real-app
+          path: gtk-evidence/
+          if-no-files-found: ignore
+          retention-days: 7
