@@ -1,0 +1,44 @@
+name: Verify consumer performance and failure investigation
+on:
+  workflow_dispatch:
+    inputs:
+      token_sha256:
+        type: string
+        description: SHA-256 digest of the external client token
+        required: true
+permissions:
+  contents: read
+jobs:
+  investigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install the native desktop fixture and accessibility packages
+        run: sudo apt-get -o DPkg::Lock::Timeout=60 install -y --no-install-recommends python3-tk python3-pyatspi at-spi2-core dbus-x11
+      - uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+        env:
+          UI_FIXTURE_EVENTS: ${{ runner.temp }}/diag-app.jsonl
+        with:
+          target: linux
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: '7'
+          display-size: 1024x768
+          desktop-apps: '{"timed-fixture":{"argv":["/usr/bin/python3","fixtures/desktop.py","fixture-ready","9"]}}'
+          diagnostic-logs: '{"app":{"path":"diag-app.jsonl","events":["ui.ready","ui.applied","process.failed"]}}'
+      - name: Corroborate both native fixture exits
+        run: |
+          python3 - "$RUNNER_TEMP/diag-app.jsonl" <<'PY'
+          import json, sys
+          from collections import Counter
+          from pathlib import Path
+          events = [json.loads(line) for line in Path(sys.argv[1]).read_text().splitlines()]
+          outcomes = Counter((event["event"], event.get("code")) for event in events)
+          assert outcomes[("ui.ready", None)] == outcomes[("ui.applied", None)] == outcomes[("process.failed", 17)] == 2
+          print("Two fresh app journeys reached Apply and exited with their actual code 17")
+          PY
