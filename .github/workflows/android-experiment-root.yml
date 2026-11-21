@@ -45,6 +45,9 @@ jobs:
       - name: Cold boot and verify Magisk root
         shell: bash
         run: bash ci/experiment/root-magisk.sh verify
+      - name: Grant the shell UID through Magisk's database before the session
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh grant
       - name: Start bounded su attempts for the interactive grant
         shell: bash
         run: |
@@ -87,10 +90,10 @@ jobs:
             adb -s emulator-5554 shell am start -W -n com.topjohnwu.magisk/.ui.MainActivity >/dev/null 2>&1 || true
           ready: |
             adb -s emulator-5554 shell getprop sys.boot_completed | grep -q 1
-      - name: Ensure the shell su policy if the interactive grant did not complete
+      - name: Re-check the shell su policy after the session
         if: always()
         shell: bash
-        run: bash ci/experiment/root-magisk.sh grant
+        run: bash ci/experiment/root-magisk.sh grant || true
       - name: Install and inspect the inert module
         if: always()
         shell: bash

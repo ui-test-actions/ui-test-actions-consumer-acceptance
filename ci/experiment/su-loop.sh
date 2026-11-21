@@ -8,7 +8,7 @@ evidence="${1:?provide the evidence directory}"
 serial='emulator-5554'
 mkdir -p "$evidence"
 for attempt in $(seq 1 120); do
-    for candidate in /system/bin/su /debug_ramdisk/su; do
+    for candidate in /debug_ramdisk/su /system/bin/su; do
         output="$(timeout 4 adb -s "$serial" shell "$candidate -c id" 2>&1 | tr -d '\r' || true)"
         printf '%s attempt=%s candidate=%s output=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$attempt" "$candidate" "$output" >> "$evidence/su-attempts.txt"
         if grep -q 'uid=0' <<<"$output"; then

@@ -118,7 +118,7 @@ magisk_binary() {
 # The AOSP google_apis image also ships toybox /system/xbin/su, which rejects
 # Magisk's -c syntax. Probe the explicit Magisk-capable paths instead of PATH.
 su_candidates() {
-    printf '%s\n' /system/bin/su /debug_ramdisk/su
+    printf "%s\n" /debug_ramdisk/su /system/bin/su
 }
 
 find_su() {
@@ -175,8 +175,9 @@ verify_root() {
         done
         echo '--- Magisk app package ---'
         adb -s "$serial" shell 'pm list packages -f com.topjohnwu.magisk; pm list packages -d | grep magisk || true; pm list packages -e | grep magisk || true; dumpsys package com.topjohnwu.magisk 2>/dev/null | grep -E "versionName|versionCode|Activity|MAIN|LAUNCHER|enabled=|stopped=|hidden=|suspended=" | head -40; cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -p com.topjohnwu.magisk 2>/dev/null' 2>/dev/null || true
-        echo '--- explicit Magisk activity start ---'
-        timeout 25 adb -s "$serial" shell 'am start -W -n com.topjohnwu.magisk/.ui.MainActivity' 2>&1 || true
+        echo '--- Magisk app repair and explicit activity start ---'
+        timeout 20 adb -s "$serial" shell 'pm enable com.topjohnwu.magisk 2>&1; cmd package install-existing --user 0 com.topjohnwu.magisk 2>&1; cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -p com.topjohnwu.magisk 2>&1' || true
+        timeout 25 adb -s "$serial" shell 'am start --user 0 -W -n com.topjohnwu.magisk/.ui.MainActivity' 2>&1 || true
         echo '--- /data/adb/magisk ---'
         adb -s "$serial" shell 'ls -la /data/adb/magisk 2>/dev/null | head -20' 2>/dev/null || true
         echo '--- /data/adb/modules ---'
@@ -315,7 +316,7 @@ if [[ "$phase" == 'patch' ]]; then
     adb -s "$serial" push "$ramdisk" "$guest/ramdisk.img" >/dev/null
 
     set +e
-    adb -s "$serial" shell "cd $guest && MAGISKVERCHOOSEN=true sh rootAVD.sh ramdisk.img" 2>&1 | tee "$evidence/patch.log"
+    adb -s "$serial" shell "cd $guest && MAGISKVERCHOOSEN=true AVDIsOnline=false sh rootAVD.sh ramdisk.img" 2>&1 | tee "$evidence/patch.log"
     patch_status=${PIPESTATUS[0]}
     set -e
     echo "rootavd_patch_exit=$patch_status" | tee -a "$evidence/patch.log"
@@ -397,7 +398,7 @@ if [[ "$phase" == 'grant' ]]; then
     adb -s "$serial" wait-for-device
     magisk="$(magisk_binary || echo magisk)"
     set +e
-    timeout 30 adb -s "$serial" shell "$magisk --sqlite \"INSERT OR REPLACE INTO policies (uid,policy,until,logging,notification) VALUES (2000,1,0,1,1);\"" >> "$evidence/grant.txt" 2>&1
+    timeout 30 adb -s "$serial" shell "$magisk --sqlite \"INSERT OR REPLACE INTO policies (uid,policy,until,logging,notification) VALUES (2000,2,0,1,1);\"" >> "$evidence/grant.txt" 2>&1
     sqlite_status=$?
     set -e
     echo "grant_sqlite_exit=$sqlite_status" | tee -a "$evidence/grant.txt"
