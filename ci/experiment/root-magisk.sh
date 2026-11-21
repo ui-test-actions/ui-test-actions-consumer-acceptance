@@ -465,7 +465,11 @@ EOF
         timeout 60 adb -s "$serial" shell "$su_path -c 'mkdir -p /data/adb/modules/integrity-inert-test && cp /data/local/tmp/inert-module-stage/module.prop /data/adb/modules/integrity-inert-test/module.prop && cp /data/local/tmp/inert-module-stage/post-fs-data.sh /data/adb/modules/integrity-inert-test/post-fs-data.sh && chmod 0755 /data/adb/modules/integrity-inert-test/post-fs-data.sh && touch /data/adb/modules/integrity-inert-test/update'" >> "$evidence/module-install.txt" 2>&1 || true
         echo "manual_module_stage=attempted" | tee -a "$evidence/module-install.txt"
     fi
-    adb -s "$serial" shell 'ls -la /data/adb/modules 2>/dev/null; cat /data/adb/modules/integrity-inert-test/module.prop 2>/dev/null' > "$evidence/module-installed.txt" 2>&1 || true
+    if [[ -n "$su_path" ]]; then
+        timeout 30 adb -s "$serial" shell "$su_path -c 'ls -la /data/adb/modules; echo ---; cat /data/adb/modules/integrity-inert-test/module.prop 2>/dev/null; echo ---; ls -la /data/adb'" > "$evidence/module-installed.txt" 2>&1 || true
+    else
+        adb -s "$serial" shell 'ls -la /data/adb/modules 2>/dev/null; cat /data/adb/modules/integrity-inert-test/module.prop 2>/dev/null' > "$evidence/module-installed.txt" 2>&1 || true
+    fi
     cat "$evidence/module-installed.txt"
     log "module phase complete"
     exit 0
@@ -477,9 +481,10 @@ if [[ "$phase" == 'reboot' ]]; then
     verify_root "$evidence/reboot-verification.txt"
     {
         echo "inert_module_marker_path=/data/adb/inert-module-ran"
-        if adb -s "$serial" shell 'test -s /data/adb/inert-module-ran' >/dev/null 2>&1; then
+        su_path="$(find_su || true)"
+        if [[ -n "$su_path" ]] && adb -s "$serial" shell "$su_path -c 'test -s /data/adb/inert-module-ran'" >/dev/null 2>&1; then
             echo "inert_module_marker=present"
-            adb -s "$serial" shell 'cat /data/adb/inert-module-ran' 2>/dev/null | tr -d '\r'
+            adb -s "$serial" shell "$su_path -c 'cat /data/adb/inert-module-ran'" 2>/dev/null | tr -d '\r'
         elif adb -s "$serial" shell 'test -s /data/local/tmp/inert-module-ran' >/dev/null 2>&1; then
             echo "inert_module_marker=present"
             adb -s "$serial" shell 'cat /data/local/tmp/inert-module-ran' 2>/dev/null | tr -d '\r'
@@ -487,7 +492,11 @@ if [[ "$phase" == 'reboot' ]]; then
             echo "inert_module_marker=absent"
         fi
         echo '--- modules list ---'
-        adb -s "$serial" shell 'ls /data/adb/modules' 2>/dev/null || true
+        if [[ -n "$su_path" ]]; then
+            adb -s "$serial" shell "$su_path -c 'ls -la /data/adb/modules'" 2>/dev/null || true
+        else
+            adb -s "$serial" shell 'ls /data/adb/modules' 2>/dev/null || true
+        fi
     } | tee -a "$evidence/reboot-verification.txt"
     adb -s "$serial" logcat -d -b crash -v threadtime > "$evidence/crash-log.txt" 2>/dev/null || true
     adb -s "$serial" logcat -d -v threadtime 2>/dev/null | grep -iE 'magisk|inert|module' | tail -300 > "$evidence/magisk-logcat.txt" || true
