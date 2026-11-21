@@ -78,6 +78,27 @@ jobs:
           )
           bash published-client/fixtures/ios/build.sh "$RUNNER_TEMP/LiveUIFixture.app"
           xcrun simctl bootstatus "$simulator" -b
+          open -a Simulator --args -CurrentDeviceUDID "$simulator"
+          python - "$simulator" <<'PY'
+          import subprocess
+          import sys
+          import time
+
+          command = ['xcrun', 'simctl', 'spawn', sys.argv[1], 'launchctl', 'list']
+          deadline = time.monotonic() + 120
+          while time.monotonic() < deadline:
+              try:
+                  processes = subprocess.check_output(command, timeout=15, stderr=subprocess.DEVNULL)
+              except subprocess.SubprocessError:
+                  processes = b''
+              if any(len(fields) == 3 and fields[0].isdigit() and fields[2] == b'com.apple.SpringBoard'
+                     for line in processes.splitlines() if (fields := line.split())):
+                  print('The selected simulator is responding and SpringBoard is running.')
+                  break
+              time.sleep(2)
+          else:
+              raise SystemExit('The simulator did not reach a responsive SpringBoard before the Action.')
+          PY
           printf 'PROOF_DEVICE=%s\n' "$simulator" >> "$GITHUB_ENV"
       - name: Run the published Action
         uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
