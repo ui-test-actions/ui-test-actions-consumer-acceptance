@@ -1,0 +1,112 @@
+name: Verify iOS Simulator accessibility bridge
+on:
+  workflow_dispatch:
+    inputs:
+      token_sha256:
+        description: SHA-256 digest of the external client token
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  ios:
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: a56957b05ce72ed15c0c35daad572a2add0d173e
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Prepare the pinned AXe adapter and app
+        shell: bash
+        run: |
+          test "$(uname -m)" = arm64
+          work="$RUNNER_TEMP/ios-ax"
+          mkdir -p "$work/axe" "$work/proof"
+          asset=AXe-macOS-v2.1.1-universal.tar.gz
+          curl -fsSL --retry 3 "https://github.com/cameroncooke/AXe/releases/download/v2.1.1/$asset" -o "$work/$asset"
+          printf '%s  %s\n' 8788838b1b32059d143cf06541b72fcaead85c16274457cdbff086510a5b17fa "$work/$asset" |
+            shasum -a 256 -c -
+          tar -xzf "$work/$asset" -C "$work/axe"
+          axe=$(find "$work/axe" -name axe -type f -print -quit)
+          test -x "$axe"
+          xcrun simctl list devices available -j > "$work/devices.json"
+          simulator=$(python - "$work/devices.json" <<'PY'
+          import json, sys
+          from pathlib import Path
+          devices = json.loads(Path(sys.argv[1]).read_text())["devices"]
+          print(next(item["udid"] for key in reversed(sorted(devices)) if ".iOS-" in key
+                   for item in devices[key] if item["name"].startswith("iPhone")))
+          PY
+          )
+          xcrun simctl bootstatus "$simulator" -b
+          bundle=dev.uitest.fixture
+          app="$work/LiveUIFixture.app"
+          bash fixtures/ios/build.sh "$app"
+          xcrun simctl install "$simulator" "$app"
+          open -a Simulator --args -CurrentDeviceUDID "$simulator"
+          xcrun simctl launch "$simulator" "$bundle"
+          observed=
+          for attempt in 1 2 3 4 5; do
+            if "$axe" describe-ui --udid "$simulator" > "$work/proof/preflight.json" 2> "$work/proof/preflight.log" &&
+                python -c 'import json, sys; assert len(json.load(open(sys.argv[1]))[0]["children"]) > 0' "$work/proof/preflight.json"; then
+              observed=1
+              break
+            fi
+            sleep 3
+          done
+          test -n "$observed" || { cat "$work/proof/preflight.log" >&2; exit 1; }
+          python - "$simulator" "$work/proof/preflight.png" <<'PY'
+          from pathlib import Path
+          import subprocess, sys, time
+
+          device, destination = sys.argv[1:]
+          for _ in range(3):
+              try:
+                  subprocess.run(["xcrun", "simctl", "io", device, "screenshot", "--type=png", destination],
+                                 check=True, timeout=25)
+                  if Path(destination).read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+                      break
+              except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+                  print(f"Simulator framebuffer warm-up failed: {error}", flush=True)
+              time.sleep(3)
+          else:
+              sys.exit("No valid simulator screenshot after three attempts")
+          PY
+          echo "AXE_BINARY=$axe" >> "$GITHUB_ENV"
+          echo "AXE_DEVICE=$simulator" >> "$GITHUB_ENV"
+          echo "AXE_APP=$bundle" >> "$GITHUB_ENV"
+      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
+        with:
+          target: ios
+          duration-minutes: '10'
+          token-sha256: ${{ inputs.token_sha256 }}
+          device: ${{ env.AXE_DEVICE }}
+          ios-axe-path: ${{ env.AXE_BINARY }}
+          app-ids: ${{ env.AXE_APP }}
+          ready: xcrun simctl spawn "$AXE_DEVICE" launchctl list | grep -Fq "UIKitApplication:$AXE_APP"
+      - name: Assert the final app state independently of the external client
+        shell: bash
+        run: |
+          "$AXE_BINARY" describe-ui --udid "$AXE_DEVICE" > "$RUNNER_TEMP/ios-ax/proof/final.json"
+          python - "$RUNNER_TEMP/ios-ax/proof/final.json" <<'PY'
+          import json, sys
+          from pathlib import Path
+          observation = json.dumps(json.loads(Path(sys.argv[1]).read_text()), ensure_ascii=False)
+          if 'AFTER · مرحبًا ١٢٣ — English 🌍' not in observation:
+              raise SystemExit("The fixture did not apply the exact Unicode input")
+          print("Exact UIKit label confirmed independently after session teardown")
+          PY
+      - name: Retain bridge observations
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ios-ax-proof
+          path: ${{ runner.temp }}/ios-ax/proof/
+          if-no-files-found: ignore
+          retention-days: 7

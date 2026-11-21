@@ -1,0 +1,76 @@
+name: Verify iOS Appium with prebuilt WebDriverAgent
+on:
+  workflow_dispatch:
+    inputs:
+      token_sha256:
+        description: SHA-256 digest of the agent's private token
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  ios:
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: a56957b05ce72ed15c0c35daad572a2add0d173e
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.15.0
+      - name: Prepare app, pinned WebDriverAgent bundle, and loopback Appium
+        shell: bash
+        run: |
+          test "$(uname -m)" = arm64
+          export APPIUM_HOME="$RUNNER_TEMP/appium-home"
+          npm install --prefix "$RUNNER_TEMP/appium" --no-audit --no-fund appium@4.0.0
+          appium="$RUNNER_TEMP/appium/node_modules/.bin/appium"
+          "$appium" driver install --source=npm appium-xcuitest-driver@13.3.0
+          curl --fail --silent --show-error --location --retry 3 \
+            https://github.com/appium/appium-ios/releases/download/appium-webdriveragent%4017.0.12/WebDriverAgentRunner-Build-Sim-arm64.zip \
+            --output "$RUNNER_TEMP/wda.zip"
+          printf '%s  %s\n' 3e14d36b112e5a838b8c6d5bb2de7d75f43928487ff8f75aac7dc76caa2af846 "$RUNNER_TEMP/wda.zip" |
+            shasum -a 256 -c -
+          unzip -q "$RUNNER_TEMP/wda.zip" -d "$RUNNER_TEMP/wda"
+          wda=$(find "$RUNNER_TEMP/wda" -name WebDriverAgentRunner-Runner.app -type d -print -quit)
+          test -n "$wda"
+          "$appium" --address 127.0.0.1 --port 4723 --log-level info > appium.log 2>&1 &
+          selection=$(xcrun simctl list devices available -j | python -c '
+          import json, sys
+          runtimes = json.load(sys.stdin)["devices"]
+          print(next(device["udid"] + " " + runtime.split(".iOS-")[-1].replace("-", ".")
+                     for runtime in reversed(sorted(runtimes)) if ".iOS-" in runtime
+                     for device in runtimes[runtime] if device["name"].startswith("iPhone")))
+          ')
+          read -r simulator ios_version <<< "$selection"
+          bash fixtures/ios/build.sh "$RUNNER_TEMP/LiveUIFixture.app"
+          xcrun simctl bootstatus "$simulator" -b
+          xcrun simctl install "$simulator" "$RUNNER_TEMP/LiveUIFixture.app"
+          echo "NATIVE_IOS_DEVICE=$simulator" >> "$GITHUB_ENV"
+          echo "NATIVE_IOS_VERSION=$ios_version" >> "$GITHUB_ENV"
+          echo "NATIVE_IOS_WDA=$wda" >> "$GITHUB_ENV"
+          curl --fail --silent --show-error --retry 5 --retry-connrefused http://127.0.0.1:4723/status
+      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
+        with:
+          target: ios
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: '8'
+          device: ${{ env.NATIVE_IOS_DEVICE }}
+          app-ids: dev.uitest.fixture
+          deeplink-schemes: ui-test-fixture
+          webdriver-url: http://127.0.0.1:4723
+          webdriver-capabilities: >-
+            {"platformName":"iOS","appium:automationName":"XCUITest","appium:bundleId":"dev.uitest.fixture","appium:waitForIdleTimeout":2,"appium:isHeadless":true,"appium:platformVersion":"${{ env.NATIVE_IOS_VERSION }}","appium:simulatorStartupTimeout":150000,"appium:wdaLaunchTimeout":180000,"appium:usePreinstalledWDA":true,"appium:prebuiltWDAPath":"${{ env.NATIVE_IOS_WDA }}"}
+      - name: Retain fixture backend diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: appium-diagnostics
+          path: appium.log
+          retention-days: 3
