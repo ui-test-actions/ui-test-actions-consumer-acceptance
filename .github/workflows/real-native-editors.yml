@@ -1,0 +1,54 @@
+name: Verify pinned native desktop editors
+run-name: Native editor · ${{ inputs.target }}
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        type: choice
+        options: [windows, macos]
+        required: true
+      token_sha256:
+        description: SHA-256 digest of the external verifier's session token
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  editor:
+    runs-on: ${{ inputs.target == 'windows' && 'windows-2025' || 'macos-26' }}
+    timeout-minutes: 22
+    env:
+      REAL_APP_TARGET: ${{ inputs.target }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: 672f07488d17d39375d8895398d72e4fb94b4437
+          path: published-client
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Prepare the checksum-verified upstream binary
+        shell: bash
+        working-directory: published-client
+        run: bash verification/real-apps/prepare.sh "$REAL_APP_TARGET"
+      - uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+        with:
+          target: ${{ inputs.target }}
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: '8'
+          launch: cd published-client && bash verification/real-apps/launch.sh "$REAL_APP_TARGET"
+          ready: cd published-client && bash verification/real-apps/ready.sh "$REAL_APP_TARGET"
+      - name: Verify the exact Unicode document on disk
+        shell: bash
+        working-directory: published-client
+        run: python verification/real-apps/verify.py assert "$REAL_APP_TARGET" real-app-evidence/document.txt real-app-evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ !cancelled() }}
+        with:
+          name: native-editor-evidence
+          path: |
+            published-client/real-app-evidence/app.json
+            published-client/real-app-evidence/result.json
+          retention-days: 7
