@@ -115,6 +115,31 @@ magisk_binary() {
     return 1
 }
 
+# The AOSP google_apis image also ships toybox /system/xbin/su, which rejects
+# Magisk's -c syntax. Probe the explicit Magisk-capable paths instead of PATH.
+su_candidates() {
+    printf '%s\n' /system/bin/su /debug_ramdisk/su
+}
+
+find_su() {
+    local candidate output
+    if [[ -s "$evidence/su-command.txt" ]]; then
+        candidate="$(cat "$evidence/su-command.txt")"
+        if [[ -n "$candidate" ]]; then
+            printf '%s\n' "$candidate"
+            return 0
+        fi
+    fi
+    for candidate in $(su_candidates); do
+        output="$(timeout 15 adb -s "$serial" shell "$candidate -c id" 2>&1 | tr -d '\r' || true)"
+        if grep -q 'uid=0' <<<"$output"; then
+            printf '%s\n' "$candidate" | tee "$evidence/su-command.txt"
+            return 0
+        fi
+    done
+    return 1
+}
+
 verify_root() {
     local output="$1"
     {
@@ -128,19 +153,28 @@ verify_root() {
             echo "magisk_version=$(adb -s "$serial" shell "$magisk -v" 2>/dev/null | tr -d '\r')"
             echo "magisk_path=$(adb -s "$serial" shell "$magisk --path" 2>/dev/null | tr -d '\r')"
         fi
-        echo '--- su -c id (timeout 20s) ---'
-        local su_output su_status
-        set +e
-        su_output="$(timeout 20 adb -s "$serial" shell 'su -c id' 2>&1 | tr -d '\r')"
-        su_status=$?
-        set -e
-        echo "$su_output"
-        echo "su_exit=$su_status"
-        if grep -q 'uid=0' <<<"$su_output"; then
-            echo "magisk_root=verified"
-        else
-            echo "magisk_root=pending"
-        fi
+        echo '--- su candidates ---'
+        adb -s "$serial" shell 'ls -l /system/bin/su /system/xbin/su /debug_ramdisk/su 2>/dev/null; readlink -f /system/bin/su 2>/dev/null; which -a su 2>/dev/null; echo PATH=$PATH' 2>/dev/null || true
+        echo '--- explicit su -c id attempts (timeout 15s each) ---'
+        local candidate su_output su_status=1
+        for candidate in $(su_candidates); do
+            set +e
+            su_output="$(timeout 15 adb -s "$serial" shell "$candidate -c id" 2>&1 | tr -d '\r')"
+            su_status=$?
+            set -e
+            echo "candidate=$candidate"
+            echo "$su_output"
+            echo "su_exit=$su_status"
+            if grep -q 'uid=0' <<<"$su_output"; then
+                printf '%s\n' "$candidate" | tee "$evidence/su-command.txt"
+                echo "magisk_root=verified"
+                break
+            else
+                echo "magisk_root=pending"
+            fi
+        done
+        echo '--- Magisk app package ---'
+        adb -s "$serial" shell 'pm list packages -f com.topjohnwu.magisk; dumpsys package com.topjohnwu.magisk 2>/dev/null | grep -E "versionName|versionCode|Activity|MAIN|LAUNCHER" | head -30; cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -p com.topjohnwu.magisk 2>/dev/null' 2>/dev/null || true
         echo '--- /data/adb/magisk ---'
         adb -s "$serial" shell 'ls -la /data/adb/magisk 2>/dev/null | head -20' 2>/dev/null || true
         echo '--- /data/adb/modules ---'
@@ -321,6 +355,8 @@ if [[ "$phase" == 'patch' ]]; then
     echo "ramdisk_sha256_reinstalled=$(sha256sum "$ramdisk" | awk '{print $1}')" | tee -a "$evidence/ramdisk-hashes.txt"
 
     if [[ -s "$RUNNER_TEMP/Magisk-pulled.apk" ]]; then
+        "$sdk/build-tools/35.0.0/aapt" dump badging "$RUNNER_TEMP/Magisk-pulled.apk" \
+            > "$evidence/magisk-apk-badging.txt" 2>&1 || true
         adb -s "$serial" install -r "$RUNNER_TEMP/Magisk-pulled.apk" > "$evidence/magisk-install.txt" 2>&1 || true
         cat "$evidence/magisk-install.txt"
     fi
@@ -345,7 +381,11 @@ if [[ "$phase" == 'grant' ]]; then
     # Only used if the interactive Magisk prompt could not be granted during
     # the UI session. This writes the normal Magisk allow policy for the shell
     # UID; su still runs through Magisk, not through adbd.
-    current="$(timeout 20 adb -s "$serial" shell 'su -c id' 2>&1 | tr -d '\r' || true)"
+    su_path="$(find_su || true)"
+    current=""
+    if [[ -n "$su_path" ]]; then
+        current="$(timeout 20 adb -s "$serial" shell "$su_path -c id" 2>&1 | tr -d '\r' || true)"
+    fi
     if grep -q 'uid=0' <<<"$current"; then
         echo "grant_phase=already_verified" | tee "$evidence/grant.txt"
         echo "$current" | tee -a "$evidence/grant.txt"
@@ -362,9 +402,16 @@ if [[ "$phase" == 'grant' ]]; then
     adb -s "$serial" unroot >> "$evidence/grant.txt" 2>&1 || true
     adb -s "$serial" wait-for-device
     sleep 2
-    set +e
-    timeout 20 adb -s "$serial" shell 'su -c id' 2>&1 | tee -a "$evidence/grant.txt"
-    set -e
+    local candidate
+    for candidate in $(su_candidates); do
+        set +e
+        timeout 20 adb -s "$serial" shell "$candidate -c id" 2>&1 | tee -a "$evidence/grant.txt"
+        set -e
+        if timeout 20 adb -s "$serial" shell "$candidate -c id" 2>&1 | grep -q 'uid=0'; then
+            printf '%s\n' "$candidate" | tee "$evidence/su-command.txt"
+            break
+        fi
+    done
     log "grant phase complete"
     exit 0
 fi
@@ -394,8 +441,13 @@ EOF
     (cd "$module_dir" && python3 -m zipfile -c "$RUNNER_TEMP/inert-module.zip" module.prop post-fs-data.sh)
     adb -s "$serial" push "$RUNNER_TEMP/inert-module.zip" /data/local/tmp/inert-module.zip >/dev/null
     magisk="$(magisk_binary || echo magisk)"
+    su_path="$(find_su || true)"
+    if [[ -z "$su_path" ]]; then
+        echo "no Magisk su candidate accepted -c id" | tee "$evidence/module-install.txt"
+        exit 1
+    fi
     set +e
-    timeout 60 adb -s "$serial" shell "su -c '$magisk --install-module /data/local/tmp/inert-module.zip'" > "$evidence/module-install.txt" 2>&1
+    timeout 60 adb -s "$serial" shell "$su_path -c '$magisk --install-module /data/local/tmp/inert-module.zip'" > "$evidence/module-install.txt" 2>&1
     status=$?
     set -e
     echo "module_install_exit=$status" | tee -a "$evidence/module-install.txt"

@@ -76,7 +76,7 @@ jobs:
           target: android
           device: emulator-5554
           token-sha256: ${{ steps.token.outputs.sha256 }}
-          duration-minutes: '12'
+          duration-minutes: '8'
           startup-timeout-seconds: '180'
           app-ids: com.topjohnwu.magisk,com.android.settings,dev.uitest.fixture
           app-installs: '{"dev.uitest.fixture":"${{ env.FIXTURE_APK }}"}'
@@ -84,6 +84,7 @@ jobs:
             adb -s emulator-5554 shell input keyevent KEYCODE_WAKEUP
             adb -s emulator-5554 shell wm dismiss-keyguard
             adb -s emulator-5554 shell input keyevent KEYCODE_HOME
+            adb -s emulator-5554 shell monkey -p com.topjohnwu.magisk -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
           ready: |
             adb -s emulator-5554 shell getprop sys.boot_completed | grep -q 1
       - name: Ensure the shell su policy if the interactive grant did not complete
