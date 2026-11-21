@@ -1,0 +1,115 @@
+name: Verify private UI access across distinct hosted runners
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: 672f07488d17d39375d8895398d72e4fb94b4437
+          path: published-client
+          persist-credentials: false
+      - name: Use public client helpers at the action pin
+        run: printf 'PYTHONPATH=%s/published-client\n' "$GITHUB_WORKSPACE" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Prepare hosted service
+        run: |
+          sudo apt-get -o DPkg::Lock::Timeout=60 install -y --no-install-recommends \
+            python3-tk wireguard-tools fonts-noto-core xvfb xauth xdotool xclip openbox wmctrl \
+            python3-pyatspi at-spi2-core dbus-x11
+          python -m pip install --disable-pip-version-check websockets==15.0.1
+          bash verification/transports/cross-host.sh identity host
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: wg-identity-host-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/transport-proof/identity/
+          retention-days: 1
+      - name: Establish the private WireGuard listener
+        id: relay
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash verification/transports/cross-host.sh link host
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: wg-relay-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/transport-proof/relay/origin
+          retention-days: 1
+      - name: Run the published consumer action
+        uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+        with:
+          transport: private
+          private-address: 10.204.0.1
+          target: linux
+          token-sha256: ${{ steps.relay.outputs.digest }}
+          duration-minutes: '2'
+          file-exchange: '1'
+          launch: /usr/bin/python3 verification/transports/fixture.py "$RUNNER_TEMP/transport-proof" > "$RUNNER_TEMP/transport-proof/app.log" 2>&1 &
+          ready: test -f "$UI_TEST_EXCHANGE_DIR/controls.json"
+      - name: Confirm the app received the exact text once
+        run: |
+          PYTHONPATH=verification python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from probe_fixture import TEST_TEXT
+
+          assert json.loads((Path(os.environ["RUNNER_TEMP"]) / "transport-proof/app-state.json").read_text()) == [TEST_TEXT]
+          print("The app submitted the exact Unicode test text once.")
+          PY
+          sleep 6
+      - name: Remove the private link and test-only carrier
+        if: always()
+        run: bash verification/transports/cross-host.sh cleanup host
+  peer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: 672f07488d17d39375d8895398d72e4fb94b4437
+          path: published-client
+          persist-credentials: false
+      - name: Use public client helpers at the action pin
+        run: printf 'PYTHONPATH=%s/published-client\n' "$GITHUB_WORKSPACE" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Prepare independent agent machine
+        run: |
+          sudo apt-get -o DPkg::Lock::Timeout=60 install -y --no-install-recommends wireguard-tools
+          python -m pip install --disable-pip-version-check websockets==15.0.1 Pillow==12.2.0
+          bash verification/transports/cross-host.sh identity peer
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: wg-identity-peer-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/transport-proof/identity/
+          retention-days: 1
+      - name: Connect the WireGuard peer and run the agent client
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          bash verification/transports/cross-host.sh link peer
+          bash verification/transports/cross-host.sh observe peer
+      - name: Remove the private peer and credentials
+        if: always()
+        run: bash verification/transports/cross-host.sh cleanup peer
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: '!cancelled()'
+        with:
+          name: transport-private-cross-host
+          path: ${{ runner.temp }}/transport-proof/public/
+          retention-days: 14

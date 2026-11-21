@@ -1,0 +1,120 @@
+name: Verify hosted mobile LAN transport
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: IP transport check, live P2pKit pair, or P2pKit network faults
+        type: choice
+        options: [transport, apps, network]
+        default: transport
+      android_app_run:
+        description: Android sample artifact build run
+        type: string
+      ios_app_run:
+        description: iOS sample artifact build run
+        type: string
+      android_token_sha256:
+        description: SHA-256 of the external Android UI token
+        type: string
+      ios_token_sha256:
+        description: SHA-256 of the external iOS UI token
+        type: string
+      ios_backend:
+        description: Simulator UI driver in app mode
+        type: choice
+        options: [visible, axe]
+        default: visible
+permissions:
+  contents: read
+  actions: read
+jobs:
+  pair:
+    timeout-minutes: 38
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: android
+            runner: ubuntu-24.04
+          - target: ios
+            runner: macos-26
+    runs-on: ${{ matrix.runner }}
+    env:
+      LAN_TARGET: ${{ matrix.target }}
+      LAN_IOS_BACKEND: ${{ inputs.ios_backend }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: 672f07488d17d39375d8895398d72e4fb94b4437
+          path: published-client
+          persist-credentials: false
+      - name: Use public client helpers at the action pin
+        run: printf 'PYTHONPATH=%s/published-client\n' "$GITHUB_WORKSPACE" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Generate a job-local LAN identity
+        run: bash verification/mobile-lan/trial.sh identity "$LAN_TARGET"
+      - name: Start Android-side relay endpoint
+        if: matrix.target == 'android'
+        run: bash verification/mobile-lan/trial.sh rendezvous "$LAN_TARGET"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lan-${{ matrix.target }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/mobile-lan/public
+          if-no-files-found: error
+          retention-days: 1
+      - name: Set up isolated LAN interface and boot mobile runtime
+        env:
+          LAN_KEEP: '1'
+        run: bash "verification/mobile-lan/preflight-$LAN_TARGET.sh"
+      - name: Fetch and validate the pinned P2pKit sample
+        if: inputs.mode != 'transport'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SAMPLE_RUN: ${{ matrix.target == 'android' && inputs.android_app_run || inputs.ios_app_run }}
+          UI_DIGEST: ${{ matrix.target == 'android' && inputs.android_token_sha256 || inputs.ios_token_sha256 }}
+        run: bash verification/mobile-lan/prepare-sample.sh "$LAN_TARGET" "$SAMPLE_RUN" "$UI_DIGEST"
+      - name: Connect the two isolated LAN interfaces
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LAN_FAULTS: ${{ inputs.mode == 'network' && '1' || '0' }}
+        run: bash verification/mobile-lan/trial.sh bridge "$LAN_TARGET"
+      - name: Verify guest-to-Mac and Mac-to-guest IP delivery
+        run: bash verification/mobile-lan/trial.sh verify "$LAN_TARGET"
+      - name: Sample actual LAN delivery throughout the fault test
+        if: inputs.mode == 'network' && matrix.target == 'android'
+        run: bash verification/mobile-lan/trial.sh probe "$LAN_TARGET"
+      - name: Expose the live P2pKit app to the same external agent
+        if: inputs.mode != 'transport'
+        uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+        with:
+          target: ${{ matrix.target }}
+          token-sha256: ${{ matrix.target == 'android' && inputs.android_token_sha256 || inputs.ios_token_sha256 }}
+          duration-minutes: ${{ inputs.mode == 'network' && '12' || '15' }}
+          device: ${{ env.LAN_DEVICE }}
+          app-ids: ${{ env.LAN_APP_ID }}
+          ios-axe-path: ${{ env.LAN_AXE }}
+          network-control-socket: ${{ inputs.mode == 'network' && matrix.target == 'android' && format('{0}/mobile-lan/control/link.sock', runner.temp) || '' }}
+          launch: bash verification/mobile-lan/launch-sample.sh "$LAN_TARGET"
+      - name: Collect sanitized sample event outcomes
+        if: ${{ always() && !cancelled() && inputs.mode != 'transport' && env.LAN_DEVICE != '' }}
+        continue-on-error: true
+        run: bash verification/mobile-lan/collect-sample.sh "$LAN_TARGET"
+      - name: Retire LAN resources
+        if: always()
+        run: bash verification/mobile-lan/trial.sh cleanup "$LAN_TARGET"
+      - name: Retain diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lan-transport-${{ matrix.target }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/mobile-lan-preflight
+          retention-days: 7

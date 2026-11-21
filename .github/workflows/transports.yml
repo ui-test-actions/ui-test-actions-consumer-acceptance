@@ -1,0 +1,114 @@
+name: Verify UI connection transports
+on:
+  workflow_dispatch:
+    inputs:
+      scenario:
+        type: choice
+        description: Run the account-free transport suite or a targeted check
+        options: [all, quick, local, private, fallback]
+        default: all
+permissions:
+  contents: read
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: ${{ fromJSON(inputs.scenario == 'all' && '["local","fallback"]' || format('["{0}"]', inputs.scenario)) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ui-test-actions/ui-test-actions
+          ref: 672f07488d17d39375d8895398d72e4fb94b4437
+          path: published-client
+          persist-credentials: false
+      - name: Use public client helpers at the action pin
+        run: printf 'PYTHONPATH=%s/published-client\n' "$GITHUB_WORKSPACE" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Prepare app, observer, and a private per-job bearer
+        id: prepare
+        run: |
+          sudo apt-get -o DPkg::Lock::Timeout=60 install -y --no-install-recommends \
+            python3-tk wireguard-tools fonts-noto-core xvfb xauth xdotool xclip openbox wmctrl \
+            python3-pyatspi at-spi2-core dbus-x11
+          python -m pip install --disable-pip-version-check Pillow==12.2.0
+          mkdir -m 700 "$RUNNER_TEMP/transport-proof"
+          python - <<'PY'
+          from hashlib import sha256
+          import os
+          from pathlib import Path
+          from secrets import token_hex
+          token = token_hex(32)
+          print(f"::add-mask::{token}", flush=True)
+          path = Path(os.environ["RUNNER_TEMP"]) / "transport-proof" / "token"
+          fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+          with os.fdopen(fd, "w") as handle:
+              handle.write(token)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              print(f"digest={sha256(token.encode()).hexdigest()}", file=output)
+          PY
+      - name: Set up an isolated WireGuard peer
+        if: matrix.mode == 'private'
+        run: bash verification/transports/wireguard.sh up
+      - name: Block Cloudflare connector egress for the fallback check
+        if: matrix.mode == 'fallback'
+        run: sudo iptables -I OUTPUT -p tcp --dport 7844 -j REJECT
+      - name: Start the independent observation process
+        env:
+          MODE: ${{ matrix.mode }}
+        run: |
+          work="$RUNNER_TEMP/transport-proof"
+          prefix=()
+          if [[ "$MODE" == private ]]; then prefix=(sudo ip netns exec ui-peer); fi
+          (
+            set +e
+            "${prefix[@]}" "$(command -v python)" verification/transports/check.py "$MODE" "$work"
+            printf '%s\n' "$?" > "$work/observer.exit"
+          ) > "$work/observer.log" 2>&1 &
+      - name: Run the published consumer action
+        uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+        with:
+          target: linux
+          token-sha256: ${{ steps.prepare.outputs.digest }}
+          transport: ${{ matrix.mode == 'fallback' && 'cloudflare-quick' || matrix.mode == 'quick' && 'auto' || matrix.mode }}
+          transport-fallback: ${{ matrix.mode == 'fallback' && 'local' || 'none' }}
+          private-address: ${{ matrix.mode == 'private' && '10.204.0.1' || '' }}
+          duration-minutes: '1'
+          launch: /usr/bin/python3 verification/transports/fixture.py "$RUNNER_TEMP/transport-proof" > "$RUNNER_TEMP/transport-proof/app.log" 2>&1 &
+          ready: test -f "$RUNNER_TEMP/transport-proof/controls.json"
+      - name: Require measured terminal access and exact application state
+        if: ${{ !cancelled() && steps.prepare.outcome == 'success' }}
+        run: |
+          work="$RUNNER_TEMP/transport-proof"
+          for ((second=0; second<35; second++)); do
+            [[ -f "$work/observer.exit" ]] && break
+            sleep 1
+          done
+          cat "$work/observer.log"
+          test "$(cat "$work/observer.exit")" = 0
+          test -s "$work/public/result.json"
+      - name: Remove the private link and temporary credentials
+        if: always()
+        env:
+          MODE: ${{ matrix.mode }}
+        run: |
+          rm -f "$RUNNER_TEMP/transport-proof/token"
+          if [[ "$MODE" == private ]]; then bash verification/transports/wireguard.sh down; fi
+          if [[ "$MODE" == fallback ]]; then
+            sudo iptables -D OUTPUT -p tcp --dport 7844 -j REJECT 2>/dev/null || true
+          fi
+      - name: Publish only redacted results and screenshots
+        if: ${{ !cancelled() && steps.prepare.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: transport-${{ matrix.mode }}
+          path: ${{ runner.temp }}/transport-proof/public/
+          if-no-files-found: error
+          retention-days: 14

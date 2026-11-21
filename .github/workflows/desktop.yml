@@ -1,0 +1,42 @@
+name: Interactive desktop test
+run-name: Consumer · ${{ inputs.target }} · ${{ inputs.purpose }}
+on:
+  workflow_dispatch:
+    inputs:
+      purpose:
+        type: string
+        default: platform
+      duration:
+        type: string
+        default: '12'
+      target:
+        type: choice
+        options: [linux, windows, macos]
+        required: true
+      token_sha256:
+        description: SHA-256 digest of the locally generated session token
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  interactive:
+    runs-on: ${{ fromJSON('{"linux":"ubuntu-24.04","windows":"windows-2025","macos":"macos-15"}')[inputs.target] }}
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Build the test app
+        shell: bash
+        run: bash ci/build-desktop-app.sh # Replace with your build command.
+      - uses: ui-test-actions/ui-test-actions@672f07488d17d39375d8895398d72e4fb94b4437
+        with:
+          target: ${{ inputs.target }}
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: ${{ inputs.duration }}
+          launch: bash ci/launch-desktop-app.sh # Starts the app and returns.
+          ready: bash ci/check-desktop-ready.sh # Returns zero when the app is ready.
