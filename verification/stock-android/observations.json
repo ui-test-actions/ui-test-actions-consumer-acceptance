@@ -1,0 +1,346 @@
+[
+  {
+    "event": "connected",
+    "utc": "2026-11-21T06:07:38.344409+00:00",
+    "target": "android",
+    "lease_remaining": 352,
+    "transport": "cloudflare-quick"
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:07:42.946099+00:00",
+    "file": "01-stock-fixture.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "4b50a54ad3a67322c43cc013cf4c9d7c1b86a08d8199f4445fb486540f0079aa"
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:07:53.836664+00:00",
+    "file": "02-native-button-applied.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "b884c94223bfa0bdb11ac3cc319620cafede493ec5333dc073d7bbc30d7fdbc3"
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:07:57.532147+00:00",
+    "file": "03-landscape.png",
+    "dimensions": [
+      640,
+      320
+    ],
+    "sha256": "b94e498aedc2982e669a2817403e4d4c723b92459201d35d72e78a17995a4d5d"
+  },
+  {
+    "event": "orientation_restored",
+    "utc": "2026-11-21T06:07:59.563597+00:00",
+    "dimensions": [
+      320,
+      640
+    ]
+  },
+  {
+    "event": "installed_with_ui_test_actions",
+    "utc": "2026-11-21T06:08:03.691130+00:00",
+    "package": "me.parlor.android"
+  },
+  {
+    "event": "real_app_home_verified",
+    "utc": "2026-11-21T06:08:09.473844+00:00",
+    "labels": [
+      "Parlor",
+      "TONIGHT AT YOUR TABLE",
+      "Make room for play.",
+      "Choose a game. Gather your people. Start something fun.",
+      "CHOOSE A GAME",
+      "6 games",
+      "All",
+      "One device",
+      "Nearby",
+      "Open Whodunit and pick how you want to play.",
+      "CASE FILE",
+      "Whodunit",
+      "Trade secrets, reveal evidence, and accuse carefully.",
+      "6 players",
+      "Local + same Wi-Fi",
+      "Open the game library.",
+      "GAMES",
+      "Open settings.",
+      "SETTINGS"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:08:10.560561+00:00",
+    "file": "04-parlor-installed-and-running.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "f53ab2341dcc908f483f6302fba9013b4863f8d0e5358608aaf893bb50dd7af2"
+  },
+  {
+    "event": "real_app_navigation_verified",
+    "utc": "2026-11-21T06:08:19.226520+00:00",
+    "labels": [
+      "Return to the home screen.",
+      "GAME SETUP",
+      "How will you play?",
+      "Choose the setup that works for your group.",
+      "ONE DEVICE EACH · SAME WI-FI",
+      "Open a room and show a code your friends can join.",
+      "Host a Room",
+      "Create the code and lead the game.",
+      "One phone per player",
+      "Enter the host's room code to join their table.",
+      "Join a Room",
+      "Enter the host’s six-character code.",
+      "One phone per player",
+      "ONE DEVICE",
+      "Start a pass-and-play session on this device.",
+      "Pass and Play",
+      "Hand one phone around. Private turns stay covered between players."
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:08:20.194826+00:00",
+    "file": "05-parlor-whodunit.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "13ffb778c8d71ce0e0874d59ee7304e5f197dd6204f3c25f59f067f8f3b9c740"
+  },
+  {
+    "event": "google_play_store_observed",
+    "utc": "2026-11-21T06:08:24.716624+00:00",
+    "labels": [
+      "Options",
+      "Sign in to find the latest Android apps, games, movies, music, & more",
+      "Sign in"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:08:25.518078+00:00",
+    "file": "06-stock-play-store.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "55ef48dc208fdd8522d8801ff264deeb44ad0aa520eac89dbf0694434caf58f5"
+  },
+  {
+    "event": "signed_out_play_store_options",
+    "utc": "2026-11-21T06:08:45.806432+00:00",
+    "labels": [
+      "Updates",
+      "Play Protect",
+      "Settings"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:08:46.786755+00:00",
+    "file": "07-stock-play-options.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "111720ef486bfb83470b20a32182af8fb99bf3eb7e0806c839f3345f257555b6"
+  },
+  {
+    "event": "play_settings_opened",
+    "utc": "2026-11-21T06:09:01.072284+00:00",
+    "labels": [
+      "General",
+      "Notifications",
+      "Click to expand the General settings section",
+      "Network preferences",
+      "Data usage for downloads, auto-updates",
+      "Click to expand the Network preferences settings section",
+      "About",
+      "Play store, build version, device certification",
+      "Click to expand the About settings section",
+      "Navigate up",
+      "Settings"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:09:01.919119+00:00",
+    "file": "08-play-settings.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "6f4e9210054bb6b6b6e0d80ecfc6c42c4ef721d67702e91a528a818406903f91"
+  },
+  {
+    "event": "play_about_opened",
+    "utc": "2026-11-21T06:09:15.805987+00:00",
+    "labels": [
+      "General",
+      "Notifications",
+      "Click to expand the General settings section",
+      "Network preferences",
+      "Data usage for downloads, auto-updates",
+      "Click to expand the Network preferences settings section",
+      "About",
+      "Play store, build version, device certification",
+      "Click to collapse the About settings section",
+      "About Google Play",
+      "Open source licenses",
+      "License details for open source software",
+      "Play Store version",
+      "Version: 41.3.25-31 [0] [PR] 640531013",
+      "Update Play Store",
+      "Learn more",
+      "Navigate up",
+      "Settings"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:09:16.614708+00:00",
+    "file": "09-play-about.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "c9ba4784973b6cd4b501fff8a6fe6e75b0aeb995b8c2610858e37bc80c71c967"
+  },
+  {
+    "event": "play_general_after_documented_activation",
+    "utc": "2026-11-21T06:09:39.722490+00:00",
+    "labels": [
+      "General",
+      "Notifications",
+      "Click to collapse the General settings section",
+      "Notifications",
+      "Manage notification settings",
+      "Network preferences",
+      "Data usage for downloads, auto-updates",
+      "Click to expand the Network preferences settings section",
+      "About",
+      "Play store, build version, device certification",
+      "Click to collapse the About settings section",
+      "About Google Play",
+      "Open source licenses",
+      "License details for open source software",
+      "Play Store version",
+      "Navigate up",
+      "Settings"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:09:40.606898+00:00",
+    "file": "10-play-general.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "41e8cd2909b7832fde16ac9d03483e2288ada2c03dda82c0630a94e6e299d17d"
+  },
+  {
+    "event": "play_settings_after_scroll",
+    "utc": "2026-11-21T06:09:54.275432+00:00",
+    "labels": [
+      "General",
+      "Notifications",
+      "Click to collapse the General settings section",
+      "Notifications",
+      "Manage notification settings",
+      "Network preferences",
+      "Data usage for downloads, auto-updates",
+      "Click to expand the Network preferences settings section",
+      "About",
+      "Play store, build version, device certification",
+      "Click to collapse the About settings section",
+      "About Google Play",
+      "Open source licenses",
+      "License details for open source software",
+      "Play Store version",
+      "Version: 41.3.25-31 [0] [PR] 640531013",
+      "Update Play Store",
+      "Learn more"
+    ]
+  },
+  {
+    "event": "official_play_store_update_response",
+    "utc": "2026-11-21T06:10:03.270047+00:00",
+    "labels": [
+      "A new version of Google Play Store will be downloaded and installed",
+      "Got it"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:10:04.228968+00:00",
+    "file": "11-play-update-result.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "4513ead12a774005e8c2094cec58d5a00a559c70078aed4d9b3993146e156985"
+  },
+  {
+    "event": "reconnected_play_store_state",
+    "utc": "2026-11-21T06:11:02.516835+00:00",
+    "labels": [
+      "General",
+      "Notifications",
+      "Click to collapse the General settings section",
+      "Notifications",
+      "Manage notification settings",
+      "Network preferences",
+      "Data usage for downloads, auto-updates",
+      "Click to expand the Network preferences settings section",
+      "About",
+      "Play store, build version, device certification",
+      "Click to collapse the About settings section",
+      "About Google Play",
+      "Open source licenses",
+      "License details for open source software",
+      "Play Store version",
+      "Version: 41.3.25-31 [0] [PR] 640531013",
+      "Update Play Store",
+      "Learn more"
+    ],
+    "remaining_seconds": 151
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:11:03.439597+00:00",
+    "file": "12-final-play-state.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "297969f119bd0e7f684cf6603becb9e9e73f16e593283e943968a444fc7c863f"
+  },
+  {
+    "event": "play_store_version_recheck",
+    "utc": "2026-11-21T06:11:59.453944+00:00",
+    "labels": [
+      "Version: 41.3.25-31 [0] [PR] 640531013"
+    ]
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-21T06:12:00.279456+00:00",
+    "file": "13-version-recheck.png",
+    "dimensions": [
+      320,
+      640
+    ],
+    "sha256": "2aa885f37eb8af9b5a396e801cebb7fc7570570707ede3fc00eb538640187a0b"
+  }
+]

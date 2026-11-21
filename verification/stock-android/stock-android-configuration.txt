@@ -1,0 +1,16 @@
+system_image=system-images;android-35;google_apis_playstore;x86_64
+runner_arch=x86_64
+emulator_revision=37.3.10
+image_revision=9
+sys.boot_completed=1
+ro.build.version.release=15
+ro.build.version.sdk=35
+ro.product.cpu.abi=x86_64
+ro.build.type=user
+ro.build.tags=release-keys
+ro.build.version.security_patch=2024-09-05
+adb_shell_uid=2000
+Physical size: 320x640
+Physical density: 160
+package:com.android.vending
+emulator_flags=-no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect

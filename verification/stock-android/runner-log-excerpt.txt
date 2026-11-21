@@ -1,0 +1,4 @@
+interactive	Boot the Android emulator and build the lightweight fixture	2026-11-21T06:07:16.6352240Z sys.boot_completed=1
+interactive	Boot the Android emulator and build the lightweight fixture	2026-11-21T06:07:16.8083982Z adb_shell_uid=2000
+interactive	Run the published Action	2026-11-21T06:07:40.7150955Z android session ready for 6 minute(s) via cloudflare-quick
+interactive	Run the published Action	2026-11-21T06:13:41.4806615Z UI session closed
