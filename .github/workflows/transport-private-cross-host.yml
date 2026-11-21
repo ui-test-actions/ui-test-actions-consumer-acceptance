@@ -58,7 +58,7 @@ jobs:
           ready: test -f "$UI_TEST_EXCHANGE_DIR/controls.json"
       - name: Confirm the app received the exact text once
         run: |
-          PYTHONPATH=verification python - <<'PY'
+          PYTHONPATH="verification:$PYTHONPATH" python - <<'PY'
           import json, os
           from pathlib import Path
           from probe_fixture import TEST_TEXT

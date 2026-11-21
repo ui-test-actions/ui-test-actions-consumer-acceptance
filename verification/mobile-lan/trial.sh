@@ -57,7 +57,7 @@ case "$stage" in
       control=(--control "$dir/control/link.sock")
     fi
     # The privileged helper sees only the dedicated job-local interface.
-    sudo -n "$dir/venv/bin/python" "$src/bridge.py" "$role" --interface "$interface" --frame-port "$dir/frame-port" \
+    sudo -n env PYTHONPATH="$PYTHONPATH" "$dir/venv/bin/python" "$src/bridge.py" "$role" --interface "$interface" --frame-port "$dir/frame-port" \
       --cert "$dir/public/cert.pem" --key "$dir/key.pem" --peer-cert "$dir/peer/cert.pem" \
       --ready "$dir/ready" --stats "$evidence/traffic.json" ${origin[@]+"${origin[@]}"} ${control[@]+"${control[@]}"} > "$evidence/bridge.log" 2>&1 &
     echo "$!" > "$dir/bridge.pid"
