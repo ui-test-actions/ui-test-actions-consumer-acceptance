@@ -419,6 +419,40 @@ if [[ "$phase" == 'grant' ]]; then
     exit 0
 fi
 
+if [[ "$phase" == 'magisk_setup' ]]; then
+    # Magisk's app normally populates /data/adb/magisk on first launch. The
+    # installed app has no resolvable launcher activity in this image, so the
+    # same documented runtime files are staged from the official APK instead.
+    apk="$RUNNER_TEMP/Magisk-pulled.apk"
+    stage="$RUNNER_TEMP/magisk-files"
+    if [[ ! -s "$apk" ]]; then
+        echo "Magisk APK is missing; cannot complete the runtime file setup" | tee "$evidence/magisk-setup.txt"
+        exit 1
+    fi
+    rm -rf "$stage"
+    mkdir -p "$stage"
+    unzip -q "$apk" 'assets/*' 'lib/x86_64/*' -d "$stage"
+    cp -a "$stage/assets/." "$stage/"
+    for f in "$stage"/lib/x86_64/lib*.so; do
+        base="${f##*/lib}"
+        base="${base%.so}"
+        cp -f "$f" "$stage/$base"
+    done
+    rm -rf "$stage/assets" "$stage/lib"
+    chmod 755 "$stage"/* 2>/dev/null || true
+    adb -s "$serial" shell 'rm -rf /data/local/tmp/magisk-files && mkdir -p /data/local/tmp/magisk-files' >/dev/null
+    adb -s "$serial" push "$stage/." /data/local/tmp/magisk-files/ >/dev/null
+    su_path="$(find_su || true)"
+    if [[ -z "$su_path" ]]; then
+        echo "no Magisk su candidate; cannot populate /data/adb/magisk" | tee "$evidence/magisk-setup.txt"
+        exit 1
+    fi
+    timeout 60 adb -s "$serial" shell "$su_path -c 'rm -rf /data/adb/magisk && mkdir -p /data/adb/magisk && cp -a /data/local/tmp/magisk-files/. /data/adb/magisk/ && chmod -R 755 /data/adb/magisk'" > "$evidence/magisk-setup.txt" 2>&1 || true
+    timeout 30 adb -s "$serial" shell "$su_path -c 'ls -la /data/adb/magisk | head -30; echo ---; ls -l /data/adb/magisk/module_installer.sh /data/adb/magisk/busybox /data/adb/magisk/magiskboot'" 2>&1 | tee -a "$evidence/magisk-setup.txt"
+    log "magisk setup phase complete"
+    exit 0
+fi
+
 if [[ "$phase" == 'module' ]]; then
     module_dir="$RUNNER_TEMP/inert-module"
     rm -rf "$module_dir"

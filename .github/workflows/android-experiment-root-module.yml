@@ -32,6 +32,9 @@ jobs:
       - name: Grant the shell UID through Magisk's database
         shell: bash
         run: bash ci/experiment/root-magisk.sh grant
+      - name: Complete the Magisk runtime files from the official APK
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh magisk_setup
       - name: Stage and inspect the inert module
         shell: bash
         run: bash ci/experiment/root-magisk.sh module
