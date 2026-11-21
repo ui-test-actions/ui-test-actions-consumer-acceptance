@@ -99,6 +99,9 @@ echo no | "$tools/avdmanager" create avd --force --name "$avd" --package "$image
     echo no | "$tools/avdmanager" create avd --force --name "$avd" --package "$image" \
         --path "$avd_home/$avd.avd" >> "$evidence/avd-create.log" 2>&1
 config="$avd_home/$avd.avd/config.ini"
+for key in hw.ramSize hw.cpu.ncore hw.lcd.width hw.lcd.height hw.lcd.density disk.dataPartition.size; do
+    sed -i "/^${key}=/d" "$config"
+done
 {
     echo 'hw.ramSize=4096'
     echo 'hw.cpu.ncore=4'
