@@ -33,10 +33,12 @@ jobs:
       - name: Build the test app
         shell: bash
         run: bash ci/build-desktop-app.sh # Replace with your build command.
-      - uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
+      - uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
         with:
           target: ${{ inputs.target }}
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
           launch: bash ci/launch-desktop-app.sh # Starts the app and returns.
           ready: bash ci/check-desktop-ready.sh # Returns zero when the app is ready.
+          desktop-apps: >-
+            {"crash-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","crash-fixture-ready","18"]}}

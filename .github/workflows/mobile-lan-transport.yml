@@ -52,7 +52,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: ui-test-actions/ui-test-actions
-          ref: a56957b05ce72ed15c0c35daad572a2add0d173e
+          ref: 0c818c5d72e8c30c59bd1287c330a40392bf8e89
           path: published-client
           persist-credentials: false
       - name: Use public client helpers at the action pin
@@ -94,7 +94,7 @@ jobs:
         run: bash verification/mobile-lan/trial.sh probe "$LAN_TARGET"
       - name: Expose the live P2pKit app to the same external agent
         if: inputs.mode != 'transport'
-        uses: ui-test-actions/ui-test-actions@a56957b05ce72ed15c0c35daad572a2add0d173e
+        uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
         with:
           target: ${{ matrix.target }}
           token-sha256: ${{ matrix.target == 'android' && inputs.android_token_sha256 || inputs.ios_token_sha256 }}
