@@ -1,0 +1,65 @@
+name: Android experiment · root module loading
+
+# Final root validation without a live UI session: reuse the pinned rootAVD
+# patch, pre-grant the shell UID through Magisk's own database, stage a harmless
+# inert boot module, then cold boot and verify both root persistence and the
+# module marker.
+on:
+  push:
+    branches: [experiment/integrity-root-magisk]
+    paths: [experiment/triggers/root-module]
+
+permissions:
+  contents: read
+
+jobs:
+  root-module:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Stage dependencies and boot the disposable AOSP emulator
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh setup
+      - name: Isolate the guest and apply the reviewed rootAVD patch
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh patch
+      - name: Cold boot and verify Magisk root
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh verify
+      - name: Grant the shell UID through Magisk's database
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh grant
+      - name: Stage and inspect the inert module
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh module
+      - name: Second cold boot, root persistence, and module marker
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh reboot
+      - name: Collect root module evidence
+        if: always()
+        timeout-minutes: 5
+        shell: bash
+        run: bash ci/experiment/root-magisk.sh collect
+      - name: Upload root module evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.0
+        with:
+          name: android-experiment-root-module-${{ github.run_id }}
+          path: evidence/root
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Summarize root module results
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "### Root module loading"
+            echo '```'
+            cat evidence/root/module-install.txt 2>/dev/null || true
+            echo '---'
+            cat evidence/root/reboot-verification.txt 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

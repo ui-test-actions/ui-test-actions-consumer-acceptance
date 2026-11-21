@@ -454,6 +454,17 @@ EOF
     status=$?
     set -e
     echo "module_install_exit=$status" | tee -a "$evidence/module-install.txt"
+    if ! grep -q 'module_install_exit=0' "$evidence/module-install.txt"; then
+        # Magisk v31.1 on this AOSP image reports "Incomplete Magisk install"
+        # because /data/adb/magisk was never populated by the app's additional
+        # setup. Stage the same inert module layout directly; Magisk picks it
+        # up from /data/adb/modules on the next boot.
+        adb -s "$serial" shell 'rm -rf /data/local/tmp/inert-module-stage && mkdir -p /data/local/tmp/inert-module-stage' >/dev/null
+        adb -s "$serial" push "$module_dir/module.prop" /data/local/tmp/inert-module-stage/module.prop >/dev/null
+        adb -s "$serial" push "$module_dir/post-fs-data.sh" /data/local/tmp/inert-module-stage/post-fs-data.sh >/dev/null
+        timeout 60 adb -s "$serial" shell "$su_path -c 'mkdir -p /data/adb/modules/integrity-inert-test && cp /data/local/tmp/inert-module-stage/module.prop /data/adb/modules/integrity-inert-test/module.prop && cp /data/local/tmp/inert-module-stage/post-fs-data.sh /data/adb/modules/integrity-inert-test/post-fs-data.sh && chmod 0755 /data/adb/modules/integrity-inert-test/post-fs-data.sh && touch /data/adb/modules/integrity-inert-test/update'" >> "$evidence/module-install.txt" 2>&1 || true
+        echo "manual_module_stage=attempted" | tee -a "$evidence/module-install.txt"
+    fi
     adb -s "$serial" shell 'ls -la /data/adb/modules 2>/dev/null; cat /data/adb/modules/integrity-inert-test/module.prop 2>/dev/null' > "$evidence/module-installed.txt" 2>&1 || true
     cat "$evidence/module-installed.txt"
     log "module phase complete"
