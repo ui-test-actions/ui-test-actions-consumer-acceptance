@@ -9,10 +9,10 @@ sdk="${ANDROID_HOME:?ANDROID_HOME must point to the Android SDK}"
 tools="$sdk/cmdline-tools/latest/bin"
 image='system-images;android-35;google_apis_playstore;x86_64'
 image_dir="$sdk/${image//;//}"
-avd='integrity-stock'
+avd="${AVD_NAME:-integrity-stock}"
 serial='emulator-5554'
 port='5554'
-evidence='evidence/stock'
+evidence="${EVIDENCE_DIR:-evidence/stock}"
 avd_home="${RUNNER_TEMP}/integrity-avds"
 mkdir -p "$evidence" "$avd_home" "$HOME/.android"
 
@@ -104,7 +104,7 @@ echo no | "$tools/avdmanager" create avd --force --name "$avd" --package "$image
     echo no | "$tools/avdmanager" create avd --force --name "$avd" --package "$image" \
         --path "$avd_home/$avd.avd" >> "$evidence/avd-create.log" 2>&1
 config="$avd_home/$avd.avd/config.ini"
-for key in hw.ramSize hw.cpu.ncore hw.lcd.width hw.lcd.height hw.lcd.density disk.dataPartition.size; do
+for key in hw.ramSize hw.cpu.ncore hw.lcd.width hw.lcd.height hw.lcd.density disk.dataPartition.size PlayStore.enabled; do
     sed -i "/^${key}=/d" "$config"
 done
 {
@@ -114,6 +114,7 @@ done
     echo 'hw.lcd.height=1920'
     echo 'hw.lcd.density=420'
     echo 'disk.dataPartition.size=6G'
+    echo "PlayStore.enabled=${PLAYSTORE_ENABLED:-no}"
 } >> "$config"
 grep -E '^(hw\.|disk\.|PlayStore|tag\.|image\.|abi\.)' "$config" > "$evidence/avd-config.txt"
 
