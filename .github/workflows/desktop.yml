@@ -34,6 +34,8 @@ jobs:
         shell: bash
         run: bash ci/build-desktop-app.sh # Replace with your build command.
       - uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
+        env:
+          CONSUMER_SCENARIO: ${{ inputs.purpose }}
         with:
           target: ${{ inputs.target }}
           token-sha256: ${{ inputs.token_sha256 }}
