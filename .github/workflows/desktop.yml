@@ -36,6 +36,7 @@ jobs:
       - uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
         env:
           CONSUMER_SCENARIO: ${{ inputs.purpose }}
+          UI_FIXTURE_EVENTS: ${{ runner.temp }}/fixture-events.jsonl
         with:
           target: ${{ inputs.target }}
           token-sha256: ${{ inputs.token_sha256 }}
@@ -44,4 +45,5 @@ jobs:
           launch: bash ci/launch-desktop-app.sh # Starts the app and returns.
           ready: bash ci/check-desktop-ready.sh # Returns zero when the app is ready.
           desktop-apps: >-
-            {"crash-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","crash-fixture-ready","18"]}}
+            {"crash-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","crash-fixture-ready","18"]},"freeze-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","freeze-fixture-ready","freeze-once"]}}
+          diagnostic-logs: '{"fixture":{"path":"fixture-events.jsonl","events":["process.frozen"]}}'

@@ -199,12 +199,41 @@ def native_crash(client, target, layout, out, *, trigger=True):
                                            "post_relaunch_native_action_verified": True})
 
 
+def native_freeze(client, layout, out):
+    app = {"id": "freeze-fixture"}
+    assert action(client, "app.launch", app)["running"]
+
+    def ready():
+        frame = screenshot(client)
+        return frame if frame.getpixel(layout.sample) == BEFORE_COLOR else None
+
+    eventually(ready, bool, "the fresh freeze fixture").crop(layout.crop).save(out / "before.png")
+    assert client.batch([click(layout.apply)], uuid4().hex)["completed"] == 1
+    observed = eventually(lambda: action(client, "diagnostics.events", {"source": "fixture"}),
+                          lambda reply: any(event["event"] == "process.frozen" for event in reply["events"]),
+                          "the fixture entering its blocked UI callback")
+    frozen = screenshot(client)
+    assert frozen.getpixel(layout.sample) != AFTER_COLOR
+    frozen.crop(layout.crop).save(out / "frozen.png")
+    assert action(client, "app.status", app)["running"]
+    assert action(client, "app.restart", app)["running"]
+    eventually(ready, bool, "the frozen app to relaunch")
+    assert client.batch([click(layout.apply)], uuid4().hex)["completed"] == 1
+    frame = eventually(lambda: screenshot(client),
+                       lambda frame: frame.getpixel(layout.sample) == AFTER_COLOR, "post-restart Apply")
+    frame.crop(layout.crop).save(out / "recovered.png")
+    assert not action(client, "app.close", app)["running"]
+    record(out, "native-freeze-recovery", {"blocked_callback_observed": True, "process_remained_live": True,
+                                           "restarted_and_responded": True, "owned_process_closed": True,
+                                           "observed_events": len(observed["events"])})
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("connection", type=Path)
     parser.add_argument("--token-file", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--case", choices=("full", "resume", "replay", "crash", "recovery"), default="full")
+    parser.add_argument("--case", choices=("full", "resume", "replay", "crash", "recovery", "freeze"), default="full")
     args = parser.parse_args()
     config = json.loads(args.connection.read_text())
     args.output.mkdir(mode=0o700, parents=True, exist_ok=True)
@@ -218,7 +247,9 @@ def main():
         wait_lock_contention(client, layout.sample, args.output)
     if args.case in ("full", "resume", "replay"):
         replay_and_lost_write(client, args.output)
-    if args.case != "replay":
+    if args.case == "freeze":
+        native_freeze(client, layout, args.output)
+    elif args.case != "replay":
         native_crash(client, target, layout, args.output, trigger=args.case != "recovery")
     record(args.output, "complete", {"target": target, "case": args.case,
                                      "at": datetime.now(timezone.utc).isoformat()})

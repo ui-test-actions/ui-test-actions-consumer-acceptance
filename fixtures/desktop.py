@@ -2,6 +2,7 @@ import json
 import os
 import time
 import tkinter as tk
+from threading import Event
 from pathlib import Path
 import sys
 
@@ -22,6 +23,13 @@ def note(event, **kwargs):
 
 
 def apply():
+    if len(sys.argv) == 3 and sys.argv[2] == "freeze-once":
+        marker = Path(sys.argv[1] + ".blocked")
+        if not marker.exists():
+            marker.touch()
+            note("process.frozen", level="info")
+            Event().wait(120)
+            return
     state.set("AFTER · " + (entry.get() or "Button clicked"))
     root.configure(bg="#17633b")
     status.configure(bg="#17633b")
@@ -39,6 +47,6 @@ root.update()
 entry.focus_force()
 Path(sys.argv[1]).touch()
 note("ui.ready", level="info")
-if len(sys.argv) == 3:
+if len(sys.argv) == 3 and sys.argv[2] != "freeze-once":
     root.after(int(sys.argv[2]) * 1000, fail)
 root.mainloop()
