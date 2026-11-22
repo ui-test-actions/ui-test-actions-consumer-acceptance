@@ -21,7 +21,7 @@ permissions:
   contents: read
 jobs:
   interactive:
-    runs-on: ${{ fromJSON('{"linux":"ubuntu-24.04","windows":"windows-2025","macos":"macos-15"}')[inputs.target] }}
+    runs-on: ${{ inputs.target == 'macos' && inputs.purpose == 'v301-mrk-candidate' && 'macos-26' || fromJSON('{"linux":"ubuntu-24.04","windows":"windows-2025","macos":"macos-15"}')[inputs.target] }}
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
