@@ -36,6 +36,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: ./ci/prepare-pos-windows.ps1
+      - name: Install the retained Apple Silicon POS package
+        if: inputs.target == 'macos' && inputs.purpose == 'v301-pos-training'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash ci/prepare-pos-macos.sh
       - name: Install the Mobile Release Kit candidate
         if: inputs.purpose == 'v301-mrk-candidate' && inputs.target != 'windows'
         shell: bash
@@ -62,8 +68,8 @@ jobs:
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
           transport-fallback: ${{ inputs.purpose == 'v301-connector-exit' && 'local' || 'none' }}
-          launch: ${{ inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/launch-pos-windows.ps1' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/launch-release-kit.sh' || 'bash ci/launch-desktop-app.sh' }}
-          ready: ${{ inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/check-pos-windows.ps1' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/check-release-kit.sh' || 'bash ci/check-desktop-ready.sh' }}
+          launch: ${{ inputs.target == 'windows' && inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/launch-pos-windows.ps1' || inputs.target == 'macos' && inputs.purpose == 'v301-pos-training' && 'open /Applications/UkkeraPOS.app' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/launch-release-kit.sh' || 'bash ci/launch-desktop-app.sh' }}
+          ready: ${{ inputs.target == 'windows' && inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/check-pos-windows.ps1' || inputs.target == 'macos' && inputs.purpose == 'v301-pos-training' && 'pgrep -x UkkeraPOS' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/check-release-kit.sh' || 'bash ci/check-desktop-ready.sh' }}
           desktop-apps: >-
             {"crash-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","crash-fixture-ready","18"]},"freeze-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","freeze-fixture-ready","freeze-once"]}}
           diagnostic-logs: '{"fixture":{"path":"fixture-events.jsonl","events":["process.frozen"]}}'
