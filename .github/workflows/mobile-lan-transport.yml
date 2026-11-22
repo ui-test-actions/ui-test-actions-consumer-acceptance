@@ -7,6 +7,9 @@ on:
         type: choice
         options: [transport, apps, network]
         default: transport
+      picker_android_source:
+        description: Exact P2pKit source for the Android native picker regression
+        type: string
       android_app_run:
         description: Android sample artifact build run
         type: string
@@ -28,7 +31,46 @@ permissions:
   contents: read
   actions: read
 jobs:
+  picker-apk:
+    if: inputs.picker_android_source != ''
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - name: Require exact Android candidate
+        env:
+          SOURCE: ${{ inputs.picker_android_source }}
+          MODE: ${{ inputs.mode }}
+        run: '[[ "$SOURCE" =~ ^[a-f0-9]{40}$ && "$MODE" == network ]]'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: p2pKit/P2pKit
+          ref: ${{ inputs.picker_android_source }}
+          persist-credentials: false
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build candidate and retain its source and hash
+        env:
+          SOURCE: ${{ inputs.picker_android_source }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE"
+          test -z "$(git status --porcelain)"
+          bash scripts/setup-ci-component.sh android
+          ./gradlew :p2p-sample-android:assembleDebug --no-daemon --console=plain
+          mkdir "$RUNNER_TEMP/picker-apk"
+          cp samples/p2p-sample-android/build/outputs/apk/debug/p2p-sample-android-debug.apk "$RUNNER_TEMP/picker-apk/sample.apk"
+          git rev-parse HEAD > "$RUNNER_TEMP/picker-apk/SOURCE_COMMIT"
+          (cd "$RUNNER_TEMP/picker-apk" && sha256sum sample.apk > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: picker-apk-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/picker-apk/
+          if-no-files-found: error
+          retention-days: 7
   pair:
+    needs: picker-apk
+    if: ${{ !cancelled() && (needs.picker-apk.result == 'success' || inputs.picker_android_source == '') }}
     timeout-minutes: 38
     strategy:
       fail-fast: false
@@ -75,8 +117,23 @@ jobs:
         env:
           LAN_KEEP: '1'
         run: bash "verification/mobile-lan/preflight-$LAN_TARGET.sh"
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        if: matrix.target == 'android' && inputs.picker_android_source != ''
+        with:
+          name: picker-apk-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/mobile-lan-sample
+      - name: Verify the exact Android candidate APK
+        if: matrix.target == 'android' && inputs.picker_android_source != ''
+        env:
+          SOURCE: ${{ inputs.picker_android_source }}
+        run: |
+          cd "$RUNNER_TEMP/mobile-lan-sample"
+          test "$(cat SOURCE_COMMIT)" = "$SOURCE"
+          sha256sum -c SHA256SUMS
+          cp SOURCE_COMMIT SHA256SUMS "$RUNNER_TEMP/mobile-lan-preflight/"
+          printf 'LAN_DEVICE=emulator-5554\nLAN_APP_ID=dev.p2pkit.sample.android\n' >> "$GITHUB_ENV"
       - name: Fetch and validate the pinned P2pKit sample
-        if: inputs.mode != 'transport'
+        if: inputs.mode != 'transport' && (matrix.target == 'ios' || inputs.picker_android_source == '')
         env:
           GH_TOKEN: ${{ github.token }}
           SAMPLE_RUN: ${{ matrix.target == 'android' && inputs.android_app_run || inputs.ios_app_run }}
@@ -85,6 +142,9 @@ jobs:
       - name: Seed deterministic Android transfer files
         if: matrix.target == 'android' && inputs.mode == 'network'
         run: bash verification/mobile-lan/seed-transfer-files.sh
+      - name: Seed the ten picker transfer fixtures
+        if: matrix.target == 'android' && inputs.picker_android_source != ''
+        run: bash verification/mobile-lan/picker-evidence.sh seed
       - name: Connect the two isolated LAN interfaces
         env:
           GH_TOKEN: ${{ github.token }}
@@ -111,6 +171,9 @@ jobs:
         if: ${{ always() && !cancelled() && inputs.mode != 'transport' && env.LAN_DEVICE != '' }}
         continue-on-error: true
         run: bash verification/mobile-lan/collect-sample.sh "$LAN_TARGET"
+      - name: Verify native picker transfers and capture scoped application events
+        if: ${{ always() && !cancelled() && inputs.picker_android_source != '' && env.LAN_DEVICE != '' }}
+        run: bash verification/mobile-lan/picker-evidence.sh "$LAN_TARGET"
       - name: Retire LAN resources
         if: always()
         run: bash verification/mobile-lan/trial.sh cleanup "$LAN_TARGET"
