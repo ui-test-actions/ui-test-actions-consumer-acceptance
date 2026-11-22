@@ -1,0 +1,30 @@
+Alpha:
+P2pKitLAN [663283][bind] JmDNS created: boundInterface=192.168.186.17 name=192.168.186.17
+[state] <ephemeral ID> → Connected
+[state] <ephemeral ID> → Connected
+[file ← <ephemeral ID>] offered <file> (2097152B), id=<ephemeral ID>…; use `accept <ephemeral ID>` or `reject <ephemeral ID>`
+[file ← <ephemeral ID>] accepting <ephemeral ID> (2097152B) → <app-private destination>
+[file → <ephemeral ID>] Completed
+[file ← <ephemeral ID> <ephemeral ID>] Completed
+[file ← <ephemeral ID> <ephemeral ID>] durable sha256=b971e53d422d856e97caeae0769ba85a8ba091478708aa750a6df873170dbc75
+P2pKitLAN [672722][lifecycle] stopAdvertising: unregistered
+Beta:
+P2pKitLAN [663260][bind] JmDNS created: boundInterface=192.168.186.17 name=192.168.186.17
+[state] <ephemeral ID> → Connected
+[state] <ephemeral ID> → Connected
+[file ← <ephemeral ID>] offered <file> (256B), id=<ephemeral ID>…; use `accept <ephemeral ID>` or `reject <ephemeral ID>`
+[file ← <ephemeral ID>] accepting <ephemeral ID> (256B) → <app-private destination>
+[file ← <ephemeral ID> <ephemeral ID>] Completed
+[file ← <ephemeral ID> <ephemeral ID>] durable sha256=c8c6e02d597fa6c407a5fec30c981c7bbad08972240eea89841b8f37e2fbf32c
+[file → <ephemeral ID>] Completed
+P2pKitLAN [676949][lifecycle] stopAdvertising: unregistered
+Gamma:
+P2pKitLAN [663182][bind] JmDNS created: boundInterface=192.168.186.17 name=192.168.186.17
+[state] <ephemeral ID> → Connected
+[state] <ephemeral ID> → Connected
+[file ← <ephemeral ID>] offered <file> (7340032B), id=<ephemeral ID>…; use `accept <ephemeral ID>` or `reject <ephemeral ID>`
+[file ← <ephemeral ID>] accepting <ephemeral ID> (7340032B) → <app-private destination>
+[file → <ephemeral ID>] Completed
+[file ← <ephemeral ID> <ephemeral ID>] Completed
+[file ← <ephemeral ID> <ephemeral ID>] durable sha256=be9a1b2988d3040f54fb2707551006c63c5cb30dec0983da5bc790162f753e78
+P2pKitLAN [681071][lifecycle] stopAdvertising: unregistered

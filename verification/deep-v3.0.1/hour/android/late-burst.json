@@ -1,0 +1,1024 @@
+{
+  "at": "2026-11-22T05:20:34.001442+00:00",
+  "target": "android",
+  "workers": 12,
+  "requests": 168,
+  "same_session_after": true,
+  "remaining_after": 448,
+  "counts": {
+    "429": 22,
+    "200": 146
+  },
+  "median_ms": 567.0,
+  "valid_screenshots": 14,
+  "samples": [
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 754
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 614
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 572
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 619
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 811
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 573
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 580
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 588
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 571
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 857
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 569
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 552
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 551
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 809
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 617
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 553
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 692
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 549
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 579
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 641
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 555
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 660
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 578
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 569
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 556
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 691
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 572
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 629
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 798
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 551
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 623
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 618
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 880
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 556
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 616
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 620
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 807
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 619
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 891
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 563
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 579
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 585
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 554
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 579
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 792
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 546
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 569
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 665
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 583
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 785
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 563
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 571
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 591
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 568
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 622
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 570
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 615
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 580
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 662
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 798
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 555
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 581
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 595
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 633
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 579
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 664
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 569
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 975
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 662
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 624
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 797
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 656
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 563
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 574
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 642
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 572
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 620
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 565
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 580
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 571
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 563
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 787
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 590
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 635
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 593
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "error": null,
+      "ms": 792
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 1052
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 625
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 617
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 574
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 586
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 605
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 552
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 629
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 635
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 664
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "error": "The session is busy",
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 606
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "error": null,
+      "ms": 564
+    }
+  ]
+}

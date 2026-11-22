@@ -1,0 +1,74 @@
+{
+  "target": "macos",
+  "run_id": 44985046027,
+  "run": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985046027",
+  "conclusion": "success",
+  "consumer_commit": "b0053719a28096151bdca373472c4dcebcdea11c",
+  "action_commit": "0c818c5d72e8c30c59bd1287c330a40392bf8e89",
+  "github_jobs": [
+    {
+      "name": "interactive",
+      "conclusion": "success",
+      "startedAt": "2026-11-22T04:26:21Z",
+      "completedAt": "2026-11-22T05:27:20Z",
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985046027/job/137093664598"
+    }
+  ],
+  "runner_ready_utc": "2026-11-22T04:27:15.8519760Z",
+  "runner_closed_utc": "2026-11-22T05:27:16.2368980Z",
+  "runner_elapsed_seconds": 3600.385,
+  "first_live": {
+    "at": "2026-11-22T04:28:03.247+00:00",
+    "http": 200,
+    "seconds_remaining": 3543,
+    "deadline_estimate": 1795325225.79986
+  },
+  "opening_visual_change": "2026-11-22T04:28:10+00:00",
+  "late_mutation": {
+    "observed_at": "2026-11-22T05:26:16.384+00:00",
+    "seconds_remaining": 50,
+    "expected_app_label": "AFTER · Hour end",
+    "label_region": [
+      85,
+      120,
+      605,
+      166
+    ],
+    "change_bounds": [
+      107,
+      11,
+      400,
+      32
+    ]
+  },
+  "last_live": {
+    "at": "2026-11-22T05:27:05.108+00:00",
+    "http": 200,
+    "seconds_remaining": 1,
+    "deadline_estimate": 1795325225.8177443,
+    "offset_seconds": -0.77
+  },
+  "first_refusal_after_last_live": {
+    "at": "2026-11-22T05:27:07.656+00:00",
+    "http": 530,
+    "offset_seconds": 1.78
+  },
+  "first_terminal": {
+    "at": "2026-11-22T05:27:07.656+00:00",
+    "http": 530,
+    "offset_seconds": 1.78
+  },
+  "last_terminal": {
+    "at": "2026-11-22T05:27:30.396+00:00",
+    "http": 530,
+    "offset_seconds": 24.52
+  },
+  "soak_rounds": 11,
+  "soak_authenticated_reads": 528,
+  "sampled_metadata_read_ms": {
+    "min": 546,
+    "p50": 575,
+    "p95": 739,
+    "max": 1633
+  }
+}

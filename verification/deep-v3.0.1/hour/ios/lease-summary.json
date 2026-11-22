@@ -1,0 +1,74 @@
+{
+  "target": "ios",
+  "run_id": 44985045694,
+  "run": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985045694",
+  "conclusion": "success",
+  "consumer_commit": "b0053719a28096151bdca373472c4dcebcdea11c",
+  "action_commit": "0c818c5d72e8c30c59bd1287c330a40392bf8e89",
+  "github_jobs": [
+    {
+      "name": "interactive",
+      "conclusion": "success",
+      "startedAt": "2026-11-22T04:26:20Z",
+      "completedAt": "2026-11-22T05:35:16Z",
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985045694/job/137093663251"
+    }
+  ],
+  "runner_ready_utc": "2026-11-22T04:35:01.5178960Z",
+  "runner_closed_utc": "2026-11-22T05:35:02.1596660Z",
+  "runner_elapsed_seconds": 3600.642,
+  "first_live": {
+    "at": "2026-11-22T04:35:03.702+00:00",
+    "http": 200,
+    "seconds_remaining": 3587,
+    "deadline_estimate": 1795325690.3674865
+  },
+  "opening_visual_change": "2026-11-22T04:35:22+00:00",
+  "late_mutation": {
+    "observed_at": "2026-11-22T05:34:01.902+00:00",
+    "seconds_remaining": 49,
+    "expected_app_label": "AFTER · Hour end",
+    "label_region": [
+      399,
+      175,
+      625,
+      210
+    ],
+    "change_bounds": [
+      25,
+      12,
+      200,
+      27
+    ]
+  },
+  "last_live": {
+    "at": "2026-11-22T05:34:48.456+00:00",
+    "http": 200,
+    "seconds_remaining": 2,
+    "deadline_estimate": 1795325690.159171,
+    "offset_seconds": -1.55
+  },
+  "first_refusal_after_last_live": {
+    "at": "2026-11-22T05:34:51.009+00:00",
+    "http": 530,
+    "offset_seconds": 1.0
+  },
+  "first_terminal": {
+    "at": "2026-11-22T05:34:51.009+00:00",
+    "http": 530,
+    "offset_seconds": 1.0
+  },
+  "last_terminal": {
+    "at": "2026-11-22T05:35:14.812+00:00",
+    "http": 530,
+    "offset_seconds": 24.81
+  },
+  "soak_rounds": 11,
+  "soak_authenticated_reads": 528,
+  "sampled_metadata_read_ms": {
+    "min": 503,
+    "p50": 545,
+    "p95": 643,
+    "max": 1601
+  }
+}

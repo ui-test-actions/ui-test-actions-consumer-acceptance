@@ -1,0 +1,103 @@
+{
+  "burst": {
+    "windows": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "200": 157,
+        "429": 11
+      },
+      "median_ms": 557.0,
+      "valid_screenshots": 25,
+      "p95_ms": 1064
+    },
+    "macos": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "429": 16,
+        "200": 152
+      },
+      "median_ms": 571.0,
+      "valid_screenshots": 20,
+      "p95_ms": 970
+    },
+    "android": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "429": 19,
+        "200": 149
+      },
+      "median_ms": 567.0,
+      "valid_screenshots": 17,
+      "p95_ms": 800
+    },
+    "ios": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "429": 22,
+        "200": 146
+      },
+      "median_ms": 532.0,
+      "valid_screenshots": 14,
+      "p95_ms": 1026
+    }
+  },
+  "late-burst": {
+    "windows": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "200": 153,
+        "429": 13,
+        "502": 2
+      },
+      "median_ms": 561.0,
+      "valid_screenshots": 21,
+      "p95_ms": 1067
+    },
+    "macos": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "200": 147,
+        "429": 21
+      },
+      "median_ms": 568.0,
+      "valid_screenshots": 15,
+      "p95_ms": 986
+    },
+    "android": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "429": 22,
+        "200": 146
+      },
+      "median_ms": 567.0,
+      "valid_screenshots": 14,
+      "p95_ms": 798
+    },
+    "ios": {
+      "workers": 12,
+      "requests": 168,
+      "same_session_after": true,
+      "counts": {
+        "429": 24,
+        "200": 144
+      },
+      "median_ms": 533.5,
+      "valid_screenshots": 12,
+      "p95_ms": 967
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "first_picker": {
+    "room_time_range_utc": [
+      "04:58:49",
+      "04:59:25"
+    ],
+    "delivered": 18,
+    "attempts": 18
+  },
+  "repeat_picker": {
+    "room_time_range_utc": [
+      "05:04:02",
+      "05:04:32"
+    ],
+    "delivered": 15,
+    "attempts": 15
+  },
+  "outage": {
+    "room_time_range_utc": [
+      "05:08:38",
+      "05:09:00"
+    ],
+    "delivered": 0,
+    "attempts": 5
+  },
+  "after_outage": {
+    "room_time_range_utc": [
+      "05:09:03",
+      "05:09:32"
+    ],
+    "delivered": 15,
+    "attempts": 15
+  }
+}

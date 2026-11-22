@@ -1,0 +1,33 @@
+{
+  "source_commit": "5c18bf0126f7e043936268951fa6892a4d0c04e5",
+  "suite": {
+    "name": "LanBusinessTransactionIntegrationTest[jvm]",
+    "tests": "4",
+    "skipped": "0",
+    "failures": "0",
+    "errors": "0",
+    "time": "75.286"
+  },
+  "test_cases": [
+    {
+      "name": "independentZeroTotalSalesFromTwoSessionsBothCommitStockAndRetainTheirOwnResults[jvm]",
+      "classname": "com.ukkera.pos.database.LanBusinessTransactionIntegrationTest",
+      "time": "29.66"
+    },
+    {
+      "name": "cancellingAnAcceptedCashWaiterPreservesTheSameLateCommitForRecovery[jvm]",
+      "classname": "com.ukkera.pos.database.LanBusinessTransactionIntegrationTest",
+      "time": "9.356"
+    },
+    {
+      "name": "cashDuplicateChangedBodyAndColdRecoveryRetainOriginalWithoutRepeatingCash[jvm]",
+      "classname": "com.ukkera.pos.database.LanBusinessTransactionIntegrationTest",
+      "time": "14.089"
+    },
+    {
+      "name": "lastUnitReservationExcludesTheOtherSessionAndZeroSaleReplayNeverIssuesTwice[jvm]",
+      "classname": "com.ukkera.pos.database.LanBusinessTransactionIntegrationTest",
+      "time": "22.177"
+    }
+  ]
+}

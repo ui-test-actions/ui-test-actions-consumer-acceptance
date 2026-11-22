@@ -1,0 +1,35 @@
+{"event": "elimination_mode_selected", "at": "2026-11-22T05:18:42.322244+00:00"}
+{"event": "private_role_revealed", "at": "2026-11-22T05:20:16.417637+00:00", "player": "نور ١"}
+{"event": "private_role_revealed", "at": "2026-11-22T05:20:48.820900+00:00", "player": "ليلى ٢"}
+{"event": "private_role_revealed", "at": "2026-11-22T05:21:21.686040+00:00", "player": "سامي ٣"}
+{"event": "private_role_revealed", "at": "2026-11-22T05:21:54.091187+00:00", "player": "مريم ٤"}
+{"event": "private_role_revealed", "at": "2026-11-22T05:22:26.422670+00:00", "player": "Omar ٥"}
+{"event": "private_role_revealed", "at": "2026-11-22T05:23:02.749721+00:00", "player": "ياسمين ٦ 🌙"}
+{"event": "elimination_all_private_dossiers_completed", "at": "2026-11-22T05:23:17.642373+00:00", "players": 6}
+{"event": "elimination_round_advanced", "at": "2026-11-22T05:23:38.801121+00:00", "round": 1}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:23:51.198572+00:00", "round": 1}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:24:03.679476+00:00", "round": 1}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:24:16.027783+00:00", "round": 1}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:24:28.280134+00:00", "round": 1}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:24:40.543144+00:00", "round": 1}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:24:52.981315+00:00", "round": 1}
+{"event": "elimination_innocent_left_and_game_continued", "at": "2026-11-22T05:25:01.923349+00:00", "round": 1}
+{"event": "elimination_round_advanced", "at": "2026-11-22T05:25:19.333174+00:00", "round": 2}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:25:31.634649+00:00", "round": 2}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:25:44.108248+00:00", "round": 2}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:25:56.469634+00:00", "round": 2}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:26:08.794432+00:00", "round": 2}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:26:21.155826+00:00", "round": 2}
+{"event": "elimination_innocent_left_and_game_continued", "at": "2026-11-22T05:26:30.057317+00:00", "round": 2}
+{"event": "elimination_round_advanced", "at": "2026-11-22T05:26:51.620838+00:00", "round": 3}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:27:04.196035+00:00", "round": 3}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:27:16.460495+00:00", "round": 3}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:27:28.831425+00:00", "round": 3}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:27:41.075728+00:00", "round": 3}
+{"event": "elimination_innocent_left_and_game_continued", "at": "2026-11-22T05:27:49.805674+00:00", "round": 3}
+{"event": "elimination_round_advanced", "at": "2026-11-22T05:28:11.037152+00:00", "round": 4}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:28:23.389596+00:00", "round": 4}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:28:35.680314+00:00", "round": 4}
+{"event": "elimination_ballot_accepted", "at": "2026-11-22T05:28:48.129034+00:00", "round": 4}
+{"event": "elimination_verdict_reached", "at": "2026-11-22T05:28:50.753302+00:00", "round": 4}
+{"event": "elimination_postgame_verified", "at": "2026-11-22T05:29:03.226007+00:00", "round": 4}

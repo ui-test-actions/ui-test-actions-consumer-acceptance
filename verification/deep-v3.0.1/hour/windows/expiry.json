@@ -1,0 +1,199 @@
+[
+  {
+    "at": "2026-11-22T05:26:12.145+00:00",
+    "http": 200,
+    "seconds_remaining": 53,
+    "deadline_estimate": 1795325224.8497982,
+    "offset_seconds": -53.12
+  },
+  {
+    "at": "2026-11-22T05:26:14.780+00:00",
+    "http": 200,
+    "seconds_remaining": 51,
+    "deadline_estimate": 1795325225.4636717,
+    "offset_seconds": -50.48
+  },
+  {
+    "at": "2026-11-22T05:26:17.358+00:00",
+    "http": 200,
+    "seconds_remaining": 48,
+    "deadline_estimate": 1795325225.0701406,
+    "offset_seconds": -47.91
+  },
+  {
+    "at": "2026-11-22T05:26:20.057+00:00",
+    "http": 200,
+    "seconds_remaining": 46,
+    "deadline_estimate": 1795325225.708572,
+    "offset_seconds": -45.21
+  },
+  {
+    "at": "2026-11-22T05:26:22.696+00:00",
+    "http": 200,
+    "seconds_remaining": 43,
+    "deadline_estimate": 1795325225.3776221,
+    "offset_seconds": -42.57
+  },
+  {
+    "at": "2026-11-22T05:26:25.269+00:00",
+    "http": 200,
+    "seconds_remaining": 40,
+    "deadline_estimate": 1795325224.9837098,
+    "offset_seconds": -40.0
+  },
+  {
+    "at": "2026-11-22T05:26:27.844+00:00",
+    "http": 200,
+    "seconds_remaining": 38,
+    "deadline_estimate": 1795325225.5577712,
+    "offset_seconds": -37.42
+  },
+  {
+    "at": "2026-11-22T05:26:30.417+00:00",
+    "http": 200,
+    "seconds_remaining": 35,
+    "deadline_estimate": 1795325225.1326861,
+    "offset_seconds": -34.85
+  },
+  {
+    "at": "2026-11-22T05:26:32.995+00:00",
+    "http": 200,
+    "seconds_remaining": 33,
+    "deadline_estimate": 1795325225.7069952,
+    "offset_seconds": -32.27
+  },
+  {
+    "at": "2026-11-22T05:26:35.567+00:00",
+    "http": 200,
+    "seconds_remaining": 30,
+    "deadline_estimate": 1795325225.2819214,
+    "offset_seconds": -29.7
+  },
+  {
+    "at": "2026-11-22T05:26:38.175+00:00",
+    "http": 200,
+    "seconds_remaining": 27,
+    "deadline_estimate": 1795325224.8719592,
+    "offset_seconds": -27.09
+  },
+  {
+    "at": "2026-11-22T05:26:40.759+00:00",
+    "http": 200,
+    "seconds_remaining": 25,
+    "deadline_estimate": 1795325225.4677572,
+    "offset_seconds": -24.51
+  },
+  {
+    "at": "2026-11-22T05:26:43.343+00:00",
+    "http": 200,
+    "seconds_remaining": 22,
+    "deadline_estimate": 1795325225.0520535,
+    "offset_seconds": -21.92
+  },
+  {
+    "at": "2026-11-22T05:26:45.927+00:00",
+    "http": 200,
+    "seconds_remaining": 20,
+    "deadline_estimate": 1795325225.6358728,
+    "offset_seconds": -19.34
+  },
+  {
+    "at": "2026-11-22T05:26:48.542+00:00",
+    "http": 200,
+    "seconds_remaining": 17,
+    "deadline_estimate": 1795325225.235098,
+    "offset_seconds": -16.72
+  },
+  {
+    "at": "2026-11-22T05:26:51.139+00:00",
+    "http": 200,
+    "seconds_remaining": 14,
+    "deadline_estimate": 1795325224.8414063,
+    "offset_seconds": -14.12
+  },
+  {
+    "at": "2026-11-22T05:26:53.792+00:00",
+    "http": 200,
+    "seconds_remaining": 12,
+    "deadline_estimate": 1795325225.4668689,
+    "offset_seconds": -11.47
+  },
+  {
+    "at": "2026-11-22T05:26:56.377+00:00",
+    "http": 200,
+    "seconds_remaining": 9,
+    "deadline_estimate": 1795325225.085246,
+    "offset_seconds": -8.89
+  },
+  {
+    "at": "2026-11-22T05:26:59.469+00:00",
+    "http": 200,
+    "seconds_remaining": 6,
+    "deadline_estimate": 1795325224.924459,
+    "offset_seconds": -5.8
+  },
+  {
+    "at": "2026-11-22T05:27:02.039+00:00",
+    "http": 200,
+    "seconds_remaining": 4,
+    "deadline_estimate": 1795325225.7552958,
+    "offset_seconds": -3.23
+  },
+  {
+    "at": "2026-11-22T05:27:04.615+00:00",
+    "http": 200,
+    "seconds_remaining": 1,
+    "deadline_estimate": 1795325225.3280246,
+    "offset_seconds": -0.65
+  },
+  {
+    "at": "2026-11-22T05:27:07.182+00:00",
+    "http": 530,
+    "offset_seconds": 1.92
+  },
+  {
+    "at": "2026-11-22T05:27:09.732+00:00",
+    "http": 530,
+    "offset_seconds": 4.47
+  },
+  {
+    "at": "2026-11-22T05:27:12.294+00:00",
+    "http": 530,
+    "offset_seconds": 7.03
+  },
+  {
+    "at": "2026-11-22T05:27:14.874+00:00",
+    "http": 530,
+    "offset_seconds": 9.61
+  },
+  {
+    "at": "2026-11-22T05:27:17.428+00:00",
+    "http": 530,
+    "offset_seconds": 12.16
+  },
+  {
+    "at": "2026-11-22T05:27:20.107+00:00",
+    "http": 530,
+    "offset_seconds": 14.84
+  },
+  {
+    "at": "2026-11-22T05:27:22.662+00:00",
+    "http": 530,
+    "offset_seconds": 17.4
+  },
+  {
+    "at": "2026-11-22T05:27:25.260+00:00",
+    "http": 530,
+    "offset_seconds": 20.0
+  },
+  {
+    "at": "2026-11-22T05:27:27.847+00:00",
+    "http": 530,
+    "offset_seconds": 22.58
+  },
+  {
+    "at": "2026-11-22T05:27:30.396+00:00",
+    "http": 530,
+    "offset_seconds": 25.13
+  }
+]

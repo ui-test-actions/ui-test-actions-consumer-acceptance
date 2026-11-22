@@ -1,0 +1,74 @@
+{
+  "target": "android",
+  "run_id": 44985045799,
+  "run": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985045799",
+  "conclusion": "success",
+  "consumer_commit": "864dc3c1c8eac966ce17406f9931e46da8bfee00",
+  "action_commit": "0c818c5d72e8c30c59bd1287c330a40392bf8e89",
+  "github_jobs": [
+    {
+      "name": "interactive",
+      "conclusion": "success",
+      "startedAt": "2026-11-22T04:26:20Z",
+      "completedAt": "2026-11-22T05:28:17Z",
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985045799/job/137093662957"
+    }
+  ],
+  "runner_ready_utc": "2026-11-22T04:28:12.1846114Z",
+  "runner_closed_utc": "2026-11-22T05:28:13.0342955Z",
+  "runner_elapsed_seconds": 3600.85,
+  "first_live": {
+    "at": "2026-11-22T04:29:24.862+00:00",
+    "http": 200,
+    "seconds_remaining": 3517,
+    "deadline_estimate": 1795325281.3799791
+  },
+  "opening_visual_change": "2026-11-22T04:29:31+00:00",
+  "late_mutation": {
+    "observed_at": "2026-11-22T05:27:10.504+00:00",
+    "seconds_remaining": 51,
+    "expected_app_label": "AFTER · Hour end",
+    "label_region": [
+      28,
+      87,
+      295,
+      133
+    ],
+    "change_bounds": [
+      5,
+      11,
+      233,
+      46
+    ]
+  },
+  "last_live": {
+    "at": "2026-11-22T05:27:59.989+00:00",
+    "http": 200,
+    "seconds_remaining": 2,
+    "deadline_estimate": 1795325281.6546044,
+    "offset_seconds": -1.69
+  },
+  "first_refusal_after_last_live": {
+    "at": "2026-11-22T05:28:02.564+00:00",
+    "http": 530,
+    "offset_seconds": 0.88
+  },
+  "first_terminal": {
+    "at": "2026-11-22T05:28:02.564+00:00",
+    "http": 530,
+    "offset_seconds": 0.88
+  },
+  "last_terminal": {
+    "at": "2026-11-22T05:28:25.388+00:00",
+    "http": 530,
+    "offset_seconds": 23.71
+  },
+  "soak_rounds": 6,
+  "soak_authenticated_reads": 288,
+  "sampled_metadata_read_ms": {
+    "min": 549,
+    "p50": 574,
+    "p95": 767,
+    "max": 2616
+  }
+}

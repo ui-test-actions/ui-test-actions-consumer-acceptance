@@ -1,0 +1,44 @@
+{
+  "mode": "three unchanged P2pKit CLI applications in an isolated Linux network namespace",
+  "app_source": "fd3cd74fcc82d342ee6c5a305f7ed15b0b7ed19d",
+  "events": [
+    {
+      "discovered_peer_counts": {
+        "Alpha": 2,
+        "Beta": 2,
+        "Gamma": 2
+      },
+      "discovery": "native mDNS; no manual addresses passed"
+    },
+    {
+      "authenticated_mesh_sessions_per_peer": 2
+    },
+    {
+      "receiver": "Beta",
+      "file": "alpha-small.bin",
+      "bytes": 256,
+      "sha256": "c8c6e02d597fa6c407a5fec30c981c7bbad08972240eea89841b8f37e2fbf32c",
+      "received_sha256_matches": true
+    },
+    {
+      "receiver": "Alpha",
+      "file": "gamma-medium.bin",
+      "bytes": 2097152,
+      "sha256": "b971e53d422d856e97caeae0769ba85a8ba091478708aa750a6df873170dbc75",
+      "received_sha256_matches": true
+    },
+    {
+      "receiver": "Gamma",
+      "file": "beta-large.bin",
+      "bytes": 7340032,
+      "sha256": "be9a1b2988d3040f54fb2707551006c63c5cb30dec0983da5bc790162f753e78",
+      "received_sha256_matches": true
+    }
+  ],
+  "result": "success",
+  "native_exit_codes": {
+    "Alpha": 0,
+    "Beta": 0,
+    "Gamma": 0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "pin": "fd3cd74fcc82d342ee6c5a305f7ed15b0b7ed19d",
+  "suites": {
+    "FileTransferErrorIsolationTest[jvm]": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "FileTransferJvmTest[jvm]": {
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "SessionReconnectFailureTest[jvm]": {
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "VerifiedJvmFileTransferTest[jvm]": {
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  }
+}

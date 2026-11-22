@@ -1,0 +1,74 @@
+{
+  "target": "windows",
+  "run_id": 44985045804,
+  "run": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985045804",
+  "conclusion": "success",
+  "consumer_commit": "b0053719a28096151bdca373472c4dcebcdea11c",
+  "action_commit": "0c818c5d72e8c30c59bd1287c330a40392bf8e89",
+  "github_jobs": [
+    {
+      "name": "interactive",
+      "conclusion": "success",
+      "startedAt": "2026-11-22T04:26:20Z",
+      "completedAt": "2026-11-22T05:27:20Z",
+      "url": "https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/actions/runs/44985045804/job/137093664084"
+    }
+  ],
+  "runner_ready_utc": "2026-11-22T04:27:16.2393119Z",
+  "runner_closed_utc": "2026-11-22T05:27:16.3284766Z",
+  "runner_elapsed_seconds": 3600.089,
+  "first_live": {
+    "at": "2026-11-22T04:28:03.110+00:00",
+    "http": 200,
+    "seconds_remaining": 3542,
+    "deadline_estimate": 1795325224.723146
+  },
+  "opening_visual_change": "2026-11-22T04:28:09+00:00",
+  "late_mutation": {
+    "observed_at": "2026-11-22T05:26:15.349+00:00",
+    "seconds_remaining": 50,
+    "expected_app_label": "AFTER · Hour end",
+    "label_region": [
+      85,
+      124,
+      610,
+      168
+    ],
+    "change_bounds": [
+      67,
+      10,
+      457,
+      36
+    ]
+  },
+  "last_live": {
+    "at": "2026-11-22T05:27:04.615+00:00",
+    "http": 200,
+    "seconds_remaining": 1,
+    "deadline_estimate": 1795325225.3280246,
+    "offset_seconds": -0.65
+  },
+  "first_refusal_after_last_live": {
+    "at": "2026-11-22T05:27:07.182+00:00",
+    "http": 530,
+    "offset_seconds": 1.92
+  },
+  "first_terminal": {
+    "at": "2026-11-22T05:27:07.182+00:00",
+    "http": 530,
+    "offset_seconds": 1.92
+  },
+  "last_terminal": {
+    "at": "2026-11-22T05:27:30.396+00:00",
+    "http": 530,
+    "offset_seconds": 25.13
+  },
+  "soak_rounds": 11,
+  "soak_authenticated_reads": 528,
+  "sampled_metadata_read_ms": {
+    "min": 533,
+    "p50": 565,
+    "p95": 691,
+    "max": 1557
+  }
+}
