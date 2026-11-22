@@ -36,11 +36,24 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: ./ci/prepare-pos-windows.ps1
+      - name: Install the Mobile Release Kit candidate
+        if: inputs.purpose == 'v301-mrk-candidate' && inputs.target != 'windows'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash ci/prepare-release-kit.sh
+      - name: Verify the unmodified Windows candidate's installation gate
+        if: inputs.purpose == 'v301-mrk-candidate' && inputs.target == 'windows'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./ci/check-release-kit-windows.ps1
       - name: Build the test app
-        if: inputs.purpose != 'v301-pos-training'
+        if: inputs.purpose != 'v301-pos-training' && inputs.purpose != 'v301-mrk-candidate'
         shell: bash
         run: bash ci/build-desktop-app.sh # Replace with your build command.
       - uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
+        if: inputs.purpose != 'v301-mrk-candidate' || inputs.target != 'windows'
         env:
           CONSUMER_SCENARIO: ${{ inputs.purpose }}
           UI_FIXTURE_EVENTS: ${{ runner.temp }}/fixture-events.jsonl
@@ -49,8 +62,24 @@ jobs:
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
           transport-fallback: ${{ inputs.purpose == 'v301-connector-exit' && 'local' || 'none' }}
-          launch: ${{ inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/launch-pos-windows.ps1' || 'bash ci/launch-desktop-app.sh' }}
-          ready: ${{ inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/check-pos-windows.ps1' || 'bash ci/check-desktop-ready.sh' }}
+          launch: ${{ inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/launch-pos-windows.ps1' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/launch-release-kit.sh' || 'bash ci/launch-desktop-app.sh' }}
+          ready: ${{ inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/check-pos-windows.ps1' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/check-release-kit.sh' || 'bash ci/check-desktop-ready.sh' }}
           desktop-apps: >-
             {"crash-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","crash-fixture-ready","18"]},"freeze-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","freeze-fixture-ready","freeze-once"]}}
           diagnostic-logs: '{"fixture":{"path":"fixture-events.jsonl","events":["process.frozen"]}}'
+
+      - name: Verify native Linux package removal
+        if: ${{ always() && inputs.purpose == 'v301-mrk-candidate' && inputs.target == 'linux' }}
+        shell: bash
+        run: |
+          if dpkg-query -W -f='${Status}' mobile-release-kit-desktop 2>/dev/null | grep -q 'install ok installed'; then
+            sudo apt-get purge -y mobile-release-kit-desktop
+            test ! -e /usr/bin/mobile-release-kit-desktop
+            printf 'native package removed; app launcher absent\n' >> "$RUNNER_TEMP/mrk-evidence/package.txt"
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ always() && inputs.purpose == 'v301-mrk-candidate' }}
+        with:
+          name: mrk-candidate-install-${{ inputs.target }}
+          path: ${{ runner.temp }}/mrk-evidence/
+          if-no-files-found: error
