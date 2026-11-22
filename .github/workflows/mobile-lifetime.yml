@@ -44,6 +44,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: bash ci/prepare-parlor.sh
+      - name: Prepare the retained Android POS package
+        if: inputs.target == 'android' && inputs.purpose == 'v301-pos-training'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: bash ci/prepare-pos-android.sh
       - name: Boot the Android emulator and build the lightweight fixture
         if: inputs.target == 'android'
         shell: bash
@@ -119,10 +125,16 @@ jobs:
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
           device: ${{ env.PROOF_DEVICE }}
-          app-ids: ${{ env.PARLOR_APK != '' && 'me.parlor.android' || 'dev.uitest.fixture' }}
+          app-ids: ${{ inputs.purpose == 'v301-pos-training' && 'com.ukkera.pos.local.testing' || env.PARLOR_APK != '' && 'me.parlor.android' || 'dev.uitest.fixture' }}
           deeplink-schemes: ${{ env.PARLOR_APK == '' && 'ui-test-fixture' || '' }}
           launch: |
-            if [[ -n "${PARLOR_APK:-}" ]]; then
+            if [[ -n "${POS_APK:-}" ]]; then
+              adb -s "$PROOF_DEVICE" shell cmd connectivity airplane-mode enable
+              adb -s "$PROOF_DEVICE" shell svc wifi disable
+              adb -s "$PROOF_DEVICE" shell svc data disable
+              adb -s "$PROOF_DEVICE" install "$POS_APK"
+              adb -s "$PROOF_DEVICE" shell monkey -p com.ukkera.pos.local.testing -c android.intent.category.LAUNCHER 1
+            elif [[ -n "${PARLOR_APK:-}" ]]; then
               adb -s "$PROOF_DEVICE" shell cmd connectivity airplane-mode enable
               adb -s "$PROOF_DEVICE" shell svc wifi disable
               adb -s "$PROOF_DEVICE" shell svc data disable
@@ -140,7 +152,9 @@ jobs:
               xcrun simctl launch "$PROOF_DEVICE" dev.uitest.fixture
             fi
           ready: |
-            if [[ -n "${PARLOR_APK:-}" ]]; then
+            if [[ -n "${POS_APK:-}" ]]; then
+              adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -E 'mResumedActivity.*com.ukkera.pos.local.testing|topResumedActivity.*com.ukkera.pos.local.testing'
+            elif [[ -n "${PARLOR_APK:-}" ]]; then
               adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -q 'mResumedActivity.*me.parlor.android\|topResumedActivity.*me.parlor.android'
             elif [[ "$RUNNER_OS" == Linux ]]; then
               adb -s "$PROOF_DEVICE" shell dumpsys activity activities | grep -q 'mResumedActivity.*dev.uitest.fixture\|topResumedActivity.*dev.uitest.fixture'
