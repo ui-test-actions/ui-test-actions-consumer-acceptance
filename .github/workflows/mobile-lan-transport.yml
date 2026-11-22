@@ -10,6 +10,10 @@ on:
       picker_android_source:
         description: Exact P2pKit source for the Android native picker regression
         type: string
+      picker_recheck:
+        description: Reuse the first picker APK and verify reverse readback and reconnect
+        type: boolean
+        default: false
       android_app_run:
         description: Android sample artifact build run
         type: string
@@ -32,7 +36,7 @@ permissions:
   actions: read
 jobs:
   picker-apk:
-    if: inputs.picker_android_source != ''
+    if: inputs.picker_android_source != '' && !inputs.picker_recheck
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     steps:
@@ -70,7 +74,7 @@ jobs:
           retention-days: 7
   pair:
     needs: picker-apk
-    if: ${{ !cancelled() && (needs.picker-apk.result == 'success' || inputs.picker_android_source == '') }}
+    if: ${{ !cancelled() && (needs.picker-apk.result == 'success' || inputs.picker_android_source == '' || inputs.picker_recheck) }}
     timeout-minutes: 38
     strategy:
       fail-fast: false
@@ -83,6 +87,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     env:
       LAN_TARGET: ${{ matrix.target }}
+      PICKER_RECHECK: ${{ inputs.picker_recheck }}
       LAN_IOS_BACKEND: ${{ inputs.ios_backend }}
     defaults:
       run:
@@ -118,10 +123,17 @@ jobs:
           LAN_KEEP: '1'
         run: bash "verification/mobile-lan/preflight-$LAN_TARGET.sh"
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
-        if: matrix.target == 'android' && inputs.picker_android_source != ''
+        if: matrix.target == 'android' && inputs.picker_android_source != '' && !inputs.picker_recheck
         with:
           name: picker-apk-${{ github.run_attempt }}
           path: ${{ runner.temp }}/mobile-lan-sample
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        if: matrix.target == 'android' && inputs.picker_recheck
+        with:
+          name: picker-apk-1
+          path: ${{ runner.temp }}/mobile-lan-sample
+          github-token: ${{ github.token }}
+          run-id: 44991524586
       - name: Verify the exact Android candidate APK
         if: matrix.target == 'android' && inputs.picker_android_source != ''
         env:
@@ -130,6 +142,9 @@ jobs:
           cd "$RUNNER_TEMP/mobile-lan-sample"
           test "$(cat SOURCE_COMMIT)" = "$SOURCE"
           sha256sum -c SHA256SUMS
+          if [[ "$PICKER_RECHECK" == true ]]; then
+            test "$(sha256sum sample.apk | cut -d' ' -f1)" = 47a245e584529c639ca5a621aed39a31b7a3adc451618860976c2bdc76ba896d
+          fi
           cp SOURCE_COMMIT SHA256SUMS "$RUNNER_TEMP/mobile-lan-preflight/"
           printf 'LAN_DEVICE=emulator-5554\nLAN_APP_ID=dev.p2pkit.sample.android\n' >> "$GITHUB_ENV"
       - name: Fetch and validate the pinned P2pKit sample
@@ -161,7 +176,7 @@ jobs:
         with:
           target: ${{ matrix.target }}
           token-sha256: ${{ matrix.target == 'android' && inputs.android_token_sha256 || inputs.ios_token_sha256 }}
-          duration-minutes: ${{ inputs.mode == 'network' && '24' || '15' }}
+          duration-minutes: ${{ inputs.picker_recheck && '12' || inputs.mode == 'network' && '24' || '15' }}
           device: ${{ env.LAN_DEVICE }}
           app-ids: ${{ env.LAN_APP_ID }}
           ios-axe-path: ${{ env.LAN_AXE }}
