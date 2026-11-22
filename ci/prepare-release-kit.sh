@@ -9,7 +9,8 @@ if [[ "$RUNNER_OS" == Linux ]]; then
   package="$stage/candidate/assembly/mobile-release-kit-desktop_0.1.4-1_amd64.deb"
   printf '%s  %s\n' 444f9e3b6f4e76bed2a10120513b047d56ed65509351a62c9edefec88904c57d "$package" | sha256sum -c
   dpkg-deb -f "$package" Package Version > "$evidence/package.txt"
-  sudo apt-get -o DPkg::Lock::Timeout=60 install -y "$package"
+  sudo apt-get -o Acquire::Retries=2 -q update
+  sudo apt-get -o DPkg::Lock::Timeout=60 -o Acquire::Retries=2 install -y "$package"
   dpkg-query -W -f='${Status}\n' mobile-release-kit-desktop | tee -a "$evidence/package.txt"
   test -x /usr/bin/mobile-release-kit-desktop
 else
@@ -18,7 +19,10 @@ else
   package="$stage/MobileReleaseKit.pkg"
   printf '%s  %s\n' 949e1f4f343669c7225bf9963082f813429c9c653b814dccbe6ba00e6aafbb64 "$package" | shasum -a 256 -c
   pkgutil --check-signature "$package" | tee "$evidence/package.txt"
-  sudo installer -pkg "$package" -target / | tee -a "$evidence/package.txt"
+  if ! sudo installer -verboseR -pkg "$package" -target / | tee -a "$evidence/package.txt"; then
+    sudo tail -160 /var/log/install.log | grep -Ei 'MobileReleaseKit|mrk|package_script_service' > "$evidence/installer-diagnostics.txt" || true
+    exit 1
+  fi
   app=$(find /Applications -maxdepth 1 -iname '*mobile*release*kit*.app' -print -quit)
   test -n "$app" && test -d "$app"
   codesign --verify --deep --strict "$app"
