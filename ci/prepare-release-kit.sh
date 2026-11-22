@@ -10,6 +10,9 @@ if [[ "$RUNNER_OS" == Linux ]]; then
   printf '%s  %s\n' 444f9e3b6f4e76bed2a10120513b047d56ed65509351a62c9edefec88904c57d "$package" | sha256sum -c
   dpkg-deb -f "$package" Package Version > "$evidence/package.txt"
   sudo apt-get -o Acquire::Retries=2 -q update
+  if [[ "${MRK_CANCEL_INSTALL_TEST:-false}" == true ]]; then
+    sudo python3 ci/cancel-release-kit-install.py "$package" "$evidence/cancellation.json"
+  fi
   sudo apt-get -o DPkg::Lock::Timeout=60 -o Acquire::Retries=2 install -y "$package"
   dpkg-query -W -f='${Status}\n' mobile-release-kit-desktop | tee -a "$evidence/package.txt"
   test -x /usr/bin/mobile-release-kit-desktop

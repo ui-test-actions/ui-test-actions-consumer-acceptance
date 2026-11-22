@@ -43,10 +43,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: bash ci/prepare-pos-macos.sh
       - name: Install the Mobile Release Kit candidate
-        if: inputs.purpose == 'v301-mrk-candidate' && inputs.target != 'windows'
+        if: startsWith(inputs.purpose, 'v301-mrk') && inputs.target != 'windows'
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          MRK_CANCEL_INSTALL_TEST: ${{ inputs.purpose == 'v301-mrk-relaunch' }}
         run: bash ci/prepare-release-kit.sh
       - name: Verify the unmodified Windows candidate's installation gate
         if: inputs.purpose == 'v301-mrk-candidate' && inputs.target == 'windows'
@@ -55,7 +56,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: ./ci/check-release-kit-windows.ps1
       - name: Build the test app
-        if: inputs.purpose != 'v301-pos-training' && inputs.purpose != 'v301-mrk-candidate'
+        if: inputs.purpose != 'v301-pos-training' && !startsWith(inputs.purpose, 'v301-mrk')
         shell: bash
         run: bash ci/build-desktop-app.sh # Replace with your build command.
       - uses: ui-test-actions/ui-test-actions@0c818c5d72e8c30c59bd1287c330a40392bf8e89
@@ -68,14 +69,14 @@ jobs:
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: ${{ inputs.duration }}
           transport-fallback: ${{ inputs.purpose == 'v301-connector-exit' && 'local' || 'none' }}
-          launch: ${{ inputs.target == 'windows' && inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/launch-pos-windows.ps1' || inputs.target == 'macos' && inputs.purpose == 'v301-pos-training' && 'open /Applications/UkkeraPOS.app' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/launch-release-kit.sh' || 'bash ci/launch-desktop-app.sh' }}
-          ready: ${{ inputs.target == 'windows' && inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/check-pos-windows.ps1' || inputs.target == 'macos' && inputs.purpose == 'v301-pos-training' && 'pgrep -x UkkeraPOS' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/check-release-kit.sh' || 'bash ci/check-desktop-ready.sh' }}
+          launch: ${{ inputs.target == 'windows' && inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/launch-pos-windows.ps1' || inputs.target == 'macos' && inputs.purpose == 'v301-pos-training' && 'open /Applications/UkkeraPOS.app' || inputs.purpose == 'v301-mrk-relaunch' && 'true' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/launch-release-kit.sh' || 'bash ci/launch-desktop-app.sh' }}
+          ready: ${{ inputs.target == 'windows' && inputs.purpose == 'v301-pos-training' && 'powershell -NoProfile -File ci/check-pos-windows.ps1' || inputs.target == 'macos' && inputs.purpose == 'v301-pos-training' && 'pgrep -x UkkeraPOS' || inputs.purpose == 'v301-mrk-relaunch' && 'true' || inputs.purpose == 'v301-mrk-candidate' && 'bash ci/check-release-kit.sh' || 'bash ci/check-desktop-ready.sh' }}
           desktop-apps: >-
-            {"crash-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","crash-fixture-ready","18"]},"freeze-fixture":{"argv":["${{ inputs.target == 'linux' && '/usr/bin/python3' || 'python' }}","fixtures/desktop.py","freeze-fixture-ready","freeze-once"]}}
+            ${{ inputs.purpose == 'v301-mrk-relaunch' && '{"release-kit":{"argv":["/usr/bin/mobile-release-kit-desktop"]}}' || format('{{"crash-fixture":{{"argv":["{0}","fixtures/desktop.py","crash-fixture-ready","18"]}},"freeze-fixture":{{"argv":["{0}","fixtures/desktop.py","freeze-fixture-ready","freeze-once"]}}}}', inputs.target == 'linux' && '/usr/bin/python3' || 'python') }}
           diagnostic-logs: '{"fixture":{"path":"fixture-events.jsonl","events":["process.frozen"]}}'
 
       - name: Verify native Linux package removal
-        if: ${{ always() && inputs.purpose == 'v301-mrk-candidate' && inputs.target == 'linux' }}
+        if: ${{ always() && startsWith(inputs.purpose, 'v301-mrk') && inputs.target == 'linux' }}
         shell: bash
         run: |
           if dpkg-query -W -f='${Status}' mobile-release-kit-desktop 2>/dev/null | grep -q 'install ok installed'; then
@@ -84,7 +85,7 @@ jobs:
             printf 'native package removed; app launcher absent\n' >> "$RUNNER_TEMP/mrk-evidence/package.txt"
           fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        if: ${{ always() && inputs.purpose == 'v301-mrk-candidate' }}
+        if: ${{ always() && startsWith(inputs.purpose, 'v301-mrk') }}
         with:
           name: mrk-candidate-install-${{ inputs.target }}
           path: ${{ runner.temp }}/mrk-evidence/
