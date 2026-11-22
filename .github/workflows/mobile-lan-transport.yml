@@ -82,6 +82,9 @@ jobs:
           SAMPLE_RUN: ${{ matrix.target == 'android' && inputs.android_app_run || inputs.ios_app_run }}
           UI_DIGEST: ${{ matrix.target == 'android' && inputs.android_token_sha256 || inputs.ios_token_sha256 }}
         run: bash verification/mobile-lan/prepare-sample.sh "$LAN_TARGET" "$SAMPLE_RUN" "$UI_DIGEST"
+      - name: Seed deterministic Android transfer files
+        if: matrix.target == 'android' && inputs.mode == 'network'
+        run: bash verification/mobile-lan/seed-transfer-files.sh
       - name: Connect the two isolated LAN interfaces
         env:
           GH_TOKEN: ${{ github.token }}
@@ -98,7 +101,7 @@ jobs:
         with:
           target: ${{ matrix.target }}
           token-sha256: ${{ matrix.target == 'android' && inputs.android_token_sha256 || inputs.ios_token_sha256 }}
-          duration-minutes: ${{ inputs.mode == 'network' && '12' || '15' }}
+          duration-minutes: ${{ inputs.mode == 'network' && '24' || '15' }}
           device: ${{ env.LAN_DEVICE }}
           app-ids: ${{ env.LAN_APP_ID }}
           ios-axe-path: ${{ env.LAN_AXE }}
