@@ -1,0 +1,19 @@
+{
+  "request_id": "f1828999dfe248b0b7bccd5a055b7c86",
+  "command": "network.profile.set",
+  "ok": true,
+  "result": {
+    "profile": {
+      "delay_ms": 0,
+      "jitter_ms": 0,
+      "loss_percent": 0,
+      "rate_kbit": 0,
+      "offline": true,
+      "seconds": 24,
+      "seed": 0
+    },
+    "generation": 3,
+    "remaining_ms": 24000,
+    "controller_epoch_ms": 1795324117848
+  }
+}

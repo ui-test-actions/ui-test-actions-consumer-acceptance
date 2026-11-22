@@ -1,0 +1,10 @@
+{
+  "sample_source": "fd3cd74fcc82d342ee6c5a305f7ed15b0b7ed19d",
+  "sender": "iOS",
+  "receiver": "Android",
+  "offer_bytes": 5242880,
+  "generator": "byte[i] = (31 * i + 7) mod 256",
+  "independently_computed_sha256": "f2793bdcacb21753483ac7bd7e6b6e89acecc817c81aa84a722ef1562c50824c",
+  "sha256_rendered_by_receiver": "f2793bdcacb21753483ac7bd7e6b6e89acecc817c81aa84a722ef1562c50824c",
+  "consumer_run": 44985173311
+}

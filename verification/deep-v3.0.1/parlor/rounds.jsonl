@@ -1,0 +1,7 @@
+{"event": "relaunch_recovered_round_1", "at": "2026-11-22T04:49:28.341083+00:00"}
+{"event": "pause_and_resume_verified", "at": "2026-11-22T04:51:54.048215+00:00", "round": 1}
+{"event": "discussion_advanced", "at": "2026-11-22T04:52:02.622852+00:00", "round": 1}
+{"event": "discussion_advanced", "at": "2026-11-22T04:52:24.367435+00:00", "round": 2}
+{"event": "discussion_advanced", "at": "2026-11-22T04:52:50.114413+00:00", "round": 3}
+{"event": "discussion_advanced", "at": "2026-11-22T04:53:15.905807+00:00", "round": 4}
+{"event": "voting_reached", "at": "2026-11-22T04:53:18.490819+00:00", "finished_rounds": 4}

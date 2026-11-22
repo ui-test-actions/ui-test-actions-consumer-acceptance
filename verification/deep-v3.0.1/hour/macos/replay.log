@@ -1,0 +1,2 @@
+{"check": "duplicate-and-lost-response", "cached_duplicate_equal": true, "intervening_observations": 96, "old_same_payload_status": 409, "old_conflicting_payload_status": 409, "abandoned_write_observed": "استرداد الاتصال ٧٨٩ — reconnected", "fault": "dropped hosted HTTPS response at the client's transport boundary", "same_id_retry_preserved_subsequent_clipboard": true}
+{"check": "complete", "target": "macos", "case": "replay", "at": "2026-11-22T05:10:02.692377+00:00"}

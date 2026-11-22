@@ -1,0 +1,19 @@
+{
+  "application_package_source": "cf78955d4363599f42f40ce539e3608a31c4040d",
+  "targeted_test_source": "69d2ccd8fba3233ea14b4399bd225ced266e94c8",
+  "persisted_language_after_restart": "ARABIC",
+  "suites": {
+    "desktop": {
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "shared-jvm": {
+      "tests": 631,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{"event": "ballot_accepted", "at": "2026-11-22T04:55:38.455266+00:00", "seat": 1, "next_handoff_verified": true}
+{"event": "ballot_accepted", "at": "2026-11-22T04:55:50.747180+00:00", "seat": 2}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:03.224579+00:00", "seat": 3}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:15.482337+00:00", "seat": 4}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:27.858335+00:00", "seat": 5}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:40.265725+00:00", "seat": 6}
+{"event": "verdict_reached", "at": "2026-11-22T04:56:45.487597+00:00", "outcome": "An innocent has been condemned."}
+{"event": "postgame_reached", "at": "2026-11-22T04:56:56.679710+00:00", "ballots": 6}
+{"event": "navigation_accepted", "at": "2026-11-22T04:57:00.218058+00:00", "destination": "games_library"}

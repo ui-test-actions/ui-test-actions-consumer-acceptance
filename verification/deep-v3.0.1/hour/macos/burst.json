@@ -1,0 +1,856 @@
+{
+  "at": "2026-11-22T04:58:55.687594+00:00",
+  "target": "macos",
+  "workers": 12,
+  "requests": 168,
+  "same_session_after": true,
+  "remaining_after": 1690,
+  "counts": {
+    "429": 16,
+    "200": 152
+  },
+  "median_ms": 571.0,
+  "valid_screenshots": 20,
+  "samples": [
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 645
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 569
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 598
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 569
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 961
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 578
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 576
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 587
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 573
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 601
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 574
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 573
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 611
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 570
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 657
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 992
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 624
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 621
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 611
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 613
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 599
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 999
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 572
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 970
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 576
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 1085
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 573
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 555
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 586
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 637
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 579
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 563
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 555
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 946
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 555
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 578
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 584
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 702
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 555
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 578
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 592
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 574
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 566
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 574
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 544
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 941
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 674
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 581
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 577
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 584
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 1108
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 640
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 571
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 620
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 936
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 617
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 577
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 571
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 962
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 581
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 554
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 955
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 585
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 635
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 602
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 565
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 576
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 643
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 762
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 555
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 618
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 571
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 959
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 622
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 570
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 553
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 429,
+      "ms": 570
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 576
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 558
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 555
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 965
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 579
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 580
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 572
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 966
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 1179
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 599
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 974
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 697
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 562
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 561
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 1052
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 560
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 559
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 1488
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 569
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 578
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 575
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 943
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 708
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 564
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 586
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 556
+    },
+    {
+      "resource": "/v1/screenshot",
+      "http": 200,
+      "ms": 946
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 585
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 557
+    },
+    {
+      "resource": "/v1/session",
+      "http": 200,
+      "ms": 567
+    }
+  ]
+}

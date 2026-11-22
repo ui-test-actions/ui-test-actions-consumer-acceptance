@@ -1,0 +1,23 @@
+{"event": "private_role_revealed", "at": "2026-11-22T04:44:09.366831+00:00", "player": "نور ١"}
+{"event": "private_role_revealed", "at": "2026-11-22T04:44:42.477128+00:00", "player": "ليلى ٢"}
+{"event": "private_role_revealed", "at": "2026-11-22T04:45:15.196427+00:00", "player": "سامي ٣"}
+{"event": "private_role_revealed", "at": "2026-11-22T04:45:47.664028+00:00", "player": "مريم ٤"}
+{"event": "private_role_revealed", "at": "2026-11-22T04:46:20.138037+00:00", "player": "Omar ٥"}
+{"event": "private_role_revealed", "at": "2026-11-22T04:46:52.742441+00:00", "player": "ياسمين ٦ 🌙"}
+{"event": "six_role_turns_and_return_to_table", "at": "2026-11-22T04:47:07.626073+00:00"}
+{"event": "relaunch_recovered_round_1", "at": "2026-11-22T04:49:28.341083+00:00"}
+{"event": "pause_and_resume_verified", "at": "2026-11-22T04:51:54.048215+00:00", "round": 1}
+{"event": "discussion_advanced", "at": "2026-11-22T04:52:02.622852+00:00", "round": 1}
+{"event": "discussion_advanced", "at": "2026-11-22T04:52:24.367435+00:00", "round": 2}
+{"event": "discussion_advanced", "at": "2026-11-22T04:52:50.114413+00:00", "round": 3}
+{"event": "discussion_advanced", "at": "2026-11-22T04:53:15.905807+00:00", "round": 4}
+{"event": "voting_reached", "at": "2026-11-22T04:53:18.490819+00:00", "finished_rounds": 4}
+{"event": "ballot_accepted", "at": "2026-11-22T04:55:38.455266+00:00", "seat": 1, "next_handoff_verified": true}
+{"event": "ballot_accepted", "at": "2026-11-22T04:55:50.747180+00:00", "seat": 2}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:03.224579+00:00", "seat": 3}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:15.482337+00:00", "seat": 4}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:27.858335+00:00", "seat": 5}
+{"event": "ballot_accepted", "at": "2026-11-22T04:56:40.265725+00:00", "seat": 6}
+{"event": "verdict_reached", "at": "2026-11-22T04:56:45.487597+00:00", "outcome": "An innocent has been condemned."}
+{"event": "postgame_reached", "at": "2026-11-22T04:56:56.679710+00:00", "ballots": 6}
+{"event": "navigation_accepted", "at": "2026-11-22T04:57:00.218058+00:00", "destination": "games_library"}

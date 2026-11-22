@@ -1,0 +1,4 @@
+Package: mobile-release-kit-desktop
+Version: 0.1.4-1
+install ok installed
+native package removed; app launcher absent

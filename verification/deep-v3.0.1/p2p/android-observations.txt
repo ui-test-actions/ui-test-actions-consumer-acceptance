@@ -1,0 +1,5 @@
+05:04:20  [system] send file failed: peer not in session list
+05:08:31  [system] receiving file 'ios-test-49-MiB-1795324093.bin' from iPhone → /storage/emulated/0/Android/data/dev.p2pkit.sample.android/files/p2pkit-incoming/iPhone/ios-test-49-MiB-1795324093.bin
+05:08:42  [system] disconnected from iPhone
+from iPhone · failed — session out-p2id2-4ddwuvcloaoqc6gwj4j5uhadgluij4jhx4laap2o535ndmziwx5q-1795323983932-3 Failed: keep-alive timeout
+4160 / 50176 KiB (8%)

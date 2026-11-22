@@ -1,0 +1,1 @@
+{"success":true,"silentAudio":true,"physicalAudioVerified":false,"operations":["prepare","play","pause","seekForward","rate","seekBack","stop"],"native":{"mpvVersion":"mpv v0.41.0","ffmpegVersion":"8.0.1","tlsVerify":"yes","audioOutput":"null"},"ownersClosedByHost":true}

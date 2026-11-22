@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-11-22T04:35:22+00:00",
+  "target": "ios",
+  "api_version": 2,
+  "anonymous_status": 401,
+  "reconnected": true,
+  "batch_steps": 3,
+  "batch_replay_equal": true,
+  "before_color": [
+    25,
+    43,
+    66
+  ],
+  "after_color": [
+    23,
+    99,
+    59
+  ],
+  "fixture_text": "Hour start",
+  "first_authenticated": {
+    "at": "2026-11-22T04:35:03.702+00:00",
+    "http": 200,
+    "seconds_remaining": 3587,
+    "deadline_estimate": 1795325690.3674865
+  },
+  "advertised_expiry": "2026-11-22T05:35:01.000+00:00"
+}
