@@ -1,0 +1,399 @@
+{
+  "target": "ios-phone",
+  "platform": "ios",
+  "checks": {
+    "device_discovery": {
+      "pass": true,
+      "discovered_count": 1,
+      "readiness": {
+        "platform": "ios",
+        "device_id": "7F81FA48-EEA2-44A5-AC62-55FB6DDF82EA",
+        "form_factor_hardware": "simulator",
+        "ready_for_build": true
+      }
+    },
+    "ui_settle": {
+      "pass": true,
+      "waited_ms": 960.3,
+      "reason": "quiet",
+      "polls": 2
+    },
+    "ref_action_settle_diff_and_switch": {
+      "pass": true,
+      "settle": {
+        "settled": true,
+        "mode": "fast",
+        "reason": "quiet",
+        "waited_ms": 3514.6,
+        "polls": 2,
+        "post_action_changed": false,
+        "ignored_volatile_nodes": []
+      },
+      "diff_mode": "full_recovery",
+      "toggled_ok": true
+    },
+    "file_picker_e2e": {
+      "pass": true,
+      "selected_file": true,
+      "file_content_verified": true,
+      "picker_engine": "ios_xctest",
+      "picker_perf": {
+        "engine": "ios_xctest",
+        "extract_ms": 1088.11,
+        "normalize_ms": 1.81,
+        "total_ms": 1138.32,
+        "cache_hit": false,
+        "probed_bundles": [
+          "io.github.apdelrahman1911.nativecmpkit.sample",
+          "com.apple.DocumentManagerUICore.Service"
+        ],
+        "probed_diagnostics": {
+          "io.github.apdelrahman1911.nativecmpkit.sample": {
+            "state": 4,
+            "nodes": 80
+          },
+          "com.apple.springboard": {
+            "modal": false,
+            "state": 4
+          },
+          "com.apple.FileProviderUI": {
+            "skipped": "inactive_state",
+            "state": 1
+          },
+          "com.apple.DocumentManagerUICore.Service": {
+            "state": 4,
+            "nodes": 63
+          },
+          "com.apple.UIKit.DocumentBrowser": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.PassbookUIService": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.QuickLookUIService": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.SafariViewService": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.DocumentsApp": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.mobileslideshow": {
+            "skipped": "inactive_state",
+            "state": 1
+          },
+          "com.apple.DocumentManagerUICore": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.DocumentManager.Service": {
+            "skipped": "inactive_state",
+            "state": 1
+          },
+          "com.apple.DocumentManagerUICore.DocBrowser": {
+            "state": 1,
+            "skipped": "inactive_state"
+          }
+        },
+        "escalated_from": "axe_serve",
+        "extra_bundles": []
+      },
+      "picker_sample_labels": [
+        "NativeCmpKit",
+        "Files",
+        "Cancel",
+        "Tab Bar",
+        "Recents",
+        "Cancel",
+        "More",
+        "Search",
+        "Recents",
+        "Shared",
+        "Browse",
+        "Search",
+        "clock",
+        "Shared Folder",
+        "move",
+        "clock",
+        "No Recents",
+        "Recently opened documents will appear here.",
+        "Tab Bar",
+        "Recents",
+        "Cancel",
+        "More",
+        "Search",
+        "Recents",
+        "Shared"
+      ],
+      "nav_trace": [
+        {
+          "clicked": "Browse",
+          "bounds": {
+            "x": 240,
+            "y": 795,
+            "width": 94,
+            "height": 54
+          },
+          "after_labels": []
+        }
+      ]
+    },
+    "rotation_and_appearance": {
+      "pass": true,
+      "landscape": {
+        "orientation": "landscape",
+        "requested": "landscape",
+        "previous_orientation": "portrait",
+        "viewport": [
+          874,
+          402
+        ],
+        "verified": true,
+        "orientation_locked": false
+      },
+      "portrait": {
+        "orientation": "portrait",
+        "requested": "portrait",
+        "previous_orientation": "landscape",
+        "viewport": [
+          402,
+          874
+        ],
+        "verified": true,
+        "orientation_locked": false
+      }
+    },
+    "isolation_and_takeover": {
+      "pass": true,
+      "fence_token": 1,
+      "heartbeat_ok": true,
+      "blocked_status": 423,
+      "blocked_code": "human_takeover_active",
+      "resumed_lease": true,
+      "released": true
+    },
+    "app_lifecycle": {
+      "pass": true,
+      "background": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "pid": 24110,
+        "state": "background",
+        "backgrounded": true
+      },
+      "foreground": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "ready": true,
+        "pid": 24110,
+        "nodes": 54,
+        "elapsed_ms": 2867.3
+      }
+    }
+  },
+  "harness_revision": null,
+  "command_count": 80,
+  "device_info": {
+    "platform": "ios",
+    "model": "iPhone 17 Pro",
+    "device_id": "7F81FA48-EEA2-44A5-AC62-55FB6DDF82EA",
+    "os_version": "26.5",
+    "api_level": null,
+    "form_factor_hardware": "simulator",
+    "arch": "arm64",
+    "physical_display": {
+      "width": 1206,
+      "height": 2622
+    },
+    "viewport": {
+      "width": 402,
+      "height": 874
+    },
+    "density_dpi": 480,
+    "scale": 3.0,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "compact",
+      "height": "medium",
+      "layout_class": "phone"
+    },
+    "driver": {
+      "name": "ios_axe",
+      "version": "2.1.1"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.info",
+      "device.list",
+      "device.orientation",
+      "device.readiness",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ]
+  },
+  "health": {
+    "ok": true,
+    "status": "healthy",
+    "session_id": "f7fe2c1a1670842994d489aa",
+    "target": "ios",
+    "seconds_remaining": 1775,
+    "expires_unix": 1795883586,
+    "warning": false,
+    "active_action_id": null,
+    "driver_ready": true
+  },
+  "benchmark": {
+    "cold_wall_ms": 1049.88,
+    "cold_driver_perf": {
+      "engine": "axe_serve",
+      "extract_ms": 263.33,
+      "normalize_ms": 0.8,
+      "total_ms": 264.13,
+      "cache_hit": false
+    },
+    "cold_nodes": 54,
+    "warm_fresh": {
+      "n": 15,
+      "p50_ms": 1040.66,
+      "p95_ms": 1961.65,
+      "p99_ms": 2596.89,
+      "min_ms": 837.49,
+      "max_ms": 2596.89,
+      "mean_ms": 1206.69,
+      "extract_p50_ms": 286.68,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.97,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "axe_serve": 15
+      }
+    },
+    "warm_compact": {
+      "n": 10,
+      "p50_ms": 879.12,
+      "p95_ms": 3130.87,
+      "p99_ms": 3130.87,
+      "min_ms": 706.73,
+      "max_ms": 3130.87,
+      "mean_ms": 1288.28,
+      "extract_p50_ms": 289.45,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.59,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "axe_serve": 10
+      }
+    },
+    "tokens": {
+      "full_json": {
+        "chars": 34036,
+        "bytes": 34036,
+        "cl100k_base": 12645,
+        "o200k_base": 12651
+      },
+      "compact_json": {
+        "chars": 5958,
+        "bytes": 5958,
+        "cl100k_base": 2248,
+        "o200k_base": 2250
+      },
+      "compact_text": {
+        "chars": 1687,
+        "bytes": 1687,
+        "cl100k_base": 394,
+        "o200k_base": 395
+      },
+      "summary_text": {
+        "chars": 812,
+        "bytes": 812,
+        "cl100k_base": 192,
+        "o200k_base": 193
+      },
+      "diff_text": {
+        "chars": 48,
+        "bytes": 48,
+        "cl100k_base": 17,
+        "o200k_base": 17
+      },
+      "savings_pct": {
+        "cl100k_compact_json_pct": 82.2,
+        "cl100k_compact_text_pct": 96.9,
+        "cl100k_summary_text_pct": 98.5,
+        "cl100k_diff_text_pct": 99.9,
+        "o200k_compact_json_pct": 82.2,
+        "o200k_compact_text_pct": 96.9,
+        "o200k_summary_text_pct": 98.5,
+        "o200k_diff_text_pct": 99.9
+      }
+    }
+  },
+  "app_metrics": {
+    "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+    "running": true,
+    "source": "simulator:launchctl+macos:ps",
+    "pid": 8857,
+    "state": "Ss",
+    "cpu_ms": 6750.0,
+    "rss_bytes": 65044480,
+    "sample_monotonic_ms": 743026.469
+  },
+  "session_perf_observations": {
+    "count": 69,
+    "p50_ms": 399.21,
+    "p95_ms": 2793.66,
+    "p99_ms": 4625.99,
+    "min_ms": 126.69,
+    "max_ms": 7586.46,
+    "engines": {
+      "axe_serve": 65,
+      "ios_xctest": 4
+    }
+  }
+}

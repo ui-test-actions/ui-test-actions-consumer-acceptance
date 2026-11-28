@@ -1,0 +1,175 @@
+{
+  "target": "macos",
+  "checks": {
+    "screenshot_stable": {
+      "pass": true,
+      "bytes": 79040,
+      "stable": true,
+      "snapshot_id": "c100cc244cd4cb6c1d7afad8"
+    },
+    "ui_settle": {
+      "pass": true,
+      "waited_ms": 265.5,
+      "reason": "quiet"
+    },
+    "unicode_clipboard": {
+      "pass": true
+    },
+    "file_exchange": {
+      "pass": true,
+      "files": null
+    },
+    "isolation_and_takeover": {
+      "pass": true,
+      "fence_token": 1,
+      "heartbeat_ok": true,
+      "blocked_status": 423,
+      "blocked_code": "human_takeover_active",
+      "resumed_lease": true,
+      "released": true
+    }
+  },
+  "harness_revision": null,
+  "command_count": 61,
+  "device_info": {
+    "platform": "macos",
+    "model": "iad20-fj923-9473c70a-9fc9-4925-b882-efaa79607840-0E0672AB8137.local",
+    "device_id": "desktop-macos",
+    "os_version": "24.6.0",
+    "api_level": null,
+    "form_factor_hardware": "desktop",
+    "arch": "arm64",
+    "orientation": "landscape",
+    "window_size_class": {
+      "width": "expanded",
+      "height": "expanded",
+      "layout_class": "desktop"
+    },
+    "driver": {
+      "name": "desktop_macos",
+      "version": "2.0"
+    },
+    "capabilities": [
+      "clipboard.get",
+      "clipboard.set",
+      "device.info",
+      "keyboard.press",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.long_press",
+      "pointer.move",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.windows",
+      "windows.close",
+      "windows.focus",
+      "windows.list",
+      "windows.move_resize"
+    ]
+  },
+  "health": {
+    "ok": true,
+    "status": "healthy",
+    "session_id": "de029e7a3d2e558bc75fbd8b",
+    "target": "macos",
+    "seconds_remaining": 1188,
+    "expires_unix": 1795881369,
+    "warning": false,
+    "active_action_id": null,
+    "driver_ready": true
+  },
+  "benchmark": {
+    "cold_wall_ms": 534.69,
+    "cold_driver_perf": {
+      "engine": "macos_ax",
+      "extract_ms": 10.29,
+      "normalize_ms": 0.0,
+      "total_ms": 10.29,
+      "cache_hit": false
+    },
+    "cold_nodes": 6,
+    "warm_fresh": {
+      "n": 8,
+      "p50_ms": 535.41,
+      "p95_ms": 591.44,
+      "p99_ms": 591.44,
+      "min_ms": 524.24,
+      "max_ms": 591.44,
+      "mean_ms": 540.11,
+      "extract_p50_ms": 3.38,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.0,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "macos_ax": 8
+      }
+    },
+    "warm_compact": {
+      "n": 8,
+      "p50_ms": 541.13,
+      "p95_ms": 898.43,
+      "p99_ms": 898.43,
+      "min_ms": 529.3,
+      "max_ms": 898.43,
+      "mean_ms": 589.33,
+      "extract_p50_ms": 3.29,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.0,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "macos_ax": 8
+      }
+    },
+    "tokens": {
+      "full_json": {
+        "chars": 1352,
+        "bytes": 1358,
+        "cl100k_base": 504,
+        "o200k_base": 504
+      },
+      "compact_json": {
+        "chars": 1182,
+        "bytes": 1194,
+        "cl100k_base": 409,
+        "o200k_base": 409
+      },
+      "compact_text": {
+        "chars": 270,
+        "bytes": 276,
+        "cl100k_base": 73,
+        "o200k_base": 73
+      },
+      "summary_text": {
+        "chars": 68,
+        "bytes": 70,
+        "cl100k_base": 28,
+        "o200k_base": 28
+      },
+      "diff_text": {
+        "chars": 48,
+        "bytes": 48,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "savings_pct": {
+        "cl100k_compact_json_pct": 18.8,
+        "cl100k_compact_text_pct": 85.5,
+        "cl100k_summary_text_pct": 94.4,
+        "cl100k_diff_text_pct": 96.2,
+        "o200k_compact_json_pct": 18.8,
+        "o200k_compact_text_pct": 85.5,
+        "o200k_summary_text_pct": 94.4,
+        "o200k_diff_text_pct": 96.2
+      }
+    }
+  }
+}

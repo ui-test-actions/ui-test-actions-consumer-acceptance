@@ -1,0 +1,175 @@
+{
+  "target": "linux",
+  "checks": {
+    "screenshot_stable": {
+      "pass": true,
+      "bytes": 18215,
+      "stable": true,
+      "snapshot_id": "f70314f679c45bf06340b100"
+    },
+    "ui_settle": {
+      "pass": true,
+      "waited_ms": 345.7,
+      "reason": "quiet"
+    },
+    "unicode_clipboard": {
+      "pass": true
+    },
+    "file_exchange": {
+      "pass": true,
+      "files": null
+    },
+    "isolation_and_takeover": {
+      "pass": true,
+      "fence_token": 1,
+      "heartbeat_ok": true,
+      "blocked_status": 423,
+      "blocked_code": "human_takeover_active",
+      "resumed_lease": true,
+      "released": true
+    }
+  },
+  "harness_revision": null,
+  "command_count": 61,
+  "device_info": {
+    "platform": "linux",
+    "model": "runnervm0j63q",
+    "device_id": "desktop-linux",
+    "os_version": "7.0.0-1020-azure",
+    "api_level": null,
+    "form_factor_hardware": "desktop",
+    "arch": "x86_64",
+    "orientation": "landscape",
+    "window_size_class": {
+      "width": "expanded",
+      "height": "expanded",
+      "layout_class": "desktop"
+    },
+    "driver": {
+      "name": "desktop_linux",
+      "version": "2.0"
+    },
+    "capabilities": [
+      "clipboard.get",
+      "clipboard.set",
+      "device.info",
+      "keyboard.press",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.long_press",
+      "pointer.move",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.windows",
+      "windows.close",
+      "windows.focus",
+      "windows.list",
+      "windows.move_resize"
+    ]
+  },
+  "health": {
+    "ok": true,
+    "status": "healthy",
+    "session_id": "3855790be45e49a322d2529f",
+    "target": "linux",
+    "seconds_remaining": 1181,
+    "expires_unix": 1795881338,
+    "warning": false,
+    "active_action_id": null,
+    "driver_ready": true
+  },
+  "benchmark": {
+    "cold_wall_ms": 631.58,
+    "cold_driver_perf": {
+      "engine": "linux_atspi",
+      "extract_ms": 72.22,
+      "normalize_ms": 0.03,
+      "total_ms": 72.25,
+      "cache_hit": false
+    },
+    "cold_nodes": 0,
+    "warm_fresh": {
+      "n": 8,
+      "p50_ms": 630.31,
+      "p95_ms": 643.08,
+      "p99_ms": 643.08,
+      "min_ms": 618.35,
+      "max_ms": 643.08,
+      "mean_ms": 630.97,
+      "extract_p50_ms": 73.14,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.02,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "linux_atspi": 8
+      }
+    },
+    "warm_compact": {
+      "n": 8,
+      "p50_ms": 636.93,
+      "p95_ms": 744.22,
+      "p99_ms": 744.22,
+      "min_ms": 621.28,
+      "max_ms": 744.22,
+      "mean_ms": 649.36,
+      "extract_p50_ms": 72.79,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.02,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "linux_atspi": 8
+      }
+    },
+    "tokens": {
+      "full_json": {
+        "chars": 222,
+        "bytes": 222,
+        "cl100k_base": 79,
+        "o200k_base": 78
+      },
+      "compact_json": {
+        "chars": 334,
+        "bytes": 334,
+        "cl100k_base": 123,
+        "o200k_base": 122
+      },
+      "compact_text": {
+        "chars": 24,
+        "bytes": 24,
+        "cl100k_base": 10,
+        "o200k_base": 10
+      },
+      "summary_text": {
+        "chars": 24,
+        "bytes": 24,
+        "cl100k_base": 10,
+        "o200k_base": 10
+      },
+      "diff_text": {
+        "chars": 48,
+        "bytes": 48,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "savings_pct": {
+        "cl100k_compact_json_pct": -55.7,
+        "cl100k_compact_text_pct": 87.3,
+        "cl100k_summary_text_pct": 87.3,
+        "cl100k_diff_text_pct": 75.9,
+        "o200k_compact_json_pct": -56.4,
+        "o200k_compact_text_pct": 87.2,
+        "o200k_summary_text_pct": 87.2,
+        "o200k_diff_text_pct": 75.6
+      }
+    }
+  }
+}

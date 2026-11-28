@@ -1,0 +1,170 @@
+{
+  "target": "verify-v4",
+  "checks": {
+    "screenshot_stable": {
+      "pass": true,
+      "bytes": 18215,
+      "stable": true,
+      "snapshot_id": "ff4290c5eb03f3679a3bb158"
+    },
+    "ui_settle": {
+      "pass": true,
+      "waited_ms": 321.0,
+      "reason": "quiet"
+    },
+    "unicode_clipboard": {
+      "pass": true
+    },
+    "file_exchange": {
+      "pass": true,
+      "files": null
+    },
+    "isolation_and_takeover": {
+      "pass": false,
+      "error": "HTTP 409 (device_in_use)"
+    }
+  },
+  "harness_revision": null,
+  "command_count": 61,
+  "device_info": {
+    "platform": "linux",
+    "model": "ip-10-0-128-81",
+    "device_id": "desktop-linux",
+    "os_version": "7.0.0-1018-aws",
+    "api_level": null,
+    "form_factor_hardware": "desktop",
+    "arch": "x86_64",
+    "orientation": "landscape",
+    "window_size_class": {
+      "width": "expanded",
+      "height": "expanded",
+      "layout_class": "desktop"
+    },
+    "driver": {
+      "name": "desktop_linux",
+      "version": "2.0"
+    },
+    "capabilities": [
+      "clipboard.get",
+      "clipboard.set",
+      "device.info",
+      "keyboard.press",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.long_press",
+      "pointer.move",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.windows",
+      "windows.close",
+      "windows.focus",
+      "windows.list",
+      "windows.move_resize"
+    ]
+  },
+  "health": {
+    "ok": true,
+    "status": "healthy",
+    "session_id": "032583f5ac732a1ec5eae694",
+    "target": "linux",
+    "seconds_remaining": 472,
+    "expires_unix": 1795882897,
+    "warning": false,
+    "active_action_id": null,
+    "driver_ready": true
+  },
+  "benchmark": {
+    "cold_wall_ms": 600.89,
+    "cold_driver_perf": {
+      "engine": "linux_atspi",
+      "extract_ms": 59.9,
+      "normalize_ms": 0.03,
+      "total_ms": 59.94,
+      "cache_hit": false
+    },
+    "cold_nodes": 0,
+    "warm_fresh": {
+      "n": 8,
+      "p50_ms": 588.7,
+      "p95_ms": 661.69,
+      "p99_ms": 661.69,
+      "min_ms": 574.44,
+      "max_ms": 661.69,
+      "mean_ms": 595.9,
+      "extract_p50_ms": 58.91,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.02,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "linux_atspi": 8
+      }
+    },
+    "warm_compact": {
+      "n": 8,
+      "p50_ms": 582.71,
+      "p95_ms": 623.23,
+      "p99_ms": 623.23,
+      "min_ms": 570.63,
+      "max_ms": 623.23,
+      "mean_ms": 587.29,
+      "extract_p50_ms": 59.06,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.02,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "linux_atspi": 8
+      }
+    },
+    "tokens": {
+      "full_json": {
+        "chars": 221,
+        "bytes": 221,
+        "cl100k_base": 83,
+        "o200k_base": 81
+      },
+      "compact_json": {
+        "chars": 334,
+        "bytes": 334,
+        "cl100k_base": 121,
+        "o200k_base": 120
+      },
+      "compact_text": {
+        "chars": 24,
+        "bytes": 24,
+        "cl100k_base": 10,
+        "o200k_base": 10
+      },
+      "summary_text": {
+        "chars": 24,
+        "bytes": 24,
+        "cl100k_base": 10,
+        "o200k_base": 10
+      },
+      "diff_text": {
+        "chars": 48,
+        "bytes": 48,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "savings_pct": {
+        "cl100k_compact_json_pct": -45.8,
+        "cl100k_compact_text_pct": 88.0,
+        "cl100k_summary_text_pct": 88.0,
+        "cl100k_diff_text_pct": 77.1,
+        "o200k_compact_json_pct": -48.1,
+        "o200k_compact_text_pct": 87.7,
+        "o200k_summary_text_pct": 87.7,
+        "o200k_diff_text_pct": 76.5
+      }
+    }
+  }
+}

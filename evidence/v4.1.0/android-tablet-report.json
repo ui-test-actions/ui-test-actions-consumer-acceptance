@@ -1,0 +1,363 @@
+{
+  "target": "android-tablet",
+  "platform": "android",
+  "checks": {
+    "device_discovery": {
+      "pass": true,
+      "discovered_count": 1,
+      "readiness": {
+        "platform": "android",
+        "device_id": "emulator-5554",
+        "form_factor_hardware": "emulator",
+        "transport": "emulator",
+        "ready_for_build": true,
+        "a11y_engine": "a11y_daemon"
+      }
+    },
+    "native_tablet_avd": {
+      "pass": true,
+      "resized_emulator": false,
+      "layout_class": "tablet",
+      "physical_display": {
+        "width": 2560,
+        "height": 1600
+      },
+      "avd_name": "showcase"
+    },
+    "android_a11y_daemon_perf": {
+      "pass": true,
+      "engine": "a11y_daemon",
+      "warm_fresh_p50_ms": 794.66,
+      "warm_compact_p50_ms": 527.64,
+      "v400_baseline_p50_ms": 2580.0,
+      "speedup_x": 3.25
+    },
+    "ui_settle": {
+      "pass": true,
+      "waited_ms": 25.1,
+      "reason": "native_idle",
+      "polls": 1
+    },
+    "ref_action_settle_diff_and_switch": {
+      "pass": true,
+      "settle": {
+        "settled": true,
+        "mode": "fast",
+        "reason": "native_idle",
+        "waited_ms": 334.1,
+        "polls": 1,
+        "event_seq": 15,
+        "ignored_volatile_nodes": []
+      },
+      "diff_mode": "full_recovery",
+      "toggled_ok": true
+    },
+    "file_picker_e2e": {
+      "pass": true,
+      "selected_file": true,
+      "file_content_verified": true,
+      "picker_engine": "a11y_daemon",
+      "picker_perf": {
+        "engine": "a11y_daemon",
+        "extract_ms": 22.0,
+        "serialize_ms": 1.0,
+        "daemon_total_ms": 0.0,
+        "normalize_ms": 1.67,
+        "cache_hit": true,
+        "event_seq": 39,
+        "transport_ms": 2.83,
+        "total_ms": 4.52
+      },
+      "picker_sample_labels": [
+        "3:38 PM",
+        "Android System notification: ",
+        "Wifi signal full.",
+        "Phone signal full.",
+        "Battery charging, 100 percent.",
+        "Show roots",
+        "Recent",
+        "Search",
+        "More options",
+        "Images",
+        "Audio",
+        "Videos",
+        "Documents",
+        "Large files",
+        "This week",
+        "Recent files",
+        "Grid view",
+        "Name",
+        "Type",
+        "Size",
+        "Modified",
+        "Descending",
+        "kira-fixture.txt",
+        "TXT document",
+        "63 B"
+      ],
+      "nav_trace": []
+    },
+    "rotation_and_appearance": {
+      "pass": true,
+      "landscape": {
+        "orientation": "landscape",
+        "viewport": [
+          2560,
+          1600
+        ],
+        "verified": true
+      },
+      "portrait": {
+        "orientation": "portrait",
+        "viewport": [
+          1600,
+          2560
+        ],
+        "verified": true
+      }
+    },
+    "isolation_and_takeover": {
+      "pass": true,
+      "fence_token": 1,
+      "heartbeat_ok": true,
+      "blocked_status": 423,
+      "blocked_code": "human_takeover_active",
+      "resumed_lease": true,
+      "released": true
+    },
+    "app_lifecycle": {
+      "pass": true,
+      "background": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "pid": 4751,
+        "state": "background",
+        "backgrounded": true
+      },
+      "foreground": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "ready": true,
+        "pid": 4751,
+        "nodes": 75,
+        "elapsed_ms": 1132.4
+      }
+    }
+  },
+  "harness_revision": null,
+  "command_count": 85,
+  "device_info": {
+    "platform": "android",
+    "model": "sdk_gphone64_x86_64",
+    "device_id": "emulator-5554",
+    "os_version": "15",
+    "api_level": 35,
+    "form_factor_hardware": "emulator",
+    "transport": "emulator",
+    "resized_emulator": false,
+    "arch": "x86_64",
+    "physical_display": {
+      "width": 2560,
+      "height": 1600
+    },
+    "viewport": {
+      "width": 2560,
+      "height": 1600
+    },
+    "logical_dp": {
+      "width": 1280,
+      "height": 800
+    },
+    "density_dpi": 320,
+    "scale": 2.0,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "expanded",
+      "height": "medium",
+      "layout_class": "tablet"
+    },
+    "driver": {
+      "name": "android_adb",
+      "version": "4.1",
+      "a11y_engine": "a11y_daemon"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.deeplink",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.connect",
+      "device.info",
+      "device.list",
+      "device.orientation",
+      "device.pair",
+      "device.readiness",
+      "device.reconnect",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.gesture",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ],
+    "avd_name": "showcase"
+  },
+  "health": {
+    "ok": true,
+    "status": "healthy",
+    "session_id": "7638aa8df352ca96917034b3",
+    "target": "android",
+    "seconds_remaining": 1483,
+    "expires_unix": 1795881744,
+    "warning": false,
+    "active_action_id": null,
+    "driver_ready": true
+  },
+  "benchmark": {
+    "cold_wall_ms": 818.56,
+    "cold_driver_perf": {
+      "engine": "a11y_daemon",
+      "extract_ms": 33.0,
+      "serialize_ms": 1.0,
+      "daemon_total_ms": 37.0,
+      "normalize_ms": 0.8,
+      "cache_hit": false,
+      "event_seq": 10,
+      "transport_ms": 6.46,
+      "total_ms": 44.29
+    },
+    "cold_nodes": 75,
+    "warm_fresh": {
+      "n": 15,
+      "p50_ms": 794.66,
+      "p95_ms": 839.83,
+      "p99_ms": 877.01,
+      "min_ms": 774.14,
+      "max_ms": 877.01,
+      "mean_ms": 804.2,
+      "extract_p50_ms": 19.0,
+      "serialize_p50_ms": 1.0,
+      "normalize_p50_ms": 0.82,
+      "transport_p50_ms": 2.2,
+      "cache_hits": 0,
+      "engines": {
+        "a11y_daemon": 15
+      }
+    },
+    "warm_compact": {
+      "n": 10,
+      "p50_ms": 527.64,
+      "p95_ms": 541.45,
+      "p99_ms": 541.45,
+      "min_ms": 503.68,
+      "max_ms": 541.45,
+      "mean_ms": 527.78,
+      "extract_p50_ms": 8.0,
+      "serialize_p50_ms": 1.0,
+      "normalize_p50_ms": 0.72,
+      "transport_p50_ms": 2.37,
+      "cache_hits": 10,
+      "engines": {
+        "a11y_daemon": 10
+      }
+    },
+    "tokens": {
+      "full_json": {
+        "chars": 69634,
+        "bytes": 69640,
+        "cl100k_base": 21112,
+        "o200k_base": 21241
+      },
+      "compact_json": {
+        "chars": 4116,
+        "bytes": 4144,
+        "cl100k_base": 1232,
+        "o200k_base": 1234
+      },
+      "compact_text": {
+        "chars": 1158,
+        "bytes": 1172,
+        "cl100k_base": 266,
+        "o200k_base": 268
+      },
+      "summary_text": {
+        "chars": 881,
+        "bytes": 895,
+        "cl100k_base": 201,
+        "o200k_base": 202
+      },
+      "diff_text": {
+        "chars": 48,
+        "bytes": 48,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "savings_pct": {
+        "cl100k_compact_json_pct": 94.2,
+        "cl100k_compact_text_pct": 98.7,
+        "cl100k_summary_text_pct": 99.0,
+        "cl100k_diff_text_pct": 99.9,
+        "o200k_compact_json_pct": 94.2,
+        "o200k_compact_text_pct": 98.7,
+        "o200k_summary_text_pct": 99.0,
+        "o200k_diff_text_pct": 99.9
+      }
+    }
+  },
+  "app_metrics": {
+    "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+    "running": true,
+    "source": "android:dumpsys",
+    "pid": 2787,
+    "pss_bytes": 121423872,
+    "rss_bytes": 249122816,
+    "cpu_ms": 4000.0,
+    "cpu_source": "android:ps TIME",
+    "sample_monotonic_ms": 339889.526
+  },
+  "session_perf_observations": {
+    "count": 61,
+    "p50_ms": 19.75,
+    "p95_ms": 159.71,
+    "p99_ms": 208.44,
+    "min_ms": 2.65,
+    "max_ms": 536.62,
+    "engines": {
+      "a11y_daemon": 61
+    }
+  }
+}

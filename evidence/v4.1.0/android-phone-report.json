@@ -1,0 +1,370 @@
+{
+  "target": "android-phone",
+  "platform": "android",
+  "checks": {
+    "device_discovery": {
+      "pass": true,
+      "discovered_count": 1,
+      "readiness": {
+        "platform": "android",
+        "device_id": "emulator-5554",
+        "form_factor_hardware": "emulator",
+        "transport": "emulator",
+        "ready_for_build": true,
+        "a11y_engine": "a11y_daemon"
+      }
+    },
+    "android_a11y_daemon_perf": {
+      "pass": true,
+      "engine": "a11y_daemon",
+      "warm_fresh_p50_ms": 802.28,
+      "warm_compact_p50_ms": 525.19,
+      "v400_baseline_p50_ms": 2580.0,
+      "speedup_x": 3.22
+    },
+    "ui_settle": {
+      "pass": true,
+      "waited_ms": 14.4,
+      "reason": "native_idle",
+      "polls": 1
+    },
+    "ref_action_settle_diff_and_switch": {
+      "pass": true,
+      "settle": {
+        "settled": true,
+        "mode": "fast",
+        "reason": "native_idle",
+        "waited_ms": 229.1,
+        "polls": 1,
+        "event_seq": 13,
+        "ignored_volatile_nodes": []
+      },
+      "diff_mode": "full_recovery",
+      "toggled_ok": true
+    },
+    "file_picker_e2e": {
+      "pass": true,
+      "selected_file": true,
+      "file_content_verified": true,
+      "picker_engine": "a11y_daemon",
+      "picker_perf": {
+        "engine": "a11y_daemon",
+        "extract_ms": 13.0,
+        "serialize_ms": 1.0,
+        "daemon_total_ms": 0.0,
+        "normalize_ms": 1.0,
+        "cache_hit": true,
+        "event_seq": 39,
+        "transport_ms": 2.73,
+        "total_ms": 3.75
+      },
+      "picker_sample_labels": [
+        "3:57 PM",
+        "Android System notification: ",
+        "Wifi signal full.",
+        "Phone signal full.",
+        "Battery charging, 100 percent.",
+        "Images",
+        "Audio",
+        "Videos",
+        "Documents",
+        "Recent files",
+        "Grid view",
+        "Show roots",
+        "Recent",
+        "Search",
+        "More options",
+        "kira-fixture.txt",
+        "3:54 PM, 63 B, TXT document",
+        "Preview the file kira-fixture.txt",
+        "kira-fixture.png",
+        "3:54 PM, 3.97 kB, PNG image",
+        "Preview the file kira-fixture.png",
+        "kira-fixture.png",
+        "3:54 PM, 3.97 kB, PNG image",
+        "Preview the file kira-fixture.png"
+      ],
+      "nav_trace": []
+    },
+    "rotation_and_appearance": {
+      "pass": true,
+      "landscape": {
+        "orientation": "landscape",
+        "viewport": [
+          2400,
+          1080
+        ],
+        "verified": true
+      },
+      "portrait": {
+        "orientation": "portrait",
+        "viewport": [
+          1080,
+          2400
+        ],
+        "verified": true
+      }
+    },
+    "isolation_and_takeover": {
+      "pass": true,
+      "fence_token": 1,
+      "heartbeat_ok": true,
+      "blocked_status": 423,
+      "blocked_code": "human_takeover_active",
+      "resumed_lease": true,
+      "released": true
+    },
+    "app_lifecycle": {
+      "pass": true,
+      "background": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "pid": 4545,
+        "state": "background",
+        "backgrounded": true
+      },
+      "foreground": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "ready": true,
+        "pid": 4545,
+        "nodes": 76,
+        "elapsed_ms": 707.8
+      }
+    }
+  },
+  "harness_revision": null,
+  "command_count": 85,
+  "device_info": {
+    "platform": "android",
+    "model": "sdk_gphone64_x86_64",
+    "device_id": "emulator-5554",
+    "os_version": "15",
+    "api_level": 35,
+    "form_factor_hardware": "emulator",
+    "transport": "emulator",
+    "resized_emulator": false,
+    "arch": "x86_64",
+    "physical_display": {
+      "width": 1080,
+      "height": 2400
+    },
+    "viewport": {
+      "width": 1080,
+      "height": 2400
+    },
+    "logical_dp": {
+      "width": 412,
+      "height": 916
+    },
+    "density_dpi": 420,
+    "scale": 2.62,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "compact",
+      "height": "expanded",
+      "layout_class": "phone"
+    },
+    "driver": {
+      "name": "android_adb",
+      "version": "4.1",
+      "a11y_engine": "a11y_daemon"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.deeplink",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.connect",
+      "device.info",
+      "device.list",
+      "device.orientation",
+      "device.pair",
+      "device.readiness",
+      "device.reconnect",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.gesture",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ],
+    "avd_name": "showcase"
+  },
+  "health": {
+    "ok": true,
+    "status": "healthy",
+    "session_id": "06b8a3b5930e621601924d6b",
+    "target": "android",
+    "seconds_remaining": 1483,
+    "expires_unix": 1795882894,
+    "warning": false,
+    "active_action_id": null,
+    "driver_ready": true
+  },
+  "benchmark": {
+    "cold_wall_ms": 805.71,
+    "cold_driver_perf": {
+      "engine": "a11y_daemon",
+      "extract_ms": 14.0,
+      "serialize_ms": 0.0,
+      "daemon_total_ms": 16.0,
+      "normalize_ms": 0.73,
+      "cache_hit": false,
+      "event_seq": 9,
+      "transport_ms": 1.64,
+      "total_ms": 18.38
+    },
+    "cold_nodes": 76,
+    "warm_fresh": {
+      "n": 15,
+      "p50_ms": 802.28,
+      "p95_ms": 843.95,
+      "p99_ms": 844.47,
+      "min_ms": 782.87,
+      "max_ms": 844.47,
+      "mean_ms": 806.29,
+      "extract_p50_ms": 18.0,
+      "serialize_p50_ms": 1.0,
+      "normalize_p50_ms": 0.73,
+      "transport_p50_ms": 2.09,
+      "cache_hits": 0,
+      "engines": {
+        "a11y_daemon": 15
+      }
+    },
+    "warm_compact": {
+      "n": 10,
+      "p50_ms": 525.19,
+      "p95_ms": 536.86,
+      "p99_ms": 536.86,
+      "min_ms": 519.78,
+      "max_ms": 536.86,
+      "mean_ms": 527.05,
+      "extract_p50_ms": 16.0,
+      "serialize_p50_ms": 1.0,
+      "normalize_p50_ms": 0.73,
+      "transport_p50_ms": 2.26,
+      "cache_hits": 10,
+      "engines": {
+        "a11y_daemon": 10
+      }
+    },
+    "tokens": {
+      "full_json": {
+        "chars": 70624,
+        "bytes": 70630,
+        "cl100k_base": 21362,
+        "o200k_base": 21491
+      },
+      "compact_json": {
+        "chars": 4116,
+        "bytes": 4144,
+        "cl100k_base": 1233,
+        "o200k_base": 1235
+      },
+      "compact_text": {
+        "chars": 1158,
+        "bytes": 1172,
+        "cl100k_base": 266,
+        "o200k_base": 268
+      },
+      "summary_text": {
+        "chars": 881,
+        "bytes": 895,
+        "cl100k_base": 201,
+        "o200k_base": 202
+      },
+      "diff_text": {
+        "chars": 48,
+        "bytes": 48,
+        "cl100k_base": 17,
+        "o200k_base": 18
+      },
+      "savings_pct": {
+        "cl100k_compact_json_pct": 94.2,
+        "cl100k_compact_text_pct": 98.8,
+        "cl100k_summary_text_pct": 99.1,
+        "cl100k_diff_text_pct": 99.9,
+        "o200k_compact_json_pct": 94.3,
+        "o200k_compact_text_pct": 98.8,
+        "o200k_summary_text_pct": 99.1,
+        "o200k_diff_text_pct": 99.9
+      }
+    }
+  },
+  "app_metrics": {
+    "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+    "running": true,
+    "source": "android:dumpsys",
+    "pid": 2618,
+    "pss_bytes": 127295488,
+    "rss_bytes": 138194944,
+    "cpu_ms": 4000.0,
+    "cpu_source": "android:ps TIME",
+    "sample_monotonic_ms": 204582.441
+  },
+  "workflow_benchmark_v40_vs_v41": {
+    "steps": 6,
+    "v40_style": {
+      "wall_ms": 11380.2,
+      "chars": 409070,
+      "cl100k_base": 124081,
+      "o200k_base": 124742
+    },
+    "v41_style": {
+      "wall_ms": 5752.7,
+      "chars": 2721,
+      "cl100k_base": 693,
+      "o200k_base": 697
+    },
+    "token_reduction_cl100k_pct": 99.44,
+    "token_reduction_o200k_pct": 99.44,
+    "wall_speedup_x": 1.98
+  },
+  "session_perf_observations": {
+    "count": 87,
+    "p50_ms": 19.95,
+    "p95_ms": 187.1,
+    "p99_ms": 261.24,
+    "min_ms": 2.39,
+    "max_ms": 446.08,
+    "engines": {
+      "a11y_daemon": 87
+    }
+  }
+}

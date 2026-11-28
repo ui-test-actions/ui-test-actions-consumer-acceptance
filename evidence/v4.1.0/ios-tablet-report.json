@@ -1,0 +1,401 @@
+{
+  "target": "ios-tablet",
+  "platform": "ios",
+  "checks": {
+    "device_discovery": {
+      "pass": true,
+      "discovered_count": 1,
+      "readiness": {
+        "platform": "ios",
+        "device_id": "D34886BC-2DC3-4857-B532-7FCC22886CC8",
+        "form_factor_hardware": "simulator",
+        "ready_for_build": true
+      }
+    },
+    "ui_settle": {
+      "pass": true,
+      "waited_ms": 1109.2,
+      "reason": "quiet",
+      "polls": 2
+    },
+    "ref_action_settle_diff_and_switch": {
+      "pass": true,
+      "settle": {
+        "settled": true,
+        "mode": "fast",
+        "reason": "quiet",
+        "waited_ms": 6112.4,
+        "polls": 2,
+        "post_action_changed": false,
+        "ignored_volatile_nodes": []
+      },
+      "diff_mode": "full_recovery",
+      "toggled_ok": true
+    },
+    "file_picker_e2e": {
+      "pass": true,
+      "selected_file": true,
+      "file_content_verified": true,
+      "picker_engine": "ios_xctest",
+      "picker_perf": {
+        "engine": "ios_xctest",
+        "extract_ms": 271.43,
+        "normalize_ms": 1.3,
+        "total_ms": 277.41,
+        "cache_hit": false,
+        "probed_bundles": [
+          "io.github.apdelrahman1911.nativecmpkit.sample",
+          "com.apple.DocumentManagerUICore.Service"
+        ],
+        "probed_diagnostics": {
+          "com.apple.UIKit.DocumentBrowser": {
+            "skipped": "inactive_state",
+            "state": 1
+          },
+          "com.apple.DocumentManagerUICore.DocBrowser": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.DocumentManagerUICore": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.DocumentManager.DockFolderViewService": {
+            "skipped": "inactive_state",
+            "state": 2
+          },
+          "com.apple.springboard": {
+            "state": 4,
+            "modal": false
+          },
+          "com.apple.FileProviderUI": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "io.github.apdelrahman1911.nativecmpkit.sample": {
+            "nodes": 18,
+            "state": 4
+          },
+          "com.apple.PassbookUIService": {
+            "skipped": "inactive_state",
+            "state": 1
+          },
+          "com.apple.QuickLookUIService": {
+            "skipped": "inactive_state",
+            "state": 1
+          },
+          "com.apple.SafariViewService": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.DocumentManagerUICore.Service": {
+            "state": 4,
+            "nodes": 150
+          },
+          "com.apple.DocumentsApp": {
+            "state": 1,
+            "skipped": "inactive_state"
+          },
+          "com.apple.DocumentManager.Service": {
+            "skipped": "inactive_state",
+            "state": 1
+          }
+        },
+        "escalated_from": "axe_serve",
+        "extra_bundles": [
+          "com.apple.DocumentManager.DockFolderViewService"
+        ]
+      },
+      "picker_sample_labels": [
+        "NativeCmpKit",
+        "Files",
+        "dismiss popup",
+        "Cancel",
+        "Cancel",
+        "More",
+        "Back",
+        "Forward",
+        "Recents",
+        "Icons",
+        "Search",
+        "Recents",
+        "Shared",
+        "Locations",
+        "iCloud Drive",
+        "On My iPad",
+        "Tags",
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green",
+        "Blue",
+        "Purple",
+        "Gray",
+        "Vertical scroll bar, 2 pages"
+      ],
+      "nav_trace": [
+        {
+          "clicked": "On My iPad",
+          "bounds": {
+            "x": 195,
+            "y": 625,
+            "width": 87,
+            "height": 20
+          },
+          "after_labels": []
+        }
+      ]
+    },
+    "rotation_and_appearance": {
+      "pass": true,
+      "landscape": {
+        "orientation": "landscape",
+        "requested": "landscape",
+        "previous_orientation": "portrait",
+        "viewport": [
+          1366,
+          1024
+        ],
+        "verified": true,
+        "orientation_locked": false
+      },
+      "portrait": {
+        "orientation": "portrait",
+        "requested": "portrait",
+        "previous_orientation": "landscape",
+        "viewport": [
+          1024,
+          1366
+        ],
+        "verified": true,
+        "orientation_locked": false
+      }
+    },
+    "isolation_and_takeover": {
+      "pass": true,
+      "fence_token": 1,
+      "heartbeat_ok": true,
+      "blocked_status": 423,
+      "blocked_code": "human_takeover_active",
+      "resumed_lease": true,
+      "released": true
+    },
+    "app_lifecycle": {
+      "pass": true,
+      "background": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "pid": 33440,
+        "state": "background",
+        "backgrounded": true
+      },
+      "foreground": {
+        "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+        "ready": true,
+        "pid": 33440,
+        "nodes": 85,
+        "elapsed_ms": 5321.4
+      }
+    }
+  },
+  "harness_revision": null,
+  "command_count": 80,
+  "device_info": {
+    "platform": "ios",
+    "model": "iPad Air 13-inch (M3)",
+    "device_id": "D34886BC-2DC3-4857-B532-7FCC22886CC8",
+    "os_version": "26.2",
+    "api_level": null,
+    "form_factor_hardware": "simulator",
+    "arch": "arm64",
+    "physical_display": {
+      "width": 2048,
+      "height": 2732
+    },
+    "viewport": {
+      "width": 1024,
+      "height": 1366
+    },
+    "density_dpi": 320,
+    "scale": 2.0,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "expanded",
+      "height": "expanded",
+      "layout_class": "tablet"
+    },
+    "driver": {
+      "name": "ios_axe",
+      "version": "2.1.1"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.info",
+      "device.list",
+      "device.orientation",
+      "device.readiness",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ]
+  },
+  "health": {
+    "ok": true,
+    "status": "healthy",
+    "session_id": "7bb0169b881df8d411072ea1",
+    "target": "ios",
+    "seconds_remaining": 1774,
+    "expires_unix": 1795882651,
+    "warning": false,
+    "active_action_id": null,
+    "driver_ready": true
+  },
+  "benchmark": {
+    "cold_wall_ms": 1063.54,
+    "cold_driver_perf": {
+      "engine": "axe_serve",
+      "extract_ms": 292.42,
+      "normalize_ms": 1.1,
+      "total_ms": 293.53,
+      "cache_hit": false
+    },
+    "cold_nodes": 85,
+    "warm_fresh": {
+      "n": 15,
+      "p50_ms": 1154.32,
+      "p95_ms": 2469.49,
+      "p99_ms": 3041.62,
+      "min_ms": 960.16,
+      "max_ms": 3041.62,
+      "mean_ms": 1324.01,
+      "extract_p50_ms": 294.59,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 0.87,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "axe_serve": 15
+      }
+    },
+    "warm_compact": {
+      "n": 10,
+      "p50_ms": 887.71,
+      "p95_ms": 3466.78,
+      "p99_ms": 3466.78,
+      "min_ms": 773.35,
+      "max_ms": 3466.78,
+      "mean_ms": 1142.19,
+      "extract_p50_ms": 328.82,
+      "serialize_p50_ms": null,
+      "normalize_p50_ms": 1.05,
+      "transport_p50_ms": null,
+      "cache_hits": 0,
+      "engines": {
+        "axe_serve": 10
+      }
+    },
+    "tokens": {
+      "full_json": {
+        "chars": 56285,
+        "bytes": 56285,
+        "cl100k_base": 21074,
+        "o200k_base": 21082
+      },
+      "compact_json": {
+        "chars": 12188,
+        "bytes": 12188,
+        "cl100k_base": 4587,
+        "o200k_base": 4589
+      },
+      "compact_text": {
+        "chars": 3658,
+        "bytes": 3658,
+        "cl100k_base": 842,
+        "o200k_base": 843
+      },
+      "summary_text": {
+        "chars": 1717,
+        "bytes": 1717,
+        "cl100k_base": 392,
+        "o200k_base": 393
+      },
+      "diff_text": {
+        "chars": 48,
+        "bytes": 48,
+        "cl100k_base": 20,
+        "o200k_base": 20
+      },
+      "savings_pct": {
+        "cl100k_compact_json_pct": 78.2,
+        "cl100k_compact_text_pct": 96.0,
+        "cl100k_summary_text_pct": 98.1,
+        "cl100k_diff_text_pct": 99.9,
+        "o200k_compact_json_pct": 78.2,
+        "o200k_compact_text_pct": 96.0,
+        "o200k_summary_text_pct": 98.1,
+        "o200k_diff_text_pct": 99.9
+      }
+    }
+  },
+  "app_metrics": {
+    "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+    "running": true,
+    "source": "simulator:launchctl+macos:ps",
+    "pid": 19673,
+    "state": "Ss",
+    "cpu_ms": 9140.0,
+    "rss_bytes": 84852736,
+    "sample_monotonic_ms": 923682.361
+  },
+  "session_perf_observations": {
+    "count": 77,
+    "p50_ms": 394.26,
+    "p95_ms": 1793.44,
+    "p99_ms": 2259.68,
+    "min_ms": 163.0,
+    "max_ms": 5551.47,
+    "engines": {
+      "axe_serve": 64,
+      "ios_xctest": 13
+    }
+  }
+}
