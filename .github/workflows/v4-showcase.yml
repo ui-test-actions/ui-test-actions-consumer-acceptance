@@ -111,7 +111,7 @@ jobs:
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Download/kira-fixture.png || true
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/kira-fixture.png || true
           adb -s emulator-5554 shell ls -la /sdcard/Download/ /sdcard/Pictures/ || true
-      - uses: ui-test-actions/ui-test-actions@d1c279b25faf66244580ac897ecd287216a92e0f
+      - uses: ui-test-actions/ui-test-actions@0ca098303ead40e3df15521ecdda23a00e3c5fb1
         with:
           target: android
           token-sha256: ${{ inputs.token_sha256 }}
@@ -212,15 +212,15 @@ jobs:
           fi
           # Build & start clean-room UitaXCTestRunner for cross-process UIDocumentPickerViewController traversal
           git clone --depth 1 --branch feat/v4.1-perf-physical-isolation https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita-src"
-          git -C "$RUNNER_TEMP/uita-src" checkout d1c279b25faf66244580ac897ecd287216a92e0f
+          git -C "$RUNNER_TEMP/uita-src" checkout 0ca098303ead40e3df15521ecdda23a00e3c5fb1
           xcodebuild build-for-testing \
             -project "$RUNNER_TEMP/uita-src/ios_xctest/UitaXCTestRunner.xcodeproj" \
             -scheme UitaRunnerUITests \
             -configuration Release \
             -destination "id=$udid" \
             -derivedDataPath "$RUNNER_TEMP/uita-xctest-dd" \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-            > "$RUNNER_TEMP/xctest-build.log" 2>&1 || { tail -n 60 "$RUNNER_TEMP/xctest-build.log"; }
+            ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            > "$RUNNER_TEMP/xctest-build.log" 2>&1 || { grep -iE "error:|failed" "$RUNNER_TEMP/xctest-build.log" | head -n 40; }
           xctestrun=$(find "$RUNNER_TEMP/uita-xctest-dd/Build/Products" -name "*.xctestrun" | head -1 || true)
           if [[ -n "$xctestrun" ]]; then
             TEST_RUNNER_UITA_XCTEST_PORT=8199 TEST_RUNNER_UITA_TARGET_BUNDLE_ID="$IOS_BUNDLE_ID" \
@@ -250,7 +250,7 @@ jobs:
             fi
             sleep 3
           done
-      - uses: ui-test-actions/ui-test-actions@d1c279b25faf66244580ac897ecd287216a92e0f
+      - uses: ui-test-actions/ui-test-actions@0ca098303ead40e3df15521ecdda23a00e3c5fb1
         with:
           target: ios
           token-sha256: ${{ inputs.token_sha256 }}
