@@ -1,0 +1,265 @@
+name: Competitive Benchmark Suite (v4.1.1 / v4.2.0)
+run-name: Bench · ${{ inputs.uita_ref }} · ${{ inputs.suite }}
+on:
+  workflow_dispatch:
+    inputs:
+      uita_ref:
+        description: ui-test-actions ref (tag/branch/SHA) to benchmark
+        type: string
+        default: v4.1.1
+      bench_ref:
+        description: ui-test-actions ref containing benchmarks/ harness scripts
+        type: string
+        default: feat/v4.2-performance-reliability
+      suite:
+        type: choice
+        options: [all, android, ios, desktop]
+        default: all
+      tools:
+        description: Comma-separated tools for mobile jobs
+        type: string
+        default: uita,agent-device,appium,maestro
+permissions:
+  contents: read
+env:
+  ANDROID_APP_ID: io.github.apdelrahman1911.nativecmpkit.sample
+  IOS_BUNDLE_ID: io.github.apdelrahman1911.nativecmpkit.sample
+  RELEASE_BASE: https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/releases/download/v4-showcase-fixtures
+  APK_SHA256: f9c951579c7e069bd89cbfe4a62804ee77c0cee66e999ec09e166271686334ae
+  IOS_TAR_SHA256: 8aaa14ae336e7f189d07a107e79ddde4a94f7bf2d0dd68a5c9bde69b65b34fb1
+  AXE_VERSION: v2.1.1
+  AXE_SHA256: 8788838b1b32059d143cf06541b72fcaead85c16274457cdbff086510a5b17fa
+jobs:
+  android-bench:
+    if: inputs.suite == 'all' || inputs.suite == 'android'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Checkout ui-test-actions (target ref) and benchmark harness
+        shell: bash
+        run: |
+          git clone https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita"
+          git -C "$RUNNER_TEMP/uita" checkout "${{ inputs.uita_ref }}"
+          git clone --depth 1 --branch "${{ inputs.bench_ref }}" https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/bench-src"
+          cp -r "$RUNNER_TEMP/bench-src/benchmarks" "$RUNNER_TEMP/uita/benchmarks"
+          python3 -m pip install --disable-pip-version-check tiktoken Pillow==12.2.0
+      - name: Install competitors (agent-device, Appium + uiautomator2, Maestro)
+        shell: bash
+        run: |
+          npm install -g agent-device@latest appium@latest
+          appium driver install uiautomator2
+          curl -fsSL "https://get.maestro.mobile.dev" | bash || true
+          echo "$HOME/.maestro/bin" >> "$GITHUB_PATH"
+          agent-device --version || true
+          appium --version || true
+          "$HOME/.maestro/bin/maestro" --version || true
+      - name: Download Showcase APK and boot Pixel 6 API 35 KVM emulator
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/showcase"
+          curl -fsSL --retry 3 "$RELEASE_BASE/showcase-android-debug.apk" -o "$RUNNER_TEMP/showcase/showcase.apk"
+          printf '%s  %s\n' "$APK_SHA256" "$RUNNER_TEMP/showcase/showcase.apk" | sha256sum -c -
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          if [[ ! -x "$SDKMANAGER" ]]; then SDKMANAGER="$(command -v sdkmanager)"; fi
+          yes | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
+          "$SDKMANAGER" 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools' 'emulator' \
+            'system-images;android-35;google_apis;x86_64'
+          export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+          echo "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+          echo "$ANDROID_HOME/emulator" >> "$GITHUB_PATH"
+          sudo chmod 666 /dev/kvm
+          export ANDROID_USER_HOME="$HOME/.android"
+          export ANDROID_AVD_HOME="$RUNNER_TEMP/bench-avds"
+          mkdir -p "$ANDROID_USER_HOME" "$ANDROID_AVD_HOME"
+          adb start-server
+          echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd \
+            --force --name bench --package 'system-images;android-35;google_apis;x86_64' \
+            --path "$ANDROID_AVD_HOME/bench.avd" --device 'pixel_6'
+          nohup "$ANDROID_HOME/emulator/emulator" -avd bench -port 5554 \
+            -no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect \
+            > "$RUNNER_TEMP/emulator.log" 2>&1 &
+          timeout 420 bash -c '
+            until [[ "$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" == 1 ]]; do
+              sleep 2
+            done'
+          adb -s emulator-5554 shell input keyevent KEYCODE_WAKEUP
+          adb -s emulator-5554 shell wm dismiss-keyguard
+          adb -s emulator-5554 shell settings put global window_animation_scale 0
+          adb -s emulator-5554 shell settings put global transition_animation_scale 0
+          adb -s emulator-5554 shell settings put global animator_duration_scale 0
+          adb -s emulator-5554 install -r "$RUNNER_TEMP/showcase/showcase.apk"
+      - name: Run Android competitive benchmark
+        shell: bash
+        run: |
+          export PATH="$HOME/.maestro/bin:$ANDROID_HOME/platform-tools:$PATH"
+          mkdir -p "$RUNNER_TEMP/results"
+          python3 -u "$RUNNER_TEMP/uita/benchmarks/bench_android.py" \
+            --serial emulator-5554 \
+            --apk "$RUNNER_TEMP/showcase/showcase.apk" \
+            --tools "${{ inputs.tools }}" \
+            --n-snap 15 --n-act 10 --n-wf 3 \
+            --out "$RUNNER_TEMP/results/android-benchmark.json"
+          cat "$RUNNER_TEMP/results/android-benchmark.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bench-android
+          path: ${{ runner.temp }}/results/android-benchmark.json
+          retention-days: 14
+
+  ios-bench:
+    if: inputs.suite == 'all' || inputs.suite == 'ios'
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Checkout ui-test-actions (target ref) and benchmark harness
+        shell: bash
+        run: |
+          git clone https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita"
+          git -C "$RUNNER_TEMP/uita" checkout "${{ inputs.uita_ref }}"
+          git clone --depth 1 --branch "${{ inputs.bench_ref }}" https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/bench-src"
+          cp -r "$RUNNER_TEMP/bench-src/benchmarks" "$RUNNER_TEMP/uita/benchmarks"
+          python3 -m pip install --disable-pip-version-check tiktoken Pillow==12.2.0 PyAutoGUI==0.9.54 pyobjc-framework-Quartz==12.1
+      - name: Install competitors (agent-device, Appium + xcuitest, Maestro)
+        shell: bash
+        run: |
+          npm install -g agent-device@latest appium@latest
+          appium driver install xcuitest
+          curl -fsSL "https://get.maestro.mobile.dev" | bash || true
+          echo "$HOME/.maestro/bin" >> "$GITHUB_PATH"
+          agent-device --version || true
+          appium --version || true
+          "$HOME/.maestro/bin/maestro" --version || true
+      - name: Download Showcase app, AXe, and boot iPhone 17 Pro Simulator
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/showcase/Kira.app" "$RUNNER_TEMP/axe"
+          curl -fsSL --retry 3 "$RELEASE_BASE/showcase-ios-app.tar.gz" -o "$RUNNER_TEMP/showcase/app.tar.gz"
+          printf '%s  %s\n' "$IOS_TAR_SHA256" "$RUNNER_TEMP/showcase/app.tar.gz" | shasum -a 256 -c -
+          tar -xzf "$RUNNER_TEMP/showcase/app.tar.gz" -C "$RUNNER_TEMP/showcase/Kira.app"
+          asset=AXe-macOS-${AXE_VERSION}-universal.tar.gz
+          curl -fsSL --retry 3 "https://github.com/cameroncooke/AXe/releases/download/${AXE_VERSION}/${asset}" -o "$RUNNER_TEMP/axe/$asset"
+          printf '%s  %s\n' "$AXE_SHA256" "$RUNNER_TEMP/axe/$asset" | shasum -a 256 -c -
+          tar -xzf "$RUNNER_TEMP/axe/$asset" -C "$RUNNER_TEMP/axe"
+          axe=$(find "$RUNNER_TEMP/axe" -name axe -type f -print -quit)
+          echo "AXE_BINARY=$axe" >> "$GITHUB_ENV"
+          xcrun simctl list devices available -j > "$RUNNER_TEMP/devices.json"
+          udid=$(python3 - "$RUNNER_TEMP/devices.json" <<'PY'
+          import json, sys
+          data = json.load(open(sys.argv[1]))["devices"]
+          preferred = ["iPhone 17 Pro", "iPhone 16 Pro", "iPhone 16", "iPhone 15"]
+          avail = [(rt, d) for rt in sorted(data) if ".iOS-" in rt for d in data[rt] if d["isAvailable"] and d["name"].startswith("iPhone")]
+          for name in preferred:
+              for rt, d in reversed(avail):
+                  if d["name"] == name:
+                      print(d["udid"]); raise SystemExit
+          print(avail[-1][1]["udid"])
+          PY
+          )
+          echo "UI_DEVICE=$udid" >> "$GITHUB_ENV"
+          xcrun simctl bootstatus "$udid" -b
+          open -a Simulator --args -CurrentDeviceUDID "$udid"
+          xcrun simctl install "$udid" "$RUNNER_TEMP/showcase/Kira.app"
+          xcrun simctl launch "$udid" "$IOS_BUNDLE_ID"
+          sleep 3
+      - name: Run iOS competitive benchmark
+        shell: bash
+        run: |
+          export PATH="$HOME/.maestro/bin:$PATH"
+          mkdir -p "$RUNNER_TEMP/results"
+          python3 -u "$RUNNER_TEMP/uita/benchmarks/bench_ios.py" \
+            --udid "$UI_DEVICE" \
+            --app "$RUNNER_TEMP/showcase/Kira.app" \
+            --axe "$AXE_BINARY" \
+            --tools "${{ inputs.tools }}" \
+            --n-snap 15 --n-act 10 --n-wf 3 \
+            --out "$RUNNER_TEMP/results/ios-benchmark.json"
+          cat "$RUNNER_TEMP/results/ios-benchmark.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bench-ios
+          path: ${{ runner.temp }}/results/ios-benchmark.json
+          retention-days: 14
+
+  desktop-bench:
+    if: inputs.suite == 'all' || inputs.suite == 'desktop'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: linux
+            os: ubuntu-24.04
+          - target: windows
+            os: windows-2025
+          - target: macos
+            os: macos-15
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        if: matrix.target != 'windows'
+        with:
+          node-version: '22'
+      - name: Prepare desktop target and benchmark harness
+        shell: bash
+        run: |
+          git clone https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita"
+          git -C "$RUNNER_TEMP/uita" checkout "${{ inputs.uita_ref }}"
+          git clone --depth 1 --branch "${{ inputs.bench_ref }}" https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/bench-src"
+          cp -r "$RUNNER_TEMP/bench-src/benchmarks" "$RUNNER_TEMP/uita/benchmarks"
+          python -m pip install --disable-pip-version-check tiktoken
+          if [[ "${{ matrix.target }}" == "linux" ]]; then
+            sudo apt-get update -qq
+            sudo apt-get -o DPkg::Lock::Timeout=60 install -y --no-install-recommends \
+              mousepad xvfb xauth xdotool xclip openbox wmctrl python3-pyatspi at-spi2-core dbus-x11
+            printf 'Benchmark GTK document\n' > "$RUNNER_TEMP/doc.txt"
+            npm install -g agent-device@latest || true
+          elif [[ "${{ matrix.target }}" == "macos" ]]; then
+            bash ci/build-desktop-app.sh
+            npm install -g agent-device@latest || true
+          else
+            bash ci/build-desktop-app.sh
+          fi
+      - name: Run desktop benchmark
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/results"
+          if [[ "${{ matrix.target }}" == "linux" ]]; then
+            LAUNCH="mousepad '$RUNNER_TEMP/doc.txt' > '$RUNNER_TEMP/app.log' 2>&1 & echo \$! > '$RUNNER_TEMP/app.pid'"
+            READY="kill -0 \$(cat '$RUNNER_TEMP/app.pid') && wmctrl -l | grep -Fq doc.txt"
+          else
+            LAUNCH="bash ci/launch-desktop-app.sh"
+            READY="bash ci/check-desktop-ready.sh"
+          fi
+          python -u "$RUNNER_TEMP/uita/benchmarks/bench_desktop.py" \
+            --target "${{ matrix.target }}" \
+            --launch "$LAUNCH" \
+            --ready "$READY" \
+            --n-snap 15 --n-act 10 \
+            --out "$RUNNER_TEMP/results/desktop-${{ matrix.target }}-benchmark.json"
+          cat "$RUNNER_TEMP/results/desktop-${{ matrix.target }}-benchmark.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bench-desktop-${{ matrix.target }}
+          path: ${{ runner.temp }}/results/desktop-${{ matrix.target }}-benchmark.json
+          retention-days: 14
