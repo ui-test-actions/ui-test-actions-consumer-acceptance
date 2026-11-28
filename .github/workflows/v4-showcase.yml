@@ -111,7 +111,7 @@ jobs:
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Download/kira-fixture.png || true
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/kira-fixture.png || true
           adb -s emulator-5554 shell ls -la /sdcard/Download/ /sdcard/Pictures/ || true
-      - uses: ui-test-actions/ui-test-actions@f0f5e7192f444857495e7c12f987351985a74494
+      - uses: ui-test-actions/ui-test-actions@d1a87b314ce94ca3ff55126b7470c62b62939efe
         with:
           target: android
           token-sha256: ${{ inputs.token_sha256 }}
@@ -234,7 +234,7 @@ jobs:
             fi
             sleep 3
           done
-      - uses: ui-test-actions/ui-test-actions@f0f5e7192f444857495e7c12f987351985a74494
+      - uses: ui-test-actions/ui-test-actions@d1a87b314ce94ca3ff55126b7470c62b62939efe
         with:
           target: ios
           token-sha256: ${{ inputs.token_sha256 }}
