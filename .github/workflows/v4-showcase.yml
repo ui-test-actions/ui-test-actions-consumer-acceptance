@@ -76,13 +76,7 @@ jobs:
               echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd \
                 --force --name showcase --package 'system-images;android-35;google_apis;x86_64' \
                 --path "$ANDROID_AVD_HOME/showcase.avd" --device 'pixel_6'
-              python3 - "$ANDROID_AVD_HOME/showcase.avd/config.ini" <<'PY'
-              import pathlib, sys
-              p = pathlib.Path(sys.argv[1])
-              lines = [l for l in p.read_text().splitlines() if not l.startswith(("hw.lcd.width=", "hw.lcd.height=", "hw.lcd.density=", "skin.name=", "skin.path="))]
-              lines += ["hw.lcd.width=1600", "hw.lcd.height=2560", "hw.lcd.density=320", "skin.name=1600x2560", "skin.path=_no_skin"]
-              p.write_text("\n".join(lines) + "\n")
-              PY
+              python3 -c 'import pathlib,sys; p=pathlib.Path(sys.argv[1]); ls=[l for l in p.read_text().splitlines() if not l.startswith(("hw.lcd.width=","hw.lcd.height=","hw.lcd.density=","skin.name=","skin.path="))]; ls+=["hw.lcd.width=1600","hw.lcd.height=2560","hw.lcd.density=320","skin.name=1600x2560","skin.path=_no_skin"]; p.write_text("\n".join(ls)+"\n")' "$ANDROID_AVD_HOME/showcase.avd/config.ini"
               echo "Configured native 1600x2560@320dpi tablet AVD hardware profile"
             fi
           else
