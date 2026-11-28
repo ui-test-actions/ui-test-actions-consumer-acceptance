@@ -197,19 +197,19 @@ jobs:
           open -a Simulator --args -CurrentDeviceUDID "$udid"
           xcrun simctl install "$udid" "$SHOWCASE_IOS_APP"
           xcrun simctl addmedia "$udid" "$RUNNER_TEMP/showcase/kira-fixture.png" || true
-          # Seed kira-fixture.txt into On My iPhone/iPad Files provider directory as well as app Documents
+          # Seed kira-fixture.txt into ALL File Provider Storage directories (On My iPhone/iPad) as well as app Documents
           app_data=$(xcrun simctl get_app_container "$udid" "$IOS_BUNDLE_ID" data)
           mkdir -p "$app_data/Documents"
           cp "$RUNNER_TEMP/showcase/kira-fixture.txt" "$app_data/Documents/kira-fixture.txt"
           cp "$RUNNER_TEMP/showcase/kira-fixture.png" "$app_data/Documents/kira-fixture.png"
-          fprov=$(find "$HOME/Library/Developer/CoreSimulator/Devices/$udid/data/Containers/Shared/AppGroup" -name "File Provider Storage" -type d 2>/dev/null | head -1 || true)
-          if [[ -n "$fprov" ]]; then
+          while IFS= read -r fprov; do
+            [[ -n "$fprov" ]] || continue
             cp "$RUNNER_TEMP/showcase/kira-fixture.txt" "$fprov/kira-fixture.txt" || true
             cp "$RUNNER_TEMP/showcase/kira-fixture.png" "$fprov/kira-fixture.png" || true
             mkdir -p "$fprov/Downloads"
             cp "$RUNNER_TEMP/showcase/kira-fixture.txt" "$fprov/Downloads/kira-fixture.txt" || true
             echo "Seeded File Provider Storage: $fprov"
-          fi
+          done < <(find "$HOME/Library/Developer/CoreSimulator/Devices/$udid/data/Containers/Shared/AppGroup" -name "File Provider Storage" -type d 2>/dev/null || true)
           # Build clean-room UitaXCTestRunner for cross-process UIDocumentPickerViewController traversal;
           # session.py launches and supervises it via ios-xctest-run inside the live session lifecycle.
           git clone --depth 1 --branch feat/v4.1-perf-physical-isolation https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita-src"
