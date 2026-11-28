@@ -5,8 +5,8 @@ on:
     inputs:
       ref:
         type: choice
-        options: [v4.0.0, v4]
-        default: v4.0.0
+        options: [v4.1.0, v4, v4.0.0]
+        default: v4.1.0
       target:
         type: choice
         options: [linux, windows, macos]
@@ -18,6 +18,29 @@ on:
 permissions:
   contents: read
 jobs:
+  verify-v4-1-0:
+    if: inputs.ref == 'v4.1.0'
+    runs-on: ${{ fromJSON('{"linux":"ubuntu-24.04","windows":"windows-2025","macos":"macos-15"}')[inputs.target] }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Build desktop fixture
+        shell: bash
+        run: bash ci/build-desktop-app.sh
+      - uses: ui-test-actions/ui-test-actions@v4.1.0
+        with:
+          target: ${{ inputs.target }}
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: '8'
+          file-exchange: '1'
+          device-isolation: '1'
+          launch: bash ci/launch-desktop-app.sh
+          ready: bash ci/check-desktop-ready.sh
   verify-v4-0-0:
     if: inputs.ref == 'v4.0.0'
     runs-on: ${{ fromJSON('{"linux":"ubuntu-24.04","windows":"windows-2025","macos":"macos-15"}')[inputs.target] }}
@@ -60,5 +83,6 @@ jobs:
           token-sha256: ${{ inputs.token_sha256 }}
           duration-minutes: '8'
           file-exchange: '1'
+          device-isolation: '1'
           launch: bash ci/launch-desktop-app.sh
           ready: bash ci/check-desktop-ready.sh
