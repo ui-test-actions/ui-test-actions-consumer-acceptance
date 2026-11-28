@@ -67,9 +67,29 @@ jobs:
           export ANDROID_AVD_HOME="$RUNNER_TEMP/showcase-avds"
           mkdir -p "$ANDROID_USER_HOME" "$ANDROID_AVD_HOME"
           adb start-server
-          echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd \
-            --force --name showcase --package 'system-images;android-35;google_apis;x86_64' \
-            --path "$ANDROID_AVD_HOME/showcase.avd" --device 'pixel_6'
+          if [[ "${{ inputs.device_class }}" == "tablet" ]]; then
+            if echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd \
+              --force --name showcase --package 'system-images;android-35;google_apis;x86_64' \
+              --path "$ANDROID_AVD_HOME/showcase.avd" --device 'pixel_tablet'; then
+              echo "Created native pixel_tablet AVD"
+            else
+              echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd \
+                --force --name showcase --package 'system-images;android-35;google_apis;x86_64' \
+                --path "$ANDROID_AVD_HOME/showcase.avd" --device 'pixel_6'
+              python3 - "$ANDROID_AVD_HOME/showcase.avd/config.ini" <<'PY'
+import pathlib, sys
+p = pathlib.Path(sys.argv[1])
+lines = [l for l in p.read_text().splitlines() if not l.startswith(("hw.lcd.width=", "hw.lcd.height=", "hw.lcd.density=", "skin.name=", "skin.path="))]
+lines += ["hw.lcd.width=1600", "hw.lcd.height=2560", "hw.lcd.density=320", "skin.name=1600x2560", "skin.path=_no_skin"]
+p.write_text("\n".join(lines) + "\n")
+PY
+              echo "Configured native 1600x2560@320dpi tablet AVD hardware profile"
+            fi
+          else
+            echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd \
+              --force --name showcase --package 'system-images;android-35;google_apis;x86_64' \
+              --path "$ANDROID_AVD_HOME/showcase.avd" --device 'pixel_6'
+          fi
           nohup "$ANDROID_HOME/emulator/emulator" -avd showcase -port 5554 \
             -no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect \
             > "$RUNNER_TEMP/emulator.log" 2>&1 &
@@ -79,13 +99,8 @@ jobs:
             done'
           adb -s emulator-5554 shell input keyevent KEYCODE_WAKEUP
           adb -s emulator-5554 shell wm dismiss-keyguard
-          if [[ "${{ inputs.device_class }}" == "tablet" ]]; then
-            adb -s emulator-5554 shell wm size 1600x2560
-            adb -s emulator-5554 shell wm density 320
-          else
-            adb -s emulator-5554 shell wm size 1080x2400
-            adb -s emulator-5554 shell wm density 420
-          fi
+          adb -s emulator-5554 shell wm size || true
+          adb -s emulator-5554 shell wm density || true
           adb -s emulator-5554 shell settings put system font_scale 1.0
           adb -s emulator-5554 shell settings put global window_animation_scale 0
           adb -s emulator-5554 shell settings put global transition_animation_scale 0
@@ -102,7 +117,7 @@ jobs:
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Download/kira-fixture.png || true
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/kira-fixture.png || true
           adb -s emulator-5554 shell ls -la /sdcard/Download/ /sdcard/Pictures/ || true
-      - uses: ui-test-actions/ui-test-actions@0591c3b2050c528d19d091b692986edb685c2726
+      - uses: ui-test-actions/ui-test-actions@d1c279b25faf66244580ac897ecd287216a92e0f
         with:
           target: android
           token-sha256: ${{ inputs.token_sha256 }}
@@ -114,6 +129,7 @@ jobs:
           app-environment: '{"io.github.apdelrahman1911.nativecmpkit.sample":["camera","microphone","contacts","notifications"]}'
           deeplink-schemes: kira
           android-ime: '1'
+          android-a11y-daemon: '1'
           launch: |
             adb -s emulator-5554 install -r "$SHOWCASE_APK"
             adb -s emulator-5554 shell am start -W -n "$ANDROID_APP_ID/io.github.apdelrahman1911.kira.sample.MainActivity"
@@ -196,6 +212,41 @@ jobs:
           if [[ -n "$fprov" ]]; then
             cp "$RUNNER_TEMP/showcase/kira-fixture.txt" "$fprov/kira-fixture.txt" || true
             cp "$RUNNER_TEMP/showcase/kira-fixture.png" "$fprov/kira-fixture.png" || true
+            mkdir -p "$fprov/Downloads"
+            cp "$RUNNER_TEMP/showcase/kira-fixture.txt" "$fprov/Downloads/kira-fixture.txt" || true
+            echo "Seeded File Provider Storage: $fprov"
+          fi
+          # Build & start clean-room UitaXCTestRunner for cross-process UIDocumentPickerViewController traversal
+          git clone --depth 1 --branch feat/v4.1-perf-physical-isolation https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita-src"
+          git -C "$RUNNER_TEMP/uita-src" checkout d1c279b25faf66244580ac897ecd287216a92e0f
+          xcodebuild build-for-testing \
+            -project "$RUNNER_TEMP/uita-src/ios_xctest/UitaXCTestRunner.xcodeproj" \
+            -scheme UitaRunnerUITests \
+            -configuration Release \
+            -destination "id=$udid" \
+            -derivedDataPath "$RUNNER_TEMP/uita-xctest-dd" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            > "$RUNNER_TEMP/xctest-build.log" 2>&1 || { tail -n 60 "$RUNNER_TEMP/xctest-build.log"; }
+          xctestrun=$(find "$RUNNER_TEMP/uita-xctest-dd/Build/Products" -name "*.xctestrun" | head -1 || true)
+          if [[ -n "$xctestrun" ]]; then
+            TEST_RUNNER_UITA_XCTEST_PORT=8199 TEST_RUNNER_UITA_TARGET_BUNDLE_ID="$IOS_BUNDLE_ID" \
+              nohup xcodebuild test-without-building \
+              -xctestrun "$xctestrun" \
+              -destination "id=$udid" \
+              -only-testing:UitaRunnerUITests/UitaXCTestRunner/testServeForever \
+              > "$RUNNER_TEMP/xctest-run.log" 2>&1 &
+            for i in $(seq 1 40); do
+              if curl -fsS http://127.0.0.1:8199/health 2>/dev/null | grep -q '"ok":true'; then
+                echo "XCTEST_URL=http://127.0.0.1:8199" >> "$GITHUB_ENV"
+                echo "UitaXCTestRunner READY on 127.0.0.1:8199"
+                break
+              fi
+              sleep 1
+            done
+            if ! grep -q "XCTEST_URL=" "$GITHUB_ENV" 2>/dev/null; then
+              echo "UitaXCTestRunner did not become ready; tail log:"
+              tail -n 40 "$RUNNER_TEMP/xctest-run.log" || true
+            fi
           fi
           xcrun simctl launch "$udid" "$IOS_BUNDLE_ID"
           for attempt in 1 2 3 4 5; do
@@ -205,7 +256,7 @@ jobs:
             fi
             sleep 3
           done
-      - uses: ui-test-actions/ui-test-actions@0591c3b2050c528d19d091b692986edb685c2726
+      - uses: ui-test-actions/ui-test-actions@d1c279b25faf66244580ac897ecd287216a92e0f
         with:
           target: ios
           token-sha256: ${{ inputs.token_sha256 }}
@@ -213,6 +264,7 @@ jobs:
           startup-timeout-seconds: '420'
           device: ${{ env.UI_DEVICE }}
           ios-axe-path: ${{ env.AXE_BINARY }}
+          ios-xctest-url: ${{ env.XCTEST_URL }}
           app-ids: ${{ env.IOS_BUNDLE_ID }}
           app-installs: '{"io.github.apdelrahman1911.nativecmpkit.sample":"${{ env.SHOWCASE_IOS_APP }}"}'
           app-environment: '{"io.github.apdelrahman1911.nativecmpkit.sample":["photos","microphone","contacts"]}'
