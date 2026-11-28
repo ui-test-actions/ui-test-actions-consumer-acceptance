@@ -1,0 +1,213 @@
+name: v4 NativeCmpKit Showcase acceptance
+run-name: v4 Showcase · ${{ inputs.platform }} · ${{ inputs.device_class }} · ${{ inputs.duration }}m
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        type: choice
+        options: [android, ios]
+        required: true
+      device_class:
+        type: choice
+        options: [phone, tablet]
+        default: phone
+      duration:
+        type: string
+        default: '45'
+      token_sha256:
+        description: SHA-256 digest of the locally generated session token
+        type: string
+        required: true
+permissions:
+  contents: read
+env:
+  ANDROID_APP_ID: io.github.apdelrahman1911.nativecmpkit.sample
+  IOS_BUNDLE_ID: io.github.apdelrahman1911.nativecmpkit.sample
+  RELEASE_BASE: https://github.com/ui-test-actions/ui-test-actions-consumer-acceptance/releases/download/v4-showcase-fixtures
+  APK_SHA256: f9c951579c7e069bd89cbfe4a62804ee77c0cee66e999ec09e166271686334ae
+  IOS_TAR_SHA256: 8aaa14ae336e7f189d07a107e79ddde4a94f7bf2d0dd68a5c9bde69b65b34fb1
+  TXT_SHA256: 149040b7064d652301a9df8442fea3af2b0623cb1fbf8f1d93f3ba8f1743c314
+  PNG_SHA256: 95e5d36bf5adfcae883fcd22aee857cb28b732f1a82c9e0ea270095da1c1b93d
+  AXE_VERSION: v2.1.1
+  AXE_SHA256: 8788838b1b32059d143cf06541b72fcaead85c16274457cdbff086510a5b17fa
+jobs:
+  android:
+    if: inputs.platform == 'android'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Download checksum-verified Showcase APK and fixtures
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/showcase"
+          curl -fsSL --retry 3 "$RELEASE_BASE/showcase-android-debug.apk" -o "$RUNNER_TEMP/showcase/showcase.apk"
+          curl -fsSL --retry 3 "$RELEASE_BASE/kira-fixture.txt" -o "$RUNNER_TEMP/showcase/kira-fixture.txt"
+          curl -fsSL --retry 3 "$RELEASE_BASE/kira-fixture.png" -o "$RUNNER_TEMP/showcase/kira-fixture.png"
+          printf '%s  %s\n' \
+            "$APK_SHA256" "$RUNNER_TEMP/showcase/showcase.apk" \
+            "$TXT_SHA256" "$RUNNER_TEMP/showcase/kira-fixture.txt" \
+            "$PNG_SHA256" "$RUNNER_TEMP/showcase/kira-fixture.png" | sha256sum -c -
+          echo "SHOWCASE_APK=$RUNNER_TEMP/showcase/showcase.apk" >> "$GITHUB_ENV"
+      - name: Boot API 35 Pixel 6 emulator and seed fixtures
+        shell: bash
+        run: |
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          if [[ ! -x "$SDKMANAGER" ]]; then SDKMANAGER="$(command -v sdkmanager)"; fi
+          yes | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
+          "$SDKMANAGER" 'platforms;android-35' 'build-tools;35.0.0' 'platform-tools' 'emulator' \
+            'system-images;android-35;google_apis;x86_64'
+          export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+          echo "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+          echo "$ANDROID_HOME/emulator" >> "$GITHUB_PATH"
+          sudo chmod 666 /dev/kvm
+          export ANDROID_USER_HOME="$HOME/.android"
+          export ANDROID_AVD_HOME="$RUNNER_TEMP/showcase-avds"
+          mkdir -p "$ANDROID_USER_HOME" "$ANDROID_AVD_HOME"
+          adb start-server
+          echo no | "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" create avd \
+            --force --name showcase --package 'system-images;android-35;google_apis;x86_64' \
+            --path "$ANDROID_AVD_HOME/showcase.avd" --device 'pixel_6'
+          nohup "$ANDROID_HOME/emulator/emulator" -avd showcase -port 5554 \
+            -no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect \
+            > "$RUNNER_TEMP/emulator.log" 2>&1 &
+          timeout 420 bash -c '
+            until [[ "$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null | tr -d "\r")" == 1 ]]; do
+              sleep 2
+            done'
+          adb -s emulator-5554 shell input keyevent KEYCODE_WAKEUP
+          adb -s emulator-5554 shell wm dismiss-keyguard
+          if [[ "${{ inputs.device_class }}" == "tablet" ]]; then
+            adb -s emulator-5554 shell wm size 1600x2560
+            adb -s emulator-5554 shell wm density 320
+          else
+            adb -s emulator-5554 shell wm size 1080x2400
+            adb -s emulator-5554 shell wm density 420
+          fi
+          adb -s emulator-5554 shell settings put system font_scale 1.0
+          adb -s emulator-5554 shell settings put global window_animation_scale 0
+          adb -s emulator-5554 shell settings put global transition_animation_scale 0
+          adb -s emulator-5554 shell settings put global animator_duration_scale 0
+          adb -s emulator-5554 shell mkdir -p /sdcard/Download /sdcard/Pictures || true
+          adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.txt" /sdcard/Download/kira-fixture.txt
+          adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.png" /sdcard/Download/kira-fixture.png
+          adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.png" /sdcard/Pictures/kira-fixture.png
+          adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Download/kira-fixture.png || true
+          adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/kira-fixture.png || true
+      - uses: ui-test-actions/ui-test-actions@61732feaf9d11360dc6240ae7dc25f9fd3431d0e
+        with:
+          target: android
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: ${{ inputs.duration }}
+          startup-timeout-seconds: '420'
+          device: emulator-5554
+          app-ids: ${{ env.ANDROID_APP_ID }}
+          app-installs: '{"io.github.apdelrahman1911.nativecmpkit.sample":"${{ env.SHOWCASE_APK }}"}'
+          app-environment: '{"io.github.apdelrahman1911.nativecmpkit.sample":["camera","microphone","contacts","notifications"]}'
+          deeplink-schemes: kira
+          android-ime: '1'
+          launch: |
+            adb -s emulator-5554 install -r "$SHOWCASE_APK"
+            adb -s emulator-5554 shell am start -W -n "$ANDROID_APP_ID/io.github.apdelrahman1911.kira.sample.MainActivity"
+          ready: |
+            adb -s emulator-5554 shell dumpsys activity activities | grep -Eq "mResumedActivity.*${ANDROID_APP_ID}|topResumedActivity.*${ANDROID_APP_ID}"
+
+  ios:
+    if: inputs.platform == 'ios'
+    runs-on: macos-26
+    timeout-minutes: 90
+    steps:
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Download checksum-verified Showcase app, fixtures, and AXe
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/showcase/Kira.app" "$RUNNER_TEMP/axe"
+          curl -fsSL --retry 3 "$RELEASE_BASE/showcase-ios-app.tar.gz" -o "$RUNNER_TEMP/showcase/app.tar.gz"
+          curl -fsSL --retry 3 "$RELEASE_BASE/kira-fixture.txt" -o "$RUNNER_TEMP/showcase/kira-fixture.txt"
+          curl -fsSL --retry 3 "$RELEASE_BASE/kira-fixture.png" -o "$RUNNER_TEMP/showcase/kira-fixture.png"
+          printf '%s  %s\n' \
+            "$IOS_TAR_SHA256" "$RUNNER_TEMP/showcase/app.tar.gz" \
+            "$TXT_SHA256" "$RUNNER_TEMP/showcase/kira-fixture.txt" \
+            "$PNG_SHA256" "$RUNNER_TEMP/showcase/kira-fixture.png" | shasum -a 256 -c -
+          tar -xzf "$RUNNER_TEMP/showcase/app.tar.gz" -C "$RUNNER_TEMP/showcase/Kira.app"
+          echo "SHOWCASE_IOS_APP=$RUNNER_TEMP/showcase/Kira.app" >> "$GITHUB_ENV"
+
+          asset=AXe-macOS-${AXE_VERSION}-universal.tar.gz
+          curl -fsSL --retry 3 "https://github.com/cameroncooke/AXe/releases/download/${AXE_VERSION}/${asset}" -o "$RUNNER_TEMP/axe/$asset"
+          printf '%s  %s\n' "$AXE_SHA256" "$RUNNER_TEMP/axe/$asset" | shasum -a 256 -c -
+          tar -xzf "$RUNNER_TEMP/axe/$asset" -C "$RUNNER_TEMP/axe"
+          axe=$(find "$RUNNER_TEMP/axe" -name axe -type f -print -quit)
+          test -x "$axe"
+          echo "AXE_BINARY=$axe" >> "$GITHUB_ENV"
+      - name: Boot Simulator, install Showcase, and seed fixtures
+        shell: bash
+        run: |
+          xcrun simctl list devices available -j > "$RUNNER_TEMP/devices.json"
+          chosen=$(python3 - "$RUNNER_TEMP/devices.json" "${{ inputs.device_class }}" <<'PY'
+          import json, sys
+          data = json.load(open(sys.argv[1]))["devices"]
+          preferred = (
+              ["iPad Pro 13-inch (M4)", "iPad Pro 12.9-inch (6th generation)",
+               "iPad Air 13-inch (M3)", "iPad Air 11-inch (M3)"]
+              if sys.argv[2] == "tablet"
+              else ["iPhone 17 Pro", "iPhone 16 Pro", "iPhone 16", "iPhone 15"]
+          )
+          available = [
+              (runtime, device)
+              for runtime in sorted(data)
+              if ".iOS-" in runtime
+              for device in data[runtime]
+              if device["isAvailable"]
+              and (device["name"].startswith("iPad") if sys.argv[2] == "tablet"
+                   else device["name"].startswith("iPhone"))
+          ]
+          for name in preferred:
+              for runtime, device in reversed(available):
+                  if device["name"] == name:
+                      print(runtime, device["name"], device["udid"], sep="\t")
+                      raise SystemExit
+          runtime, device = available[-1]
+          print(runtime, device["name"], device["udid"], sep="\t")
+          PY
+          )
+          udid=$(printf '%s' "$chosen" | cut -f3)
+          echo "Selected simulator: $chosen"
+          echo "UI_DEVICE=$udid" >> "$GITHUB_ENV"
+          xcrun simctl bootstatus "$udid" -b
+          open -a Simulator --args -CurrentDeviceUDID "$udid"
+          xcrun simctl install "$udid" "$SHOWCASE_IOS_APP"
+          xcrun simctl addmedia "$udid" "$RUNNER_TEMP/showcase/kira-fixture.png" || true
+          # Seed kira-fixture.txt into On My iPhone/iPad Files provider directory as well as app Documents
+          app_data=$(xcrun simctl get_app_container "$udid" "$IOS_BUNDLE_ID" data)
+          mkdir -p "$app_data/Documents"
+          cp "$RUNNER_TEMP/showcase/kira-fixture.txt" "$app_data/Documents/kira-fixture.txt"
+          cp "$RUNNER_TEMP/showcase/kira-fixture.png" "$app_data/Documents/kira-fixture.png"
+          fprov=$(find "$HOME/Library/Developer/CoreSimulator/Devices/$udid/data/Containers/Shared/AppGroup" -name "File Provider Storage" -type d 2>/dev/null | head -1 || true)
+          if [[ -n "$fprov" ]]; then
+            cp "$RUNNER_TEMP/showcase/kira-fixture.txt" "$fprov/kira-fixture.txt" || true
+            cp "$RUNNER_TEMP/showcase/kira-fixture.png" "$fprov/kira-fixture.png" || true
+          fi
+          xcrun simctl launch "$udid" "$IOS_BUNDLE_ID"
+          for attempt in 1 2 3 4 5; do
+            if "$AXE_BINARY" describe-ui --udid "$udid" > "$RUNNER_TEMP/preflight.json" \
+               && python3 -c 'import json,sys; assert len(json.load(open(sys.argv[1]))[0]["children"]) > 0' "$RUNNER_TEMP/preflight.json"; then
+              break
+            fi
+            sleep 3
+          done
+      - uses: ui-test-actions/ui-test-actions@61732feaf9d11360dc6240ae7dc25f9fd3431d0e
+        with:
+          target: ios
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: ${{ inputs.duration }}
+          startup-timeout-seconds: '420'
+          device: ${{ env.UI_DEVICE }}
+          ios-axe-path: ${{ env.AXE_BINARY }}
+          app-ids: ${{ env.IOS_BUNDLE_ID }}
+          app-installs: '{"io.github.apdelrahman1911.nativecmpkit.sample":"${{ env.SHOWCASE_IOS_APP }}"}'
+          app-environment: '{"io.github.apdelrahman1911.nativecmpkit.sample":["photos","microphone","contacts"]}'
+          ready: xcrun simctl spawn "$UI_DEVICE" launchctl list | grep -Fq "UIKitApplication:$IOS_BUNDLE_ID"

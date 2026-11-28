@@ -1,0 +1,40 @@
+name: v4 Desktop qualification
+run-name: v4 Desktop · ${{ inputs.target }} · ${{ inputs.duration }}m
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        type: choice
+        options: [linux, windows, macos]
+        required: true
+      duration:
+        type: string
+        default: '12'
+      token_sha256:
+        description: SHA-256 digest of the locally generated session token
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  desktop:
+    runs-on: ${{ fromJSON('{"linux":"ubuntu-24.04","windows":"windows-2025","macos":"macos-15"}')[inputs.target] }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Build desktop fixture
+        shell: bash
+        run: bash ci/build-desktop-app.sh
+      - uses: ui-test-actions/ui-test-actions@61732feaf9d11360dc6240ae7dc25f9fd3431d0e
+        with:
+          target: ${{ inputs.target }}
+          token-sha256: ${{ inputs.token_sha256 }}
+          duration-minutes: ${{ inputs.duration }}
+          file-exchange: '1'
+          launch: bash ci/launch-desktop-app.sh
+          ready: bash ci/check-desktop-ready.sh
