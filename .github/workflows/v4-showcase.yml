@@ -90,12 +90,18 @@ jobs:
           adb -s emulator-5554 shell settings put global window_animation_scale 0
           adb -s emulator-5554 shell settings put global transition_animation_scale 0
           adb -s emulator-5554 shell settings put global animator_duration_scale 0
-          adb -s emulator-5554 shell mkdir -p /sdcard/Download /sdcard/Pictures || true
-          adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.txt" /sdcard/Download/kira-fixture.txt
-          adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.png" /sdcard/Download/kira-fixture.png
-          adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.png" /sdcard/Pictures/kira-fixture.png
+          for attempt in 1 2 3 4 5 6 7 8; do
+            if adb -s emulator-5554 shell mkdir -p /sdcard/Download /sdcard/Pictures \
+               && adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.txt" /sdcard/Download/kira-fixture.txt \
+               && adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.png" /sdcard/Download/kira-fixture.png \
+               && adb -s emulator-5554 push "$RUNNER_TEMP/showcase/kira-fixture.png" /sdcard/Pictures/kira-fixture.png; then
+              break
+            fi
+            sleep 3
+          done
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Download/kira-fixture.png || true
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/kira-fixture.png || true
+          adb -s emulator-5554 shell ls -la /sdcard/Download/ /sdcard/Pictures/ || true
       - uses: ui-test-actions/ui-test-actions@61732feaf9d11360dc6240ae7dc25f9fd3431d0e
         with:
           target: android
