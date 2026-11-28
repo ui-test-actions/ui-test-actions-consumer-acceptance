@@ -1,0 +1,217 @@
+{
+  "mode": "desktop",
+  "target": "linux",
+  "started_at": "2026-11-28T09:51:28.435801+00:00",
+  "checks": [
+    {
+      "name": "l12_health_heartbeat_extend",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:32.152886+00:00",
+      "detail": {
+        "health": {
+          "ok": true,
+          "status": "healthy",
+          "session_id": "86f9ed906c5bb56aa2c42e04",
+          "target": "linux",
+          "seconds_remaining": 708,
+          "expires_unix": 1795860213,
+          "warning": false,
+          "active_action_id": null,
+          "driver_ready": true
+        },
+        "extended_seconds": 300
+      },
+      "duration_ms": 1770.8
+    },
+    {
+      "name": "l14_l11_device_info_and_windows",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:33.925106+00:00",
+      "detail": {
+        "device_info": {
+          "platform": "linux",
+          "model": "ip-10-0-131-74",
+          "device_id": "desktop-linux",
+          "os_version": "7.0.0-1018-aws",
+          "api_level": null,
+          "form_factor_hardware": "desktop",
+          "arch": "x86_64",
+          "orientation": "landscape",
+          "window_size_class": {
+            "width": "expanded",
+            "height": "expanded",
+            "layout_class": "desktop"
+          },
+          "driver": {
+            "name": "desktop_linux",
+            "version": "2.0"
+          },
+          "capabilities": [
+            "clipboard.get",
+            "clipboard.set",
+            "device.info",
+            "keyboard.press",
+            "pointer.click",
+            "pointer.double_tap",
+            "pointer.drag",
+            "pointer.long_press",
+            "pointer.move",
+            "pointer.scroll",
+            "pointer.swipe",
+            "text.clear",
+            "text.insert",
+            "text.replace",
+            "tree.snapshot",
+            "ui.active_application",
+            "ui.active_window",
+            "ui.windows",
+            "windows.close",
+            "windows.focus",
+            "windows.list",
+            "windows.move_resize"
+          ]
+        },
+        "window_count": 1
+      },
+      "duration_ms": 1114.6
+    },
+    {
+      "name": "l13_stable_screenshot_bound",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:35.040304+00:00",
+      "detail": {
+        "timestamp_utc": "2026-11-28T09:51:48.765903+00:00",
+        "bytes": 18198,
+        "sha256": "2f20a79e5a014d8c772bdd81bc510a0f0e9289965965536791cd841c2421ddae",
+        "viewport": [
+          1280,
+          800
+        ],
+        "stable": true,
+        "timed_out": false,
+        "frames_sampled": 4,
+        "elapsed_ms": 530.4,
+        "snapshot_id": "4be4312add0ef77c50dddfa9",
+        "action_id": "82e48393ebe445c6a91ee98ae21915d6",
+        "observation_interval_ms": 70.5,
+        "correlation": "post_capture_bounded",
+        "target": "linux",
+        "harness_revision": null,
+        "path": "/var/tmp/uita-v4-qual/evidence-w3/linux/screenshots/linux-stable.png"
+      },
+      "duration_ms": 1799.3
+    },
+    {
+      "name": "p0_6_action_ledger_and_conflict",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:36.840281+00:00",
+      "detail": {
+        "ledger_state": "succeeded",
+        "conflict_verified": true,
+        "missing_404_verified": true
+      },
+      "duration_ms": 3147.1
+    },
+    {
+      "name": "l18_50_step_batch_resume",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:39.987931+00:00",
+      "detail": {
+        "total": 50,
+        "replayed_prefix": 25
+      },
+      "duration_ms": 1436.3
+    },
+    {
+      "name": "l15_structured_error_taxonomy",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:41.424937+00:00",
+      "detail": {
+        "element_not_found_404": true,
+        "invalid_arguments_details": true
+      },
+      "duration_ms": 1479.4
+    },
+    {
+      "name": "l16_l18_trace_and_unicode",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:42.905083+00:00",
+      "detail": {
+        "events": 1,
+        "redacted": true
+      },
+      "duration_ms": 2270.2
+    },
+    {
+      "name": "l12_graceful_close",
+      "status": "passed",
+      "started_at": "2026-11-28T09:51:45.176089+00:00",
+      "detail": {
+        "ok": true,
+        "id": "86f9ed906c5bb56aa2c42e04",
+        "closed": true
+      },
+      "duration_ms": 555.1
+    }
+  ],
+  "capabilities": [
+    "alert.accept",
+    "alert.deny",
+    "alert.dismiss",
+    "alert.present",
+    "clipboard.get",
+    "clipboard.set",
+    "device.info",
+    "element.adjust",
+    "element.assert",
+    "element.click",
+    "element.drag",
+    "element.find",
+    "element.focus",
+    "element.perform_action",
+    "element.scroll",
+    "element.scroll_into_view",
+    "element.scroll_to_end",
+    "element.scroll_to_start",
+    "element.set_value",
+    "element.toggle",
+    "element.wait",
+    "files.list",
+    "files.read",
+    "files.stage",
+    "keyboard.press",
+    "performance.observations",
+    "pointer.click",
+    "pointer.double_tap",
+    "pointer.drag",
+    "pointer.long_press",
+    "pointer.move",
+    "pointer.scroll",
+    "pointer.swipe",
+    "recording.start",
+    "recording.stop",
+    "screenshot.capture",
+    "text.clear",
+    "text.insert",
+    "text.replace",
+    "trace.start",
+    "trace.stop",
+    "tree.snapshot",
+    "ui.active_application",
+    "ui.active_window",
+    "ui.windows",
+    "visual.sample",
+    "visual.wait",
+    "windows.close",
+    "windows.focus",
+    "windows.list",
+    "windows.move_resize"
+  ],
+  "harness_revision": null,
+  "finished_at": "2026-11-28T09:51:45.732008+00:00",
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8
+  }
+}

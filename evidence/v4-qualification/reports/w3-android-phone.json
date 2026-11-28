@@ -1,0 +1,334 @@
+{
+  "mode": "showcase-v4-targeted-wave3",
+  "platform": "android",
+  "device_label": "api35-phone",
+  "started_at": "2026-11-28T09:52:38.348964+00:00",
+  "checks": [
+    {
+      "name": "w3_buttons",
+      "status": "passed",
+      "started_at": "2026-11-28T09:52:40.941379+00:00",
+      "detail": {
+        "counter_incremented": "0 -> 1",
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/buttons-after.png",
+          "snapshot_id": "4bdd43cad7c8ce7adc06f8e1",
+          "stable": true
+        }
+      },
+      "duration_ms": 38363.3
+    },
+    {
+      "name": "w3_dropdown",
+      "status": "passed",
+      "started_at": "2026-11-28T09:53:19.305370+00:00",
+      "detail": {
+        "selected": "Copy",
+        "verified": "Copied!",
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/dropdown-after.png",
+          "snapshot_id": "a9d18d67840824ef54c6a146",
+          "stable": true
+        }
+      },
+      "duration_ms": 33999.3
+    },
+    {
+      "name": "w3_alert_dialog_unified",
+      "status": "passed",
+      "started_at": "2026-11-28T09:53:53.305219+00:00",
+      "detail": {
+        "alert_type": "dialog",
+        "buttons": [
+          "Ok",
+          "Cancel"
+        ],
+        "dismiss": {
+          "handled": true,
+          "dismissed": true,
+          "button": "Cancel"
+        },
+        "accept": {
+          "handled": true,
+          "dismissed": true,
+          "button": "Ok"
+        }
+      },
+      "duration_ms": 42769.6
+    },
+    {
+      "name": "w3_sheet_veto",
+      "status": "passed",
+      "started_at": "2026-11-28T09:54:36.078700+00:00",
+      "detail": {
+        "veto_held": true,
+        "closed_after_reenable": true,
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/sheet-veto-closed.png",
+          "snapshot_id": "ca8346a1fceabdd23445688a",
+          "stable": true
+        }
+      },
+      "duration_ms": 55071.2
+    },
+    {
+      "name": "w3_chrome_topbar_navbar_icons_scaffold_liquidglass",
+      "status": "passed",
+      "started_at": "2026-11-28T09:55:31.151780+00:00",
+      "detail": {
+        "topbar": "passed",
+        "navbar": "passed",
+        "icons_category": "passed",
+        "scaffold_tab": "passed",
+        "liquidglass": "android_fallback_verified"
+      },
+      "duration_ms": 122161.4
+    },
+    {
+      "name": "w3_l1_real_file_picker",
+      "status": "passed",
+      "started_at": "2026-11-28T09:57:33.316437+00:00",
+      "detail": {
+        "documentsui_detected": true,
+        "seeded_file_selected": true,
+        "returned_filename_verified": true,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/file-picker-before.png",
+          "snapshot_id": "a151fa6a4746351b8b08710f",
+          "stable": true
+        },
+        "picker_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/file-picker-system-ui.png",
+          "snapshot_id": "86f56b830b3067922c031320",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/file-picker-selected.png",
+          "snapshot_id": "b8040a8259addba9362c1a7a",
+          "stable": true
+        }
+      },
+      "duration_ms": 51399.2
+    },
+    {
+      "name": "w3_l1_real_share_sheet",
+      "status": "passed",
+      "started_at": "2026-11-28T09:58:24.716289+00:00",
+      "detail": {
+        "windows": [
+          {
+            "owner": "com.android.systemui",
+            "type": "system_ui",
+            "active": false
+          },
+          {
+            "owner": "io.github.apdelrahman1911.nativecmpkit.sample",
+            "type": "application",
+            "active": true
+          },
+          {
+            "owner": "com.android.systemui",
+            "type": "status_bar",
+            "active": false
+          },
+          {
+            "owner": "com.google.android.apps.nexuslauncher",
+            "type": "navigation_bar",
+            "active": false
+          },
+          {
+            "owner": "com.android.systemui",
+            "type": "system_ui",
+            "active": false
+          },
+          {
+            "owner": "com.android.systemui",
+            "type": "system_ui",
+            "active": false
+          }
+        ],
+        "labels": [
+          "Share text, URLs, and files using the platform's native share sheet.",
+          "Share File",
+          "Pick a file",
+          "Share File",
+          "Pick up to 3 files",
+          "Share Multiple Files",
+          "Share Text",
+          "Hello from Kira!",
+          "Text to share",
+          "Share Text",
+          "Share URL",
+          "https://github.com/Apdelrahman1911/NativeCmpKit",
+          "URL to share",
+          "Share URL",
+          "Back",
+          "Content Sharing"
+        ],
+        "share_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/share-sheet-open.png",
+          "snapshot_id": "b45be6e8163814fb3aa88917",
+          "stable": true
+        }
+      },
+      "duration_ms": 38070.3
+    },
+    {
+      "name": "w3_l1_permissions_api",
+      "status": "passed",
+      "started_at": "2026-11-28T09:59:02.788045+00:00",
+      "detail": {
+        "permission": "microphone",
+        "granted": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "permission": "microphone",
+          "state": "granted",
+          "verified_by_driver": true,
+          "source": "android:package-manager"
+        },
+        "denied": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "permission": "microphone",
+          "state": "denied",
+          "verified_by_driver": true,
+          "source": "android:package-manager"
+        },
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/android-phone/screenshots/permissions-granted.png",
+          "snapshot_id": "b34d5c6c4a5a6d8e434f9740",
+          "stable": true
+        }
+      },
+      "duration_ms": 29690.3
+    },
+    {
+      "name": "w3_date_picker",
+      "status": "failed",
+      "started_at": "2026-11-28T09:59:32.479958+00:00",
+      "error": "ClientError('The action response was lost. Inspect the live UI or query GET /v2/action/{request_id} before deciding whether to retry.')",
+      "http_status": null,
+      "error_code": "action_outcome_unknown",
+      "error_details": null,
+      "duration_ms": 105913.2
+    },
+    {
+      "name": "w3_l8_latency_benchmark",
+      "status": "passed",
+      "started_at": "2026-11-28T10:01:18.394329+00:00",
+      "detail": {
+        "cycles": 20,
+        "zero_400s": true,
+        "restart_p50_ms": 5630.8,
+        "restart_p95_ms": 6129.6,
+        "query_after_ready_p50_ms": 2589.7,
+        "query_after_ready_p95_ms": 2649.2,
+        "query_after_ready_p99_ms": 2692.2
+      },
+      "duration_ms": 164755.9
+    },
+    {
+      "name": "w3_graceful_close",
+      "status": "passed",
+      "started_at": "2026-11-28T10:04:03.152201+00:00",
+      "detail": {
+        "ok": true,
+        "id": "de34581adfc54ab5fb3f3475",
+        "closed": true
+      },
+      "duration_ms": 539.9
+    }
+  ],
+  "device_info": {
+    "platform": "android",
+    "model": "sdk_gphone64_x86_64",
+    "device_id": "emulator-5554",
+    "os_version": "15",
+    "api_level": 35,
+    "form_factor_hardware": "emulator",
+    "resized_emulator": false,
+    "arch": "x86_64",
+    "physical_display": {
+      "width": 1080,
+      "height": 2400
+    },
+    "viewport": {
+      "width": 1080,
+      "height": 2400
+    },
+    "logical_dp": {
+      "width": 412,
+      "height": 916
+    },
+    "density_dpi": 420,
+    "scale": 2.62,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "compact",
+      "height": "expanded",
+      "layout_class": "phone"
+    },
+    "driver": {
+      "name": "android_adb",
+      "version": "2.0"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.deeplink",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.info",
+      "device.orientation",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.gesture",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ]
+  },
+  "capabilities_count": 70,
+  "finished_at": "2026-11-28T10:04:03.693010+00:00",
+  "total_duration_seconds": 685.34,
+  "summary": {
+    "passed": 10,
+    "partial": 0,
+    "failed": 1,
+    "total": 11
+  }
+}

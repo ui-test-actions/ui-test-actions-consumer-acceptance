@@ -1,0 +1,624 @@
+{
+  "mode": "showcase-v4-full",
+  "platform": "ios",
+  "device_label": "ipad-simulator",
+  "started_at": "2026-11-28T09:19:45.504701+00:00",
+  "checks": [
+    {
+      "name": "l12_health_heartbeat_extend",
+      "status": "passed",
+      "started_at": "2026-11-28T09:19:58.872019+00:00",
+      "detail": {
+        "health": {
+          "ok": true,
+          "status": "healthy",
+          "session_id": "6e479271da67d13e01eca46d",
+          "target": "ios",
+          "seconds_remaining": 2674,
+          "expires_unix": 1795860285,
+          "warning": false,
+          "active_action_id": null,
+          "driver_ready": true
+        },
+        "heartbeat": {
+          "ok": true,
+          "session_id": "6e479271da67d13e01eca46d",
+          "seconds_remaining": 2673,
+          "expires_unix": 1795860285,
+          "warning": false
+        },
+        "extend": {
+          "ok": true,
+          "id": "6e479271da67d13e01eca46d",
+          "added_seconds": 900,
+          "seconds_remaining": 3573,
+          "expires_unix": 1795861185
+        }
+      },
+      "duration_ms": 1909.3
+    },
+    {
+      "name": "flow_01_l5_l16_search_and_text",
+      "status": "passed",
+      "started_at": "2026-11-28T09:20:00.783005+00:00",
+      "detail": {
+        "search_repetitions": "10/10",
+        "observable_before_kb_dismiss": "10/10",
+        "kb_visible_sample": {
+          "visible": false,
+          "bounds": null,
+          "docked_offscreen": true
+        },
+        "l16_consecutive_text_ops": 20
+      },
+      "duration_ms": 661217.8
+    },
+    {
+      "name": "flow_02_buttons_and_disabled_422",
+      "status": "failed",
+      "started_at": "2026-11-28T09:31:02.002375+00:00",
+      "error": "ClientError('HTTP 408 (condition_timeout)')",
+      "http_status": 408,
+      "error_code": "condition_timeout",
+      "error_details": {
+        "selector": {
+          "label_contains": "component screens"
+        },
+        "state": "absent",
+        "expected": null,
+        "snapshot_id": "c85bbdbdbf4b677b2bea19ba",
+        "matched": 1,
+        "mismatches": {},
+        "elapsed_ms": 6042.8
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/flow_02_buttons_and_disabled_422-failed.png",
+      "duration_ms": 41395.5
+    },
+    {
+      "name": "flow_03_l9_p0_6_clickable_double_tap_and_ledger",
+      "status": "failed",
+      "started_at": "2026-11-28T09:31:43.399521+00:00",
+      "error": "ClientError('The action response was lost. Inspect the live UI or query GET /v2/action/{request_id} before deciding whether to retry.')",
+      "http_status": 502,
+      "error_code": "action_outcome_unknown",
+      "error_details": null,
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/flow_03_l9_p0_6_clickable_double_tap_and_ledger-failed.png",
+      "duration_ms": 93100.3
+    },
+    {
+      "name": "flow_04_l3_l6_l7_switch_semantics",
+      "status": "passed",
+      "started_at": "2026-11-28T09:33:16.501396+00:00",
+      "detail": {
+        "switches_found": 5,
+        "ambiguous_409_verified": true,
+        "before": false,
+        "after": true,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/switch-before.png",
+          "snapshot_id": "b678de4e2a42cc4d008a76e5",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/switch-after.png",
+          "snapshot_id": "bea11f0d89ae6d099c22c5f4",
+          "stable": true
+        }
+      },
+      "duration_ms": 70211.0
+    },
+    {
+      "name": "flow_05_l3_l10_slider_continuous_discrete",
+      "status": "passed",
+      "started_at": "2026-11-28T09:34:26.714983+00:00",
+      "detail": {
+        "sliders_exposed": 0,
+        "brightness": "Brightness — 50% -> Brightness — 85%",
+        "discrete": "Discrete 0..5 (4 steps) — 2 / 5 -> Discrete 0..5 (4 steps) — 4 / 5",
+        "disabled_preserved": true,
+        "adjust": {
+          "method": "track_drag",
+          "track": {
+            "x": 32,
+            "y": 182,
+            "width": 960,
+            "height": 48
+          }
+        },
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/slider-before.png",
+          "snapshot_id": "be5e4a50c90d116071f05e13",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/slider-after.png",
+          "snapshot_id": "2af0d3abaa17627f5eb9f55e",
+          "stable": true
+        }
+      },
+      "duration_ms": 78223.1
+    },
+    {
+      "name": "flow_06_dropdown",
+      "status": "failed",
+      "started_at": "2026-11-28T09:35:44.940202+00:00",
+      "error": "ClientError('HTTP 408 (condition_timeout)')",
+      "http_status": 408,
+      "error_code": "condition_timeout",
+      "error_details": {
+        "selector": {
+          "label_contains": "component screens"
+        },
+        "state": "absent",
+        "expected": null,
+        "snapshot_id": "b2a6efc0e391c59424d2a5fe",
+        "matched": 1,
+        "mismatches": {},
+        "elapsed_ms": 7482.4
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/flow_06_dropdown-failed.png",
+      "duration_ms": 51912.7
+    },
+    {
+      "name": "flow_07_l11_alert_and_popover",
+      "status": "passed",
+      "started_at": "2026-11-28T09:36:36.854356+00:00",
+      "detail": {
+        "alert1_present": true,
+        "alert1_dismissed": true,
+        "ios_action_sheet_popover": {
+          "has_cancel": false,
+          "modal_cancel": "absent",
+          "dismiss_method": "outside_tap",
+          "open_shot": {
+            "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/action-sheet-open.png",
+            "snapshot_id": "e65e4c36522cc7928d895eb8",
+            "stable": true
+          },
+          "closed_shot": {
+            "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/action-sheet-dismissed.png",
+            "snapshot_id": "b100b5b90e9be85249bae501",
+            "stable": true
+          }
+        }
+      },
+      "duration_ms": 90559.7
+    },
+    {
+      "name": "flow_08_l4_sheet_veto",
+      "status": "passed",
+      "started_at": "2026-11-28T09:38:07.415066+00:00",
+      "detail": {
+        "scrolls": 0,
+        "veto_held": true,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/sheet-veto-reached.png",
+          "snapshot_id": "c410726caf8fbfabde7e9669",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/sheet-veto-closed.png",
+          "snapshot_id": "81a0d2bbc82aec945165c3df",
+          "stable": true
+        }
+      },
+      "duration_ms": 100095.9
+    },
+    {
+      "name": "flow_09_l4_date_picker_bounds_and_display",
+      "status": "failed",
+      "started_at": "2026-11-28T09:39:47.512152+00:00",
+      "error": "ClientError('HTTP 404 (element_not_found)')",
+      "http_status": 404,
+      "error_code": "element_not_found",
+      "error_details": {
+        "selector": {
+          "label_contains": "Inline display: Input"
+        },
+        "scrolls": 2,
+        "reached_boundary": true,
+        "snapshot_id": "9e8175e3b0ff814e191646dc"
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/flow_09_l4_date_picker_bounds_and_display-failed.png",
+      "duration_ms": 73849.0
+    },
+    {
+      "name": "flow_10_time_picker_24h",
+      "status": "passed",
+      "started_at": "2026-11-28T09:41:01.362124+00:00",
+      "detail": {
+        "toggled_24h": false,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/time-before.png",
+          "snapshot_id": "92b93ad9c296f1f903fc5ee3",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/time-after.png",
+          "snapshot_id": "1346b29f6ce06507a4b0e87c",
+          "stable": true
+        }
+      },
+      "duration_ms": 54847.7
+    },
+    {
+      "name": "flow_11_scaffold_bars_icons_progress_limitations",
+      "status": "failed",
+      "started_at": "2026-11-28T09:41:56.212649+00:00",
+      "error": "AssertionError(\"Only 4/7 chrome screens visited: {'Adaptive Scaffold': {'nodes': 49, 'ok': True}, 'Adaptive TopAppBar': {'ok': False, 'error': '408/condition_timeout'}, 'Adaptive Toolbar': {'nodes': 61, 'ok': True}, 'Adaptive NavigationBar': {'ok': False, 'error': '408/condition_timeout'}, 'Adaptive Icons': {'ok': False, 'error': '408/condition_timeout'}, 'Adaptive Progress Bar': {'nodes': 33, 'ok': True}, 'Known Limitations': {'nodes': 66, 'ok': True}}\")",
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/flow_11_scaffold_bars_icons_progress_limitations-failed.png",
+      "duration_ms": 287862.9
+    },
+    {
+      "name": "flow_12_webview_js_semantics",
+      "status": "passed",
+      "started_at": "2026-11-28T09:46:44.077276+00:00",
+      "detail": {
+        "toggled_off": true,
+        "js_evaluated": true,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/webview-js-before.png",
+          "snapshot_id": "9f535a45e5bfc9a34612aad0",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/webview-js-after.png",
+          "snapshot_id": "85c45540dd20f9ce7456db8d",
+          "stable": true
+        }
+      },
+      "duration_ms": 61198.6
+    },
+    {
+      "name": "flow_13_l2_nav_003_rotation",
+      "status": "passed",
+      "started_at": "2026-11-28T09:47:45.278260+00:00",
+      "detail": {
+        "repetitions": "10/10",
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/nav-003-after-rotation.png",
+          "snapshot_id": "336261567d808e6eae598281",
+          "stable": true
+        }
+      },
+      "duration_ms": 255831.5
+    },
+    {
+      "name": "flow_14_dark_mode_and_font_scale",
+      "status": "passed",
+      "started_at": "2026-11-28T09:52:01.110554+00:00",
+      "detail": {
+        "dark_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/appearance-dark.png",
+          "snapshot_id": "8d07a19b6c628e795728257d",
+          "stable": true
+        },
+        "light_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/appearance-light.png",
+          "snapshot_id": "5f859980998bf85e4ec40de0",
+          "stable": true
+        },
+        "font_scale": null
+      },
+      "duration_ms": 66116.4
+    },
+    {
+      "name": "flow_15_l1_real_file_picker",
+      "status": "partial",
+      "started_at": "2026-11-28T09:53:07.229149+00:00",
+      "detail": {
+        "picker_opened_visually": true,
+        "axe_remote_xpc_boundary": true,
+        "cancel_node_exposed_and_dismissed": false,
+        "picker_labels_count": 39,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/file-picker-before.png",
+          "snapshot_id": "b530305e0df03dd1484019de",
+          "stable": true
+        },
+        "picker_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/file-picker-system-ui.png",
+          "snapshot_id": "848b29dff2f09704c7e10905",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/file-picker-after-cancel.png",
+          "snapshot_id": "84ca48a5efb5ac7cead54f8a",
+          "stable": true
+        }
+      },
+      "duration_ms": 65989.9
+    },
+    {
+      "name": "flow_16_l1_real_share_sheet",
+      "status": "passed",
+      "started_at": "2026-11-28T09:54:13.220028+00:00",
+      "detail": {
+        "windows": [
+          {
+            "owner": "io.github.apdelrahman1911.nativecmpkit.sample",
+            "type": "application",
+            "active": true
+          }
+        ],
+        "share_labels_sample": [
+          "NativeCmpKit",
+          "dismiss popup",
+          "Back",
+          "Content Sharing",
+          "Share text, URLs, and files using the platform's native share sheet.",
+          "Share File",
+          "Pick a file",
+          "Share File",
+          "Pick up to 3 files",
+          "Share Multiple Files",
+          "Share Text",
+          "Text to share",
+          "Share Text",
+          "Share URL",
+          "URL to share",
+          "Share URL",
+          "Pick a file",
+          "Share File",
+          "Pick up to 3 files",
+          "Share Multiple Files"
+        ],
+        "share_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/share-sheet-open.png",
+          "snapshot_id": "d2b5c40bde88e3bd1e19bad7",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/share-sheet-dismissed.png",
+          "snapshot_id": "dafd4c9d898bd9d16fb84153",
+          "stable": true
+        }
+      },
+      "duration_ms": 57518.7
+    },
+    {
+      "name": "flow_17_l1_permissions_api",
+      "status": "failed",
+      "started_at": "2026-11-28T09:55:10.740663+00:00",
+      "error": "ClientError('HTTP 400 (invalid_arguments)')",
+      "http_status": 400,
+      "error_code": "invalid_arguments",
+      "error_details": {
+        "field": "params.state",
+        "reason": "invalid_enum",
+        "allowed": [
+          "granted",
+          "denied",
+          "reset"
+        ]
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/flow_17_l1_permissions_api-failed.png",
+      "duration_ms": 2487.6
+    },
+    {
+      "name": "flow_18_l17_lifecycle_process_death",
+      "status": "passed",
+      "started_at": "2026-11-28T09:55:13.229392+00:00",
+      "detail": {
+        "before_pid": 4170,
+        "bg": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "pid": 4170,
+          "state": "background",
+          "backgrounded": true
+        },
+        "killed": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "previous_pid": 4170,
+          "running": false,
+          "terminated": true,
+          "mode": "background_then_terminate"
+        },
+        "relaunched_pid": 6386
+      },
+      "duration_ms": 44387.4
+    },
+    {
+      "name": "flow_19_l18_50_step_batch_and_trace",
+      "status": "passed",
+      "started_at": "2026-11-28T09:55:57.619897+00:00",
+      "detail": {
+        "batch_completed": 50,
+        "replayed": 25,
+        "trace_events": 51,
+        "redacted": true
+      },
+      "duration_ms": 3789.9
+    },
+    {
+      "name": "flow_20_l15_error_taxonomy",
+      "status": "passed",
+      "started_at": "2026-11-28T09:56:01.410976+00:00",
+      "detail": {
+        "element_not_found_404": true,
+        "invalid_arguments_field_details": true
+      },
+      "duration_ms": 2867.0
+    },
+    {
+      "name": "l8_readiness_stress_cycles",
+      "status": "failed",
+      "started_at": "2026-11-28T09:56:04.279257+00:00",
+      "error": "ClientError('The action response was lost. Inspect the live UI or query GET /v2/action/{request_id} before deciding whether to retry.')",
+      "http_status": null,
+      "error_code": "action_outcome_unknown",
+      "error_details": null,
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/ios-tablet/screenshots/l8_readiness_stress_cycles-failed.png",
+      "duration_ms": 100373.4
+    },
+    {
+      "name": "l12_graceful_close_410",
+      "status": "passed",
+      "started_at": "2026-11-28T09:57:44.654203+00:00",
+      "detail": {
+        "closed": true,
+        "subsequent_410_session_ended": false
+      },
+      "duration_ms": 1214.5
+    }
+  ],
+  "capabilities": [
+    "alert.accept",
+    "alert.deny",
+    "alert.dismiss",
+    "alert.present",
+    "app.background",
+    "app.close",
+    "app.environment.capabilities",
+    "app.foreground",
+    "app.install",
+    "app.kill",
+    "app.launch",
+    "app.locale.set",
+    "app.metrics",
+    "app.permission.set",
+    "app.reset",
+    "app.restart",
+    "app.resume",
+    "app.status",
+    "app.suspend",
+    "app.terminate",
+    "app.uninstall",
+    "app.wait_ready",
+    "clipboard.get",
+    "clipboard.set",
+    "device.configure",
+    "device.info",
+    "device.orientation",
+    "device.rotate",
+    "element.adjust",
+    "element.assert",
+    "element.click",
+    "element.drag",
+    "element.find",
+    "element.focus",
+    "element.perform_action",
+    "element.scroll",
+    "element.scroll_into_view",
+    "element.scroll_to_end",
+    "element.scroll_to_start",
+    "element.set_value",
+    "element.toggle",
+    "element.wait",
+    "keyboard.dismiss",
+    "keyboard.press",
+    "keyboard.visible",
+    "performance.observations",
+    "pointer.click",
+    "pointer.double_tap",
+    "pointer.drag",
+    "pointer.long_press",
+    "pointer.pinch",
+    "pointer.scroll",
+    "pointer.swipe",
+    "recording.start",
+    "recording.stop",
+    "screenshot.capture",
+    "text.clear",
+    "text.insert",
+    "text.replace",
+    "trace.start",
+    "trace.stop",
+    "tree.snapshot",
+    "ui.active_application",
+    "ui.active_window",
+    "ui.target",
+    "ui.windows",
+    "visual.sample",
+    "visual.wait"
+  ],
+  "harness_revision": null,
+  "device_info": {
+    "platform": "ios",
+    "model": "iPad Air 13-inch (M3)",
+    "device_id": "D34886BC-2DC3-4857-B532-7FCC22886CC8",
+    "os_version": "26.2",
+    "api_level": null,
+    "form_factor_hardware": "simulator",
+    "arch": "arm64",
+    "physical_display": {
+      "width": 2048,
+      "height": 2732
+    },
+    "viewport": {
+      "width": 1024,
+      "height": 1366
+    },
+    "density_dpi": 320,
+    "scale": 2.0,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "expanded",
+      "height": "expanded",
+      "layout_class": "tablet"
+    },
+    "driver": {
+      "name": "ios_axe",
+      "version": "2.1.1"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.info",
+      "device.orientation",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ]
+  },
+  "functional_suite_duration_seconds": 2163.5,
+  "finished_at": "2026-11-28T09:57:45.870173+00:00",
+  "total_duration_seconds": 2280.37,
+  "summary": {
+    "passed": 15,
+    "partial": 1,
+    "failed": 7,
+    "total": 23,
+    "functional_suite_seconds": 2163.5,
+    "total_seconds": 2280.37
+  }
+}

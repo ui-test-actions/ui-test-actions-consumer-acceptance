@@ -1,0 +1,645 @@
+{
+  "mode": "showcase-v4-full",
+  "platform": "android",
+  "device_label": "api35-phone",
+  "started_at": "2026-11-28T09:14:38.290409+00:00",
+  "checks": [
+    {
+      "name": "l12_health_heartbeat_extend",
+      "status": "passed",
+      "started_at": "2026-11-28T09:14:41.073176+00:00",
+      "detail": {
+        "health": {
+          "ok": true,
+          "status": "healthy",
+          "session_id": "3678564e2db3752abba2f6ae",
+          "target": "android",
+          "seconds_remaining": 2689,
+          "expires_unix": 1795859983,
+          "warning": false,
+          "active_action_id": null,
+          "driver_ready": true
+        },
+        "heartbeat": {
+          "ok": true,
+          "session_id": "3678564e2db3752abba2f6ae",
+          "seconds_remaining": 2688,
+          "expires_unix": 1795859982,
+          "warning": false
+        },
+        "extend": {
+          "ok": true,
+          "id": "3678564e2db3752abba2f6ae",
+          "added_seconds": 900,
+          "seconds_remaining": 3587,
+          "expires_unix": 1795860882
+        }
+      },
+      "duration_ms": 1711.9
+    },
+    {
+      "name": "flow_01_l5_l16_search_and_text",
+      "status": "failed",
+      "started_at": "2026-11-28T09:14:42.785934+00:00",
+      "error": "ClientError('HTTP 503 (driver_not_ready)')",
+      "http_status": 503,
+      "error_code": "driver_not_ready",
+      "error_details": null,
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_01_l5_l16_search_and_text-failed.png",
+      "duration_ms": 105408.0
+    },
+    {
+      "name": "flow_02_buttons_and_disabled_422",
+      "status": "failed",
+      "started_at": "2026-11-28T09:16:28.194968+00:00",
+      "error": "ClientError('HTTP 408 (condition_timeout)')",
+      "http_status": 408,
+      "error_code": "condition_timeout",
+      "error_details": {
+        "selector": {
+          "label_contains": "component screens"
+        },
+        "state": "absent",
+        "expected": null,
+        "snapshot_id": "67f87caf389096727e89fce7",
+        "matched": 1,
+        "mismatches": {},
+        "elapsed_ms": 6507.9
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_02_buttons_and_disabled_422-failed.png",
+      "duration_ms": 35673.7
+    },
+    {
+      "name": "flow_03_l9_p0_6_clickable_double_tap_and_ledger",
+      "status": "passed",
+      "started_at": "2026-11-28T09:17:03.870729+00:00",
+      "detail": {
+        "p0_6_dropped_exc": "None/action_outcome_unknown",
+        "p0_6_ledger_state": "succeeded",
+        "p0_6_idempotent_single_click": true,
+        "p0_6_conflict_409": true,
+        "p0_6_missing_404": true,
+        "long_press": true,
+        "double_tap_passed": "10/10",
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/clickable-before.png",
+          "snapshot_id": "01583c3cc1ec57372ddb470f",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/clickable-after.png",
+          "snapshot_id": "e9817ebc8f65a3faa2212efc",
+          "stable": true
+        }
+      },
+      "duration_ms": 103985.3
+    },
+    {
+      "name": "flow_04_l3_l6_l7_switch_semantics",
+      "status": "passed",
+      "started_at": "2026-11-28T09:18:47.856990+00:00",
+      "detail": {
+        "switches_found": 5,
+        "ambiguous_409_verified": true,
+        "before": false,
+        "after": true,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/switch-before.png",
+          "snapshot_id": "170127631c48aa048a5ab469",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/switch-after.png",
+          "snapshot_id": "9bacd43981954e2341cd4348",
+          "stable": true
+        }
+      },
+      "duration_ms": 47303.3
+    },
+    {
+      "name": "flow_05_l3_l10_slider_continuous_discrete",
+      "status": "passed",
+      "started_at": "2026-11-28T09:19:35.161289+00:00",
+      "detail": {
+        "sliders_exposed": 5,
+        "brightness": "Brightness — 50% -> Brightness — 83%",
+        "discrete": "Discrete 0..5 (4 steps) — 2 / 5 -> Discrete 0..5 (4 steps) — 4 / 5",
+        "disabled_preserved": true,
+        "adjust": {
+          "method": "drag",
+          "target_percent": 85.0,
+          "before_value": null,
+          "after_value": null,
+          "node": {
+            "id": "13",
+            "parent_id": "11",
+            "name": "",
+            "label": "",
+            "text": "",
+            "role": "slider",
+            "native_role": "android.widget.SeekBar",
+            "visible": true,
+            "bounds": {
+              "x": 58,
+              "y": 639,
+              "width": 964,
+              "height": 116
+            },
+            "raw_bounds": {
+              "x": 58,
+              "y": 639,
+              "width": 964,
+              "height": 116
+            },
+            "enabled": true,
+            "resource_id": "",
+            "properties": {
+              "resource_id": "",
+              "class": "android.widget.SeekBar",
+              "package": "io.github.apdelrahman1911.nativecmpkit.sample",
+              "clickable": false,
+              "long-clickable": false,
+              "scrollable": false,
+              "enabled": true,
+              "focusable": true,
+              "focused": false,
+              "checkable": false,
+              "checked": false,
+              "selected": false,
+              "password": false,
+              "adjustable": true
+            },
+            "actions": [
+              "adjust",
+              "increment",
+              "decrement",
+              "set_value"
+            ],
+            "owner_app": "io.github.apdelrahman1911.nativecmpkit.sample",
+            "window_id": "android:win:acd5137",
+            "native": {
+              "index": "1",
+              "class": "android.widget.SeekBar",
+              "package": "io.github.apdelrahman1911.nativecmpkit.sample"
+            }
+          },
+          "snapshot_id": "a250c09bf6b73c3bb082c70b"
+        },
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/slider-before.png",
+          "snapshot_id": "006b669a9a21289f911f4c37",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/slider-after.png",
+          "snapshot_id": "9030e6edd2df6ad37940147c",
+          "stable": true
+        }
+      },
+      "duration_ms": 56010.3
+    },
+    {
+      "name": "flow_06_dropdown",
+      "status": "failed",
+      "started_at": "2026-11-28T09:20:31.172758+00:00",
+      "error": "ClientError('HTTP 408 (condition_timeout)')",
+      "http_status": 408,
+      "error_code": "condition_timeout",
+      "error_details": {
+        "selector": {
+          "label_contains": "component screens"
+        },
+        "state": "absent",
+        "expected": null,
+        "snapshot_id": "6c200326b33d6ea09521d0ec",
+        "matched": 1,
+        "mismatches": {},
+        "elapsed_ms": 6544.0
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_06_dropdown-failed.png",
+      "duration_ms": 35599.8
+    },
+    {
+      "name": "flow_07_l11_alert_and_popover",
+      "status": "failed",
+      "started_at": "2026-11-28T09:21:06.774006+00:00",
+      "error": "ClientError('HTTP 404 (element_not_found)')",
+      "http_status": 404,
+      "error_code": "element_not_found",
+      "error_details": {
+        "snapshot_id": "062031efa70db7874ce63267"
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_07_l11_alert_and_popover-failed.png",
+      "duration_ms": 33882.7
+    },
+    {
+      "name": "flow_08_l4_sheet_veto",
+      "status": "failed",
+      "started_at": "2026-11-28T09:21:40.657677+00:00",
+      "error": "ClientError('HTTP 408 (condition_timeout)')",
+      "http_status": 408,
+      "error_code": "condition_timeout",
+      "error_details": {
+        "selector": {
+          "label_contains": "Allow swipe to hide"
+        },
+        "state": "absent",
+        "expected": null,
+        "snapshot_id": "abcc316cba3d7f80dd4d60fd",
+        "matched": 1,
+        "mismatches": {},
+        "elapsed_ms": 6492.2
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_08_l4_sheet_veto-failed.png",
+      "duration_ms": 54304.2
+    },
+    {
+      "name": "flow_09_l4_date_picker_bounds_and_display",
+      "status": "failed",
+      "started_at": "2026-11-28T09:22:34.963701+00:00",
+      "error": "ClientError('The action response was lost. Inspect the live UI or query GET /v2/action/{request_id} before deciding whether to retry.')",
+      "http_status": null,
+      "error_code": "action_outcome_unknown",
+      "error_details": null,
+      "duration_ms": 104420.7
+    },
+    {
+      "name": "flow_10_time_picker_24h",
+      "status": "passed",
+      "started_at": "2026-11-28T09:24:19.385407+00:00",
+      "detail": {
+        "toggled_24h": true,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/time-before.png",
+          "snapshot_id": "1240418462438561651beb98",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/time-after.png",
+          "snapshot_id": "3cb30004ae7db0a6e58faa80",
+          "stable": true
+        }
+      },
+      "duration_ms": 34191.4
+    },
+    {
+      "name": "flow_11_scaffold_bars_icons_progress_limitations",
+      "status": "failed",
+      "started_at": "2026-11-28T09:24:53.578912+00:00",
+      "error": "AssertionError(\"Only 4/7 chrome screens visited: {'Adaptive Scaffold': {'nodes': 40, 'ok': True}, 'Adaptive TopAppBar': {'ok': False, 'error': '408/condition_timeout'}, 'Adaptive Toolbar': {'nodes': 35, 'ok': True}, 'Adaptive NavigationBar': {'ok': False, 'error': '408/condition_timeout'}, 'Adaptive Icons': {'ok': False, 'error': '408/condition_timeout'}, 'Adaptive Progress Bar': {'nodes': 27, 'ok': True}, 'Known Limitations': {'nodes': 37, 'ok': True}}\")",
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_11_scaffold_bars_icons_progress_limitations-failed.png",
+      "duration_ms": 183598.6
+    },
+    {
+      "name": "flow_12_webview_js_semantics",
+      "status": "passed",
+      "started_at": "2026-11-28T09:27:57.179248+00:00",
+      "detail": {
+        "toggled_off": true,
+        "js_evaluated": true,
+        "before_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/webview-js-before.png",
+          "snapshot_id": "e93d5bf06e256d1d9e24bf71",
+          "stable": true
+        },
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/webview-js-after.png",
+          "snapshot_id": "00ee39e2804637eefea8d8bc",
+          "stable": true
+        }
+      },
+      "duration_ms": 48982.7
+    },
+    {
+      "name": "flow_13_l2_nav_003_rotation",
+      "status": "passed",
+      "started_at": "2026-11-28T09:28:46.163476+00:00",
+      "detail": {
+        "repetitions": "10/10",
+        "after_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/nav-003-after-rotation.png",
+          "snapshot_id": "0cb69ff0ff6e5ca68478986e",
+          "stable": true
+        }
+      },
+      "duration_ms": 113272.1
+    },
+    {
+      "name": "flow_14_dark_mode_and_font_scale",
+      "status": "passed",
+      "started_at": "2026-11-28T09:30:39.437518+00:00",
+      "detail": {
+        "dark_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/appearance-dark.png",
+          "snapshot_id": "dcc8ebd24f87775cfefd2423",
+          "stable": true
+        },
+        "light_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/appearance-light.png",
+          "snapshot_id": "fac20a618a2145e313fca1de",
+          "stable": true
+        },
+        "font_scale": {
+          "font_scale": 1.3
+        }
+      },
+      "duration_ms": 40200.2
+    },
+    {
+      "name": "flow_15_l1_real_file_picker",
+      "status": "failed",
+      "started_at": "2026-11-28T09:31:19.639320+00:00",
+      "error": "ClientError('HTTP 404 (element_not_found)')",
+      "http_status": 404,
+      "error_code": "element_not_found",
+      "error_details": {
+        "selector": {
+          "role": "button",
+          "label": "Pick Files"
+        },
+        "state": "present",
+        "snapshot_id": "eadf1950261f1827107e8146",
+        "elapsed_ms": 6468.9
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_15_l1_real_file_picker-failed.png",
+      "duration_ms": 34444.8
+    },
+    {
+      "name": "flow_16_l1_real_share_sheet",
+      "status": "failed",
+      "started_at": "2026-11-28T09:31:54.085127+00:00",
+      "error": "ClientError('HTTP 404 (element_not_found)')",
+      "http_status": 404,
+      "error_code": "element_not_found",
+      "error_details": {
+        "selector": {
+          "role": "button",
+          "label": "Share Text"
+        },
+        "scrolls": 1,
+        "reached_boundary": true,
+        "snapshot_id": "70b3302b5f8dac9213762d92"
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_16_l1_real_share_sheet-failed.png",
+      "duration_ms": 28866.7
+    },
+    {
+      "name": "flow_17_l1_permissions_api",
+      "status": "failed",
+      "started_at": "2026-11-28T09:32:22.952926+00:00",
+      "error": "ClientError('HTTP 400 (invalid_arguments)')",
+      "http_status": 400,
+      "error_code": "invalid_arguments",
+      "error_details": {
+        "field": "params.state",
+        "reason": "invalid_enum",
+        "allowed": [
+          "granted",
+          "denied",
+          "reset"
+        ]
+      },
+      "failure_screenshot": "/var/tmp/uita-v4-qual/evidence-w2/android-phone/screenshots/flow_17_l1_permissions_api-failed.png",
+      "duration_ms": 1599.4
+    },
+    {
+      "name": "flow_18_l17_lifecycle_process_death",
+      "status": "passed",
+      "started_at": "2026-11-28T09:32:24.553650+00:00",
+      "detail": {
+        "before_pid": 14544,
+        "bg": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "pid": 14544,
+          "state": "background",
+          "backgrounded": true
+        },
+        "killed": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "previous_pid": 14544,
+          "running": false,
+          "terminated": true,
+          "mode": "background_kill"
+        },
+        "relaunched_pid": 14964
+      },
+      "duration_ms": 40766.6
+    },
+    {
+      "name": "flow_19_l18_50_step_batch_and_trace",
+      "status": "passed",
+      "started_at": "2026-11-28T09:33:05.322255+00:00",
+      "detail": {
+        "batch_completed": 50,
+        "replayed": 25,
+        "trace_events": 51,
+        "redacted": true
+      },
+      "duration_ms": 2660.5
+    },
+    {
+      "name": "flow_20_l15_error_taxonomy",
+      "status": "passed",
+      "started_at": "2026-11-28T09:33:07.984134+00:00",
+      "detail": {
+        "element_not_found_404": true,
+        "invalid_arguments_field_details": true
+      },
+      "duration_ms": 3626.2
+    },
+    {
+      "name": "l8_readiness_stress_cycles",
+      "status": "passed",
+      "started_at": "2026-11-28T09:33:11.611609+00:00",
+      "detail": {
+        "cycles": 100,
+        "zero_400s": true,
+        "restart_p50_ms": 5668.9,
+        "restart_p95_ms": 6283.0,
+        "restart_p99_ms": 7428.5,
+        "query_after_ready_p50_ms": 2583.9,
+        "query_after_ready_p95_ms": 2653.6,
+        "query_after_ready_p99_ms": 2940.1
+      },
+      "duration_ms": 832960.8
+    },
+    {
+      "name": "l12_graceful_close_410",
+      "status": "passed",
+      "started_at": "2026-11-28T09:47:04.574189+00:00",
+      "detail": {
+        "closed": true,
+        "subsequent_410_session_ended": false
+      },
+      "duration_ms": 1090.8
+    }
+  ],
+  "capabilities": [
+    "alert.accept",
+    "alert.deny",
+    "alert.dismiss",
+    "alert.present",
+    "app.background",
+    "app.close",
+    "app.deeplink",
+    "app.environment.capabilities",
+    "app.foreground",
+    "app.install",
+    "app.kill",
+    "app.launch",
+    "app.locale.set",
+    "app.metrics",
+    "app.permission.set",
+    "app.reset",
+    "app.restart",
+    "app.resume",
+    "app.status",
+    "app.suspend",
+    "app.terminate",
+    "app.uninstall",
+    "app.wait_ready",
+    "clipboard.get",
+    "clipboard.set",
+    "device.configure",
+    "device.info",
+    "device.orientation",
+    "device.rotate",
+    "element.adjust",
+    "element.assert",
+    "element.click",
+    "element.drag",
+    "element.find",
+    "element.focus",
+    "element.perform_action",
+    "element.scroll",
+    "element.scroll_into_view",
+    "element.scroll_to_end",
+    "element.scroll_to_start",
+    "element.set_value",
+    "element.toggle",
+    "element.wait",
+    "keyboard.dismiss",
+    "keyboard.press",
+    "keyboard.visible",
+    "performance.observations",
+    "pointer.click",
+    "pointer.double_tap",
+    "pointer.drag",
+    "pointer.gesture",
+    "pointer.long_press",
+    "pointer.pinch",
+    "pointer.scroll",
+    "pointer.swipe",
+    "recording.start",
+    "recording.stop",
+    "screenshot.capture",
+    "text.clear",
+    "text.insert",
+    "text.replace",
+    "trace.start",
+    "trace.stop",
+    "tree.snapshot",
+    "ui.active_application",
+    "ui.active_window",
+    "ui.target",
+    "ui.windows",
+    "visual.sample",
+    "visual.wait"
+  ],
+  "harness_revision": null,
+  "device_info": {
+    "platform": "android",
+    "model": "sdk_gphone64_x86_64",
+    "device_id": "emulator-5554",
+    "os_version": "15",
+    "api_level": 35,
+    "form_factor_hardware": "emulator",
+    "resized_emulator": false,
+    "arch": "x86_64",
+    "physical_display": {
+      "width": 1080,
+      "height": 2400
+    },
+    "viewport": {
+      "width": 1080,
+      "height": 2400
+    },
+    "logical_dp": {
+      "width": 412,
+      "height": 916
+    },
+    "density_dpi": 420,
+    "scale": 2.62,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "compact",
+      "height": "expanded",
+      "layout_class": "phone"
+    },
+    "driver": {
+      "name": "android_adb",
+      "version": "2.0"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.deeplink",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.info",
+      "device.orientation",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.gesture",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ]
+  },
+  "functional_suite_duration_seconds": 1108.83,
+  "finished_at": "2026-11-28T09:47:05.666273+00:00",
+  "total_duration_seconds": 1947.38,
+  "summary": {
+    "passed": 13,
+    "partial": 0,
+    "failed": 10,
+    "total": 23,
+    "functional_suite_seconds": 1108.83,
+    "total_seconds": 1947.38
+  }
+}

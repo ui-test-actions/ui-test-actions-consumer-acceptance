@@ -1,0 +1,304 @@
+{
+  "mode": "showcase-v4-targeted-wave3",
+  "platform": "ios",
+  "device_label": "iphone-simulator",
+  "started_at": "2026-11-28T10:01:18.192041+00:00",
+  "checks": [
+    {
+      "name": "w3_buttons",
+      "status": "passed",
+      "started_at": "2026-11-28T10:01:25.055722+00:00",
+      "detail": {
+        "counter_incremented": "0 -> 1",
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/ios-phone/screenshots/buttons-after.png",
+          "snapshot_id": "b9850d42bfb2e27d53407fa0",
+          "stable": true
+        }
+      },
+      "duration_ms": 85952.2
+    },
+    {
+      "name": "w3_dropdown",
+      "status": "passed",
+      "started_at": "2026-11-28T10:02:51.008567+00:00",
+      "detail": {
+        "selected": "Duplicate",
+        "verified": "Duplicated!",
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/ios-phone/screenshots/dropdown-after.png",
+          "snapshot_id": "d9f497a56ea4dd299c30189e",
+          "stable": true
+        }
+      },
+      "duration_ms": 45353.9
+    },
+    {
+      "name": "w3_alert_dialog_unified",
+      "status": "passed",
+      "started_at": "2026-11-28T10:03:36.363349+00:00",
+      "detail": {
+        "alert_type": "sheet",
+        "buttons": [
+          "Ok",
+          "Cancel"
+        ],
+        "dismiss": {
+          "handled": true,
+          "dismissed": true,
+          "button": "Cancel"
+        },
+        "accept": {
+          "handled": true,
+          "dismissed": true,
+          "button": "Ok"
+        }
+      },
+      "duration_ms": 56256.1
+    },
+    {
+      "name": "w3_sheet_veto",
+      "status": "passed",
+      "started_at": "2026-11-28T10:04:32.623044+00:00",
+      "detail": {
+        "veto_held": true,
+        "closed_after_reenable": true,
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/ios-phone/screenshots/sheet-veto-closed.png",
+          "snapshot_id": "cfc4f11aff75c6daa1793d49",
+          "stable": true
+        }
+      },
+      "duration_ms": 76838.2
+    },
+    {
+      "name": "w3_chrome_topbar_navbar_icons_scaffold_liquidglass",
+      "status": "passed",
+      "started_at": "2026-11-28T10:05:49.462232+00:00",
+      "detail": {
+        "topbar": "passed",
+        "navbar": "passed",
+        "icons_category": "passed",
+        "scaffold_tab": "passed",
+        "liquidglass": "ios_clicked_0_to_1"
+      },
+      "duration_ms": 178267.6
+    },
+    {
+      "name": "w3_l1_real_file_picker",
+      "status": "partial",
+      "started_at": "2026-11-28T10:08:47.734603+00:00",
+      "detail": {
+        "picker_opened_visually": true,
+        "axe_remote_xpc_boundary": true,
+        "cancel_dismissed": true,
+        "picker_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/ios-phone/screenshots/file-picker-system-ui.png",
+          "snapshot_id": "d8874a6076a775ebfd3a7e9d",
+          "stable": true
+        }
+      },
+      "duration_ms": 67161.8
+    },
+    {
+      "name": "w3_l1_real_share_sheet",
+      "status": "passed",
+      "started_at": "2026-11-28T10:09:54.898794+00:00",
+      "detail": {
+        "windows": [
+          {
+            "owner": "io.github.apdelrahman1911.nativecmpkit.sample",
+            "type": "application",
+            "active": true
+          }
+        ],
+        "labels": [
+          "NativeCmpKit",
+          "Back",
+          "Content Sharing",
+          "Share text, URLs, and files using the platform's native share sheet.",
+          "Share File",
+          "Pick a file",
+          "Share File",
+          "Pick up to 3 files",
+          "Share Multiple Files",
+          "Share Text",
+          "Text to share",
+          "Share Text",
+          "Share URL",
+          "URL to share",
+          "Share URL",
+          "Pick a file",
+          "Share File",
+          "Pick up to 3 files",
+          "Share Multiple Files",
+          "Text to share"
+        ],
+        "share_shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/ios-phone/screenshots/share-sheet-open.png",
+          "snapshot_id": "acf834745eb991e2431c15c1",
+          "stable": true
+        }
+      },
+      "duration_ms": 50736.6
+    },
+    {
+      "name": "w3_l1_permissions_api",
+      "status": "passed",
+      "started_at": "2026-11-28T10:10:45.636788+00:00",
+      "detail": {
+        "permission": "microphone",
+        "granted": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "permission": "microphone",
+          "state": "granted",
+          "verified_by_driver": false,
+          "source": "simulator:privacy"
+        },
+        "denied": {
+          "id": "io.github.apdelrahman1911.nativecmpkit.sample",
+          "permission": "microphone",
+          "state": "denied",
+          "verified_by_driver": false,
+          "source": "simulator:privacy"
+        },
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/ios-phone/screenshots/permissions-granted.png",
+          "snapshot_id": "f0dee88ae6eba70c212bb6d3",
+          "stable": true
+        }
+      },
+      "duration_ms": 54450.9
+    },
+    {
+      "name": "w3_date_picker",
+      "status": "passed",
+      "started_at": "2026-11-28T10:11:40.089295+00:00",
+      "detail": {
+        "range_updated": true,
+        "before_checked": false,
+        "after_checked": false,
+        "ios_showcase_label_updated_to_input": false,
+        "note": "Switch toggled cleanly via ui-test-actions; iOS Showcase DatePicker keeps Picker label.",
+        "shot": {
+          "path": "/var/tmp/uita-v4-qual/evidence-w3/ios-phone/screenshots/date-display-after.png",
+          "snapshot_id": "fe75bc1cd9a6e528be2f3176",
+          "stable": true
+        }
+      },
+      "duration_ms": 57161.1
+    },
+    {
+      "name": "w3_l8_latency_benchmark",
+      "status": "passed",
+      "started_at": "2026-11-28T10:12:37.251697+00:00",
+      "detail": {
+        "cycles": 10,
+        "zero_400s": true,
+        "restart_p50_ms": 8484.3,
+        "restart_p95_ms": 13887.8,
+        "query_after_ready_p50_ms": 1364.8,
+        "query_after_ready_p95_ms": 4254.5,
+        "query_after_ready_p99_ms": 4254.5
+      },
+      "duration_ms": 108956.1
+    },
+    {
+      "name": "w3_graceful_close",
+      "status": "passed",
+      "started_at": "2026-11-28T10:14:26.210797+00:00",
+      "detail": {
+        "ok": true,
+        "id": "b09050d9658cecae8dacf1d3",
+        "closed": true
+      },
+      "duration_ms": 612.0
+    }
+  ],
+  "device_info": {
+    "platform": "ios",
+    "model": "iPhone 17 Pro",
+    "device_id": "7F81FA48-EEA2-44A5-AC62-55FB6DDF82EA",
+    "os_version": "26.5",
+    "api_level": null,
+    "form_factor_hardware": "simulator",
+    "arch": "arm64",
+    "physical_display": {
+      "width": 1206,
+      "height": 2622
+    },
+    "viewport": {
+      "width": 402,
+      "height": 874
+    },
+    "density_dpi": 480,
+    "scale": 3.0,
+    "orientation": "portrait",
+    "window_size_class": {
+      "width": "compact",
+      "height": "medium",
+      "layout_class": "phone"
+    },
+    "driver": {
+      "name": "ios_axe",
+      "version": "2.1.1"
+    },
+    "capabilities": [
+      "alert.accept",
+      "alert.deny",
+      "alert.dismiss",
+      "alert.present",
+      "app.background",
+      "app.close",
+      "app.environment.capabilities",
+      "app.foreground",
+      "app.install",
+      "app.kill",
+      "app.launch",
+      "app.locale.set",
+      "app.metrics",
+      "app.permission.set",
+      "app.reset",
+      "app.restart",
+      "app.resume",
+      "app.status",
+      "app.suspend",
+      "app.terminate",
+      "app.uninstall",
+      "app.wait_ready",
+      "clipboard.get",
+      "clipboard.set",
+      "device.configure",
+      "device.info",
+      "device.orientation",
+      "device.rotate",
+      "keyboard.dismiss",
+      "keyboard.press",
+      "keyboard.visible",
+      "pointer.click",
+      "pointer.double_tap",
+      "pointer.drag",
+      "pointer.long_press",
+      "pointer.pinch",
+      "pointer.scroll",
+      "pointer.swipe",
+      "text.clear",
+      "text.insert",
+      "text.replace",
+      "tree.snapshot",
+      "ui.active_application",
+      "ui.active_window",
+      "ui.target",
+      "ui.windows"
+    ]
+  },
+  "capabilities_count": 68,
+  "finished_at": "2026-11-28T10:14:26.824096+00:00",
+  "total_duration_seconds": 788.63,
+  "summary": {
+    "passed": 10,
+    "partial": 1,
+    "failed": 0,
+    "total": 11
+  }
+}
