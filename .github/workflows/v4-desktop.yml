@@ -30,7 +30,7 @@ jobs:
       - name: Build desktop fixture
         shell: bash
         run: bash ci/build-desktop-app.sh
-      - uses: ui-test-actions/ui-test-actions@87e689fb32ed419a07491f97a4d2b3dd0dc17f1e
+      - uses: ui-test-actions/ui-test-actions@07d7f778e72222efc0efc97db36e54e9fd4d6dda
         with:
           target: ${{ inputs.target }}
           token-sha256: ${{ inputs.token_sha256 }}

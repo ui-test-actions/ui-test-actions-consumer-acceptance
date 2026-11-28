@@ -111,7 +111,7 @@ jobs:
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Download/kira-fixture.png || true
           adb -s emulator-5554 shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/kira-fixture.png || true
           adb -s emulator-5554 shell ls -la /sdcard/Download/ /sdcard/Pictures/ || true
-      - uses: ui-test-actions/ui-test-actions@87e689fb32ed419a07491f97a4d2b3dd0dc17f1e
+      - uses: ui-test-actions/ui-test-actions@07d7f778e72222efc0efc97db36e54e9fd4d6dda
         with:
           target: android
           token-sha256: ${{ inputs.token_sha256 }}
@@ -212,8 +212,8 @@ jobs:
           done < <(find "$HOME/Library/Developer/CoreSimulator/Devices/$udid/data/Containers/Shared/AppGroup" -name "File Provider Storage" -type d 2>/dev/null || true)
           # Build clean-room UitaXCTestRunner for cross-process UIDocumentPickerViewController traversal;
           # session.py launches and supervises it via ios-xctest-run inside the live session lifecycle.
-          git clone --depth 1 --branch feat/v4.1-perf-physical-isolation https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita-src"
-          git -C "$RUNNER_TEMP/uita-src" checkout 87e689fb32ed419a07491f97a4d2b3dd0dc17f1e
+          git clone --depth 1 --branch fix/v4.1.1-reported-issues https://github.com/ui-test-actions/ui-test-actions.git "$RUNNER_TEMP/uita-src"
+          git -C "$RUNNER_TEMP/uita-src" checkout 07d7f778e72222efc0efc97db36e54e9fd4d6dda
           xcodebuild build-for-testing \
             -project "$RUNNER_TEMP/uita-src/ios_xctest/UitaXCTestRunner.xcodeproj" \
             -scheme UitaRunnerUITests \
@@ -235,7 +235,7 @@ jobs:
             fi
             sleep 3
           done
-      - uses: ui-test-actions/ui-test-actions@87e689fb32ed419a07491f97a4d2b3dd0dc17f1e
+      - uses: ui-test-actions/ui-test-actions@07d7f778e72222efc0efc97db36e54e9fd4d6dda
         with:
           target: ios
           token-sha256: ${{ inputs.token_sha256 }}
