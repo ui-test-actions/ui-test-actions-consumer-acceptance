@@ -50,6 +50,7 @@ jobs:
           cp -r "$RUNNER_TEMP/bench-src/benchmarks" "$RUNNER_TEMP/uita/benchmarks"
           python3 -m pip install --disable-pip-version-check tiktoken Pillow==12.2.0
       - name: Install competitors (agent-device, Appium + uiautomator2, Maestro)
+        if: inputs.tools != 'uita'
         shell: bash
         run: |
           npm install -g agent-device@latest appium@latest
@@ -133,6 +134,7 @@ jobs:
           cp -r "$RUNNER_TEMP/bench-src/benchmarks" "$RUNNER_TEMP/uita/benchmarks"
           python3 -m pip install --disable-pip-version-check tiktoken Pillow==12.2.0 PyAutoGUI==0.9.54 pyobjc-framework-Quartz==12.1
       - name: Install competitors (agent-device, Appium + xcuitest, Maestro)
+        if: inputs.tools != 'uita'
         shell: bash
         run: |
           npm install -g agent-device@latest appium@latest
